@@ -1,1 +1,1 @@
-C:\Users\carlo\Documents\rust\structs\target\debug\structs.exe: C:\Users\carlo\Documents\rust\structs\src\main.rs
+D:\rust\structs\target\debug\structs.exe: D:\rust\structs\src\main.rs
