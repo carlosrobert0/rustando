@@ -1,0 +1,1 @@
+D:\rust\restaurant\target\debug\librestaurant.rlib: D:\rust\restaurant\src\back_of_house\appetizer.rs D:\rust\restaurant\src\back_of_house\breakfast.rs D:\rust\restaurant\src\back_of_house\mod.rs D:\rust\restaurant\src\front_of_house\hosting.rs D:\rust\restaurant\src\front_of_house\mod.rs D:\rust\restaurant\src\front_of_house\serving.rs D:\rust\restaurant\src\lib.rs
