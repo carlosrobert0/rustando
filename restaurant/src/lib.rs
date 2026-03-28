@@ -1,19 +1,17 @@
-mod back_of_house;
+use std::fmt::Result;
+use std::io::Result as IoResult;
+
 mod front_of_house;
 
-use crate::back_of_house::breakfast::Breakfast;
-use crate::back_of_house::appetizer::Appetizer;
-pub use crate::front_of_house::hosting::add_to_waitlist;
+use crate::front_of_house::hosting;
 
-pub fn eat_at_restaurant() {
-    let mut meal = Breakfast::summer("Rye");
-    meal.toast = String::from("Wheat");
-    println!("{:?}", meal.toast);
+fn function1() -> Result { Ok(()) }
+fn function2() -> IoResult<()> { Ok(()) }
 
-    let order1 = Appetizer::Soup;
-    let order2 = Appetizer::Salad;
+fn eat_at_restaurant() {
+    // Absolute path
+    hosting::add_to_waitlist();
 
-    add_to_waitlist();
-
-    println!("{:?} {:?}", order1, order2);
+    // Relative path
+    hosting::add_to_waitlist();
 }
