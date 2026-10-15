@@ -1,0 +1,100 @@
+1
+00:00:00,040 --> 00:00:04,120
+Fala, Dev, tudo bem? Seja muito bem-vindo ao nosso curso de Rust aqui no canal. É um
+
+2
+00:00:04,120 --> 00:00:07,799
+prazer ter você nessa jornada para aprender uma das linguagens mais modernas e
+
+3
+00:00:07,799 --> 00:00:11,960
+seguras da atualidade. Nesta aula eu vou te dar um panorama geral sobre o Rust e te
+
+4
+00:00:11,960 --> 00:00:15,679
+mostrar porque vale a pena aprender essa linguagem. Vamos começar entendendo então
+
+5
+00:00:15,679 --> 00:00:20,519
+um pouco da história do Rust. Eh, o projeto começou lá em 2006, criado por Grey
+
+6
+00:00:20,519 --> 00:00:26,000
+Warren como um projeto pessoal. Em 2009, 2010, a Mozilla eh entrou ali, né, como
+
+7
+00:00:26,000 --> 00:00:31,080
+apoiadora oficial e passou a investir pesado na linguagem. Eh, em 2015 saiu a
+
+8
+00:00:31,080 --> 00:00:37,520
+primeira versão do Rust Stável e 2016 a 2022 foi considerada a linguagem mais amada
+
+9
+00:00:37,520 --> 00:00:42,320
+no stack overflow. Ali indústria vem aumentando cada vez mais com grandes empresas
+
+10
+00:00:42,320 --> 00:00:47,800
+como Amazon, Microsoft, Dropbox, Cloudflare, usando ali o Rust em projetos críticos
+
+11
+00:00:47,800 --> 00:00:52,480
+deles, né? E é onde a gente chega agora, né, de quem usa o Rust, igual já falei, o
+
+12
+00:00:52,480 --> 00:00:57,719
+Firefox, o Dropbox, Cloudflare, muitos outros sistemas ali, né, que onde eh precisam
+
+13
+00:00:57,719 --> 00:01:01,960
+de performance, segurança e confiabilidade também estão utilizando o Rust.
+
+14
+00:01:02,480 --> 00:01:06,920
+Por que então aprender o Rust, né? Ele combina o melhor dos mundos, né? Essa
+
+15
+00:01:06,920 --> 00:01:10,439
+linguagem combina o melhor dos mundos, tanto a segurança de memória sem depender de
+
+16
+00:01:10,439 --> 00:01:14,520
+um garbage collector e quanto a performance que é praticamente o mesmo nível de
+
+17
+00:01:14,520 --> 00:01:19,680
+linguagens como C e C++ e ainda com garantias em tempo real de compilação para você
+
+18
+00:01:19,680 --> 00:01:24,600
+evitar, né, o bugs ali, os bugs ali antes de rodar o seu programa, né?
+
+19
+00:01:24,960 --> 00:01:29,360
+Então agora que você já sabe por vale a pena investir seu tempo em rush, bora para a
+
+20
+00:01:29,360 --> 00:01:32,840
+próxima aula. Na próxima aula a gente vai estar instalando a linguagem, instalando o
+
+21
+00:01:32,840 --> 00:01:36,680
+Rust, preparando o ambiente de desenvolvimento e escrevendo ali o nosso primeiro
+
+22
+00:01:36,680 --> 00:01:40,360
+programa em Rust. Então, muito obrigado por assistir esse vídeo até aqui. Se você
+
+23
+00:01:40,360 --> 00:01:43,840
+curtiu, já deixa o seu like, compartilha com os amigos que também querem aprender
+
+24
+00:01:43,840 --> 00:01:48,079
+Rust e se inscreve no canal aqui para não perder as próximas aulas. Nos vemos no
+
+25
+00:01:48,079 --> 00:01:51,880
+próximo vídeo e até lá. Valeu e bora aprender Rust.
+

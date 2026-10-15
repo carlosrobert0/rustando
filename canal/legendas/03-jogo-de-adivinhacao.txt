@@ -1,0 +1,170 @@
+Fala, Dev. Beleza? Seja muito bem-vindo ao quarto episódio do curso de Rust.
+Hoje a gente vai tá trabalhando juntos aqui um projeto prático, eh, onde a gente vai
+poder estar aprendendo sobre let, mut, métodos associados,
+funções associadas, crates externos, que são bibliotecas, né, e muito mais. A gente
+vai est implementando, então, né, um jogo aí de adivinhação. O programa ele vai
+gerar um número e aleatório de 1 a 100 e em seguida ele vai solicitar o que o
+jogador digite um palpite. Aí quando ele digitar o programa vai falar se tá muito
+baixo, se tá muito alto ou se ele acertou. Beleza? Então bora lá. Primeiro, galera,
+a gente vai começar criando um novo um novo programa aqui, né, com o cargo cargo
+new. E o nome do programa, que no caso aqui vai ser guessing game.
+Beleza? Agora a gente pode entrar dentro do
+do programa aqui, né?
+Então, beleza, né? A gente tem esse arquivo main aqui, ó. Esse arquivo main é o
+arquivo principal do programa. a gente tava vendo antes.
+Vamos est executando aqui para ver o que que vai printar. Ó, printou então o nosso
+Hello World.
+Agora, pessoal, vamos começar aqui eh só fazendo um input de um de um valor e
+exibindo esse input aqui na tela. Só pra gente ver. A gente vai pedir então o
+palpite, né, do jogador e vai tá pegando e vai est exibindo esse palpite aqui, né,
+no na tela, que no caso aqui é o nosso terminal por enquanto, né?
+Então, beleza.
+Eh, a gente vai estar utilizando aqui um crade chamado STD.
+Aí ele é tipo uma biblioteca
+pra gente tá utilizando aqui. E aqui a gente vai estar fazendo a importação
+utilizando o o use ao invés do importe lá do JavaScript, por exemplo. Aí vamos então
+vamos estar importando então o STD. IIO a gente faz use STD
+e do STD a gente vai utilizar o IO que porque a gente vai precisar de entrada e
+saída ali, né, de dados. Beleza?
+Beleza. Então vamos começar aqui, né, com print ln. Gir adivinha o número.
+Digite o seu palpite, presidente.
+Aí a gente vai criar uma variável aqui que aí no no Rust estável ela é criada utilizando
+a palavrachave let.
+E toda variável no Rust ela já é imutável. Então, pra gente permitir que ela seja
+mutável, né, porque ela vai receber novos valores ali, que vai ser a entrada do
+usuário, eh, a gente precisa definir que ela vai ser mutável através da
+palavra-chave
+muu, né, milt, né, a palavra-chave milt aqui. Aí vamos colocar o nome da variável
+como diz. Vamos iniciar ela como uma string vazia, uma nova string aqui.
+Agora a gente vai est pegando e utilizando essa esse crate, essa biblioteca ali que
+a gente importou ali em cima. Então a gente vai est utilizando Igo,
+stdin
+ponto
+ponline.
+E aí a gente vai passar a nossa variável que a gente criou, passou ali em cima. E
+aí, como é uma eh referência mutável, a gente vai passar o ecomercial,
+representando que é uma referência. Aí passa o milt e o nome da variável.
+E aqui embaixo a gente pode passar um inspect também, caso dê alguma falha ali.
+Beleza? Agora vamos então printar, né? Só printar na tela esse esse valor que o
+usuário
+que o usuário palpitou ali, né? assim. E aí, pessoal, aqui, ó, é interessante pra
+gente tá utilizando a interpolação aqui, a gente pode fazer assim, a gente passa
+umas chaves onde a gente quer que fica a variável, o valor da variável e aqui fora
+do eh fora das aspas duplas, uma como um parâmetro ali do parênteses, a gente passa
+a variável que a gente quer,
+beleza? E aí, ó, vamos estar executando
+e pergunta, né? Digite um palpite 10, ó, tá vendo? você disse 10. Beleza? Então
+vamos continuando aqui
+agora, pessoal. Eh, vamos falar sobre o rending. A gente vai precisar tá, então, né,
+gerando esses números aleatórios. E esses números aleatórios, eles podem ser gerados
+através de uma de um crate, através de uma lib, né, numa biblioteca que se chama
+hand. Eh, então a gente pode estar instalando ela através do cargo ad, cargo ed e o
+nome da liv, que no caso aqui é se rend. Aí ele já vai estar instalando ali pra
+gente. Quando ele instalar, a gente já pode fazer a importação aqui também. Então,
+use hand e do rend a gente vai estar importando aqui e a função RNG.
+Beleza? Aí aqui em cima, pessoal, ó, a gente tá criando uma variável chamada sect
+number, por exemplo, e a gente vai utilizar o r,
+a função RNG
+e o handle
+handle range.
+E esse range ele vai ser de 1 a 100. Então é de um. Coloca esses dois pontos a 100.
+Beleza? Vamos tá printando ele aqui também
+pra gente ver se foi gerado então o número aleatório.
+[Aplausos]
+Beleza, a gente agora vamos vamos rodar os vamos est rodando
+o sistema pra gente ver.
+E aqui, ó, ele gerou um número aleatório de 1 a 100. Nesse caso aqui foi o 68.
+Então, beleza. Agora então a gente já tem a
+o crate ali que permite a gente fazer a entrada de dados que é o input, né, do
+usuário ali. E a gente agora já tem também uma o crate que faz a questão do dos
+números aleatórios, né? Foi gerado aqui pra gente também. Agora a gente vai tá
+fazendo o quê? A gente vai est comparando o palpite do jogador com o número secreto
+ali que foi gerado. Beleza? Então vamos lá.
+Eh, pra gente fazer essa comparação, pessoal, tem aqui dentro do STD também tem uma
+biblioteca, tem uma função chamada CTM e dentro dela tem o order, que ele consegue
+eh trazer ali, né, um resultado
+a de uma comparação entre dois números ali. Beleza? Então, a gente vai tá utilizando
+aqui, ó, SD,
+o nome do da função CMP.
+E a gente vai est utilizando o order dele aqui, beleza?
+Esse order ele é um enum que vocês vão ver ali a funcionalidade dele. Então, eh, aí
+o que que acontece, né? Eh, pra gente tá então comparando esses dois números,
+a gente vai estar utilizando o Mat.
+E aqui o mut. Aí você coloca o o que que você quer que faz a comparação, né, que no
+caso é o palpite. A gente vai utilizar o CMP que a gente importou ali. E o próprio
+CMP, ó, ele fala que ele espera um
+um resultado, né,
+que que esse resultado é é esse número de ordem que ele faz a comparação entre os
+números ali, né, o que recebeu e outro número. Beleza? Então, no caso, tá comparando
+o palpite com
+o nosso número ali que a gente criou,
+recrete número.
+Beleza? E aqui dentro a gente vai estar utilizando
+o ordering.
+O less é para quando ele é menor. A gente vai escrever
+muito baixo.
+Aí a gente tem aqui o maior também.
+Alo.
+E a gente tem aqui o igual para quando ele acertar ali, né?
+Então, beleza. Aí com isso a gente já consegue fazer a comparação aqui, ó. Só que aí
+ele já deu um erro aqui em tempo de execução, ó, em tempo de compilação. Aqui ele
+deu um erro no código e ele tá falando, ó, que ele espera um inteiro, mas foi
+recebido um string. É porque a gente precisa passar essa variável nossa aqui de
+palpite para uma string e a gente passa para uma para um inteiro, na verdade, e a
+gente passa string para inteiro através do pars.
+Então aqui, ó, a gente pode definir a variável novamente aqui e ela vai ser ela vai
+ter um retorno inteiro. E esse U32 é um retorno aqui inteiro, beleza? E eh a gente
+vai pegar e vai est utilizando essa variável em cima. Vamos estar utilizando o tren
+para remover os espaços em branco
+e vamos estar utilizando o passe para fazer o passe ali. E se der algum erro, a
+gente vai pegar e vai
+falar aqui aqui. Aí, por exemplo, aqui
+vamos tá quebrando aqui esse spect para baixo para ficar mais eh legível pra gente.
+E aqui o erro ele já parou de acontecer. Beleza?
+Eh, então vamos táar rodando aqui agora.
+E aí, ó, ele fala aqui, né, o Só que que ele tá falando, né? Qual que é o número? Eu
+não quero isso não. Vou tirar, senão aí vai ficar fácil, dar certo.
+E aí vamos pegar e vamos rar de novo.
+Deixa eu deixar aqui do lado direito que eu consigo melhorar o zoom aqui para
+Beleza. Eh, aí então aqui nós vamos digitar um palpite 10.
+Você dig muito baixo. Só que aí o que acontece? Quando eu já fiz esse primeiro
+palpite ali, ele já foi já saindo da aplicação, né? Eh, então a gente vai agora
+utilizar os laços de repetição pra gente tá conseguindo eh
+ir repetindo ali, né? Eh, os palpits até quando ele acertar. Aí quando ele acertar a
+gente vai finaliza ali o sistema.
+É, beleza? Eh, então vamos estar utilizando
+o loop pra gente tá fazendo esse esse laço de repetição.
+E acontece o quê, pessoal? Aqui, ó, a gente pode deixar pro lado de fora do loop
+somente essa variável secret number. Belez? E aí agora tudo isso aqui que tá
+dentro do tudo isso daqui, né, que é do programa C, a gente vai colocar dentro de um
+lucro.
+Beleza, pessoal? E aqui, ó, somente quando eh o valor for igual, a gente vai tá
+então encerrando essa estrutura de repetição
+e a gente encerra ela através do break. Beleza, pessoal? Então, vamos est rodando
+aqui de novo, ó.
+Digit 10, tá? Muito baixo. Aí pediu, pediu para digitar de novo. 40 baixa 81.
+Calma, calma.
+Ah, acertou aí foi saiu. Maneiro, né, pessoal? Agora o que que acontece?
+Vamos executar aqui novamente. Agora o sistema já tá funcionando, já tá tudo certo.
+Só que agora vamos pegar e vamos digitar um valor que não é numérico para ver o que
+que acontece.
+Ó, quebrou o nosso sistema, entendeu? deu um panic aqui e fechou o sistema porque
+isso aqui não foi tratado. E como que a gente faz isso? Aqui é gente, onde a gente
+tá utilizando esse aqui, ó. A gente pode tirar ele. E aqui a gente vai tá passando
+depois do passe umas chaves, que vai ser o bloco que a gente vai estar utilizando
+ali, que é o do resute. E aqui, ó, antes do antes de eu fazer aqui, né, o passe e
+tudo mais, eu vou colocar uma instrução mat
+que aí aqui dentro se ele vai retornar o resulte, né? Aqui dentro ele vai est
+retornando um resulte.
+Eh, e aqui, ó, caso ele seja tenha dado OK, ele vai pegar, vai retornar um número
+normal, né? Mas caso tenha dado erro,
+eu quero que ele continua
+para ele não tá quebrando igual aconteceu ali.
+E agora vamos executar novamente.
+Eh, vamos 10. Beleza, né? Agora vamos pôr um texto.
+Não quebrou também. Tá lá, pessoal.
+Então é isso daí, pessoal. Eh,
+então é isso daí. Se você gostou do vídeo, eh, deixa o seu like aí, compartilha, se
+inscreva no canal e porque nos próximos vídeos a gente vai entender melhor eh sobre
+o sistema de títulos no Rust, como lidar com várias eh com vários conceitos de
+programação aqui no Rust. Beleza, pessoal? Valeu,

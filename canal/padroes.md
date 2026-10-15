@@ -71,6 +71,9 @@ Proibido antes dos 30 s: "fala pessoal", apresentação, vinheta, pedido de like
 - A cada 2–3 min, um novo "por que continuar": o próximo erro, o próximo resultado.
 - Erros propositais funcionam: mostrar a mensagem real do compilador e resolver.
 - CTA (like/inscrição) uma vez, **logo depois do melhor momento**, não no começo.
+- **Nunca "então é isso" no meio do vídeo.** Soa como fim: no #4 Parte 1 a retenção caiu de 52% pra 42% logo
+  depois dessa frase. Aparece no meio de 6 vídeos. Pra trocar de assunto: "agora vem a parte que mais confunde…".
+- Pausas e esperas (instalação, abrir programa) saem na edição. No vídeo do macOS eram 1:51 de espera.
 - Últimos 20 s: tela final (próximo vídeo + playlist). Sem "tchau" longo.
 
 ## Thumbnail
@@ -80,17 +83,31 @@ Proibido antes dos 30 s: "fala pessoal", apresentação, vinheta, pedido de like
 - Projetos: o **resultado ou o número** na thumbnail (ex.: "DOM CASMURRO EM 3 MS").
 - Mesma identidade: fundo escuro, laranja do Rust, o caranguejo, a marca RUSTANDO.
 
-## Série de projetos
+## Roteiro do curso (o curso é a base)
 
-O #3 (jogo de adivinhação) é o vídeo com melhor retenção e mais tempo de exibição do canal. Em inglês,
-vídeos "Learn Rust: Build X" fizeram de 20 a 100 vezes a média do canal. Ideias, em ordem de dificuldade:
+O **Curso de Rust seguindo o Rust Book é a linha do canal** e não muda. A didática funciona:
+18 inscritos a cada mil views, retenção do meio do vídeo entre as melhores do YouTube, e metade do tempo de
+exibição vem de quem segue a playlist em ordem.
 
-1. ✅ Contador de palavras — Dom Casmurro (HashMap, String, erros)
-2. Lista de tarefas no terminal salvando em arquivo (structs, enums, Vec, serde)
-3. Jogo da cobrinha no terminal (loop, enums, crate `crossterm`)
-4. Clone do `grep` (ler arquivos, iterators, testes: capítulo 12 do Book)
-5. API REST com Axum do zero (async, JSON)
-6. Mini Redis: servidor TCP com threads (Arc, Mutex)
+Os **projetos entram a cada 3–4 aulas**, do mesmo jeito que o próprio Book faz: ele alterna capítulos de
+conceito com projetos (cap. 2 jogo de adivinhação, cap. 12 minigrep, cap. 21 servidor web). Regras:
+- O projeto **só usa o que já foi ensinado** nas aulas, e diz de quais aulas cada parte veio.
+- Quando o Book tem projeto, ele é o projeto da vez. Entre eles, um projeto próprio que junta as últimas aulas.
+- O curso nunca para por causa de um projeto.
+
+| Aulas (capítulo do Book) | Projeto depois delas |
+|---|---|
+| ✅ #1–#3 (cap. 1–2) | ✅ #3 Jogo de adivinhação (projeto do Book, cap. 2) |
+| ✅ #4–#10 (cap. 3–9) | **Projeto #1: contador de palavras / Dom Casmurro** (HashMap, String, erros) |
+| #11 generics, traits e lifetimes (cap. 10, 4 partes) · #12 testes (cap. 11, 2 partes) | **Projeto #2: minigrep** (projeto do Book, cap. 12, 2 partes) |
+| #13 closures e iterators (cap. 13) · #14 Cargo e crates.io (cap. 14) · #15 smart pointers (cap. 15) | **Projeto #3: lista de tarefas no terminal** salvando em arquivo (crates `serde`/`clap`, iterators) |
+| #16 concorrência (cap. 16) · #17 async (cap. 17) · #18 orientação a objetos (cap. 18) | **Projeto #4: mini Redis**, um servidor TCP com threads (`Arc`, `Mutex`) |
+| #19 patterns (cap. 19) · #20 recursos avançados (cap. 20) | **Projeto final: servidor web multithread** (projeto do Book, cap. 21) |
+
+Números das aulas a partir do #12 são sugestão. Se o #11 ganhar mais partes (traits, lifetimes), tudo anda uma casa.
+
+**É um teste:** se o Projeto #1 não tiver mais views engajadas e % assistido que as aulas no D+28
+(ver [metricas.md](metricas.md#teste-projeto-vs-aula)), os próximos projetos ficam só nos do Book.
 
 ## Shorts
 

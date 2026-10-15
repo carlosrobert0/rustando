@@ -1,0 +1,195 @@
+Fala, Dev. Beleza? Hoje vamos falar aqui um pouco sobre alguns conceitos comuns de
+programação eh em Rust, alguns como os variáveis eh tipos básicos,
+funções, comentários e fluxos de controle. Beleza? Isso que primeiro, pessoal, a
+gente tá vendo aqui sobre variáveis e mutabilidade aqui no Rust. O que que acontece?
+Toda a variável no hust por padrão, ela já é imutável, beleza? Ela por padrão é
+imutável. Se a gente vem aqui e tenta alterar essa variável, ele vai dar um erro
+falando que essa variável aqui ela não pode ser alterada
+porque ela é imutável. Caso a gente queira alterar essa variável, a gente precisa
+colocar antes do nome da variável a palavra reservada, a palavra-chave mut, né? E
+aí ela se torna uma variável mutável. Aí ela consegue receber um novo valor que você
+passa aqui para ela. A gente também tem as constantes. As constantes elas são sempre
+imutáveis e elas sempre também eh precisa ser passado para ela. Qual é o tipo dessa
+constante aqui? Nesse caso, é um tipo inteiro que a gente já vai ver um pouco
+depois. Eh, aqui nos tipos, nos types, beleza? Então, ó, a gente pode declarar aqui
+as constantes com as letras maiúsculas e definir para ela um valor aqui que não vai
+ser alterado.
+Beleza?
+Aqui, pessoal, tem uma coisa bem maneira também que é a questão do shadowing, que é
+sombreamento. O shadowing, ele é o quê? Você pode usar o mesmo nome da variável eh
+já declarada. Por exemplo, aqui, ó, let
+com valor 20. E aqui eu printo o valor dela. Aqui embaixo eu posso novamente
+declarar outra variável com o mesmo nome dela. E aqui vai sobrepor, no caso, né, a
+declaração eh anterior. Beleza? Aqui também, ó, a gente tem o escopo eh o escopo
+aqui, né, local, vamos dizer assim. E a gente consegue declarar esse escopo
+utilizando chaves e o que vem aqui dentro e é apenas desse escopo aqui mesmo.
+Beleza? Eh, aqui, né, tem alguma declaração de de uma variável, enfim.
+Eh, aqui também
+a gente consegue fazer dessa forma, ó. A gente define então o nome da variável, por
+exemplo, spaces. E aí a gente tem uns spaces aqui. E pra gente não precisar eh
+trocar, né, o nome da variável e tudo mais, a gente usa aqui, ó, space.l length e a
+gente consegue pegar o tamanho desse desse dessa string. Já aqui embaixo vai dar um
+erro falando de mistes,
+por a gente tá alterando através do Mil
+do
+da variável aqui e isso não pode acontecer.
+Beleza? Então se a gente remove aqui o mut, ele volta a compilar aqui novamente,
+né? sem o erro tá aparecendo.
+Beleza?
+Então é isso, galera. Eh, mostramos aqui então, né, sobre os as variáveis, né, e a
+mutabilidade
+aqui também. Beleza?
+aqui deve eh são os tipos de dados em Rust.
+Aqui a gente tem dois tipos de dados, são os tipos escalares e temos os tipos compos
+compostos aqui. Beleza? Então, nos tipos escalares a gente tem os inteiros, os
+floating,
+os buleano e os caracter. Beleza? Pros inteiros, a gente tem os que podem receber um
+sinal de um sinal, né, que podem ser negativo, receber nesse sinal negativo. E a
+gente tem os que não podem, os que podem ser somente positivos, sem o sinal de
+negativo. E ele faz essa descrição através do esse I e desse U. Esse I é quando ele
+pode receber o sinal e esse U é um sized, um signet, quando ele não pode receber o
+sinal. E aí aqui no pros valores inteiros a gente tem do 8 até o 128
+bits.
+E quando a gente quer e definir através do próprio eh
+plataforma ali, né, da arquitetura do sistema, a gente utiliza esse size ou e size.
+Beleza?
+Aqui a gente tem as operações que ah, tá, ó, desculpa. Eh, lembrando pessoal aqui
+também a gente tem esses outros tipos inteiros que são o decimal, tem o hexadecimal,
+tem o o tal aqui tem o binário e tem o byte também que ele só é permitido com esse o
+U8 aqui. Beleza?
+Então aqui, ó, a gente tem algumas operações que a gente pode fazer, né, nesses
+inteiros. A gente tem a soma, a gente tem a diferença,
+a gente tem a multiplicação, a gente tem a divisão e a gente tem também aqui o
+resto.
+Aqui, ó, a gente tem os pontos flutuantes. Os pontos flutuantes, eles são f3
+ou 64. São 32 ou 64 bits. Beleza? por padrão ele é eh vamos
+ver aqui por padrão o que que ele é. Vamos fazer então a inferência de tipo.
+Ele faz aqui também, né, 3.5
+e aí por padrão, então ele é 64 bits. Beleza?
+Aqui também, então, a gente tem os bolianos, né, que a gente pode passar a tipagem
+e utilizando esse boleano também, esse bow aqui também. a gente tem os caracter, né,
+que tem essa tipase do char e o caracter é apenas um único, né, eh, caracter aqui.
+Agora a gente tem os tipos compostos. Os tipos compostos a gente tem as as tuplas,
+né, as tuplas. Então, ela é um ela é um parênteses e o que vem dentro dela separado
+por vírgula. Aqui, depois que a gente definiu eh essa tupla aqui, a gente também não
+precisa, né, passar,
+a gente não precisa tá passando aqui de início essa tipagem porque ele mesmo faz a
+inferência de tipo ali. Depois a gente fala melhor sobre isso, mas enfim. Aí a
+tupla, então ela é um valor que vem dentro de um parênteses e é separado por
+vírgula. Aqui a gente consegue desestruturar
+fazendo da mesma forma, utilizando parênteses
+e desestruturando aqui da da variável que a gente acabou de criar.
+Eh, e a gente consegue fazer então, né, esses acessos aqui. A gente também consegue
+acessar as tuplas através dos índex delas. Ó, por exemplo, esse channel é o index
+zero ali e aqui o index 1. Beleza? A gente tem também os arrays. Os arrays eles são
+separados eh por vírgula, né? E são dentro de colchetes. Eles vêm dentro de
+colchetes e são separados por vírgulas. Eles têm um tamanho fixo
+dele. Beleza? A gente não consegue tá e mudando isso daqui. A gente ele tem um
+tamanho fixo. Nesse caso, são cinco cinco valores aqui que ele tem. Pra gente tá
+acessando o index
+eh no para o o elemento, né, no array, a gente utiliza o array e passa qual através
+do colchetes a gente passa qual o índex que a gente quer acessar.
+Beleza? A gente também, ó, pode fazer mutabilidade com o array
+e utilizando a palavra reservada aqui mut.
+Beleza, galera?
+Eh, e a gente tem também aqui, pessoal, a questão da inferência de tipo, né? Se a
+gente define alguma variável sem definir o tipo dela, ele faz pra gente aqui qual é
+a inferência, eh, através da inferência, né? Qual é o tipo desse valor que a gente
+atribuiu a variável aqui. Um outro ponto aqui interessante também é a questão das
+funções.
+Eh, uma função, ela é declarada através da palavra chave fn. a gente utiliza Fn e
+na frente do Fn a gente define o nome para função seguido de parênteses.
+E depois disso a gente abre uma chaves, que é onde que vai eh ser, né, o conteúdo
+ali da função. Beleza? a gente consegue utilizar parâmetros na função, passando esse
+parâmetro eh paraa função. Então, então a gente pega eh dentro do parênteses, a
+gente passa qual é o parâmetro que a gente quer e
+pontos a tipagem do parâmetro. Também é preciso eh tá passando aqui.
+Eh, por exemplo, aqui, né, passa dois valores, dois parâmetros também. a gente pode
+passar eh com tipos diferentes para função também os parâmetros. Aqui
+agora a gente vai falar sobre eh os statements e os e as expressions.
+O que que acontece? os statements aqui eles não retornam eh os valores ali pra
+gente. Já a expressão ela faz o retorno aqui do valor. Por exemplo, aqui, ó, a
+gente tem um estado, né, uma uma variável que recebe o valor cinco. Já aqui, ó, esse
+esse essa expressão aqui, ela retorna
+o valor diretamente
+quando a gente não passa aqui o ponto e vírgula, né? É uma expressão
+e e ela já pega e já faz esse retorno. Por exemplo, aqui embaixo a gente tem eh as
+nossas funções com retorno, né? Eh, e aqui, ó, a gente define, né? eh utilizando
+essa seta e depois da seta passando qual que é o tipo de retorno que essa função vai
+ter.
+E aqui, ó, a gente poderia pegar e passar
+eh retorno
+e o ponto e vírgula no final. Ou a gente só, eh, não passa o ponto e vírgula,
+que aí não precisa passar o retorno, que ele já vai tá retornando, que é no caso, é
+a expressão, igual a gente acabou de falar ali em cima. Agora aqui a gente vai falar
+sobre os fluxos de controle aqui no rush, né?
+É, por exemplo, aqui a gente tem um número e a gente pode fazer essa verificação
+aqui com o if else statement, né? Ó, se esse número for menor do que 10, vai falar:
+"Esse número é menor do que 10. Se não, maior do que 10". Certo? Aqui, ó, ele vai
+acontecer um erro porque ele não é um um boleano, não é um buleano, né? E a gente tá
+tentando tratar ele como se fosse um buleano. Então aqui ele vai falar que ele
+espera, né, que seja um boleano dessa forma.
+Eh, aqui, ó, quando você tiver eh mais de uma condição,
+ó, quando você tiver uma condição, na verdade, né, ó, se o número for diferente de
+zero, senão, né, ele é zero. Aqui é para quando a gente tem mais de uma condição,
+são múltiplas condições, né? Ó, se o número for menor do que zero, ele vai falar,
+né, é negativo. Se não, se
+número igual a zero é igual a zero. Se não, beleza? Aqui também a gente consegue
+utilizar
+o o if
+em uma variável, né, em um let ali, né?
+A gente define a variável e fala, ó, se a condição, né, então vai retornar o cinco,
+senão vai retornar o 10. aqui,
+aqui, ó, ele vai acontecer um erro porque a gente tá tentando fazer essa essa
+verificação aqui, né, do if else, só que eles não são do mesmo tipo de retorno e por
+isso vai acontecer o erro aqui.
+Aqui a gente vai ver então as repetições
+com os loops, né? Aqui a gente vai utilizar o loop mesmo para fazer essa repetição.
+Então a gente define um uma variável, né, que ela vai ser mutável, que o nome dela
+aqui vai ser contador, por exemplo, vai iniciar em zero.
+E aqui a gente define essa palavra chave loop e abre o as chaves. E tudo que vier
+dentro dessas chaves é o conteúdo do loop. Aqui, ó, a gente pode fazer o incremento,
+né, do contador mais um e a gente vê se ele chegou até cinco, então a gente faz o
+break aqui. O break ele é a instrução que vai parar a execução do loop, beleza?
+Aqui, ó, eh, a gente vê eh
+o o loop como um retorno, a gente utilizando ele como um retorno em uma variável.
+Por exemplo, nessa result,
+né? Então, a gente pega eh passa aqui o loop e aonde a gente vai fazer o break, a
+gente retorna o contador que a gente tá tá utilizando ali.
+Beleza?
+Aqui, ó, a gente também consegue fazer eh os as estruturas de repetição utilizando
+esses labels aqui para para distinguir, né, outros loops. Por exemplo, aqui, ó, a
+gente criou essa variável e de contador e definimos aqui um label para ela, para
+essa execução. E aí aqui dentro esse break, ele é o break desse loop interno. E esse
+outro break aqui, ó, já é o break referente ao label que a gente definiu ali em
+cima. Beleza? Agora aqui, ó, a gente vai tá vendo sobre a estrutura e repetição,
+eh, o while. O while a gente vai ter, né, que o while e vem a condição e dentro de
+chaves é o conteúdo do do da repetição ali. Então, a gente vai fazer então, né, um
+incremento
+eh
+dos valores aqui, beleza? E a gente também tem um exemplo aqui com o decremento dos
+valores.
+Eh, aqui, ó, a gente também pode fazer esses esse percorrer, né, esses valores eh de
+uma collection. Por exemplo, aqui a gente tem esse array
+e aí e aqui, ó, a gente consegue também percorrer esses essas esse array através
+desse for. E aí com for a gente faz for, coloca o nome aqui eh do elemento
+e aí a gente coloca aqui o nome eh do array e essa função de iter aqui para tá
+iterando sobre o array. E aqui a gente printa então o elemento que a gente nomeou
+aqui em cima.
+Eh, a gente também tem a parte da repetição confor utilizando o range. E aí a gente
+coloca o elemento, né, que a gente vai tá querendo e utilizar aqui. E o win, mesma
+coisa. E aqui a gente utiliza o range. A gente coloca um, esses dois pontos, seis.
+Então aqui vai de um ao cinco, no caso. Esse outro conceito aqui no rosto, pessoal,
+é a questão dos comentários, né? Pra gente fazer um comentário aqui em uma única
+linha, a gente utiliza esses eh duas barras aqui.
+Pra gente utilizar um comentário em bloco, a gente coloca a barra invertida,
+asterisco.
+E aí dentro aqui do bloco a gente coloca o que que a gente quer que comenta e aí
+depois é asterisco e barra novamente. Beleza? E a gente também consegue fazer aqui,
+ó, eh, uma um comentário
+dentro e depois de uma variável aqui, né, ou de alguma função, algo do tipo.
+A gente consegue referenciar aqui assim também. Então é isso, pessoal. Esses foram
+alguns conceitos importantes aqui de programação em host. E agora a gente vai est
+passando pra parte ali de entender o ownership
+no Rust. É isso aí, galera. Quem gostou? Deixa o like, se inscreve no canal,
+compartilha e muito obrigado.

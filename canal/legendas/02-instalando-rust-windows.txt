@@ -1,0 +1,69 @@
+Fala, Dev, beleza? Seja muito bem-vindo à segunda aula do nosso curso de Rust aqui
+no canal. Hoje vou mostrar para você passo a passo como instalar o Rust o Visual
+Studio Code com extensão certa para programar com mais produtividade. Beleza? Então,
+bora lá.
+Então, pessoal, eh, aqui no Google a gente pode estar pesquisando por Rust
+opção vai ser aqui, Rust Programming Language. A gente pode estar clicando aqui, ó,
+e a gente vem na opção do get started,
+que também se a gente quiser, ó, podemos traduzir pro português,
+beleza? E aqui vai ter um
+como instalar,
+como instalar, né? A gente vai ter a opção aqui de instalando o Rust.
+a gente pode testar ele sem instalar. E aqui e a gente vai tá instalando, utilizando
+o Rust, né, que ele é um instalador ali, né, e gerenciador de versões do Rust.
+Aqui você pode baixar a 32 bits ou a 64 bits.
+Eu vou baixar isso daqui. Como eu tô no Windows, né, eu vou estar baixando dessa
+forma. Se vocês tiverem no Linux ou no Mac, vocês podem estar baixando dessa forma
+aqui através do CO aqui. Beleza? Então, eh, ele baixado, eu posso vir, né, e
+executar o meu
+o meu arquivo aqui. O, como eu já tava já tinha continuado iniciada a instalação,
+eh, vai pular a parte da a primeira parte da instalação, mas a primeira parte vocês
+vão na opção um e dá e aperta enter, que depois eh vai tá fazendo a parte
+ali das configurações, né, a instalação utilizando o Visual Studio Community,
+beleza? Eh, então aqui, ó, eu vou est só continuando o meu, finalizando, na verdade,
+né, a minha instalação aqui, que ele tava dependendo, né, do
+Visual Studio ali. E a gente continua assim que essa instalação finalizar. Beleza?
+Então, não, que já funcionou. Pra gente conferir se deu tudo certo, a gente pode
+rodar o rust
+menos vers no nosso terminal, por exemplo. Vou abrir o cmd aqui só de início mesmo
+e vou rodar o hust
+c men- menos version.
+Ó, tá vendo que ele já instalou para mim? Então, né? ele já mostra aqui qual a
+versão do Rust já tá sendo executada aqui.
+Eh, ele também instala o cargo que eu vou falar para vocês eh daqui a pouco sobre
+ele. Vamos verificar se a instalação dele também eh está bem-sucedida, né? Fazendo o
+cargo menos version. E aqui também tá a instalação dele.
+Eh, então, beleza. Eh, as duas versões já apareceram, então o Rust e o cargo já
+estão instalados, prontos para serem usados. Beleza? Então agora vamos estar
+instalando o VS Code. Da mesma forma a gente vem aqui, ó, pesquisa por VS Code no
+Google. Vai ser o primeiro link que aparecer.
+Você clica em download aqui, ó, na na opção que aparecer, né? E aqui é, como eu tô
+no Windows, eu vou selecionar o Windows e ele vai tá baixando aqui para mim também o
+o VS Code. Beleza? Eh, só eu tá executando aqui mesmo o arquivo normalmente
+de instalação agora do VS Code.
+Eh, então vamos lá.
+Agora aqui, né, estamos então instalando o VS Code
+pra gente conseguir eh tá codando o nossos programas a letra do Rust. Beleza? Esse
+VS Code ele é um editor de código, né, que permite a gente então tá fazendo essas
+edições de códigos aí de de programas, de sistemas.
+E é isso daí. Então, eh, vamos estar iniciando aqui o VS Code.
+Beleza? de início aqui ele dá uma página de WCOM mesmo normal aqui.
+Eh, agora, pessoal, aqui no VS Code,
+eh, a gente tem
+aqui no VS Code, a gente tem eh uma extensão chamada rust-analyzer.
+A gente vem aqui em extensions e vamos procurar Rust.
+Eh, deixa eu aumentar aqui.
+Beleza. Então, a gente tem essa extensão do Rust que tá depreciada, na verdade é
+essa daqui que tá depreciada. E a gente tem essa extensão rust-analyzer.
+Essa extensão, pessoal, vai est ajudando a gente a programar melhor aí com o Rust,
+beleza? Então, a gente vai est instalando essa
+extensão chamado Rust, beleza?
+Então, Rust já tá configurado, o rust-analyzer aqui. Então, pessoal, eh, o Rust agora
+ele já tá instalado, o VS Code ele já tá instalado também e configurado com a
+extensão do rust-analyzer.
+Eh, e é isso aí. Agora a gente já tem o Rust instalado, a gente já tem o VS Code
+configurado para começar a programar e na próxima aula a gente vai escrever o nosso
+primeiro programa em Rust, o clássico Hello World, e já entender como o cargo
+funciona. Então já deixa o like aqui no vídeo, se inscreve no canal para não perder
+os próximos vídeos que chegarem e comenta aí embaixo se deu tudo certo na sua
+instalação. E até a próxima. Valeu,

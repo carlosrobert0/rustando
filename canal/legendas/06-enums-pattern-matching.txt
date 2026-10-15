@@ -1,0 +1,230 @@
+Fala dev, beleza?
+Hoje a gente vai est falando aqui sobre Enum. Enum é uma propriedade, é um comando,
+é uma opção que a gente tem aqui para trabalhar no hust, que ele consegue enumerar
+opções de um determinado dado ali pra gente. Por exemplo, é quando a gente quer
+fazer algo que tem alguma variante, que tem mais de uma opção, então a gente utiliza
+um enum. Por exemplo, vou criar um enum aqui de endereço de IP.
+Esse Enum ele é criado da seguinte forma. A gente utiliza a palavra chave enum
+seguido do nome que a gente quer pro Enum em utilizando camel case seguido depois de
+chaves e aqui dentro do enum vem as opções dele separado por e vírgula.
+E aí a gente implementa o Enum
+e utilizando da seguinte forma.
+a gente eh passa, cria então, né, uma variável e atribui o Enum para ela, passando
+então o nome do Enum e utilizando essa esse comando
+2.2 pontos
+para acessar o campo do Enum. Por exemplo, aqui, ó, eu tenho acesso aos dois e as
+duas opções daquele enum, certo?
+E aí, eh, aqui também eu consigo
+utilizar o Enum,
+eh, dentro de uma função. Por exemplo, vou criar aqui uma função chamada IPEC R,
+que vai receber o nosso Enum. E aqui dentro ele pode fazer alguma coisa com ele. O
+Enum, então, pode ser passado por funções também, pela função também.
+O Enum a gente consegue também passar ele como uma propriedade de uma struct. Por
+exemplo, vou criar uma struct aqui de endereço de IP, que ela vai ter dois campos.
+Ela vai ter aqui o campo de Kindle, que vai ser o nosso Enu, que vai receber o Enu,
+e o campo de edress.
+E aí a gente estancia aqui
+eh a nossa
+a nossa
+struct, né, e passa para ela então os valores
+eh de que a gente tem aqui para para tá utilizando.
+Então eh dessa forma a gente vê que a gente consegue também trabalhar com eh Enum
+dentro de uma struct,
+por exemplo, vou est rodando aqui esse código para você ver. funcionando.
+Como eu quero passar toda a struct aqui,
+então eu tenho que que utilizar essa sintaxe, né, de dois pontos interrogação
+para eu conseguir e mostrar todos os campos daquela struct. E aqui para stupão,
+né, eh, aquele nosso
+trait utilizando o derive
+e o nome do trait que é debug.
+E aqui, ó, a gente roda
+e a gente pode ver então é a nossa struct e aqui dentro o valor da nossa enum.
+A gente consegue também, por exemplo, eh
+utilizar o próprio, essa própria string aqui dentro da nossa, do nosso Enum. Dessa
+seguinte forma, ó. A gente vem aqui no Enu, na opção do Enum e passa uma um
+parênteses.
+Eh, e essa string, esse formato, na verdade, é um formato de tupla. E aqui a gente
+passa então que ele vai ter um parâmetro, né, que vai ser uma string.
+E agora aqui a gente pode então tá passando
+esse valor da string aqui diretamente pro nosso enumo.
+A gente pode estar então exibindo aqui, ó, que ele vai mostrar então a nossa string
+ali,
+tá vendo?
+É, agora a gente consegue também trabalhar com mais de um formato
+dentro do nosso Enum. Aqui, por exemplo, nessa nesse Enum de no formato de tupla, eu
+estou recebendo uma string, né? Mas eu posso mais passar outras propriedades. Por
+exemplo, vou fazer que esse é endereço de IP aqui ele receba então eh
+uma propriedade que é numérica e vai até 256
+ao invés de string. Aí agora aqui, ao invés de eu passar em string, eu passo em
+número.
+E aí a gente vê
+aqui que funciona da mesma forma,
+só que agora passamos os valores, né, em números. Beleza? É, por exemplo, aqui, ó,
+dentro da Enum, a gente consegue trabalhar com mais de um formato. Por exemplo, aqui
+eu estou utilizando eh o formato de tupla, mas eu posso utilizar outros formatos. E
+esses formatos eles são structs, são estruturas, certo? Então isso daqui é uma
+estrutura de uma tupla. E aqui, ó, por exemplo, esse enum de message,
+eu tenho um exemplo de outras eh estruturas, de outros formatos aqui dentro. Por
+exemplo, aqui eu tenho uma estrutura de dos campos nomeados, né, onde tem seria uma
+função que tem recebe o parâmetro X e Y. Eu tenho aqui uma
+uma estrutura no formato de tupla também. Então a gente vê que a gente tem mais, a
+gente pode ter mais de uma estrutura
+dentro do nosso Enumi, como opções do Enum, certo?
+Eh, então seguindo aqui,
+vou tá mostrando para vocês um enum que é muito importante aqui no Rust, que é o
+enum,
+que é o enum.
+O enum do option,
+ele é um enum que o próprio Rust eh implementa,
+mas eu vou fazer ele aqui pra gente ver como que ele funciona e a gente vê ele eh
+sendo utilizado.
+Por exemplo, eu tenho aqui então enum, né, e o option,
+ele vai receber um parâmetro aqui que é um genérico
+e o retorno dele é alguma coisa.
+Então aí se alguma coisa é sum
+e dentro aqui do sum a gente pega o parâmetro
+e retorna ele aqui
+ou
+o non ou nonim.
+Ou seja, esse é enum aqui, ele é um enum que ele retorna duas opções.
+Eh, ele retorna uma opção quando tem alguma coisa, que é esse some e dentro do
+parênteses a gente consegue recuperar o valor
+ou o none.
+E aí a gente utiliza ele aqui, por exemplo, eh, eu vou estar utilizando aqui é
+essa,
+por exemplo, su number,
+que ele vai ser um some
+desse tipo. E aí, para eu estar mostrando ele, eu preciso tratar ele. Porque, por
+exemplo, se eu mostro aqui su number
+no print aqui, né?
+Se eu exibo eleito para você aqui no no print sem tratar. Olha aqui que ele retorna,
+ó.
+Ele tá me retornando erro. Mas beleza.
+Agora então a gente vai tá vendo aqui no Rust
+controle de fluxo
+que utilizam os enuns para tá eh fazendo a comparação ali
+do que precisa. precisa de ser feito. Por exemplo, eu tenho esse enum aqui de
+algumas
+coins, de algumas moedas
+de alguns eh estados dos Estados Unidos.
+E aí
+eu tenho aqui também eh uma função
+que transforma
+essa esse valor, esse valor que a gente recebe em centavos, né?
+E aí quando ele faz o M
+aqui é uma estrutura que a gente já vê que é uma estrutura de controle.
+É o Mat. O mat ele e tem essa sintaxe. A gente escreve mat
+e seguido do que a gente quer fazer a comparação,
+depois abre chaves e aí a gente coloca
+cada comparação,
+cada possível comparação, cada possível correspondência
+separada por vírgula aqui.
+Então, essa aqui é uma estrutura de controle de fluxo
+eh chamada Mat, certo? Igual eu posso tá implementando aqui, ó,
+uma uma uma conha aqui, né? uma moeda aqui.
+E aí eu posso fazer o print LM dela aqui
+e fazer o valente.
+Vou passar a coin.
+Vamos ver se retorna aqui pra gente.
+Então a gente vê que retornou 25,
+que é o valor que retorna aqui para quando a coin é essa quart. Então isso daqui é
+uma estrutura de controle de fluxo que a gente consegue utilizar o enum aqui para tá
+utilizando como valor de comparação.
+É que é essa mat. Ela é bastante interessante e parece bastante também com suit
+case.
+Eh, aí
+aqui dentro ainda, né, das nossas
+da das nossas
+implementações de Enum,
+a gente tem um Enum que é bastante interessante, que é o Enum de option.
+O Enum de option, ele funciona da seguinte forma.
+Eh,
+ele retorna alguma coisa ou nada.
+Ele retorna então dois tipos, que é o some ou nome, que a gente pode estar vendo
+nesse exemplo aqui dessa função de somar mais um.
+Por exemplo, essa função aqui vai receber um valor
+e ela vai ser desse tipo,
+ela vai ser do tipo do enum option.
+E ele vai poder retornar
+um valor numérico que é 1,32.
+Beleza? E o retorno dessa função vai ser também um OP
+i3.
+Agora aqui dentro a gente vai fazer a comparação. Então
+vamos utilizar o mut aqui e vamos eh agora aqui dentro do Mat está verificando os
+dois possíveis valores que são retornados no option que a gente já viu que é o some
+e o none. Então aqui quando ele retornar o none
+eu vou não vou retornar nada. Vou retornar o nô. E quando ele retornar um valor,
+eu vou estar somando esse valor.
+Beleza? E aí, ó, aqui a gente pode estar então vendo o exemplo dele.
+Também vou criar aqui um com o none para você ver que ele retorna também. O non
+É verdade.
+Aqui, ó, o que que acontece? Eh, eu preciso passar
+o valor aqui
+do som, né? Eu preciso
+fazer passar esse som aqui pro valor do C.
+E para exibir esses valores aqui, eu também preciso passar a questão do nosso eh
+trait ali. Como esse enum já implementa, a gente não precisou fazer nada. A gente
+pode utilizar no Enum def aqui do próprio Rust.
+Então aqui, ó, a gente vê os retornos dos das funções. Aqui, por exemplo, ó, a gente
+quando a gente passou um valor, ele viu que esse valor era cinco e somou com mais um
+e deu seis. Quando a gente não passou nada, ele caiu nesse nô aqui. Então, esse enum
+é o option. Ele é bastante interessante pra gente trabalhar aqui na no rust.
+Eh, algo agora, pessoal, a gente vai falar sobre uma estrutura de controle de fluxo
+bem interessante também. é para quando a gente tem somente uma opção.
+Por exemplo,
+eh, aqui, ó,
+eu posso pegar e posso fazer aqui uma comparação.
+Eu posso pegar e posso fazer aqui uma comparação, ó, eh, de mut aqui, ó. Por
+exemplo, eu vou verificar se esse valor aqui ele é essa moeda que a gente tem aqui.
+E se for, eu vou dar o print ln. Pera aí. Quarter point.
+Caso não for,
+eu tenho que passar aqui.
+Caso não seja nada, eu posso passar esse underline
+retornando o n aqui. Beleza? E aqui eu posso então dar um print al
+retornando. É só posso só posso só executar aqui
+e ele já já vai tá rodando.
+Só que esse nome aqui não preciso. Vou retornar uma função vazia.
+Então beleza. Ó aqui, ó, a gente usou um exemplo onde a gente só tem uma opção de
+correspondência, certo? Aí, por exemplo, aqui tem um mat,
+a variável que a gente quer verificar. E aqui só uma opção de correspondência.
+Nesse caso, a gente pode utilizar uma sintaxe chamada iflet.
+Aí a gente passa assim da seguinte forma, ó. Ifet.
+Aí a gente vai passa a condição que a gente quer. Por exemplo, aqui, ó, coin
+quarter,
+que é essa mesma comparação que a gente tá fazendo aí,
+ela é igual a nossa variável.
+E aqui dentro a gente retorna o que que a gente quer.
+Então esse iflet ele é utilizado para quando a gente só tem uma opção
+dentro das possíveis dos possíveis retornos ali de um enum. Por exemplo,
+esse ifet a gente ainda consegue utilizar o ELSE nele. Por exemplo, a gente pode
+pegar aqui, ó, e verificar,
+ó. Se ele for essa moeda quarter, a gente retorna quart. Mas caso não for, a gente
+pode fazer um elsce aqui também, ó, e retornar, ó,
+not
+assim, entendeu? Que ele vai entender também. E aqui a gente muda, vou mudar, né, o
+valor para ele cair no else.
+E aqui ele roda também, ó, viu? caiu nessa outra opção aqui. Ainda a gente tem essa
+opção, eh, por exemplo, do de uma outra sintaxe que é para quando a gente quer
+utilizar
+eh retornar o elce primeiro. Por exemplo, caso eu que eu queira verificar se essa
+moeda aqui, ó, não é a quarter coin,
+então eu posso pegar e posso verificar assim, ó. por exemplo, ó, let.
+Aí eu vou
+coloco a minha
+a minha condição
+seguido de ELS e aqui dentro eu venho e retorno então
+o meu código, meu comando do else
+aqui. Eu tenho que retornar ele. Quando é esse el
+retorno
+e também a bênção do ponto e vírgula
+faz parte.
+Vamos rodar novamente aqui, então.
+E aí, ó, ele caiu aqui também nessa segunda opção que é esse let else. Então, a
+gente viu a sintaxe de iflet,
+do iflet else. Vimos a sintaxe do letse,
+a sintaxe do,
+vimos os enuns, né, como trabalhar eles ali também, eh, com outros formatos dentro
+dos enuns.
+E também vimos o enum
+do, do Rust, que é o Enum de option.
+Então é isso, pessoal. Quem gostou do vídeo, deixa o like.

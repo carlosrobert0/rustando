@@ -1,0 +1,680 @@
+1
+00:00:00,719 --> 00:00:05,600
+Fala, Dev. Beleza? Seja muito bem-vindo ao quarto episódio do curso de Rust.
+
+2
+00:00:08,400 --> 00:00:13,000
+Hoje a gente vai tá trabalhando juntos aqui um projeto prático, eh, onde a gente vai
+
+3
+00:00:13,000 --> 00:00:16,839
+poder estar aprendendo sobre let, mut, métodos associados,
+
+4
+00:00:17,279 --> 00:00:22,640
+funções associadas, crates externos, que são bibliotecas, né, e muito mais. A gente
+
+5
+00:00:22,640 --> 00:00:27,160
+vai est implementando, então, né, um jogo aí de adivinhação. O programa ele vai
+
+6
+00:00:27,160 --> 00:00:32,719
+gerar um número e aleatório de 1 a 100 e em seguida ele vai solicitar o que o
+
+7
+00:00:32,719 --> 00:00:37,879
+jogador digite um palpite. Aí quando ele digitar o programa vai falar se tá muito
+
+8
+00:00:37,879 --> 00:00:43,559
+baixo, se tá muito alto ou se ele acertou. Beleza? Então bora lá. Primeiro, galera,
+
+9
+00:00:43,559 --> 00:00:50,399
+a gente vai começar criando um novo um novo programa aqui, né, com o cargo cargo
+
+10
+00:00:50,399 --> 00:00:55,039
+new. E o nome do programa, que no caso aqui vai ser guessing game.
+
+11
+00:00:56,120 --> 00:00:58,680
+Beleza? Agora a gente pode entrar dentro do
+
+12
+00:00:59,320 --> 00:01:01,079
+do programa aqui, né?
+
+13
+00:01:14,560 --> 00:01:18,960
+Então, beleza, né? A gente tem esse arquivo main aqui, ó. Esse arquivo main é o
+
+14
+00:01:18,960 --> 00:01:22,159
+arquivo principal do programa. a gente tava vendo antes.
+
+15
+00:01:22,600 --> 00:01:26,479
+Vamos est executando aqui para ver o que que vai printar. Ó, printou então o nosso
+
+16
+00:01:26,479 --> 00:01:27,759
+Hello World.
+
+17
+00:01:28,320 --> 00:01:34,720
+Agora, pessoal, vamos começar aqui eh só fazendo um input de um de um valor e
+
+18
+00:01:34,720 --> 00:01:38,680
+exibindo esse input aqui na tela. Só pra gente ver. A gente vai pedir então o
+
+19
+00:01:38,680 --> 00:01:44,119
+palpite, né, do jogador e vai tá pegando e vai est exibindo esse palpite aqui, né,
+
+20
+00:01:44,119 --> 00:01:47,920
+no na tela, que no caso aqui é o nosso terminal por enquanto, né?
+
+21
+00:01:48,479 --> 00:01:49,719
+Então, beleza.
+
+22
+00:01:50,640 --> 00:01:55,159
+Eh, a gente vai estar utilizando aqui um crade chamado STD.
+
+23
+00:01:55,719 --> 00:01:57,759
+Aí ele é tipo uma biblioteca
+
+24
+00:01:57,960 --> 00:02:02,640
+pra gente tá utilizando aqui. E aqui a gente vai estar fazendo a importação
+
+25
+00:02:02,640 --> 00:02:08,360
+utilizando o o use ao invés do importe lá do JavaScript, por exemplo. Aí vamos então
+
+26
+00:02:08,360 --> 00:02:13,879
+vamos estar importando então o STD. IIO a gente faz use STD
+
+27
+00:02:14,319 --> 00:02:18,920
+e do STD a gente vai utilizar o IO que porque a gente vai precisar de entrada e
+
+28
+00:02:18,920 --> 00:02:21,599
+saída ali, né, de dados. Beleza?
+
+29
+00:02:23,800 --> 00:02:28,000
+Beleza. Então vamos começar aqui, né, com print ln. Gir adivinha o número.
+
+30
+00:02:37,480 --> 00:02:39,840
+Digite o seu palpite, presidente.
+
+31
+00:02:42,680 --> 00:02:48,920
+Aí a gente vai criar uma variável aqui que aí no no Rust estável ela é criada utilizando
+
+32
+00:02:48,920 --> 00:02:50,760
+a palavrachave let.
+
+33
+00:02:51,280 --> 00:02:56,319
+E toda variável no Rust ela já é imutável. Então, pra gente permitir que ela seja
+
+34
+00:02:56,319 --> 00:03:00,640
+mutável, né, porque ela vai receber novos valores ali, que vai ser a entrada do
+
+35
+00:03:00,640 --> 00:03:05,920
+usuário, eh, a gente precisa definir que ela vai ser mutável através da
+
+36
+00:03:05,920 --> 00:03:06,920
+palavra-chave
+
+37
+00:03:07,319 --> 00:03:12,920
+muu, né, milt, né, a palavra-chave milt aqui. Aí vamos colocar o nome da variável
+
+38
+00:03:12,920 --> 00:03:18,440
+como diz. Vamos iniciar ela como uma string vazia, uma nova string aqui.
+
+39
+00:03:18,920 --> 00:03:23,840
+Agora a gente vai est pegando e utilizando essa esse crate, essa biblioteca ali que
+
+40
+00:03:23,840 --> 00:03:27,400
+a gente importou ali em cima. Então a gente vai est utilizando Igo,
+
+41
+00:03:29,360 --> 00:03:30,360
+stdin
+
+42
+00:03:32,080 --> 00:03:33,080
+ponto
+
+43
+00:03:34,920 --> 00:03:35,920
+ponline.
+
+44
+00:03:37,760 --> 00:03:41,599
+E aí a gente vai passar a nossa variável que a gente criou, passou ali em cima. E
+
+45
+00:03:41,599 --> 00:03:47,120
+aí, como é uma eh referência mutável, a gente vai passar o ecomercial,
+
+46
+00:03:47,400 --> 00:03:51,959
+representando que é uma referência. Aí passa o milt e o nome da variável.
+
+47
+00:03:52,319 --> 00:03:58,720
+E aqui embaixo a gente pode passar um inspect também, caso dê alguma falha ali.
+
+48
+00:04:01,799 --> 00:04:06,720
+Beleza? Agora vamos então printar, né? Só printar na tela esse esse valor que o
+
+49
+00:04:06,720 --> 00:04:07,720
+usuário
+
+50
+00:04:09,319 --> 00:04:14,200
+que o usuário palpitou ali, né? assim. E aí, pessoal, aqui, ó, é interessante pra
+
+51
+00:04:14,200 --> 00:04:18,919
+gente tá utilizando a interpolação aqui, a gente pode fazer assim, a gente passa
+
+52
+00:04:18,919 --> 00:04:23,680
+umas chaves onde a gente quer que fica a variável, o valor da variável e aqui fora
+
+53
+00:04:23,680 --> 00:04:29,199
+do eh fora das aspas duplas, uma como um parâmetro ali do parênteses, a gente passa
+
+54
+00:04:29,199 --> 00:04:30,960
+a variável que a gente quer,
+
+55
+00:04:31,320 --> 00:04:34,160
+beleza? E aí, ó, vamos estar executando
+
+56
+00:04:37,320 --> 00:04:43,000
+e pergunta, né? Digite um palpite 10, ó, tá vendo? você disse 10. Beleza? Então
+
+57
+00:04:43,000 --> 00:04:44,639
+vamos continuando aqui
+
+58
+00:04:44,840 --> 00:04:49,919
+agora, pessoal. Eh, vamos falar sobre o rending. A gente vai precisar tá, então, né,
+
+59
+00:04:49,919 --> 00:04:54,600
+gerando esses números aleatórios. E esses números aleatórios, eles podem ser gerados
+
+60
+00:04:54,600 --> 00:04:59,600
+através de uma de um crate, através de uma lib, né, numa biblioteca que se chama
+
+61
+00:04:59,600 --> 00:05:06,440
+hand. Eh, então a gente pode estar instalando ela através do cargo ad, cargo ed e o
+
+62
+00:05:06,440 --> 00:05:10,720
+nome da liv, que no caso aqui é se rend. Aí ele já vai estar instalando ali pra
+
+63
+00:05:10,720 --> 00:05:15,160
+gente. Quando ele instalar, a gente já pode fazer a importação aqui também. Então,
+
+64
+00:05:15,160 --> 00:05:21,759
+use hand e do rend a gente vai estar importando aqui e a função RNG.
+
+65
+00:05:22,319 --> 00:05:27,919
+Beleza? Aí aqui em cima, pessoal, ó, a gente tá criando uma variável chamada sect
+
+66
+00:05:27,919 --> 00:05:31,280
+number, por exemplo, e a gente vai utilizar o r,
+
+67
+00:05:32,000 --> 00:05:33,800
+a função RNG
+
+68
+00:05:34,600 --> 00:05:36,199
+e o handle
+
+69
+00:05:36,960 --> 00:05:38,319
+handle range.
+
+70
+00:05:39,199 --> 00:05:45,759
+E esse range ele vai ser de 1 a 100. Então é de um. Coloca esses dois pontos a 100.
+
+71
+00:05:46,880 --> 00:05:49,840
+Beleza? Vamos tá printando ele aqui também
+
+72
+00:05:50,440 --> 00:05:53,520
+pra gente ver se foi gerado então o número aleatório.
+
+73
+00:05:56,620 --> 00:05:57,620
+[Aplausos]
+
+74
+00:06:11,840 --> 00:06:15,880
+Beleza, a gente agora vamos vamos rodar os vamos est rodando
+
+75
+00:06:16,120 --> 00:06:18,160
+o sistema pra gente ver.
+
+76
+00:06:22,080 --> 00:06:26,759
+E aqui, ó, ele gerou um número aleatório de 1 a 100. Nesse caso aqui foi o 68.
+
+77
+00:06:26,919 --> 00:06:30,039
+Então, beleza. Agora então a gente já tem a
+
+78
+00:06:30,479 --> 00:06:34,840
+o crate ali que permite a gente fazer a entrada de dados que é o input, né, do
+
+79
+00:06:34,840 --> 00:06:40,759
+usuário ali. E a gente agora já tem também uma o crate que faz a questão do dos
+
+80
+00:06:40,759 --> 00:06:45,479
+números aleatórios, né? Foi gerado aqui pra gente também. Agora a gente vai tá
+
+81
+00:06:45,479 --> 00:06:50,759
+fazendo o quê? A gente vai est comparando o palpite do jogador com o número secreto
+
+82
+00:06:50,759 --> 00:06:54,360
+ali que foi gerado. Beleza? Então vamos lá.
+
+83
+00:06:56,280 --> 00:07:00,919
+Eh, pra gente fazer essa comparação, pessoal, tem aqui dentro do STD também tem uma
+
+84
+00:07:00,919 --> 00:07:07,319
+biblioteca, tem uma função chamada CTM e dentro dela tem o order, que ele consegue
+
+85
+00:07:07,319 --> 00:07:10,080
+eh trazer ali, né, um resultado
+
+86
+00:07:10,440 --> 00:07:14,759
+a de uma comparação entre dois números ali. Beleza? Então, a gente vai tá utilizando
+
+87
+00:07:14,759 --> 00:07:16,240
+aqui, ó, SD,
+
+88
+00:07:16,479 --> 00:07:19,319
+o nome do da função CMP.
+
+89
+00:07:19,960 --> 00:07:23,560
+E a gente vai est utilizando o order dele aqui, beleza?
+
+90
+00:07:24,120 --> 00:07:30,240
+Esse order ele é um enum que vocês vão ver ali a funcionalidade dele. Então, eh, aí
+
+91
+00:07:31,080 --> 00:07:36,479
+o que que acontece, né? Eh, pra gente tá então comparando esses dois números,
+
+92
+00:07:36,680 --> 00:07:39,160
+a gente vai estar utilizando o Mat.
+
+93
+00:07:40,199 --> 00:07:45,800
+E aqui o mut. Aí você coloca o o que que você quer que faz a comparação, né, que no
+
+94
+00:07:45,800 --> 00:07:50,840
+caso é o palpite. A gente vai utilizar o CMP que a gente importou ali. E o próprio
+
+95
+00:07:50,840 --> 00:07:54,560
+CMP, ó, ele fala que ele espera um
+
+96
+00:07:55,080 --> 00:07:56,720
+um resultado, né,
+
+97
+00:07:56,960 --> 00:08:03,319
+que que esse resultado é é esse número de ordem que ele faz a comparação entre os
+
+98
+00:08:03,319 --> 00:08:07,199
+números ali, né, o que recebeu e outro número. Beleza? Então, no caso, tá comparando
+
+99
+00:08:07,199 --> 00:08:09,440
+o palpite com
+
+100
+00:08:10,599 --> 00:08:12,960
+o nosso número ali que a gente criou,
+
+101
+00:08:13,520 --> 00:08:14,960
+recrete número.
+
+102
+00:08:15,479 --> 00:08:18,680
+Beleza? E aqui dentro a gente vai estar utilizando
+
+103
+00:08:19,039 --> 00:08:20,199
+o ordering.
+
+104
+00:08:21,039 --> 00:08:24,560
+O less é para quando ele é menor. A gente vai escrever
+
+105
+00:08:26,199 --> 00:08:27,560
+muito baixo.
+
+106
+00:08:32,519 --> 00:08:34,880
+Aí a gente tem aqui o maior também.
+
+107
+00:08:40,719 --> 00:08:41,719
+Alo.
+
+108
+00:08:44,440 --> 00:08:48,800
+E a gente tem aqui o igual para quando ele acertar ali, né?
+
+109
+00:08:54,440 --> 00:08:58,880
+Então, beleza. Aí com isso a gente já consegue fazer a comparação aqui, ó. Só que aí
+
+110
+00:08:58,880 --> 00:09:02,959
+ele já deu um erro aqui em tempo de execução, ó, em tempo de compilação. Aqui ele
+
+111
+00:09:02,959 --> 00:09:07,160
+deu um erro no código e ele tá falando, ó, que ele espera um inteiro, mas foi
+
+112
+00:09:07,160 --> 00:09:13,000
+recebido um string. É porque a gente precisa passar essa variável nossa aqui de
+
+113
+00:09:13,000 --> 00:09:18,600
+palpite para uma string e a gente passa para uma para um inteiro, na verdade, e a
+
+114
+00:09:18,600 --> 00:09:22,320
+gente passa string para inteiro através do pars.
+
+115
+00:09:22,959 --> 00:09:28,440
+Então aqui, ó, a gente pode definir a variável novamente aqui e ela vai ser ela vai
+
+116
+00:09:28,440 --> 00:09:35,040
+ter um retorno inteiro. E esse U32 é um retorno aqui inteiro, beleza? E eh a gente
+
+117
+00:09:35,040 --> 00:09:39,920
+vai pegar e vai est utilizando essa variável em cima. Vamos estar utilizando o tren
+
+118
+00:09:39,920 --> 00:09:42,120
+para remover os espaços em branco
+
+119
+00:09:42,399 --> 00:09:46,680
+e vamos estar utilizando o passe para fazer o passe ali. E se der algum erro, a
+
+120
+00:09:46,680 --> 00:09:48,320
+gente vai pegar e vai
+
+121
+00:09:48,600 --> 00:09:51,079
+falar aqui aqui. Aí, por exemplo, aqui
+
+122
+00:09:53,880 --> 00:09:58,720
+vamos tá quebrando aqui esse spect para baixo para ficar mais eh legível pra gente.
+
+123
+00:10:03,200 --> 00:10:07,480
+E aqui o erro ele já parou de acontecer. Beleza?
+
+124
+00:10:07,880 --> 00:10:10,279
+Eh, então vamos táar rodando aqui agora.
+
+125
+00:10:20,200 --> 00:10:24,399
+E aí, ó, ele fala aqui, né, o Só que que ele tá falando, né? Qual que é o número? Eu
+
+126
+00:10:24,399 --> 00:10:28,480
+não quero isso não. Vou tirar, senão aí vai ficar fácil, dar certo.
+
+127
+00:10:29,000 --> 00:10:31,279
+E aí vamos pegar e vamos rar de novo.
+
+128
+00:10:37,560 --> 00:10:41,639
+Deixa eu deixar aqui do lado direito que eu consigo melhorar o zoom aqui para
+
+129
+00:10:42,639 --> 00:10:47,519
+Beleza. Eh, aí então aqui nós vamos digitar um palpite 10.
+
+130
+00:10:47,800 --> 00:10:52,480
+Você dig muito baixo. Só que aí o que acontece? Quando eu já fiz esse primeiro
+
+131
+00:10:52,480 --> 00:10:56,959
+palpite ali, ele já foi já saindo da aplicação, né? Eh, então a gente vai agora
+
+132
+00:10:56,959 --> 00:11:02,440
+utilizar os laços de repetição pra gente tá conseguindo eh
+
+133
+00:11:03,040 --> 00:11:08,079
+ir repetindo ali, né? Eh, os palpits até quando ele acertar. Aí quando ele acertar a
+
+134
+00:11:08,079 --> 00:11:10,680
+gente vai finaliza ali o sistema.
+
+135
+00:11:10,880 --> 00:11:13,839
+É, beleza? Eh, então vamos estar utilizando
+
+136
+00:11:14,160 --> 00:11:18,760
+o loop pra gente tá fazendo esse esse laço de repetição.
+
+137
+00:11:20,160 --> 00:11:25,279
+E acontece o quê, pessoal? Aqui, ó, a gente pode deixar pro lado de fora do loop
+
+138
+00:11:25,279 --> 00:11:32,440
+somente essa variável secret number. Belez? E aí agora tudo isso aqui que tá
+
+139
+00:11:32,440 --> 00:11:36,800
+dentro do tudo isso daqui, né, que é do programa C, a gente vai colocar dentro de um
+
+140
+00:11:36,800 --> 00:11:37,800
+lucro.
+
+141
+00:11:40,000 --> 00:11:46,200
+Beleza, pessoal? E aqui, ó, somente quando eh o valor for igual, a gente vai tá
+
+142
+00:11:46,200 --> 00:11:49,399
+então encerrando essa estrutura de repetição
+
+143
+00:11:49,760 --> 00:11:54,959
+e a gente encerra ela através do break. Beleza, pessoal? Então, vamos est rodando
+
+144
+00:11:54,959 --> 00:11:56,519
+aqui de novo, ó.
+
+145
+00:11:59,839 --> 00:12:07,600
+Digit 10, tá? Muito baixo. Aí pediu, pediu para digitar de novo. 40 baixa 81.
+
+146
+00:12:08,839 --> 00:12:10,399
+Calma, calma.
+
+147
+00:12:17,720 --> 00:12:23,079
+Ah, acertou aí foi saiu. Maneiro, né, pessoal? Agora o que que acontece?
+
+148
+00:12:23,480 --> 00:12:27,680
+Vamos executar aqui novamente. Agora o sistema já tá funcionando, já tá tudo certo.
+
+149
+00:12:27,680 --> 00:12:31,519
+Só que agora vamos pegar e vamos digitar um valor que não é numérico para ver o que
+
+150
+00:12:31,519 --> 00:12:32,680
+que acontece.
+
+151
+00:12:33,240 --> 00:12:38,839
+Ó, quebrou o nosso sistema, entendeu? deu um panic aqui e fechou o sistema porque
+
+152
+00:12:38,839 --> 00:12:43,720
+isso aqui não foi tratado. E como que a gente faz isso? Aqui é gente, onde a gente
+
+153
+00:12:43,720 --> 00:12:50,440
+tá utilizando esse aqui, ó. A gente pode tirar ele. E aqui a gente vai tá passando
+
+154
+00:12:50,440 --> 00:12:54,959
+depois do passe umas chaves, que vai ser o bloco que a gente vai estar utilizando
+
+155
+00:12:54,959 --> 00:13:00,880
+ali, que é o do resute. E aqui, ó, antes do antes de eu fazer aqui, né, o passe e
+
+156
+00:13:00,880 --> 00:13:03,959
+tudo mais, eu vou colocar uma instrução mat
+
+157
+00:13:04,240 --> 00:13:09,120
+que aí aqui dentro se ele vai retornar o resulte, né? Aqui dentro ele vai est
+
+158
+00:13:09,120 --> 00:13:10,680
+retornando um resulte.
+
+159
+00:13:10,959 --> 00:13:17,000
+Eh, e aqui, ó, caso ele seja tenha dado OK, ele vai pegar, vai retornar um número
+
+160
+00:13:17,000 --> 00:13:20,399
+normal, né? Mas caso tenha dado erro,
+
+161
+00:13:20,760 --> 00:13:22,480
+eu quero que ele continua
+
+162
+00:13:22,959 --> 00:13:25,800
+para ele não tá quebrando igual aconteceu ali.
+
+163
+00:13:26,399 --> 00:13:28,480
+E agora vamos executar novamente.
+
+164
+00:13:34,160 --> 00:13:38,240
+Eh, vamos 10. Beleza, né? Agora vamos pôr um texto.
+
+165
+00:13:38,440 --> 00:13:41,320
+Não quebrou também. Tá lá, pessoal.
+
+166
+00:13:49,240 --> 00:13:51,560
+Então é isso daí, pessoal. Eh,
+
+167
+00:13:52,800 --> 00:13:58,519
+então é isso daí. Se você gostou do vídeo, eh, deixa o seu like aí, compartilha, se
+
+168
+00:13:58,519 --> 00:14:04,000
+inscreva no canal e porque nos próximos vídeos a gente vai entender melhor eh sobre
+
+169
+00:14:04,000 --> 00:14:09,519
+o sistema de títulos no Rust, como lidar com várias eh com vários conceitos de
+
+170
+00:14:09,519 --> 00:14:13,480
+programação aqui no Rust. Beleza, pessoal? Valeu,
+

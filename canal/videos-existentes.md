@@ -19,9 +19,9 @@ Ordem certa: Começando com Rust → #1 → #2 → #3 → #4 p1 → #4 p2 → #5
 
 ---
 
-## Lote 1 — defeitos concretos
+## Lote 1 — defeitos concretos ✅ aplicado em 15/10/2026 pelo vidIQ
 
-### [ ] #9 — `p-ByiaX3jSU` (título fora do padrão + capítulos quebrados)
+### [x] #9 — `p-ByiaX3jSU` (título fora do padrão + capítulos quebrados)
 
 **Problema:** o título começa com "Rust do Zero" (sem "Curso de Rust", a busca que mais traz gente pro canal) e
 **todos os capítulos estão em 00:00**, então o YouTube ignora a lista. Capítulos abaixo gerados pela
@@ -89,7 +89,7 @@ Se esse vídeo te ajudou, deixa o like 👍, se inscreve no canal 🔔 e comenta
 
 ---
 
-### [ ] #10 — `IgOrxvzHmGE` (capítulos quebrados + links de exemplo + sem legenda)
+### [x] #10 — `IgOrxvzHmGE` (capítulos quebrados + links de exemplo + sem legenda)
 
 **Problema:** todos os capítulos em 00:00, `[link da playlist]` no lugar do link, anterior/próximo sem link, e o
 link do código (`/tree/main/erros`) dá 404 até a pasta `erros/` ser enviada pro GitHub. **O vídeo também não
@@ -146,7 +146,7 @@ Se esse vídeo te ajudou, deixa o like 👍, se inscreve 🔔 e comenta aí: voc
 
 ---
 
-### [ ] #4 Ownership — `0gmJARCCPO8` (dois vídeos chamados "#4" + link de exemplo)
+### [x] #4 Ownership — `0gmJARCCPO8` (dois vídeos chamados "#4" + link de exemplo)
 
 **Problema:** existem dois "#4" (Variáveis e Ownership). E a descrição tem `playlist?list=...` no lugar do link.
 
@@ -199,7 +199,7 @@ Slices: https://doc.rust-lang.org/book/ch04-03-slices.html
 
 ---
 
-### [ ] #4 Variáveis — `9YXmfytr_CQ` (par do anterior + referências sem link)
+### [x] #4 Variáveis — `9YXmfytr_CQ` (par do anterior + referências sem link)
 
 **Problema:** vira "Parte 1" do #4. E a descrição diz "→ Livro Oficial em PT-BR / → Versão em Inglês"
 sem os links.
@@ -249,7 +249,7 @@ Se inscreva no canal, ative o sininho e continue aprendendo!
 
 ---
 
-### [ ] #6 Enums — `5Ub6tYVRFYc` (a primeira linha é um pedido de desculpas)
+### [x] #6 Enums — `5Ub6tYVRFYc` (a primeira linha é um pedido de desculpas)
 
 **Problema:** a primeira linha da descrição, que aparece na busca, é "Obs.: Caso ache lento, sugiro assistir
 com a velocidade em 1.25x ou 1.5x". Ela vai pro fim.
@@ -290,7 +290,7 @@ Dica: se achar o ritmo lento, assista em 1.25x ou 1.5x.
 
 ---
 
-### [ ] #11 Parte 1 — `LSKlmBGf-VA` (não aponta pra Parte 2)
+### [x] #11 Parte 1 — `LSKlmBGf-VA` (não aponta pra Parte 2)
 
 **Título:** manter. **Descrição:** trocar a linha `➡️ Na parte 2: generics em structs, enums e métodos.` por:
 ```text
@@ -299,9 +299,9 @@ Dica: se achar o ritmo lento, assista em 1.25x ou 1.5x.
 📺 Playlist completa do Curso de Rust: https://www.youtube.com/playlist?list=PL5_WhrqTYdknQk5oVabIuLuJFE0RFZ55B
 ⬅️ Aula anterior — #10 Tratamento de erros: https://youtu.be/IgOrxvzHmGE
 ```
-O link do código (`/tree/main/generics`) só funciona depois que a pasta `generics/` for enviada pro GitHub.
+O link do código (`/tree/main/generics`) já funciona (pasta enviada no commit `94c5d63`).
 
-### [ ] #11 Parte 2 — `C5vEZ_uUmt4` (link da Parte 1 começa no meio)
+### [x] #11 Parte 2 — `C5vEZ_uUmt4` (link da Parte 1 começa no meio)
 
 **Título:** manter. **Descrição:** trocar `⬅️ Parte 1 (generics em funções): https://www.youtube.com/watch?v=LSKlmBGf-VA&t=209s`
 (o `&t=209s` abre o vídeo em 3:29) por:

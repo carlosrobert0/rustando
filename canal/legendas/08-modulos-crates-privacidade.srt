@@ -1,0 +1,540 @@
+1
+00:00:00,399 --> 00:00:02,280
+Fala, Dev. Beleza?
+
+2
+00:00:02,840 --> 00:00:08,439
+Hoje você vai ver como que funciona a questão dos módulos aqui no Rust,
+
+3
+00:00:08,679 --> 00:00:11,719
+ó. Aqui no Rust a gente tem essa documentação
+
+4
+00:00:12,080 --> 00:00:14,000
+e dentro dessa documentação
+
+5
+00:00:14,240 --> 00:00:17,400
+a gente tem tudo sobre o Rust, desde a instalação
+
+6
+00:00:17,600 --> 00:00:22,760
+até sistemas embarcados e coisas do tipo. Falar sobre isso aqui.
+
+7
+00:00:23,119 --> 00:00:30,359
+A gente tem os packages e os crates. O que que são esses packages e e esses crates?
+
+8
+00:00:30,359 --> 00:00:35,399
+Nada mais são do que pacotes. Vamos imaginar dessa forma. Por exemplo, a gente vai
+
+9
+00:00:35,399 --> 00:00:39,640
+vir aqui no código agora e a gente vai ver uma coisa, ó. como que funciona
+
+10
+00:00:41,800 --> 00:00:45,680
+então beleza, né? Então aqui, ó, dentro do nosso terminal, eu vou criar um novo
+
+11
+00:00:45,680 --> 00:00:49,199
+projeto para você ver, ó. Cargo new,
+
+12
+00:00:50,559 --> 00:00:53,399
+eh, menos My Project,
+
+13
+00:00:55,239 --> 00:01:00,199
+tá? É Cargo New e My Project, o nome do projeto, né? Beleza. Então, ó, tô criando
+
+14
+00:01:00,199 --> 00:01:01,760
+aqui um novo projeto.
+
+15
+00:01:02,760 --> 00:01:07,439
+Eh, deve tá dando para ver aí, né? De boa. Tô criando aqui um novo projeto e criou.
+
+16
+00:01:07,439 --> 00:01:13,280
+Eu vou entrar dentro desse projeto e vou ver o que que tem dentro dele. Ó, essa CD é
+
+17
+00:01:13,280 --> 00:01:19,200
+o jeito que a gente entra nas pastas, né? E o code ponto é para você abrir o Visual
+
+18
+00:01:19,200 --> 00:01:22,040
+Studio eh naquele projeto ali.
+
+19
+00:01:22,439 --> 00:01:26,680
+Eh, ele tem então, né, uma nomenclatura,
+
+20
+00:01:26,960 --> 00:01:32,840
+uma divisão, né, de pastas que é esse sece e dentro ele gerou esse arquivo main.
+
+21
+00:01:32,840 --> 00:01:37,399
+Esse arquivo main é o arquivo binário da aplicação, né? Não, dentro ainda do nosso
+
+22
+00:01:37,399 --> 00:01:44,520
+projeto a gente tem e esse arquivo Cargo.toml, que é onde fica as dependências do
+
+23
+00:01:44,520 --> 00:01:50,119
+projeto. Você viu, ó, que aqui ele criou um pacote, que é os package e os crates,
+
+24
+00:01:50,119 --> 00:01:55,119
+né, que a gente tá falando. Então, aqui, ó, ele criou um pacote com o nome da nossa
+
+25
+00:01:55,119 --> 00:02:01,439
+aplicação, certo? E aqui dentro de dependências vão vir os crates que ele vai
+
+26
+00:02:01,439 --> 00:02:07,320
+depender. A gente então pode usar um crate aqui para tá eh utilizando em alguma
+
+27
+00:02:07,320 --> 00:02:11,319
+feature, né, semelhante às bibliotecas ali do JavaScript
+
+28
+00:02:11,599 --> 00:02:17,840
+e o package Jason. Então aqui, ó, foi criando eh um projeto em Rust
+
+29
+00:02:18,840 --> 00:02:24,280
+eh a execução binária aqui dele, certo? Pra gente trabalhar com módulos,
+
+30
+00:02:24,760 --> 00:02:29,200
+a gente cria eh uma lib, certo?
+
+31
+00:02:29,400 --> 00:02:34,360
+Porque, por exemplo, esses eh esses crates que tem e tudo mais,
+
+32
+00:02:35,720 --> 00:02:41,840
+eles são como se fosse bibliotecas, certo? E aí dentro de bibliotecas a gente pode
+
+33
+00:02:41,840 --> 00:02:43,480
+ter módulos.
+
+34
+00:02:44,120 --> 00:02:47,519
+E esses módulos, eles são eh geralmente
+
+35
+00:02:47,920 --> 00:02:54,000
+funcionalidades isoladas que fazem alguma coisa, né? Certo? E agora a gente vai
+
+36
+00:02:54,000 --> 00:02:59,400
+criar um módulo, um um uma lib. A gente vai criar uma lib, a gente vai criar um
+
+37
+00:02:59,400 --> 00:03:00,400
+pacote
+
+38
+00:03:02,280 --> 00:03:07,560
+pra gente ver o funcionamento dos módulos. Projeto ele não pode ser criado dessa
+
+39
+00:03:07,560 --> 00:03:12,280
+forma, utilizando o cargo new. Ele tem que utilizar a lib,
+
+40
+00:03:12,720 --> 00:03:17,840
+ele tem que utilizar a flag lib. Então, a gente já viu que para criar um projeto é
+
+41
+00:03:17,840 --> 00:03:22,120
+cargon e ele cria um executável, que seria o binário,
+
+42
+00:03:22,519 --> 00:03:24,840
+que é o arquivo main.rs.
+
+43
+00:03:25,159 --> 00:03:30,239
+E agora a gente vai criar um módulo, a gente vai criar um pacote. E para isso a
+
+44
+00:03:30,239 --> 00:03:33,319
+gente vai utilizar a flag lib.
+
+45
+00:03:33,720 --> 00:03:35,799
+Então, ó, cargo new.
+
+46
+00:03:37,720 --> 00:03:39,439
+Aí o nome do projeto
+
+47
+00:03:44,680 --> 00:03:47,000
+e a flag libe
+
+48
+00:03:48,920 --> 00:03:51,200
+vai ter criado então pra gente.
+
+49
+00:03:52,120 --> 00:03:54,879
+Então vamos acessar agora o projeto, né?
+
+50
+00:04:01,360 --> 00:04:04,760
+E aí quando a gente passa essa flag lib
+
+51
+00:04:05,400 --> 00:04:07,400
+aqui no nosso sece
+
+52
+00:04:07,879 --> 00:04:15,200
+ele vai ter criado um arquivo, ó, de nome libo invés de main. Maneiro, né?
+
+53
+00:04:15,680 --> 00:04:20,280
+E aqui dentro, então, a gente consegue trabalhar com módulos
+
+54
+00:04:21,120 --> 00:04:25,280
+e esses módulos vão permitir que a gente eh
+
+55
+00:04:25,919 --> 00:04:27,720
+isole a nossa aplicação.
+
+56
+00:04:29,400 --> 00:04:34,479
+Aqui a gente pode apagar tudo isso que vem dentro desse arquivo libro
+
+57
+00:04:34,880 --> 00:04:36,080
+da documentação,
+
+58
+00:04:36,320 --> 00:04:38,240
+a gente tem esse exemplo.
+
+59
+00:04:41,160 --> 00:04:48,320
+Um, a gente cria um módulo através da palavra chave módulo mod e nomeia ele.
+
+60
+00:04:48,800 --> 00:04:51,800
+Aí aqui dentro, então, né, a gente tem o módulo
+
+61
+00:04:53,000 --> 00:04:55,000
+e a gente vai utilizar
+
+62
+00:04:56,600 --> 00:05:02,240
+esses módulos que a gente tem dentro ali, dentro de uma função forma.
+
+63
+00:05:03,160 --> 00:05:05,759
+A gente tem aqui essa função
+
+64
+00:05:06,960 --> 00:05:11,600
+que utiliza esse módulos, esses módulos aqui, ó.
+
+65
+00:05:12,039 --> 00:05:16,120
+Essas formas da gente acessar o módulo, formas que são
+
+66
+00:05:16,400 --> 00:05:18,800
+eh uma é utilizando
+
+67
+00:05:19,160 --> 00:05:26,319
+o PEF absoluto PEF, PEF absoluto, né? O caminho absoluto. E o caminho absoluto, ele
+
+68
+00:05:26,319 --> 00:05:31,600
+sempre inicia desse crate dois pontos, dois pontos.
+
+69
+00:05:32,160 --> 00:05:33,280
+E aí
+
+70
+00:05:33,520 --> 00:05:38,440
+vem o nome do módulo e a gente vai acessando através desse
+
+71
+00:05:38,840 --> 00:05:40,280
+comando aqui.
+
+72
+00:05:41,479 --> 00:05:48,880
+E quando a gente quer acessar também de uma forma eh que você vai utilizar o caminho
+
+73
+00:05:48,880 --> 00:05:55,600
+relativo e aí você já pode passar diretamente o nome do módulo aqui que tá dando
+
+74
+00:05:55,600 --> 00:05:59,400
+esse erro aqui. Ele tá informando que o módulo é privado.
+
+75
+00:06:00,000 --> 00:06:01,880
+E pra gente eh
+
+76
+00:06:02,400 --> 00:06:04,120
+expor esse módulo,
+
+77
+00:06:04,400 --> 00:06:10,280
+a gente consegue através da palavrachave pub. Então a gente vem no módulo que a
+
+78
+00:06:10,280 --> 00:06:15,560
+gente quer expor e antes da definição dele, a gente escreve pub.
+
+79
+00:06:16,360 --> 00:06:20,479
+E aí, ó, a gente vê que o módulo ele já tá público.
+
+80
+00:06:21,199 --> 00:06:27,639
+Eh, agora a função a gente também precisa vir e tornar ela pública
+
+81
+00:06:28,120 --> 00:06:32,000
+caso a gente queira acessar ela. Então,
+
+82
+00:06:32,759 --> 00:06:34,240
+tudo no Rust
+
+83
+00:06:34,520 --> 00:06:38,560
+é privado. Tudo no Rust é privado. E se a gente quiser
+
+84
+00:06:38,840 --> 00:06:39,840
+eh
+
+85
+00:06:40,120 --> 00:06:45,880
+expor de forma pública, a gente precisa utilizar a palavra-chave pub.
+
+86
+00:06:46,120 --> 00:06:49,400
+E aí com isso, a gente já consegue acessar
+
+87
+00:06:49,639 --> 00:06:51,360
+o que você quer
+
+88
+00:06:51,599 --> 00:06:57,800
+acessar que está dentro daquele módulo ali, seja função, seja stup, seja
+
+89
+00:06:59,840 --> 00:07:04,599
+ó, o que que acontece? A gente então criou um módulo
+
+90
+00:07:05,360 --> 00:07:12,160
+através da palavra mod e dentro desse módulo a gente tem um struct
+
+91
+00:07:14,720 --> 00:07:16,400
+e dentro aqui
+
+92
+00:07:16,680 --> 00:07:21,800
+eh ainda dentro do módulo, a gente tem a implementação dessa struct
+
+93
+00:07:22,080 --> 00:07:24,280
+criando uma função
+
+94
+00:07:24,840 --> 00:07:25,840
+associada.
+
+95
+00:07:26,319 --> 00:07:28,080
+Essa função associada,
+
+96
+00:07:28,639 --> 00:07:30,080
+ela consegue
+
+97
+00:07:30,680 --> 00:07:33,240
+alterar o valor que é privado.
+
+98
+00:07:33,560 --> 00:07:39,160
+Então, tem um módulo que dentro dele tem uma struct e essa struct tem duas
+
+99
+00:07:39,160 --> 00:07:43,080
+propriedades, uma é pública e a outra é privado.
+
+100
+00:07:43,479 --> 00:07:49,479
+Mais para baixo a gente implementa essa struct pra gente trabalhar e conseguir
+
+101
+00:07:49,479 --> 00:07:56,720
+utilizar as funções associadas. Essa função associada aqui, ela consegue alterar o
+
+102
+00:07:56,720 --> 00:08:01,039
+valor que é privado dentro dessa struct.
+
+103
+00:08:02,720 --> 00:08:07,159
+Beleza? Então é isso. E aqui mais para baixo a gente tem uma função
+
+104
+00:08:08,000 --> 00:08:13,800
+que ela eh nomeia aqui, né? Então um pedido, né?
+
+105
+00:08:14,039 --> 00:08:20,039
+Com esse com esse valor. Ele vai receber esse toast aqui, né? vamos dizer como
+
+106
+00:08:20,039 --> 00:08:24,560
+valor, que é o que a gente consegue eh alterar, que é público,
+
+107
+00:08:25,199 --> 00:08:28,400
+e ele recebe aqui então como uma propriedade
+
+108
+00:08:29,360 --> 00:08:33,000
+e a gente vê que o que é público a gente consegue alterar,
+
+109
+00:08:33,360 --> 00:08:38,880
+ó. a gente consegue vir aqui passar outro nome para ele e ele vai dar o print
+
+110
+00:08:38,880 --> 00:08:40,440
+exibindo corretamente.
+
+111
+00:08:40,959 --> 00:08:45,080
+Mas se a gente vi aqui e tentar mudar o que é privado,
+
+112
+00:08:45,320 --> 00:08:47,519
+ele não vai deixar porque
+
+113
+00:08:49,040 --> 00:08:54,880
+quando um item da struct é privado, a gente só consegue atribuir valor para ele
+
+114
+00:08:54,880 --> 00:08:57,160
+através de funções associadas
+
+115
+00:08:57,440 --> 00:09:03,480
+quando a gente vai implementar a struct. E agora a gente vai ver um exemplo com os
+
+116
+00:09:03,480 --> 00:09:04,480
+enuns.
+
+117
+00:09:04,720 --> 00:09:08,839
+Com o enum é bem diferente e muito mais simples.
+
+118
+00:09:09,560 --> 00:09:13,160
+A gente tenta utilizar ele e fala que é privado,
+
+119
+00:09:13,440 --> 00:09:14,440
+certo?
+
+120
+00:09:15,200 --> 00:09:21,079
+Só que a gente não precisa eh ir em cada campo do Enum
+
+121
+00:09:21,360 --> 00:09:26,480
+e nomear esse campo como público. A gente já consegue
+
+122
+00:09:26,880 --> 00:09:31,839
+só a gente nomeando o Enum, a gente já consegue tornar ele público. Então aqui a
+
+123
+00:09:31,839 --> 00:09:36,920
+gente tem um módulo que tem um enum público e por ele tá público, a gente consegue
+
+124
+00:09:36,920 --> 00:09:42,800
+acessar dentro aqui do nosso código normalmente aqui, né? Eu tenho o meu módulo
+
+125
+00:09:43,000 --> 00:09:47,320
+e aí eu consigo vir aqui e fazer a importação dele, ó.
+
+126
+00:09:47,839 --> 00:09:54,839
+use create 2.2 pontos e o nome do módulo. E aí eu consigo utilizar ele aqui sem
+
+127
+00:09:54,839 --> 00:09:56,480
+precisar eh
+
+128
+00:09:57,079 --> 00:10:02,760
+utilizar o create aqui no módulo em si e ficar repetindo. Então esse use ele
+
+129
+00:10:02,760 --> 00:10:08,839
+simplifica a importação pra gente. A gente tem um código aqui também que é pra gente
+
+130
+00:10:08,839 --> 00:10:12,279
+ver o exemplo dele, né? por exemplo, result
+
+131
+00:10:13,320 --> 00:10:14,640
+essas importações
+
+132
+00:10:14,959 --> 00:10:19,640
+que elas têm o mesmo nome e aí a gente tem que renomear
+
+133
+00:10:20,279 --> 00:10:25,320
+para conseguir eh lidar com eles. Aqui, por exemplo, esse daqui, ó, eu consigo
+
+134
+00:10:25,320 --> 00:10:32,519
+renomear indo na frente da importação, passando o nome s e aí só renomeando aqui.
+
+135
+00:10:32,519 --> 00:10:33,519
+M.
+

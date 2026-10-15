@@ -1,0 +1,720 @@
+Fala pessoal, bem-vindos a mais um vídeo do Rustando. Hoje a gente vai falar das
+Common Collections
+do Rust, que são aquelas três estruturas que você vai usar praticamente todos os
+dias, que é o vetor, a string e o hash map.
+A diferença
+delas pros arrays e tuplas que a gente já viu é simples. arrays e tuplas tem tamanho
+fixo e não vivem na stack.
+Essas coleções aqui elas guardam os dados na heap, ou seja, pode crescer e também
+diminuir enquanto o programa roda ali. Eh, a gente vai então tá escrevendo aqui do
+zero tudo aqui junto com vocês. Então, eh, bora para cima.
+Eh, abre aí, né, o seu editor de código. No meu caso, eu tô utilizando
+o VS Code aqui, né? Você pode estar abrindo aí o seu editor de código de
+preferência.
+E a gente vai tá criando então um novo projeto que vai chamar collections,
+cargo new collections.
+Ele vai tá criando aqui pra gente o nosso
+o nosso projeto. Projeto já foi criado inclusive.
+E aí a gente vai est então começando
+eh a utilizar.
+Beleza? Primeiro das collections que a gente falou, que a gente vai falar, a gente
+vai iniciar falando da collection, que é o vetor. Beleza? Primeiro nós vamos est
+entrando aqui dentro do nosso
+do nosso projeto. Como eu tô aqui no Mac e ainda não aprendi utilizar o code ponto,
+eu vou vir por aqui e vou est acessando esse projeto que a gente criou.
+Beleza, já acessei aqui então, né, o projeto que a gente criou, que é um
+projeto chamado Collections.
+E a gente então vai tá iniciando
+o desenvolvimento aqui, né, de uma collection.
+Então, pessoal, eh já criei aqui, né, o nosso projeto chamado Collections, que é o
+projeto onde a gente vai trabalhar e as três collections que existe, que é a
+collection de vetor, a collection de string e a collection de HashMap. E nesse
+primeiro momento, nessa primeira sessão, a gente vai trabalhar com o vetor. O vetor
+é uma lista que ele pode crescer.
+Então, a gente vai começar aqui eh criando uma um vetor vazio
+pra gente ver como que é feito. Beleza?
+Então, aqui, né, no nosso projeto, a gente tem a nossa função main, que é a função
+principal.
+E dentro dessa função, eu vou criar aqui um novo vetor.
+Esse vetor,
+deixa eu tirar o
+o auto complete aqui.
+Deixa eu só
+tirar, né?
+Só tirar a complit aqui, né? Porque senão ele vai ficar completando pra gente. Então
+aqui pra gente criar um um vetor,
+eh esse vetor
+a gente vai criar ele utilizando eh tipagem. A gente já vai iniciar ele tipando ele.
+Então vamos criar um novo vetor
+que eu vou chamar aqui de V.
+E essa variável ela vai receber,
+ela vai ser do tipo, né, VC, que é um vetor,
+e vai ser do valor dela dentro desse vetor vai ser um valor inteiro, que é o
+I3.
+E aqui a gente estancia
+o nosso vetor.
+Dessa forma, a gente criou um novo vetor sem nenhum valor, mas que a gente já
+definiu que dentro dele os valores que vão poder ser eh compostos vão ser valores
+inteiros do tipo ali I32,
+certo?
+Eh, a gente também consegue
+criar valores iniciais para um vetor,
+eh, utilizando uma macro chamado VC, que a gente consegue
+eh passar os valores ali pro vetor e ele infere esse valor de forma
+automática ali, implícita.
+né? Então aqui eu vou criar um valor, um
+um vetor
+de nome numbers e dentro dele eu vou utilizar essa sintaxe que chama
+eh o macro, né? Esse essa exclamação é sempre quando a gente quer utilizar alguma
+chamada eh do tipo macro aqui no Rust. Então, dessa forma aqui, ó, VEC ponto
+exclamação, a gente consegue criar um novo vetor
+sem definir o tipo dele. E aqui a gente passa, por exemplo, os números. Dessa forma
+ele vai tá inferindo os tipos do vetor.
+Eu vou estar fazendo um print ln aqui pra gente alistar o nosso vetor.
+E a gente vai passar também
+o vetor de números ali,
+beleza? Então, primeiro exemplo criado.
+Vamos estar executando o projeto.
+Ele compilou e aí listou aqui pra gente então os nossos dois vetores que a gente
+acabou de criar. um vetor com a tipagem explícita,
+onde a gente define o tipo do vetor. Nesse caso, a gente só iniciou ele
+com esse construtor new, mas não passamos nenhum valor para ele. E nesse segundo
+caso, a gente criou um outro vetor
+que a gente passou alguns valores para ele e ele inferiu o tipo desses valores ali
+pra gente.
+E essa questão aqui do dois pontos interrogação é aquele debug que ele permite a
+gente printar mais informações do que a gente quer tá exibindo aqui em tela.
+Beleza?
+Então é isso. Por exemplo, nesse array aqui,
+nesse vetor, né, que eu criei, que eu instanciei ele aqui
+e ele tá vazio porque eu não associei nem nada a ele, eu consigo associar novos
+valores para ele. De que forma?
+Vou tentar primeiro tá associando aqui com o push normal, né, que é o que você
+consegue inserir novas informações dentro de um vetor.
+E aí vai dar um erro porque
+esse vetor,
+essa variável ela é imutável. Tudo no rush é imutável.
+Primeiro eu vou tá tentando fazer com imutabilidade e vou est tentando alterar o
+valor do array do vetor.
+E aqui mesmo,
+é, já era para est me aparecendo o erro,
+mas provavelmente é porque eu tô com rust-analyzer
+desinstalado,
+que é quem vai tá fazendo aqui pra gente, né, a nossa verificação do código em tempo
+de escrita.
+Então, eh vou est instalando ele aqui.
+Beleza?
+E vamos ver se ele já vai pegar o erro aqui pra gente.
+Ó, agora ele já pegou o erro,
+ó. A extensão do rush analiz já pegou o erro informando que é aquele cheque, aquele
+borrel cheque, né? Ele fala que essa variável
+ela ela tá tentando ser uma variável mutável,
+porém não tem nada declarando que ela é mutável.
+E o e o bom do Rust, que ele mesmo já mostra pra gente eh qual que é a solução aí
+que ele fala, né? Só adicionar essa palavra reservada antes do nome da variável.
+Então aqui pra gente transformar esse vetor em um array mutável, porque a gente quer
+adicionar novos valores para ele, a gente declara que ele é um
+valor mutável. E dessa forma ele já vai tá permitindo a gente inserir novos valores
+dentro desse vetor.
+Então aqui, ó, vou colocar o cinco e também vou fazer um push aqui do do
+seis, só pra gente ver dois itens.
+E agora aqui no cargo run,
+ele vai est então listando pra gente esses dois novos itens que a gente adicionou no
+vetor.
+Eh, beleza?
+Agora,
+eh, a gente também
+vai tá aprendendo como que a gente ler os vetor os vetores aqui dentro do rust.
+A gente viu como a gente cria um novo vetor.
+A gente viu como a gente insere novos valores para para esse vetor. E agora a gente
+vai ver como que a gente lê informações desse vetor.
+Beleza? Então, ó, vamos então, né?
+tá pegando aqui esse exemplo do,
+vamos criar um novo exemplo, na verdade
+que vai ser um vetor. Vamos criar aqui um vetor
+que ele vai ter cinco, cinco itens ali dentro. Vamos colocar.
+Beleza? Esse B aqui tá maiúsculo, tá maiúsculo. Beleza, agora tá minúsculo. Então a
+gente tem aqui um vetor com cinco posições.
+Eh,
+e aí
+a gente vai ver a forma que a gente faz para tá acessando
+esse
+esse esse item ali dentro do vetor. Por exemplo, eu quero acessar o terceiro
+elemento desse vetor.
+É, o terceiro elemento é o número três. Como é um vetor, todo vetor começa no índice
+zero. Então, se a gente quer o pegar o o a referência da posição três,
+a gente precisa pegar o índice dois, porque o vetor começa no zero. Então beleza,
+vamos criar uma variável chamada TID, que ela vai representar pra gente que esse é o
+terceiro elemento ali
+que a gente tá querendo eh buscar.
+E aqui a gente então passa
+o e comercial,
+que é a referência,
+é a sintaxe que a gente acessa a referência
+nesse caso aqui também.
+E aí a gente passa qual a posição que a gente quer. Como eu disse, o vetor ele
+inicia na posição zero, no índice zero. Se a gente quer pegar a posição três, então
+o índice é o valor do
+e dessa forma a gente consegue acessar
+a terceira,
+o terceiro item desse vetor que a gente acabou de criar.
+Então, dessa forma, a gente eh acessa ele através ali das referências, né, buscando
+pela posição dele. Vamos então fazer um print aln aqui
+e vamos est
+informando, né? O terceiro
+elemento
+é, e aí eu passo aqui dentro o nosso valor que a gente acabou de definir ali em
+cima.
+Beleza?
+Beleza? Dessa forma vamos est rodando o cargo run.
+E ele já trouxe aqui pra gente que o terceiro elemento é o valor 3 aqui. E ele
+inferiu também o tipo do
+nosso elemento. Caso a gente quisesse, a gente poderia também definir aqui de forma
+explícita qual é a tipagem que a gente quer buscar desse vetor aqui
+que daria no mesmo.
+Bacana.
+Eh, beleza. A outra forma que a gente tem também
+de acessar o
+valor ali, né, dentro do vetor é através do get.
+O que que acontece? O get
+ele retorna pra gente um option.
+Um optional é um é um enum
+que ele pode ser su que é quando tem alguma coisa, ou pode ser nisa.
+Então vamos tá acessando aqui
+o terceiro elemento desse vetor através da sintaxe
+do get.
+Beleza? Então vamos aqui, né,
+fazer essa nova chamada
+e aqui dentro a gente vai querer então
+buscar
+o a posição dois do vetor. Nesse caso a gente tá buscando através do ponto get.
+Na inferência de tipo, o Rust já trouxe aqui pra gente que ele é um option que vai
+retornar uma referência eh de um inteiro, certo? A gente pode vir aqui e definir
+a tipagem dele ou a gente também pode
+ele inferir a tipagem. Mas bem, beleza. Então, eh, tivemos agora uma um acesso
+do vetor
+e a gente quer buscar o índex dele e a gente tá utilizando a sintaxe do get. Dentro
+do get a gente retorna qual o índex que a gente quer e o retorno desse get.
+Esse option ele pode retornar um sum para quando tem valor e um nani para quando não
+tem valor. Dessa forma, com o get, a gente encontra ali o valor
+dessa sintaxe de optal, utilizando e a sintaxe de Mat. O Mat é
+dessa forma. Você passa o match,
+passa o item que você quer fazer a comparação
+e dentro dele você vai retornar o que que você quer. Como é um option, ele
+retorna um som
+que dentro dele tem o value
+e a gente vai estar
+eh fazendo o print desse valor
+ou ele retorna o nô para quando essa condição não for verdadeira.
+E aqui a gente vai imprimir então
+que não existe
+terceiro elemento.
+Beleza? Então, dessa forma aqui, ele retorna pra gente nesse métor
+dentro aqui desse tird, né,
+acessando o vetor pelo get, ele vai retornar o valor. Quando não tiver, ele não vai
+retornar o valor. Vamos rodar aqui para ver o que que ele vai estar passando.
+E aí aqui, ó, é, ele retornou o valor, né, porque
+é o terceiro elemento que que ele encontrou ali pra gente.
+Mas, por exemplo, se eu vim aqui e tento acessar o índex 20, não vai ter, porque a
+gente só tem cinco index aqui. Aí ele vai cair dentro dessa condição de none.
+Ó, não existe terceiro elemento.
+Beleza? Então, essas duas formas a gente consegue est acessando o
+nosso
+os nossos itens ali dentro do vetor. Dessa forma, a gente consegue acessar
+utilizando as referências e passando
+eh
+o a o índex a gente quer
+retornar, a posição que a gente quer retornar.
+E por exemplo, nesse caso aqui que a gente não utilizou a sintaxe do get, se a gente
+vi aqui e tentar acessar
+o o index 20 através da referência, vamos ver o que que dá.
+Ó, ele deu um erro, ele deu um panic, porque a gente não tem esse 20.
+Já aqui embaixo, utilizando o get, por ele retornar um option, que pode
+retornar um valor
+ou não, aí nessa nessa sintaxe ele consegue tratar e ao invés de
+retornar um panic, ele retorna pra gente uma tentativa melhor informando aqui, né,
+que não existe o terceiro elemento.
+Beleza?
+Eh,
+beleza. Agora, pessoal, eu vou est mostrando para vocês um exemplo de borb
+aqui no vetor, né? No vector. Que isso? Então eu vou est mostrando aqui um exemplo
+de B cheque no vetor. Eh, aqui, ó,
+vamos estar utilizando esse vetor que a gente tem mesmo e vamos estar acessando o
+primeiro elemento desse vetor.
+Beleza? Ó, aqui a gente já tá acessando o primeiro elemento do vetor.
+Logo aqui embaixo, mesmo esse vetor sendo o vetor mutável,
+logo aqui embaixo eu vou tentar
+eh tá fazendo aqui
+uma inserção de um novo item no vetor.
+E mais embaixo eu vou estar fazendo um print ln,
+mostrando ali o valor, né, do primeiro
+do primeiro item que a gente trouxe.
+Beleza? Aí, pessoal, ó, só de eu salvar aqui o Rust Analyse e
+o borrel check do Rust, ele já veio aqui pra gente, ó. Ó, canal B
+votable
+because it is also B as immutable.
+Mas enfim, o que que ele tá falando? Que você não pode
+eh fazer essa transferência aí de valor, porque
+aqui em cima
+essa variável ela utiliza uma referência
+do nosso vetor. Como ela utiliza uma referência do nosso vetor? E aqui embaixo a
+gente tenta adicionar
+mais um
+mais um item ali dentro do vetor, ele perde eh essa referência, porque esse
+empréstimo aqui que ele fez, né, essa referência que ele fez, ela é imutável.
+por conta dela ser imutável,
+eh,
+esse
+e essa inserção aqui do vetor não pode acontecer porque ele já meio que se
+comprometeu, né, com essa primeira eh variável que a gente definiu aqui. Então, ou
+seja,
+se eu utilizo a referência de um vetor
+que é mutável
+e depois eu tento acrescentar novos valores nesse vetor, eu não consigo, porque o
+borrel check ele já identifica
+que tem uma primeira variável que já tá utilizando a referência desse vetor. E aí
+quando a gente tenta fazer algo com ele que mude a estrutura dele ou algo do tipo,
+ele já identifica que tem uma variável que já fez a referência daquilo e não pode
+mudar. Muito interessante, né?
+Então é isso. Eh, agora
+a gente vai tá percorrendo aqui também eh o nosso vetor pra gente ver como que
+funciona
+eh essa questão de você conseguir percorrer
+dentro ali de dos vetores. Beleza? Então bora lá. Primeiro vou criar aqui uma
+estrutura de vetor
+que não vai ser essa que a gente utilizou várias vezes,
+vai ser essa daqui.
+Beleza? Eu tenho aqui, né, um vetor com alguns valores dentro. Esses valores eles
+não são mutáveis.
+Tenho então, né, esses valores aqui dentro.
+E agora eu quero percorrer esse vetor. Como eu faço isso? Eu tenho aqui a estrutura
+de repetição for, que ela ela funciona da seguinte forma. Você faz o for, cria
+uma variável que vai ser a variável que vai interar dentro ali do for e você fala
+sobre o que que essa variável vai iterar. Então ela vai iterar em, né,
+esse I. e a gente passa a referência
+do nosso vetor.
+Aqui dentro a gente pode colocar um print ln,
+onde vai tá listando pra gente
+eh
+o item que tá sendo iterado ali.
+Vamos dar um carro no RAM aqui para ver. E aí ele lista então pra gente, né, esses
+eh itens do vetor.
+A gente também consegue
+eh alterar esses elementos que tá sendo interados. Como que a gente faz? A gente
+precisa que o vetor seja mutável. Por isso a gente utiliza a palavra mut ali na
+frente
+antes, na verdade do nome da variável. E aqui dentro,
+eh, a gente vai tá passando a nossa referência
+como sendo mutável também. Aqui, ao invés de eu passar só a referência, eu passo a
+referência
+e na frente a palavra mil, que ele já vai entender que esse valor é
+mutável. Agora aqui dentro dessa
+repetição,
+eu vou estar fazendo uma iteração.
+Vou pegar o item
+que está sendo iterado.
+Eh, esse esse esse asterisco significa de referência.
+Aqui dentro ele faz a derreferência
+desse item. Mas enfim, então eu vou pegar esse meu item que tá sendo iterado e vou
+somar mais 50 nele.
+É. E aí, fora do loop, fora da repetição,
+eu vou estar fazendo então
+a exibição
+desse item, que no caso é o nosso print ln aqui
+e esse print ln. Beleza? Agora eu vou est então rodando o comando o projeto e a
+gente vê que os itens eles foram iterados
+com um valor de 50 a mais ali.
+Eh, beleza?
+Agora a gente também vai aprender trabalhar com eh vetores de tipos diferente.
+Por exemplo, até agora a gente trabalhou com vetores que dentro dele eh eram
+formados por um mesmo tipo. Por exemplo, nesse caso, eram formado por inteiros.
+Agora a gente vai aprender a como trabalhar com vetores de tipos diferentes. Por
+exemplo,
+vou criar aqui um enum
+e
+para como se fosse uma
+uma células de uma planilha, certo? Então eu vou colocar aqui, ó, spriad
+spriad
+cheit
+cell.
+que seriam as células. E aqui dentro eu vou passar os tipos,
+ó. Vou passar o inteiro que dentro dele ele é um i3,
+um float
+f64
+e um text que vai ser uma string.
+Beleza?
+E aí aqui dentro
+a gente estancia
+esse novo vetor
+e dentro dele a gente passa então o nosso enumero.
+Aqui, ó, vou falar que esse é do tipo inteiro e o valor vai ser três.
+Vou falar que esse vai ser do tipo string,
+que é um texto, né? E aqui dentro, então, eu vou passar
+um valor para ele.
+Nesse caso são cores, né? Então vou passar, por exemplo, cor blue.
+E também tenho o meu
+enum aqui de float
+que para dentro dele eu consigo também passar um float. Beleza? E aqui dentro,
+então, eu vou estar listando
+o nosso vetor que a gente acabou de
+acabou de eh criar.
+Ah, sim. Beleza? Ó, uma coisa importante aqui pra gente é que, por exemplo, eu tô
+querendo exibir
+essa rua aqui pra gente, só que tem uma trait que depois a gente vai falar sobre
+isso, chamada display.
+Essa trait display a gente precisa implementar ela
+para que nossos e enum eles possam estar sendo exibidos aqui no print ln.
+E beleza? E dessa forma, como que a gente faz essa implementação?
+Eh, é sempre bom a gente ver o próprio erro que o Rust mostra. Ó, ele tá falando que
+não pode implementar, né? Que e esse não, ele não implementa esse display,
+né?
+E aqui ele fala, né?
+Tã, como é que é? para quando a gente quer utilizar dessa forma aqui, certo?
+Aí, pessoal, só pra gente passar por essa etapa aqui,
+tem uma tem uma derivada, né? Tem uma
+uma derivada que a gente consegue trazer para cá, que é o debug.
+Deixa eu ver se essa é sintaxe
+assim. Beleza? Então é dessa forma aqui mesmo. Só que ao invés de seu coochetes
+aqui, eu vou utilizar as chaves.
+Beleza? Dessa forma, pessoal, eh eu utilizei esse esse deriv aqui que ele consegue
+meio que importar esse macro aqui, debug, que esse debug, esse trate debug, ele
+permite que a gente exiba
+a nossa o nosso Enum aqui através do
+eh de conseguir, né, mostrar o objeto, mostrar o item em si completo. Então, dessa
+forma a gente consegue
+estar listando aqui pra gente. É, voltando aqui,
+eh, a gente então utilizou esse esse deriv aqui, né, esse trait do debug para
+conseguir exibir
+todos os nossos itens aqui sem precisar mostrar um por um. Eh, e aí vamos estar
+rodando o nosso programa.
+E aqui embaixo, ó, ele já retorna pra gente os nossos resultados, ó. int 3, text
+blue e float 10.12, igual os valores que a gente eh passou aqui para ele.
+Então, dessa forma, a gente consegue fazer eh
+vetores que
+tem tipos diferentes.
+Beleza? Beleza? Então pessoal, essa foi a primeira sessão, né, das collections.
+E
+essa foi as explicações
+da collection de vetor. Agora a gente vai utilizar, a gente vai aprender sobre a
+collection do da string. Beleza? Então bora lá.
+Eh, deixa eu só limpar o código aqui.
+Então,
+eh, a string ela é um pouco mais chata aqui no Rust, porque ela lida com esse com o
+TF8 ali, né? Eh, em vez de de tipo assim, de mascarar o problema, ela consegue litar
+lidar com o TF8.
+E e isso é um pouco complicado aqui pro Ver, mas beleza. Então, ó, vamos tá criando
+uma nova
+uma nova string aqui,
+que ela vai ser mutável
+e a gente cria com essa sintaxe
+string
+e o new. Esse new é um construtor
+que ele consegue então e criar uma nova string pra gente. Beleza? A nova string foi
+criada. Eu posso aqui, por exemplo, colocar alguns valores, por exemplo, esse data
+aqui, ó, conteúdo inicial.
+Eh,
+e vou pegar e vou estar concatenando
+eh
+com mais um valor aqui, por exemplo, ó,
+s de string.
+Vou tá transformando esse valor aqui para uma string
+e depois eu vou est fazendo
+isso daqui que também dá na mesma.
+as formas, né, que a gente consegue trabalhar, né, transformar
+uma slice e uma string.
+E aqui também a gente consegue eh escrever um string através da sintaxe de string
+do pontos dois pontos from e aqui dentro você passa
+o valor que você quer pra sua string. já com um valor inicial ali, né? Por exemplo,
+então é o two string
+e o string 2.2
+from, eles fazem a mesma coisa e aí é mais a preferência
+eh de estilo, né?
+Eh, e aí,
+só pra gente
+aqui dentro da dessa string
+cabe qualquer
+eh caractere ali do TF8.
+Por exemplo, eu vou vou pegar alguns exemplos aqui.
+É igual aqui, ó, é um com acento, né? Olá, depois vem os chinês aqui, depois outros
+caracteres.
+Então, eh, a gente percebe
+que
+a string aqui dentro ela consegue lidar com os caracteres de UTF8 de forma
+tranquila.
+Beleza?
+Eh, então, atualizando as strings, né, atualizando os valores dela. Por exemplo, eu
+vou iniciar aqui uma nova string
+com o valor full.
+Depois eu vou tá e acrescentando o barra.
+E aí eu vou criar então aqui uma nova, uma string no dois aqui que vai ter
+o slice aqui, né, que vai ter o valor de barra.
+Beleza?
+Eh, agora aqui se eu vim e fazer
+por quê? Porque esse push
+é aquele push que a gente utiliza para
+levar itens para dentro de um vetor. Só que como a gente tá dentro da string, a
+gente utiliza o push.
+stream
+que aí
+aqui,
+ó, punh string. E aí, dessa forma ele permite que a gente faça esse push. Então, se
+eu vi aqui e mostrar, ó,
+então se eu rodar o comando, se eu rodar o programa aqui, ele vai tá então, né, eh,
+trazendo aqui pra gente.
+Beleza? E aí
+aqui quando a gente quer juntar, né, as strings,
+ela aqui, o que que a gente faz? A gente pode utilizar a sintaxe do format.
+Eh, eu vou est tentando fazer a concatenização
+das stringas aqui
+e e vou est mostrando para vocês a utilização do macro format, que aí você que ele
+permite que a gente formata uma string e a gente consegue concatenar uma na outra.
+Mas de início,
+eh, vou estar criando aqui, então, né, duas
+duas strings que são esse Hello World.
+Eh, e dessa forma a gente tem, né, essa concatenização
+com o mais.
+E se a gente tenta listar aqui então no print ln
+do três
+três, né?
+A gente vê então, né, que esses itens eles foram concatenados, ó, por exemplo, Hello
+Word. E aqui ele trouxe pra gente.
+Eh, só que dessa forma aqui fica uma sintaxe muito ruim eh de de identificar.
+Por isso, então
+a a gente tem aqui a sintaxe do format.
+Aí você chama o format
+de forma macro,
+né? né, com essa exclamação, reforma de exclamação. E aqui dentro você consegue
+então formatar sua string de uma forma muito mais
+eh
+muito melhor, né, de uma forma muito mais semântica aqui. Então, por exemplo, eu
+posso vir aqui, ó, S1
+e S2,
+que ele vai formatar a string, vai criar essas duas strings aqui, né? e vai tá
+listando pra gente também da mesma forma, ó. Hello world.
+Tudo certinho.
+Beleza. Beleza.
+Show de bola, pessoal. Eh, tem um outro ponto aqui também que eu não ia
+estar mostrando para vocês porque é um pouco maçante, mas eu vou est mostrando assim
+mesmo. O que que acontece? a gente não consegue indexar strings.
+em outras, eh,
+em outras linguagens de programação, JavaScript, a gente consegue fazer o, é,
+capturar, né, o índex da string, igual, por exemplo, aqui seria o H, né,
+mas aqui ele não consegue
+eh tá pegando
+esse índex da string, porque o rush
+ele
+ele
+ele traz ali, né, alguns bytes
+para string. E aí cada letra, né, ela consegue, ela ocupa ali
+os dois bytes em TF8.
+Então, eh, ele não traz por conta disso, porque algumas strings pode ter um byte
+maior e outras menores
+e e por isso ele não consegue eh capturar o índex em si.
+Eh, a coisa, a única coisa que ele consegue fazer o jeito certo ali, né, seria
+iterar, fazer a iteração sobre aquela string. E aí sim a gente conseguiria
+eh pegar
+o índex daquela string. Por exemplo,
+eu tenho essa string aqui, hera
+iteração.
+Eu eu peguei aqui, né, o range dela do do index zero até o o quatro aqui. E logo
+abaixo
+eu faço então a iteração desses itens.
+Eu faço aqui, né,
+a interação do item
+e dessa forma ele consegue retornar pra gente o índex.
+Ó, ele traz o índex ali desse
+desse dessa string.
+Beleza?
+Então é isso, ó. Agora já acabou o a fase dois, que foi a fase das strings.
+Primeira fase das collections foram os vetores, segunda fase a string e a terceira
+fase agora é o HashMap. O HMAP é uma estrutura de chave e
+valor que a gente vai tá estudando aqui agora. Eh, então, beleza, vamos estar então,
+né, criando um novo HashMap
+aqui pra gente.
+O HashMap ele é uma collection que a gente precisa importar
+de dentro ali das collections disponíveis no hust. Então, pra gente tá importando, a
+gente utiliza a
+sintaxe do use e passa eh a o create box ali, né?
+A lipar.
+Nesse caso é do STD e dentro dela tem os collections e a gente quer o HashMap.
+Beleza? Agora aqui a gente vai então instanciar um novo HashMap.
+A gente vai
+definir esse HashMap como scores
+e a gente vai utilizar sintaxe passando o nome da collection seguido de 2.2 pontos
+new. Isso cria uma um construtor de um novo HashMap. HashMap é uma estrutura
+de chave e valor. E aqui foi criado o novo HashMap.
+Agora vamos inserir chaves e valores dentro desse HashMap.
+Para isso, a gente pega o nome
+da collection, que é a variável que a gente acabou de criar.
+E aqui dentro a gente tem algumas funções.
+A gente tem a função de insert,
+onde a gente vai tá passando chave e valor. A gente vai passar a chave
+e para branco, né, que seria
+a cor ali.
+E para pro branco a gente vai ter o valor 10.
+A gente vai fazer a mesma coisa embaixo, só que vai ser a chave, o nome yellow e pro
+yellow a gente vai ter o valor 50.
+Beleza?
+Eh, fechou.
+Então, aqui dentro a gente tem um HashMap
+criado
+com eh essa estrutura que a gente estanciou o novo HashMap através do
+construtor new
+da collection HashMap.
+E dentro do HashMap a gente tem algumas funções, uma delas é a insert.
+E aqui então a gente passa o chave e qual é o valor para aquela chave.
+Para agora,
+eh, pra gente ler
+o HashMap,
+eh, a gente precisa, então, né, de algumas
+de algumas propriedades ali. Beleza?
+Então, vamos estar eh criando aqui um novo time, só pra gente ter exemplos de busca,
+que vai ser
+blue.
+Ele vai ter a chave blue ali.
+E agora eu vou querer eh ler esse valor de dentro ali do nosso HashMap.
+Então vou criar aqui um score
+que ele vai tá então dentro do nosso scores que é o nosso Hmap.
+Eu vou acessar o valor através do get
+e dentro aqui do getu vou passar a referência
+da nossa chave,
+certo?
+Eh, e aí a gente vai fazer uma cópia desse valor.
+E como o get ele é um optimum, ele pode retornar algo ou não. Eu vou fazer um um
+wrap
+um wrap or zero, ou seja, caso ele não encontre nenhum valor, ele vai retornar o
+zero.
+E aqui embaixo eu vou estar então fazendo o print ln
+do nosso score, que é o valor que a gente é acessou de dentro do HashMap.
+E aqui dentro, então, ele retorna pra gente que pra chave Blue o valor é 10.
+Beleza, beleza, beleza. Eh, então, né, a gente pegou
+e utilizou então aqui o
+a estrutura,
+a collection HashMap,
+criamos alguns valores para ela, depois fizemos o acesso aqui da collection através
+do get, que retorna pra gente uma option. com a referência ali, né, do I32.
+Esse essa função de copied,
+ela transforma eh a referência em um valor bruto ali, né, que seria o o número
+para fora ali da referência, né? E esse um RP, ele faz o seguinte, se encontra algo,
+se não encontrar algo, o defu vai ser zero. E aqui embaixo ele faz o print do valor
+que a gente acabou de acessar.
+a gente consegue também acessar os valores da collection
+e do HashMap
+percorrendo ela com o for. Então, a gente cria um novo for. Aqui dentro a gente vai
+passar a chave e o valor,
+né? E a gente vai passar qual estrutura que a gente vai iterar. a gente passa a
+referência e passa aqui, que é a estrutura de da collection aqui de scores esse
+HashMap.
+E aqui para dentro a gente pode rodar um print ln retornando
+a chave
+e o valor.
+E o valor.
+Beleza? Aí agora aqui, né, a gente sempre lembrando do ponto e vírgula,
+vamos tá exibindo. E aí percorrendo
+a o HashMap, a gente retorna então ali a chave e o valor do item.
+Beleza? Agora, pessoal, trabalhando aqui com o ownership, a gente sabe que o
+ownership é um dos conceitos aqui do Rust: ownership
+vai tá funcionando dentro de um HashMap, beleza? Então vamos est pegando esse
+exemplo aqui,
+onde a gente tem dois nomes, né?
+A gente tem o nome do campo e o valor do campo em si.
+Eh,
+e aqui dentro, então, a gente tem uma nova estrutura, um novo HashMap, que vai ser
+mutável, porque ele vai poder receber eh novas novos valores. E ele recebe então
+aqui o a chave e o valor e insere dentro desse HashMap. Agora
+vamos estar tentando eh acessar
+esse field name aqui, pessoal. ele já deu o erro do
+onip
+porque ele ele já fala aqui, ó, que eu tentei
+eh fazer o print de um valor que já foi modificado,
+porque quando a gente utiliza esse fio de name aqui dentro do insert,
+a gente falou agora, eh,
+ele já foi utilizado, né? ele já tem essa, ele já tem um dono. E aí quando a gente
+tenta acessar ele aqui de novo, ele dá o erro de
+de ownership, né? Caso a gente venha aqui e faça um clone ou algo do tipo assim, ele
+vai até passar.
+Então copy também, mas esse erro acontece porque o field name foi movido aqui, foi
+movido aqui para dentro do do MAC. E quando ele é movido, ele ele
+ele ele é o novo. Tipo assim, quando ele é movido, o ele perde a propriedade dele. E
+aí quando a gente tenta utilizar novamente,
+ele já dá o erro falando que a propriedade desse valor já foi utilizada
+em outro lugar.
+Beleza?
+Então, beleza. Agora, pessoal, a gente vai também fazer, aproveitar para fazer um
+exemplo aqui de sobreescrever
+versus inserir só se não existir o item ali no HashMap.
+Beleza?
+Então, bora lá. Eh, vamos então utilizar esse exemplo.
+A gente vai utilizar esse exemplo aqui, onde a gente tem o HashMap,
+inserimos novas
+eh novos itens aqui para ele, né? E depois a gente sobrescreveu o valor
+aqui na exibição,
+ele vai retornar pra gente o novo valor que foi sobrescrito.
+Já
+já dessa forma aqui
+ele ele faz a verificação
+para ver se já não existe.
+Beleza? Ó, aqui ele faz o insert, né, do da chave blue e o valor 10.
+E através do entry, esse entry aqui, ele é uma API do nosso STD,
+né, que é essa liba
+te dá uma entrada naquela chave.
+Eh, e aí, né, ele consegue verificar
+se esse se essa chave existe ou não.
+E aí, caso não exista,
+ele utiliza esse or insert
+para passar um valor de full para ele ali. Vamos tá vendo?
+E agora aqui, ó, pro valor blue, ele passa o 50 e o yellow 50 também.
+Aqui ele ignora porque nesse entry, quando ele pesquisa por essa chave do Blue, ele
+já encontra
+e ignora ela. Bacana demais, né, pessoal?
+Eh, então beleza. Agora a gente vai utilizar, então vamos fazer o último exemplo
+para fechar com chave de ouro, que é o exemplo clássico aqui de contar palavras no
+HashMap.
+Eh, a gente então vai utilizar esse exemplo
+que a gente tem um texto que é uma slice, né? é esse string aqui, uma referência de
+string.
+Eh, e dentro a gente cria então uma um novo HashMap.
+E agora aqui para dentro a gente vai estar contando as palavras dessa string. O que
+que a gente faz? A gente pega esse Word como o iterador,
+ele vai ter sobre essa slice chamada text, onde a gente vai
+eh fazer o split ali, né, dos espaços, vai tá retirando os espaços.
+E aqui a gente vai fazer a contagem, então, eh, do da palavra em si.
+vai pegar esse esse esse HashMap que a gente criou e a gente vai utilizar esse entry
+para ver se já tem essa palavra que
+a gente
+inseriu, que está passando ali dentro do do iterador. Caso não tenha, ele vai
+colocar o valor como zero aqui em defrazer
+a interação de mais mais
+de mais um, no caso ali, né? E no final ele mostra qual que é o
+qual que é a o valor ali, né, das palavras em si, separadas por espaço.
+Então aqui, ó,
+eh ele mostra aqui o relo quantas vezes que foi, né? Uma vez o Word
+duas vezes e o Wordful aqui uma vez, sem fazer a repetição
+eh das palavras em si. Então, a gente tem uma string,
+a gente estancia um novo HashMap,
+a gente faz a iteração
+e dentro dessa string, separa ela por espaços
+e aqui dentro a gente verifica se a se a palavra já existe, a gente somente ignora.
+E caso não exista,
+eh, a gente faz a contagem aqui, né, do mais. Então aqui, né, ele identificou que a
+palavra rel aparece uma vez, a palavra Word aparece duas e o Wordful uma vez também.
+Eh, então
+é isso, pessoal. Pra gente fechar aqui, né, resumindo tudo que a gente viu, pra
+gente fechar com chave de ouro,
+eh,
+a gente tem o vetor, né, que é uma lista que cresce, a gente consegue acessar
+através ali dos
+dos tipos, né,
+a gente consegue acessar
+e geralmente ele ele só tem um tipo, a menos que você utilize um N1 para você
+utilizar diversos tipos dentro ali do seu vetor.
+A gente tem a collection de string, onde ela lida muito bem ali com os
+questão da indexação, mas tem o format, que é string que a gente consegue formatar
+as strings ali, juntar elas de uma forma mais elegante.
+E por final a gente tem a collection, é do HashMap, que é uma collection que é a
+estrutura dela é chave e valor. E a gente também tem essa sintaxe aqui do entry, que
+resolve metade dos problemas no HashMap, onde a gente consegue verificar, né, se
+aquele item já existe ou coisas do tipo. Pessoal, muito obrigado pela audiência.
+Conseguimos então finalizar essa aula aqui relacionada a collections no Rust. Muito
+obrigado e bora para cima. Se inscreve no canal, deixa o like se gostou e muito
+obrigado. Ja.

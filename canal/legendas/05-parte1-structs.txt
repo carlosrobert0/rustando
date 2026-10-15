@@ -1,0 +1,115 @@
+Fala Dev, fala rustáceo. Beleza? Ó, começando esse vídeo com esse conteúdo muito
+maneiro que é o quê? É a nossa cidade. Olha que bção. Ol bom paraíso igual simpos.
+Então bora começar.
+Fala Dev, beleza? Fala rustáceo. Beleza? Vamos então estar implementando agora o
+struct pra gente ver como que funciona aqui na prática numa mão na massa.
+A gente começa eh definindo uma struct com a palavra reservada struct
+seguido do nome da struct, por exemplo, user.
+E depois dentro de chaves a gente vai pegar e vai est colocando ali os nossos
+valores e daquela struct.
+Por exemplo, eh activo,
+ele vai ser um guliano
+uma stringil
+string
+e sig
+count.
+Dessa forma, então a gente implementou
+e uma struct, a gente definiu, na verdade uma struct.
+E como que a gente faz pra gente estar agora utilizando essa struct
+dentro da nossa função main principal aqui do Rust? A gente vai est então e criando
+uma variável e está atribuindo para ela a struct. E quando a gente faz essa
+atribuição da struct, é a forma que a gente faz para instanciar a struct. E aí dentro
+da struct ali a gente vai passar os valores de cada campo.
+A gente passa então a struct seguido de chaves, bem semelhante à forma que a gente
+define, só que ao invés agora da gente passar o tipo do campo, a gente passa o valor
+em cima.
+Beleza? Aí a gente passa o valor aqui de cada eh propriedade de cada atributo aqui
+do
+da Struct. ela é semelhante a um objeto.
+Portanto, eh, a gente consegue acessar os valores da struct.
+Por exemplo, eu consigo vir aqui, ó, e fazer um print eh
+do username que a gente definiu aqui, acessando a struct seguido do nome
+do da propriedade do atributo que seria que a gente quer acessar.
+Dessa forma ele consegue fazer o acesso aqui pra gente. Normalmente
+ele vai fazer o log aqui, né?
+Aqui, ó. Ele mostra pra gente o log normalmente,
+certo? Beleza. Vamos continuando aqui. Então, a struct a gente, se a gente quiser,
+por exemplo, reatribuir algum valor a alguma propriedade da Struct, a gente consegue
+também. Por exemplo, eu vou vir aqui e vou fazer assim, ó. user
+ponusername,
+né? Acessei a propriedade. Agora vou passar agora o novo valor para ela,
+certo? Passei o novo valor.
+Aí aqui a gente vai tá rodando a aplicação e ele vai est gerando pra gente um erro.
+Ele mostra então pra gente aqui no erro que a gente não consegue reatribuir por
+conta da variável que a gente criou e atribuiu a Struct. Ela é uma variável
+imutável, porque pro padrão toda a variável é imutável. Então, a gente precisa
+adicionar aqui antes do nome da variável
+a palavra reservada milde.
+Com isso, a gente consegue
+acessar aqui novamente e ele já passa o novo valor aqui pra gente que foi a então,
+né, a reatribuição do valor de uma propriedade da Struct, de um campo da Struct.
+A gente consegue também e utilizar a sintaxe de field short hand, que é a sintaxe de
+abreviação. Vou criar aqui então uma função pra gente tá vendo esse exemplo.
+Por exemplo, vou criar aqui uma função e build user que recebe dois parâmetros, o
+e-mail que é uma string e username que também é uma string. E ele vai retornar pra
+gente, então, é a criação ali,
+de uma struct.
+Então, a gente vai retornar esse instruct, certo? E vamos abrir a função aqui. Agora
+dentro da função, a gente vai criar então e a implementação da struct. Fazendo da
+seguinte forma. A gente passa a struct
+seguido de chaves e aqui dentro os valores.
+Beleza? Eh, a sintaxe aqui de
+short e não, a sintaxe aqui de field e need short hand é a sintaxe da abreviação
+que a gente pode fazer aqui. Por exemplo, a gente tá passando para pro valor aqui da
+Struct
+uma propriedade, né, um parâmetro que tem o mesmo nome do campo da Struct. Então, a
+gente pode abreviar aqui e passar dessa forma que funciona também. Então eu vou est
+criando aqui esse novo usuário aqui com essa função pra gente ver ele aqui
+funcionando.
+Pera aí rapidinho.
+Vou criar aqui então pra gente ver, né, ele funcionando
+pra gente.
+Eu posso dar o log dele aqui
+e vai tá ali, então, né, o nosso log é da criação do da Struct através de uma função
+e utilizando a sintaxe de field short rang onde a gente pode abreviar
+e o o a atribuição ali do valor ao campo quando é o mesmo nome do campo que a gente
+tá atribuindo ali. Beleza? Então vamos continuando aqui. Eh, a gente consegue também
+criar outras instâncias de da Struct através de uma que já foi criada, ou seja, a
+gente consegue reaproveitar
+uma struct já criada. E a gente faz da seguinte forma,
+por exemplo, vou tá vou estar apagando aqui só pra gente tá fazendo eh essa
+exemplificação da reutilização de uma struct. Por exemplo, aqui eu posso criar o user
+do
+e ele vai ser um instructe
+vai ter um username,
+um username diferente,
+por exemplo. Vou colocar aqui Carlos 2. E o e-mail também vai ser diferente.
+Agora, o restante dos dados, que são os campos actitive e o campo sign account,
+esse eu quero reaproveitar, eu quero que sejam os mesmos. Eu posso vir aqui e
+passar, por exemplo, é active igual user.
+Active
+e sign in account user.
+Account
+vai funcionar. Ou eu também posso utilizar a sintaxe de update eh da
+Struct que a gente faz semelhante ao spread operator no Typescript,
+que é da seguinte forma.
+A gente passa dois pontos final
+e agora o nome da struct.
+Dessa forma, a gente utiliza
+o o restante dos dados e daquela struct que a gente tá referenciando ali. É semelhante
+ao spread operator no JavaScript.
+Ó, aqui, por exemplo, para vocês verem que ele reutiliza, eu vou est passando aqui
+uma um atributo, por exemplo, o atributo de
+no nosso
+é aqui, ponto vírgula que esqueceu.
+E aqui, ó, ele já retornou, né, a propriedade que ele reaproveitou daquela struct.
+Isso chama eh o struct update, que é a sintaxe, né, de de atualizar uma struct aqui
+no no Rust. Aí, pessoal, eu mostrei agora então eh alguns exemplos da Struct e esses
+exemplos foi da struct e que chamamos de field name struct, onde a gente tem
+os nossos campos aqui nomeados.
+Existe também outros dois tipos de struct, que é o o tuple struct, que a gente passa
+só o tipo e do campo e no formato de tupla e o unit struct,
+que a gente só passa o nome ali para struct sem nenhum e nome para campo e também sem
+nenhum valor atribuído. Beleza? Então, esse foi o vídeo aí eh sobre struct e nos
+próximos vídeos eu vou estar mostrando os outros dois tipos de struct e também um
+exemplo de eh utilização da struct. Valeu,

@@ -1,0 +1,130 @@
+Fala galera, beleza? Hoje eu vou est mostrando aí para você como que você pode estar
+fazendo a instalação do Rust no MacOS.
+Então bora lá. Ó, sempre você começa pesquisando no Google mesmo, o Rust. Então eu
+vou estar pesquisando aqui.
+Aí como tem várias e quer ver? Eu vou colocar só Rust. Ele já apareceu aqui o
+primeiro, né?
+Eh, mas também tem um um jogo,
+esse jogo aqui que chama Rust também, aí tem hora que confunde, né? Mas aí caso não
+encontre de primeira,
+caso não encontre aqui de primeira, você pode colocar, ó, Rust linguagem
+programação, que aí ele vai ser mais específico na busca,
+beleza? Então aqui, ó, no Rust, né, na linguagem de programação, a gente já viu isso
+em outras aulas, mas aqui, ó, a gente inicia
+e essa é a tela inicial da documentação da linguagem em si.
+Eh, aqui tem alguns
+arquivos que são importantes, caso vocês queiram aprofundar, que é questão aqui, né,
+do do livro mesmo, né, do Rust, tem alguns vídeos também. E aqui, ó, a gente tem
+o botão comece agora. Só clicar nele
+e aí ele vai tá falando aqui, né, o que que você precisa fazer para tá instalando
+ele.
+Eh, ele fala, né, como que é feito aqui a questão do instalador e do gerenciador.
+Eh, ele utiliza, então, né, esse crew aqui para tá fazendo a instalação desse Rust,
+que é
+essa ferramenta do Rust,
+que é para fazer a instalação e gerenciar as versões do Rust em si.
+Eh, aqui, ó, esse Rust Tap, então ele é a ferramenta do Rust e com
+ele a gente consegue e ter um geniamento aqui, né, por exemplo, de pacotes. E aqui a
+gente consegue fazer o update também caso o seu rush esteja desatualizado.
+Junto com o Rust, a gente tem o cargo, que o cargo é a ferramenta ali, né, de
+compilação e gerenciamento de pacotes.
+ele consegue então nós estar gerenciando os pacotes da nossa aplicação ali. É tanto
+pacotes, tanto execuções, né, de scripts, como é carregar a aplicação, fazer o
+build, né, executar a aplicação, esse RAM aqui, testar a aplicação com teste, como
+também a gente consegue adicionar novos pacotes, que aqui chama create
+com cargo. Então a gente escreve cargo add e o nome do pacote. É, beleza?
+aqui, né? Tem outras ferramentas. VS Code V. Eh, a gente utiliza o VS Code, né? Eu
+utilizo o VS Code e aqui ele já até mostra como que você cria um novo projeto, mas
+nesse vídeo a gente não tá falando sobre isso. A gente vai criar um novo projeto pra
+gente ver executando, mas a gente tá falando sobre instalação.
+Beleza? Então, eh, a instalação, né, a gente viu que chegou, clicou no
+botão comece agora, ele já trouxe aqui para essa tela.
+E nessa tela a gente tem esse comando crew pra gente tá instalando o Rust. Esse
+comando ele é um comando que ele é executado universalmente em qualquer terminal.
+Dessa forma, então, eu vou est iniciando aqui, né, um
+uma aplicação aqui no no VS Code.
+Vamos esperar ele abrir aqui.
+Mas igual eu falei, né, como ele é um terminal, a gente pode vir aqui também, ó,
+terminal
+e executar ele, ó.
+Então aqui, ó, tanto a a gente pode executar no terminal aqui do VS Code,
+como a gente também pode executar no terminal aqui no no terminal geral mesmo, né?
+Vamos executar no terminal geral. E aqui, ó, ele já tá fazendo a
+instalação do que a gente precisa, que no caso é o rustup.
+Eh, e aí, bem simples, tá fazendo a instalação ali. É isso, pessoal.
+Eh, ele vai terminar ali e a gente vai seguir. Então, eh, geralmente as coisas elas
+são simples.
+Caso você vai fazer algo esteja ficando muito complexo,
+pode eh duvidar, pode duvidar
+que esteja errado, porque geralmente quando as coisas estão certas, elas
+são simples.
+Então, beleza. aqui, né? Ele faz algumas perguntas se eu quero proceder com a
+instalação padrão, se eu quero customizar a instalação ou se eu quero cancelar a
+instalação. Eu quero proceder. Então é o botão, é o opção um. Beleza? Clico aqui, ó,
+ele já vai est fazendo as instalações que eu preciso aqui pra minha máquina.
+E com isso a gente vai ter o Rust instalado.
+O legal galera, é que eu tava fazendo esses cursos, né, esses conteúdos no meu
+Windows e ele é bem ruim, tipo assim, não é ruim, né, porque me ajudou muito, já tô
+usando, mas assim, eh, ele era um pouco mais fraco, né? E esse notebook aqui é um
+MacBook daqueles M4 Pro. Esse essa máquina aqui ela é muito potente.
+Aí assim, vai dar pra gente fazer muitos testes para ver. eh em tempo de execução,
+comparando tempo de execução de build entre as máquinas.
+Eh, e então o processo aqui de desenvolvimento pra gente vai
+ser mais fluido.
+Eh, então talvez a gente vai até trazer mais
+conteúdos aí, igual, na verdade, eu criei três vídeos, mas não postei sobre uma
+plataforma de atendimento com inteligência artificial, utilizando o Rust e criando
+criada com Rust, o back end todo em rush ali, só o front end em next, no caso, né?
+Mas é bem bacana.
+E eu vou ver se eu recrio ele aqui ou se eu edito mesmo o vídeo e posto e dou
+continuidade nele aqui nessa nessa outra máquina,
+né? Então a gente vai aguardar aqui a instalação finalizar.
+Ó, ele já instalou
+e já falou aqui pra gente o que que a gente fez, ó.
+as nossas configurações e tudo mais. Quando a gente instala, a gente pode verificar
+através do Rust menos version, se for instalado mesmo, ó.
+Não, na verdade não é o Rust, é o Rust
+menos Version.
+Tá beleza?
+Então, pessoal, ó, aqui a gente viu que ele não finaliza, né? A gente precisa,
+eu acho que é tá com copiando esses comandos aqui, ó, que são pra gente eh tá
+inserindo as nossas variáveis de ambiente.
+Quando a gente faz isso, a gente consegue então ter as nossas
+pra gente executar. Vamos ver, ó.
+Ó, isso mesmo, pessoal. Tá vendo? Agora ele já identificou o rustc e já trouxe para
+nós a versão. Vamos ver se ele instalou o cargo também.
+Beleza, instalou, trouxe pra gente também.
+Então, a instalação ela foi concluída aqui no Mac.
+Pra gente ver que foi concluída mesmo, vamos est rodando é o nosso Hello World, igual
+como a gente fez, né? a gente fez a instalação, ele instala o rustc, que seria esse
+Rust App aqui, né? E ele instala também o cargo, que é o gerenciador de pacotes.
+Eh, então aqui embaixo, ó, vamos est criando esse projetinho só pra gente
+ver ele funcionando. É bem simples, ó. Ele vai chamar Hello Rust. Então, aqui,
+ó, no terminal,
+eh, a gente pode vir, ó, vou até vir aqui nesse terminal aqui mesmo,
+ó. Vou dar, deixa eu dar um LS para eu ver onde eu tô. Beleza, deixa eu ir dentro de
+documentos
+e aqui dentro eu vou fazer cargo new hello hust.
+É bem simples, pessoal, ó. já criou paraa gente ali. Então vamos tá acessando
+através do CD e o nome do projeto.
+Aqui tá o projeto. Aqui, ó, no Rust ou no Mac, eu ainda não peguei para configurar o
+code ponto, que o code ponto ele abre já o o VS Code naquele projeto, naquela pasta,
+só que ele não tá pegando e por isso eu vou vir aqui e vou estar abrindo através do
+Open Folder
+e vou est selecionando o projeto.
+Beleza? Aqui já tá o projeto do Rust. E nesse projeto
+a gente eh
+a gente tem essa estrutura aqui de pastas que é o CC e o main dentro. E aqui dentro
+do main ele já tem então um Hello World. Eu vou trocar o Word pro Rust e vou est
+executando aqui no nosso projeto.
+Ele já compilou e rodou aqui pra gente o nosso projeto em Rust. Beleza,
+pessoal? Então, esse foi um vídeo mostrando como que faz a instalação do Rust eh no
+MacOS
+e como a gente executa aqui também. Beleza, pessoal? Agora eu tô com essa nova
+máquina e a tendência é que a gente vai criar bastante vídeo e vamos trazer bastante
+conteúdo aqui pro pro canal. Tô participando de um boot camp e de rust avançado.
+Tô eh para trazer mais conteúdos ainda para pra galera aqui. E é isso, pessoal. Vou
+est trazendo mais conteúdos de criando aplicações reais com Rust, mostrando ali, né?
+E e é isso. Se vocês também puderem estar trazendo sugestões de vídeo, eu agradeço,
+pessoal. Muito obrigado por vocês aí. Valeu. Se inscreve no canal se você ainda não
+é inscrito. Deixa o seu like.

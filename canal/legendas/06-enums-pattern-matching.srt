@@ -1,0 +1,920 @@
+1
+00:00:02,360 --> 00:00:04,320
+Fala dev, beleza?
+
+2
+00:00:04,960 --> 00:00:10,920
+Hoje a gente vai est falando aqui sobre Enum. Enum é uma propriedade, é um comando,
+
+3
+00:00:10,920 --> 00:00:17,480
+é uma opção que a gente tem aqui para trabalhar no hust, que ele consegue enumerar
+
+4
+00:00:17,560 --> 00:00:23,519
+opções de um determinado dado ali pra gente. Por exemplo, é quando a gente quer
+
+5
+00:00:23,519 --> 00:00:29,840
+fazer algo que tem alguma variante, que tem mais de uma opção, então a gente utiliza
+
+6
+00:00:29,840 --> 00:00:34,920
+um enum. Por exemplo, vou criar um enum aqui de endereço de IP.
+
+7
+00:00:40,239 --> 00:00:44,840
+Esse Enum ele é criado da seguinte forma. A gente utiliza a palavra chave enum
+
+8
+00:00:44,840 --> 00:00:51,800
+seguido do nome que a gente quer pro Enum em utilizando camel case seguido depois de
+
+9
+00:00:51,800 --> 00:00:59,239
+chaves e aqui dentro do enum vem as opções dele separado por e vírgula.
+
+10
+00:01:00,399 --> 00:01:03,280
+E aí a gente implementa o Enum
+
+11
+00:01:03,960 --> 00:01:07,040
+e utilizando da seguinte forma.
+
+12
+00:01:07,920 --> 00:01:14,680
+a gente eh passa, cria então, né, uma variável e atribui o Enum para ela, passando
+
+13
+00:01:14,680 --> 00:01:19,040
+então o nome do Enum e utilizando essa esse comando
+
+14
+00:01:19,439 --> 00:01:21,360
+2.2 pontos
+
+15
+00:01:21,680 --> 00:01:27,479
+para acessar o campo do Enum. Por exemplo, aqui, ó, eu tenho acesso aos dois e as
+
+16
+00:01:27,479 --> 00:01:30,840
+duas opções daquele enum, certo?
+
+17
+00:01:31,159 --> 00:01:34,640
+E aí, eh, aqui também eu consigo
+
+18
+00:01:35,280 --> 00:01:37,200
+utilizar o Enum,
+
+19
+00:01:37,439 --> 00:01:44,880
+eh, dentro de uma função. Por exemplo, vou criar aqui uma função chamada IPEC R,
+
+20
+00:01:44,880 --> 00:01:50,759
+que vai receber o nosso Enum. E aqui dentro ele pode fazer alguma coisa com ele. O
+
+21
+00:01:50,759 --> 00:01:55,600
+Enum, então, pode ser passado por funções também, pela função também.
+
+22
+00:01:56,719 --> 00:02:03,399
+O Enum a gente consegue também passar ele como uma propriedade de uma struct. Por
+
+23
+00:02:03,399 --> 00:02:09,920
+exemplo, vou criar uma struct aqui de endereço de IP, que ela vai ter dois campos.
+
+24
+00:02:10,800 --> 00:02:15,519
+Ela vai ter aqui o campo de Kindle, que vai ser o nosso Enu, que vai receber o Enu,
+
+25
+00:02:15,519 --> 00:02:17,360
+e o campo de edress.
+
+26
+00:02:19,400 --> 00:02:22,400
+E aí a gente estancia aqui
+
+27
+00:02:22,959 --> 00:02:24,840
+eh a nossa
+
+28
+00:02:25,440 --> 00:02:26,680
+a nossa
+
+29
+00:02:27,040 --> 00:02:30,519
+struct, né, e passa para ela então os valores
+
+30
+00:02:31,160 --> 00:02:34,879
+eh de que a gente tem aqui para para tá utilizando.
+
+31
+00:02:35,120 --> 00:02:43,080
+Então eh dessa forma a gente vê que a gente consegue também trabalhar com eh Enum
+
+32
+00:02:43,239 --> 00:02:45,120
+dentro de uma struct,
+
+33
+00:02:46,000 --> 00:02:49,840
+por exemplo, vou est rodando aqui esse código para você ver. funcionando.
+
+34
+00:02:55,920 --> 00:02:58,800
+Como eu quero passar toda a struct aqui,
+
+35
+00:02:59,159 --> 00:03:03,519
+então eu tenho que que utilizar essa sintaxe, né, de dois pontos interrogação
+
+36
+00:03:03,879 --> 00:03:09,599
+para eu conseguir e mostrar todos os campos daquela struct. E aqui para stupão,
+
+37
+00:03:10,360 --> 00:03:13,200
+né, eh, aquele nosso
+
+38
+00:03:13,720 --> 00:03:16,519
+trait utilizando o derive
+
+39
+00:03:16,959 --> 00:03:19,480
+e o nome do trait que é debug.
+
+40
+00:03:23,560 --> 00:03:25,480
+E aqui, ó, a gente roda
+
+41
+00:03:26,360 --> 00:03:33,480
+e a gente pode ver então é a nossa struct e aqui dentro o valor da nossa enum.
+
+42
+00:03:34,840 --> 00:03:37,959
+A gente consegue também, por exemplo, eh
+
+43
+00:03:38,280 --> 00:03:44,879
+utilizar o próprio, essa própria string aqui dentro da nossa, do nosso Enum. Dessa
+
+44
+00:03:44,879 --> 00:03:49,799
+seguinte forma, ó. A gente vem aqui no Enu, na opção do Enum e passa uma um
+
+45
+00:03:49,799 --> 00:03:50,799
+parênteses.
+
+46
+00:03:51,599 --> 00:03:57,599
+Eh, e essa string, esse formato, na verdade, é um formato de tupla. E aqui a gente
+
+47
+00:03:57,599 --> 00:04:02,799
+passa então que ele vai ter um parâmetro, né, que vai ser uma string.
+
+48
+00:04:03,159 --> 00:04:06,680
+E agora aqui a gente pode então tá passando
+
+49
+00:04:06,959 --> 00:04:12,400
+esse valor da string aqui diretamente pro nosso enumo.
+
+50
+00:04:21,359 --> 00:04:26,639
+A gente pode estar então exibindo aqui, ó, que ele vai mostrar então a nossa string
+
+51
+00:04:26,639 --> 00:04:27,639
+ali,
+
+52
+00:04:28,160 --> 00:04:29,360
+tá vendo?
+
+53
+00:04:29,960 --> 00:04:34,960
+É, agora a gente consegue também trabalhar com mais de um formato
+
+54
+00:04:35,320 --> 00:04:41,080
+dentro do nosso Enum. Aqui, por exemplo, nessa nesse Enum de no formato de tupla, eu
+
+55
+00:04:41,080 --> 00:04:44,960
+estou recebendo uma string, né? Mas eu posso mais passar outras propriedades. Por
+
+56
+00:04:44,960 --> 00:04:51,360
+exemplo, vou fazer que esse é endereço de IP aqui ele receba então eh
+
+57
+00:04:52,120 --> 00:04:56,479
+uma propriedade que é numérica e vai até 256
+
+58
+00:04:58,840 --> 00:05:03,759
+ao invés de string. Aí agora aqui, ao invés de eu passar em string, eu passo em
+
+59
+00:05:03,759 --> 00:05:04,759
+número.
+
+60
+00:05:08,039 --> 00:05:09,680
+E aí a gente vê
+
+61
+00:05:10,600 --> 00:05:13,080
+aqui que funciona da mesma forma,
+
+62
+00:05:13,320 --> 00:05:19,319
+só que agora passamos os valores, né, em números. Beleza? É, por exemplo, aqui, ó,
+
+63
+00:05:19,319 --> 00:05:25,000
+dentro da Enum, a gente consegue trabalhar com mais de um formato. Por exemplo, aqui
+
+64
+00:05:25,000 --> 00:05:31,080
+eu estou utilizando eh o formato de tupla, mas eu posso utilizar outros formatos. E
+
+65
+00:05:31,080 --> 00:05:36,880
+esses formatos eles são structs, são estruturas, certo? Então isso daqui é uma
+
+66
+00:05:36,880 --> 00:05:42,319
+estrutura de uma tupla. E aqui, ó, por exemplo, esse enum de message,
+
+67
+00:05:42,560 --> 00:05:48,360
+eu tenho um exemplo de outras eh estruturas, de outros formatos aqui dentro. Por
+
+68
+00:05:48,360 --> 00:05:53,440
+exemplo, aqui eu tenho uma estrutura de dos campos nomeados, né, onde tem seria uma
+
+69
+00:05:53,440 --> 00:05:58,919
+função que tem recebe o parâmetro X e Y. Eu tenho aqui uma
+
+70
+00:05:59,639 --> 00:06:04,440
+uma estrutura no formato de tupla também. Então a gente vê que a gente tem mais, a
+
+71
+00:06:04,440 --> 00:06:07,319
+gente pode ter mais de uma estrutura
+
+72
+00:06:07,599 --> 00:06:12,240
+dentro do nosso Enumi, como opções do Enum, certo?
+
+73
+00:06:13,120 --> 00:06:15,639
+Eh, então seguindo aqui,
+
+74
+00:06:15,840 --> 00:06:21,199
+vou tá mostrando para vocês um enum que é muito importante aqui no Rust, que é o
+
+75
+00:06:21,199 --> 00:06:22,199
+enum,
+
+76
+00:06:26,080 --> 00:06:27,599
+que é o enum.
+
+77
+00:06:28,000 --> 00:06:29,639
+O enum do option,
+
+78
+00:06:29,880 --> 00:06:33,960
+ele é um enum que o próprio Rust eh implementa,
+
+79
+00:06:34,160 --> 00:06:39,960
+mas eu vou fazer ele aqui pra gente ver como que ele funciona e a gente vê ele eh
+
+80
+00:06:39,960 --> 00:06:41,520
+sendo utilizado.
+
+81
+00:06:42,120 --> 00:06:46,800
+Por exemplo, eu tenho aqui então enum, né, e o option,
+
+82
+00:06:47,120 --> 00:06:50,360
+ele vai receber um parâmetro aqui que é um genérico
+
+83
+00:06:50,759 --> 00:06:54,599
+e o retorno dele é alguma coisa.
+
+84
+00:06:55,599 --> 00:06:58,280
+Então aí se alguma coisa é sum
+
+85
+00:06:59,319 --> 00:07:02,479
+e dentro aqui do sum a gente pega o parâmetro
+
+86
+00:07:03,520 --> 00:07:06,199
+e retorna ele aqui
+
+87
+00:07:11,919 --> 00:07:12,919
+ou
+
+88
+00:07:13,280 --> 00:07:15,199
+o non ou nonim.
+
+89
+00:07:15,599 --> 00:07:22,599
+Ou seja, esse é enum aqui, ele é um enum que ele retorna duas opções.
+
+90
+00:07:23,360 --> 00:07:28,759
+Eh, ele retorna uma opção quando tem alguma coisa, que é esse some e dentro do
+
+91
+00:07:28,759 --> 00:07:31,720
+parênteses a gente consegue recuperar o valor
+
+92
+00:07:32,120 --> 00:07:33,759
+ou o none.
+
+93
+00:07:34,560 --> 00:07:41,720
+E aí a gente utiliza ele aqui, por exemplo, eh, eu vou estar utilizando aqui é
+
+94
+00:07:41,720 --> 00:07:42,720
+essa,
+
+95
+00:07:43,919 --> 00:07:46,000
+por exemplo, su number,
+
+96
+00:07:46,919 --> 00:07:49,039
+que ele vai ser um some
+
+97
+00:07:49,599 --> 00:07:56,000
+desse tipo. E aí, para eu estar mostrando ele, eu preciso tratar ele. Porque, por
+
+98
+00:07:56,000 --> 00:07:58,680
+exemplo, se eu mostro aqui su number
+
+99
+00:07:59,080 --> 00:08:00,919
+no print aqui, né?
+
+100
+00:08:17,280 --> 00:08:21,800
+Se eu exibo eleito para você aqui no no print sem tratar. Olha aqui que ele retorna,
+
+101
+00:08:21,800 --> 00:08:22,800
+ó.
+
+102
+00:08:28,120 --> 00:08:30,599
+Ele tá me retornando erro. Mas beleza.
+
+103
+00:08:41,560 --> 00:08:45,000
+Agora então a gente vai tá vendo aqui no Rust
+
+104
+00:08:49,839 --> 00:08:51,519
+controle de fluxo
+
+105
+00:08:52,360 --> 00:08:59,880
+que utilizam os enuns para tá eh fazendo a comparação ali
+
+106
+00:08:59,880 --> 00:09:04,480
+do que precisa. precisa de ser feito. Por exemplo, eu tenho esse enum aqui de
+
+107
+00:09:04,480 --> 00:09:05,480
+algumas
+
+108
+00:09:05,720 --> 00:09:08,040
+coins, de algumas moedas
+
+109
+00:09:08,279 --> 00:09:11,200
+de alguns eh estados dos Estados Unidos.
+
+110
+00:09:11,440 --> 00:09:12,600
+E aí
+
+111
+00:09:12,880 --> 00:09:16,120
+eu tenho aqui também eh uma função
+
+112
+00:09:16,480 --> 00:09:17,760
+que transforma
+
+113
+00:09:18,279 --> 00:09:25,760
+essa esse valor, esse valor que a gente recebe em centavos, né?
+
+114
+00:09:25,760 --> 00:09:28,440
+E aí quando ele faz o M
+
+115
+00:09:30,920 --> 00:09:36,680
+aqui é uma estrutura que a gente já vê que é uma estrutura de controle.
+
+116
+00:09:37,320 --> 00:09:44,279
+É o Mat. O mat ele e tem essa sintaxe. A gente escreve mat
+
+117
+00:09:44,399 --> 00:09:48,240
+e seguido do que a gente quer fazer a comparação,
+
+118
+00:09:48,800 --> 00:09:53,000
+depois abre chaves e aí a gente coloca
+
+119
+00:09:53,360 --> 00:09:54,839
+cada comparação,
+
+120
+00:09:55,279 --> 00:09:59,040
+cada possível comparação, cada possível correspondência
+
+121
+00:10:00,320 --> 00:10:02,600
+separada por vírgula aqui.
+
+122
+00:10:03,079 --> 00:10:06,680
+Então, essa aqui é uma estrutura de controle de fluxo
+
+123
+00:10:07,120 --> 00:10:13,440
+eh chamada Mat, certo? Igual eu posso tá implementando aqui, ó,
+
+124
+00:10:14,600 --> 00:10:19,600
+uma uma uma conha aqui, né? uma moeda aqui.
+
+125
+00:10:24,160 --> 00:10:27,640
+E aí eu posso fazer o print LM dela aqui
+
+126
+00:10:28,160 --> 00:10:29,839
+e fazer o valente.
+
+127
+00:10:30,200 --> 00:10:32,640
+Vou passar a coin.
+
+128
+00:10:35,800 --> 00:10:38,360
+Vamos ver se retorna aqui pra gente.
+
+129
+00:10:39,680 --> 00:10:42,079
+Então a gente vê que retornou 25,
+
+130
+00:10:42,279 --> 00:10:49,000
+que é o valor que retorna aqui para quando a coin é essa quart. Então isso daqui é
+
+131
+00:10:49,000 --> 00:10:56,079
+uma estrutura de controle de fluxo que a gente consegue utilizar o enum aqui para tá
+
+132
+00:10:56,160 --> 00:10:58,440
+utilizando como valor de comparação.
+
+133
+00:10:59,839 --> 00:11:05,399
+É que é essa mat. Ela é bastante interessante e parece bastante também com suit
+
+134
+00:11:05,399 --> 00:11:06,399
+case.
+
+135
+00:11:08,560 --> 00:11:10,200
+Eh, aí
+
+136
+00:11:12,320 --> 00:11:15,120
+aqui dentro ainda, né, das nossas
+
+137
+00:11:16,639 --> 00:11:18,279
+da das nossas
+
+138
+00:11:18,720 --> 00:11:20,680
+implementações de Enum,
+
+139
+00:11:20,959 --> 00:11:25,959
+a gente tem um Enum que é bastante interessante, que é o Enum de option.
+
+140
+00:11:26,320 --> 00:11:30,399
+O Enum de option, ele funciona da seguinte forma.
+
+141
+00:11:31,519 --> 00:11:32,519
+Eh,
+
+142
+00:11:33,600 --> 00:11:37,560
+ele retorna alguma coisa ou nada.
+
+143
+00:11:38,279 --> 00:11:44,880
+Ele retorna então dois tipos, que é o some ou nome, que a gente pode estar vendo
+
+144
+00:11:44,880 --> 00:11:49,360
+nesse exemplo aqui dessa função de somar mais um.
+
+145
+00:11:51,720 --> 00:11:55,000
+Por exemplo, essa função aqui vai receber um valor
+
+146
+00:11:55,560 --> 00:11:58,040
+e ela vai ser desse tipo,
+
+147
+00:11:59,240 --> 00:12:03,320
+ela vai ser do tipo do enum option.
+
+148
+00:12:05,240 --> 00:12:07,600
+E ele vai poder retornar
+
+149
+00:12:07,880 --> 00:12:10,240
+um valor numérico que é 1,32.
+
+150
+00:12:10,480 --> 00:12:15,560
+Beleza? E o retorno dessa função vai ser também um OP
+
+151
+00:12:16,040 --> 00:12:17,040
+i3.
+
+152
+00:12:19,240 --> 00:12:23,320
+Agora aqui dentro a gente vai fazer a comparação. Então
+
+153
+00:12:23,959 --> 00:12:31,000
+vamos utilizar o mut aqui e vamos eh agora aqui dentro do Mat está verificando os
+
+154
+00:12:31,000 --> 00:12:37,920
+dois possíveis valores que são retornados no option que a gente já viu que é o some
+
+155
+00:12:37,920 --> 00:12:42,279
+e o none. Então aqui quando ele retornar o none
+
+156
+00:12:44,079 --> 00:12:50,760
+eu vou não vou retornar nada. Vou retornar o nô. E quando ele retornar um valor,
+
+157
+00:12:51,839 --> 00:12:54,600
+eu vou estar somando esse valor.
+
+158
+00:12:57,800 --> 00:13:04,120
+Beleza? E aí, ó, aqui a gente pode estar então vendo o exemplo dele.
+
+159
+00:13:23,639 --> 00:13:29,720
+Também vou criar aqui um com o none para você ver que ele retorna também. O non
+
+160
+00:14:06,199 --> 00:14:07,759
+É verdade.
+
+161
+00:14:08,000 --> 00:14:11,839
+Aqui, ó, o que que acontece? Eh, eu preciso passar
+
+162
+00:14:12,399 --> 00:14:13,880
+o valor aqui
+
+163
+00:14:14,480 --> 00:14:17,120
+do som, né? Eu preciso
+
+164
+00:14:17,880 --> 00:14:22,040
+fazer passar esse som aqui pro valor do C.
+
+165
+00:14:28,399 --> 00:14:34,120
+E para exibir esses valores aqui, eu também preciso passar a questão do nosso eh
+
+166
+00:14:34,120 --> 00:14:39,600
+trait ali. Como esse enum já implementa, a gente não precisou fazer nada. A gente
+
+167
+00:14:39,600 --> 00:14:43,560
+pode utilizar no Enum def aqui do próprio Rust.
+
+168
+00:14:44,079 --> 00:14:49,920
+Então aqui, ó, a gente vê os retornos dos das funções. Aqui, por exemplo, ó, a gente
+
+169
+00:14:49,920 --> 00:14:54,639
+quando a gente passou um valor, ele viu que esse valor era cinco e somou com mais um
+
+170
+00:14:54,639 --> 00:15:00,320
+e deu seis. Quando a gente não passou nada, ele caiu nesse nô aqui. Então, esse enum
+
+171
+00:15:00,320 --> 00:15:06,240
+é o option. Ele é bastante interessante pra gente trabalhar aqui na no rust.
+
+172
+00:15:07,519 --> 00:15:12,880
+Eh, algo agora, pessoal, a gente vai falar sobre uma estrutura de controle de fluxo
+
+173
+00:15:12,880 --> 00:15:17,839
+bem interessante também. é para quando a gente tem somente uma opção.
+
+174
+00:15:18,199 --> 00:15:19,360
+Por exemplo,
+
+175
+00:15:19,959 --> 00:15:22,399
+eh, aqui, ó,
+
+176
+00:15:23,560 --> 00:15:26,560
+eu posso pegar e posso fazer aqui uma comparação.
+
+177
+00:15:29,319 --> 00:15:34,959
+Eu posso pegar e posso fazer aqui uma comparação, ó, eh, de mut aqui, ó. Por
+
+178
+00:15:34,959 --> 00:15:41,360
+exemplo, eu vou verificar se esse valor aqui ele é essa moeda que a gente tem aqui.
+
+179
+00:15:42,480 --> 00:15:47,720
+E se for, eu vou dar o print ln. Pera aí. Quarter point.
+
+180
+00:15:48,480 --> 00:15:50,079
+Caso não for,
+
+181
+00:15:51,480 --> 00:15:53,480
+eu tenho que passar aqui.
+
+182
+00:15:54,160 --> 00:15:57,360
+Caso não seja nada, eu posso passar esse underline
+
+183
+00:15:58,279 --> 00:16:03,600
+retornando o n aqui. Beleza? E aqui eu posso então dar um print al
+
+184
+00:16:04,839 --> 00:16:09,040
+retornando. É só posso só posso só executar aqui
+
+185
+00:16:09,720 --> 00:16:12,480
+e ele já já vai tá rodando.
+
+186
+00:16:12,920 --> 00:16:17,120
+Só que esse nome aqui não preciso. Vou retornar uma função vazia.
+
+187
+00:16:18,519 --> 00:16:24,399
+Então beleza. Ó aqui, ó, a gente usou um exemplo onde a gente só tem uma opção de
+
+188
+00:16:24,399 --> 00:16:28,800
+correspondência, certo? Aí, por exemplo, aqui tem um mat,
+
+189
+00:16:29,480 --> 00:16:33,920
+a variável que a gente quer verificar. E aqui só uma opção de correspondência.
+
+190
+00:16:34,519 --> 00:16:39,160
+Nesse caso, a gente pode utilizar uma sintaxe chamada iflet.
+
+191
+00:16:39,399 --> 00:16:43,680
+Aí a gente passa assim da seguinte forma, ó. Ifet.
+
+192
+00:16:45,040 --> 00:16:52,759
+Aí a gente vai passa a condição que a gente quer. Por exemplo, aqui, ó, coin
+
+193
+00:16:53,759 --> 00:16:54,759
+quarter,
+
+194
+00:16:59,639 --> 00:17:02,560
+que é essa mesma comparação que a gente tá fazendo aí,
+
+195
+00:17:03,000 --> 00:17:05,720
+ela é igual a nossa variável.
+
+196
+00:17:06,240 --> 00:17:10,000
+E aqui dentro a gente retorna o que que a gente quer.
+
+197
+00:17:11,839 --> 00:17:16,640
+Então esse iflet ele é utilizado para quando a gente só tem uma opção
+
+198
+00:17:17,240 --> 00:17:22,319
+dentro das possíveis dos possíveis retornos ali de um enum. Por exemplo,
+
+199
+00:17:23,799 --> 00:17:30,600
+esse ifet a gente ainda consegue utilizar o ELSE nele. Por exemplo, a gente pode
+
+200
+00:17:30,600 --> 00:17:33,080
+pegar aqui, ó, e verificar,
+
+201
+00:17:33,880 --> 00:17:39,880
+ó. Se ele for essa moeda quarter, a gente retorna quart. Mas caso não for, a gente
+
+202
+00:17:39,880 --> 00:17:44,360
+pode fazer um elsce aqui também, ó, e retornar, ó,
+
+203
+00:17:46,440 --> 00:17:47,440
+not
+
+204
+00:17:47,760 --> 00:17:52,799
+assim, entendeu? Que ele vai entender também. E aqui a gente muda, vou mudar, né, o
+
+205
+00:17:52,799 --> 00:17:55,200
+valor para ele cair no else.
+
+206
+00:17:56,760 --> 00:18:03,120
+E aqui ele roda também, ó, viu? caiu nessa outra opção aqui. Ainda a gente tem essa
+
+207
+00:18:03,120 --> 00:18:08,880
+opção, eh, por exemplo, do de uma outra sintaxe que é para quando a gente quer
+
+208
+00:18:08,880 --> 00:18:09,880
+utilizar
+
+209
+00:18:10,159 --> 00:18:15,679
+eh retornar o elce primeiro. Por exemplo, caso eu que eu queira verificar se essa
+
+210
+00:18:15,679 --> 00:18:19,480
+moeda aqui, ó, não é a quarter coin,
+
+211
+00:18:19,720 --> 00:18:24,880
+então eu posso pegar e posso verificar assim, ó. por exemplo, ó, let.
+
+212
+00:18:26,080 --> 00:18:27,480
+Aí eu vou
+
+213
+00:18:27,840 --> 00:18:29,919
+coloco a minha
+
+214
+00:18:30,559 --> 00:18:32,039
+a minha condição
+
+215
+00:18:32,280 --> 00:18:37,640
+seguido de ELS e aqui dentro eu venho e retorno então
+
+216
+00:18:37,919 --> 00:18:40,799
+o meu código, meu comando do else
+
+217
+00:18:46,400 --> 00:18:50,120
+aqui. Eu tenho que retornar ele. Quando é esse el
+
+218
+00:18:51,039 --> 00:18:52,039
+retorno
+
+219
+00:18:52,600 --> 00:18:56,720
+e também a bênção do ponto e vírgula
+
+220
+00:18:57,400 --> 00:18:58,799
+faz parte.
+
+221
+00:19:00,720 --> 00:19:03,120
+Vamos rodar novamente aqui, então.
+
+222
+00:19:04,320 --> 00:19:10,240
+E aí, ó, ele caiu aqui também nessa segunda opção que é esse let else. Então, a
+
+223
+00:19:10,240 --> 00:19:12,919
+gente viu a sintaxe de iflet,
+
+224
+00:19:13,240 --> 00:19:17,600
+do iflet else. Vimos a sintaxe do letse,
+
+225
+00:19:18,600 --> 00:19:20,440
+a sintaxe do,
+
+226
+00:19:21,559 --> 00:19:28,720
+vimos os enuns, né, como trabalhar eles ali também, eh, com outros formatos dentro
+
+227
+00:19:28,720 --> 00:19:30,000
+dos enuns.
+
+228
+00:19:30,679 --> 00:19:33,320
+E também vimos o enum
+
+229
+00:19:34,400 --> 00:19:37,080
+do, do Rust, que é o Enum de option.
+
+230
+00:19:37,320 --> 00:19:40,600
+Então é isso, pessoal. Quem gostou do vídeo, deixa o like.
+

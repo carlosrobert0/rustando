@@ -1,0 +1,25 @@
+Fala, Dev, tudo bem? Seja muito bem-vindo ao nosso curso de Rust aqui no canal. É um
+prazer ter você nessa jornada para aprender uma das linguagens mais modernas e
+seguras da atualidade. Nesta aula eu vou te dar um panorama geral sobre o Rust e te
+mostrar porque vale a pena aprender essa linguagem. Vamos começar entendendo então
+um pouco da história do Rust. Eh, o projeto começou lá em 2006, criado por Grey
+Warren como um projeto pessoal. Em 2009, 2010, a Mozilla eh entrou ali, né, como
+apoiadora oficial e passou a investir pesado na linguagem. Eh, em 2015 saiu a
+primeira versão do Rust Stável e 2016 a 2022 foi considerada a linguagem mais amada
+no stack overflow. Ali indústria vem aumentando cada vez mais com grandes empresas
+como Amazon, Microsoft, Dropbox, Cloudflare, usando ali o Rust em projetos críticos
+deles, né? E é onde a gente chega agora, né, de quem usa o Rust, igual já falei, o
+Firefox, o Dropbox, Cloudflare, muitos outros sistemas ali, né, que onde eh precisam
+de performance, segurança e confiabilidade também estão utilizando o Rust.
+Por que então aprender o Rust, né? Ele combina o melhor dos mundos, né? Essa
+linguagem combina o melhor dos mundos, tanto a segurança de memória sem depender de
+um garbage collector e quanto a performance que é praticamente o mesmo nível de
+linguagens como C e C++ e ainda com garantias em tempo real de compilação para você
+evitar, né, o bugs ali, os bugs ali antes de rodar o seu programa, né?
+Então agora que você já sabe por vale a pena investir seu tempo em rush, bora para a
+próxima aula. Na próxima aula a gente vai estar instalando a linguagem, instalando o
+Rust, preparando o ambiente de desenvolvimento e escrevendo ali o nosso primeiro
+programa em Rust. Então, muito obrigado por assistir esse vídeo até aqui. Se você
+curtiu, já deixa o seu like, compartilha com os amigos que também querem aprender
+Rust e se inscreve no canal aqui para não perder as próximas aulas. Nos vemos no
+próximo vídeo e até lá. Valeu e bora aprender Rust.

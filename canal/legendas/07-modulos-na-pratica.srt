@@ -1,0 +1,924 @@
+1
+00:00:02,000 --> 00:00:03,360
+Fala, rustáceo,
+
+2
+00:00:04,600 --> 00:00:10,960
+tudo certo? Se você tá escrevendo o seu código hoje em um arquivo só, você pode
+
+3
+00:00:10,960 --> 00:00:16,400
+perceber que a manutenção dele é um caos, é praticamente impossível, né? E aí no
+
+4
+00:00:16,400 --> 00:00:17,400
+Rust, os módulos
+
+5
+00:00:19,320 --> 00:00:25,160
+que a gente consegue organizar, eh, separar melhor ali, né, as nossas eh
+
+6
+00:00:25,160 --> 00:00:28,080
+responsabilidades através de arquivos separados.
+
+7
+00:00:29,000 --> 00:00:34,800
+E aí a gente vai entender aqui qual que é a base, né, dos módulos aqui no Rust: os packages
+
+8
+00:00:36,200 --> 00:00:42,120
+e os crates. Os packages e os crates, eles são base de tudo. Eh, tudo começa ali,
+
+9
+00:00:42,120 --> 00:00:46,800
+né, com um package, né, um pacote. Quando você roda ali o comando cargo para criar
+
+10
+00:00:46,800 --> 00:00:53,840
+uma nova aplicação, você cria um pacote que pode conter vários crates. E um crate
+
+11
+00:00:53,879 --> 00:01:00,320
+é o menor pedaço de código que o compilador Rust analisa por vez, certo?
+
+12
+00:01:00,719 --> 00:01:05,199
+Então bora lá. Vamos mão na massa pra gente ver como que funciona ali o sistema de
+
+13
+00:01:05,199 --> 00:01:07,000
+módulos no Rust.
+
+14
+00:01:09,960 --> 00:01:10,960
+Eh,
+
+15
+00:01:11,400 --> 00:01:12,400
+beleza.
+
+16
+00:01:12,799 --> 00:01:18,280
+Então, né? Bora lá. Vamos criar então um novo, um novo projeto. E aí pra gente criar
+
+17
+00:01:18,280 --> 00:01:24,079
+ele eh para ele ser um módulo, a gente precisa utilizar flag lib.
+
+18
+00:01:24,759 --> 00:01:26,720
+Então a gente vai fazer cargo
+
+19
+00:01:33,079 --> 00:01:38,960
+cargil e esse nome da aplicação vai ser restaurante, que nessa aplicação a gente vai
+
+20
+00:01:38,960 --> 00:01:42,320
+conseguir separar as responsabilidades, por exemplo, a parte da frente do
+
+21
+00:01:42,320 --> 00:01:45,280
+restaurante, a parte da cozinha, essas coisas assim.
+
+22
+00:01:45,799 --> 00:01:53,079
+Então, a gente roda Cargo Newil, eh, o nome da aplicação e menos menos lib.
+
+23
+00:01:53,159 --> 00:01:57,880
+Aí ele vai tá criando pra gente eh um pacote ali,
+
+24
+00:01:58,200 --> 00:02:01,560
+ele vai criar um create pra gente, beleza?
+
+25
+00:02:01,960 --> 00:02:06,600
+Então, eh, ele criou aqui pra gente, né? E a gente pode navegar então para pra
+
+26
+00:02:06,600 --> 00:02:07,600
+aplicação.
+
+27
+00:02:18,080 --> 00:02:22,000
+A gente pode então, né, navegar aqui para nosso projeto que ele criou
+
+28
+00:02:22,720 --> 00:02:26,200
+e a gente consegue ver uma estrutura de arquivos
+
+29
+00:02:27,400 --> 00:02:28,680
+que é
+
+30
+00:02:29,440 --> 00:02:36,120
+um sece geralmente ele gera. E aí ele vai gerar o arquivo libo invés do main,
+
+31
+00:02:36,400 --> 00:02:40,720
+porque a gente criou então o módulo ali, certo?
+
+32
+00:02:40,959 --> 00:02:47,959
+Ao invés de criar um binário executado. Beleza? Então o nosso projeto tá criado. O a
+
+33
+00:02:47,959 --> 00:02:54,840
+nosso arquivo aqui LIB é o nosso create principal, né? O nosso root ali da raiz. E
+
+34
+00:02:54,840 --> 00:02:58,080
+aqui vão ficar então todos os nossos eh
+
+35
+00:02:58,360 --> 00:03:02,440
+as nossas funcionalidades que a gente vai ver como que funciona, beleza? Então,
+
+36
+00:03:02,440 --> 00:03:07,360
+dentro desse arquivo Lib, vamos apagar tudo que tem tiver dentro dele aqui, né? E
+
+37
+00:03:07,360 --> 00:03:11,080
+vamos tá escrevendo agora um novo módulo, certo?
+
+38
+00:03:12,200 --> 00:03:17,239
+Eh, então vamos pensar aí no sistema de módulo como um sistema de arquivos, né, do
+
+39
+00:03:17,239 --> 00:03:23,319
+seu computador. Eh, a gente vai modelar aqui um restaurante usando os módulos para
+
+40
+00:03:23,319 --> 00:03:28,760
+separar ali, né, a frente da casa, seria onde ficam ali os clientes, o fundo da
+
+41
+00:03:28,760 --> 00:03:32,200
+casa, né, onde fica ali a cozinha e a parte da administração.
+
+42
+00:03:32,519 --> 00:03:38,080
+Beleza? Então vamos criar aqui um módulo chamado front da casa, que dentro dele vai
+
+43
+00:03:38,080 --> 00:03:39,720
+ter um outro módulo,
+
+44
+00:03:40,000 --> 00:03:45,200
+eh, e a gente vai ter também, eh, uma função. Beleza? Então vamos criar aqui o
+
+45
+00:03:45,200 --> 00:03:51,560
+módulo. A gente cria com a palavra reservada mod e o nome do módulo na frente
+
+46
+00:03:55,319 --> 00:04:00,760
+seguido ali, né, de chaves. Abre fecha e dentro aqui a gente vai definir o que que a
+
+47
+00:04:00,760 --> 00:04:02,840
+gente quer expor desse módulo.
+
+48
+00:04:03,599 --> 00:04:05,680
+Aqui a gente vai eh
+
+49
+00:04:06,319 --> 00:04:08,760
+criar um novo módulo chamado hosting.
+
+50
+00:04:09,360 --> 00:04:11,799
+E dentro dele a gente vai ter uma função
+
+51
+00:04:12,079 --> 00:04:16,360
+que vai ser eh para adicionar ali na fila de espera,
+
+52
+00:04:20,560 --> 00:04:21,560
+certo?
+
+53
+00:04:22,000 --> 00:04:26,960
+Então explicando, né? Eh, nós usamos aqui a palavra-chave reservada
+
+54
+00:04:27,440 --> 00:04:33,960
+mod para criar os nossos módulos, que esses módulos eles podem conter funções,
+
+55
+00:04:34,160 --> 00:04:40,600
+structs, enuns e até outros módulos dentro dele. Note que eu eh
+
+56
+00:04:41,639 --> 00:04:46,600
+que que agora você eu vou tá rodando isso daqui e você vai ver que o que que
+
+57
+00:04:46,600 --> 00:04:48,160
+acontece. oust
+
+58
+00:04:48,680 --> 00:04:51,000
+por padrão ele é
+
+59
+00:04:51,680 --> 00:04:57,600
+ele é privado, as funções, os módulos, tudo dentro dele é privado. E aí se a gente
+
+60
+00:04:57,600 --> 00:05:03,560
+tentar acessar esse módulo que a gente criou, por exemplo, ele vai tá reclamando por
+
+61
+00:05:03,560 --> 00:05:11,160
+conta de que a gente precisa eh tornar o módulo público que a gente quer acessar.
+
+62
+00:05:11,160 --> 00:05:13,919
+Por exemplo, vou criar aqui uma função
+
+63
+00:05:15,080 --> 00:05:19,319
+que vai se chamar este restaurante comendo restaurante.
+
+64
+00:05:20,960 --> 00:05:25,479
+E aqui dentro o que que eu vou fazer? Eu vou est referenciando
+
+65
+00:05:26,039 --> 00:05:31,319
+o nosso módulo ali que a gente acabou de criar. E quando a gente vai referenciar o
+
+66
+00:05:31,319 --> 00:05:37,880
+módulo que a gente criou, a gente tem dois formatos. um formato eh utilizando o
+
+67
+00:05:37,880 --> 00:05:45,000
+caminho absoluto através da palavra chave create dois pontos dois pontos e o nome do
+
+68
+00:05:45,000 --> 00:05:46,600
+módulo, o caminho.
+
+69
+00:05:47,240 --> 00:05:52,840
+Esse essa é a forma com o caminho absoluto, que a gente consegue referenciar o
+
+70
+00:05:52,840 --> 00:05:58,199
+módulo que a gente criou. Então a gente usa create dois pontos, dois pontos,
+
+71
+00:06:00,120 --> 00:06:03,919
+create dois pontos, dois pontos e o nome do módulo.
+
+72
+00:06:09,240 --> 00:06:10,240
+Certo?
+
+73
+00:06:11,440 --> 00:06:12,440
+Aqui
+
+74
+00:06:13,080 --> 00:06:18,319
+é a forma que a gente consegue referenciar o módulo através eh
+
+75
+00:06:18,599 --> 00:06:24,400
+do caminho absoluto. A gente utiliza a palavra reservada create dois pontos dois
+
+76
+00:06:24,400 --> 00:06:25,400
+pontos
+
+77
+00:06:25,880 --> 00:06:30,039
+e na frente o módulo seguido ali eh
+
+78
+00:06:30,720 --> 00:06:35,720
+seguido as referências até você chegar o o que você quer naquele módulo, certo? E
+
+79
+00:06:35,720 --> 00:06:42,160
+tem a outra forma que a gente consegue lidar com os módulos aqui, referenciar eles
+
+80
+00:06:42,160 --> 00:06:44,759
+através do caminho relativo,
+
+81
+00:06:45,039 --> 00:06:51,440
+OK? Nesse caso, a gente só usa o nome do módulo mesmo, ao invés de usar o create 2.
+
+82
+00:06:51,440 --> 00:06:55,000
+Na frente. Então aqui vai ser front, ó, rose
+
+83
+00:06:55,240 --> 00:06:59,560
+que é o nome do módulo. E o que que a gente quer acessar dentro dele?
+
+84
+00:07:00,440 --> 00:07:04,960
+Aquilo que eu tava falando com vocês em relação à privacidade do Rust, tudo no Rust
+
+85
+00:07:04,960 --> 00:07:09,360
+é privado. E pra gente conseguir acessar, por exemplo, a gente criou esse módulo
+
+86
+00:07:09,360 --> 00:07:15,680
+aqui de hosting e dentro dele essa função de adicionar a lista de espera. Só que é,
+
+87
+00:07:15,680 --> 00:07:19,080
+a gente vê aqui através dessa
+
+88
+00:07:19,479 --> 00:07:22,120
+extensão do Rust chamada rust-analyzer,
+
+89
+00:07:22,800 --> 00:07:27,800
+ele consegue ver por o os problemas que tem no nosso código antes da gente copilar,
+
+90
+00:07:27,800 --> 00:07:32,759
+compilar sem precisar compilar no terminal ali, ele consegue pegar os problemas. E
+
+91
+00:07:32,759 --> 00:07:37,520
+aqui ele já fala pra gente, ó, o módulo husting o é privado.
+
+92
+00:07:38,000 --> 00:07:42,680
+E aí, pra gente conseguir expor ele, a gente precisa usar uma palavra reservada
+
+93
+00:07:42,680 --> 00:07:49,560
+chamada pub. que referencia a público. Então, na antes do da definição do módulo, a
+
+94
+00:07:49,560 --> 00:07:52,759
+gente coloca a palavra reservada pub,
+
+95
+00:07:53,319 --> 00:08:00,479
+que isso vai tornar então o nosso módulo aqui eh público, né? E aí, ó, a
+
+96
+00:08:00,479 --> 00:08:06,400
+gente vê que ele já parou de reclamar na referência que a gente tentava acessar ele.
+
+97
+00:08:06,400 --> 00:08:12,039
+E agora ele fala aqui também que a nossa função ela está privada e também precisa
+
+98
+00:08:12,039 --> 00:08:18,800
+ser passada para public. ali. E agora o erro aqui no compilador ele já ele já para
+
+99
+00:08:18,800 --> 00:08:20,840
+de acontecer, certo?
+
+100
+00:08:21,720 --> 00:08:24,560
+A gente tem também aqui no Rust
+
+101
+00:08:25,400 --> 00:08:28,759
+para importação do código, certo?
+
+102
+00:08:29,000 --> 00:08:34,000
+Por exemplo, eh aqui, ó, a gente tem essa importação
+
+103
+00:08:34,800 --> 00:08:40,839
+do caminho absoluto aqui, certo? Create 2.2 pontos, o nome do módulo e tudo mais,
+
+104
+00:08:40,839 --> 00:08:44,440
+certo? No hust a gente tem
+
+105
+00:08:45,000 --> 00:08:51,920
+um atalho que é um comando chamado use. Ele é semelhante ao a, por exemplo, PHP e
+
+106
+00:08:51,920 --> 00:08:56,920
+outras linguagens que usa aqueles name space, né? E pra gente utilizar aquele
+
+107
+00:08:56,920 --> 00:09:02,720
+namespace, a gente importa ele através do use. E aqui é semelhante a isso. A gente
+
+108
+00:09:02,720 --> 00:09:09,600
+consegue então eh reduzir esse código todo aqui. Ao invés de chamar isso tudo aqui,
+
+109
+00:09:09,600 --> 00:09:11,680
+a gente consegue importar
+
+110
+00:09:12,600 --> 00:09:19,399
+através do comando use. Então a gente usa use e o nome daquele módulo ali, por
+
+111
+00:09:19,399 --> 00:09:22,480
+exemplo, ó. É o host aqui, né?
+
+112
+00:09:25,200 --> 00:09:29,600
+por exemplo, vamos pegar até o nossos mod host aqui, que é o que a gente quer tá
+
+113
+00:09:29,600 --> 00:09:33,760
+importando, vamos dizer assim. E aqui, ó, ao invés de eu usar o create dois pontos,
+
+114
+00:09:33,760 --> 00:09:40,680
+dois pontos, eu posso só passar o rust aqui, ó, que é o caminho que a gente tem aqui
+
+115
+00:09:40,680 --> 00:09:47,880
+em cima. Esse é um jeito idiomático que o Rust faz para trazer os módulos ali para
+
+116
+00:09:47,880 --> 00:09:53,519
+a função do do scopo que a gente tem. Então esse use a gente consegue importar
+
+117
+00:09:54,519 --> 00:09:55,519
+eh
+
+118
+00:09:55,959 --> 00:10:01,880
+aqui, né, a nossa a nossa função, o nosso módulo que a gente quer utilizar e aí ele
+
+119
+00:10:01,880 --> 00:10:05,959
+fica menos verboso, né? A gente consegue reutilizar
+
+120
+00:10:06,360 --> 00:10:11,120
+dentro aqui da nossa aplicação, certo? Beleza, pessoal?
+
+121
+00:10:11,320 --> 00:10:12,320
+Eh,
+
+122
+00:10:16,320 --> 00:10:18,560
+então, né? O que que acontece?
+
+123
+00:10:19,600 --> 00:10:21,880
+A gente tem também aqui no Rust
+
+124
+00:10:22,120 --> 00:10:26,920
+alguns possíveis conflitos eh de importação.
+
+125
+00:10:27,240 --> 00:10:29,680
+E esses possíveis conflitos de importação
+
+126
+00:10:30,000 --> 00:10:35,720
+são quando os nomes dos módulos ou das funções são idênticos. E aí a gente utiliza
+
+127
+00:10:35,720 --> 00:10:41,040
+uma forma de fazer um alias, né, de renomear aquele módulo ali para ele não ter
+
+128
+00:10:41,040 --> 00:10:42,639
+conflito, certo?
+
+129
+00:10:42,920 --> 00:10:46,639
+Para isso, eu vou tá eh utilizando aqui
+
+130
+00:10:47,200 --> 00:10:51,440
+um código que para exemplificar aqui para vocês, beleza?
+
+131
+00:10:51,760 --> 00:10:55,160
+Ó, eu tenho aqui dentro da minha
+
+132
+00:10:55,760 --> 00:10:58,600
+da minha aplicação, dentro do Rust,
+
+133
+00:10:59,399 --> 00:11:06,600
+eu tenho uma função, né, uns pacote, um create que chama STD, que ele consegue pra
+
+134
+00:11:06,600 --> 00:11:09,200
+gente aqui, né, pegar o resultado
+
+135
+00:11:10,160 --> 00:11:11,160
+eh
+
+136
+00:11:11,399 --> 00:11:15,720
+de uma de uma saída aqui que a gente vai precisar, certo?
+
+137
+00:11:16,560 --> 00:11:23,160
+Então, e aqui também, ó, a gente tem dentro desse pacote do IO esse mesmo,
+
+138
+00:11:24,000 --> 00:11:25,360
+esse mesmo,
+
+139
+00:11:26,440 --> 00:11:31,600
+eh, esse mesmo type aqui, ó, esse mesmo tipo aqui que a gente tem do resulte, certo?
+
+140
+00:11:31,920 --> 00:11:33,040
+E aí,
+
+141
+00:11:33,279 --> 00:11:36,040
+caso a gente eh queira utilizar
+
+142
+00:11:37,120 --> 00:11:38,120
+esses
+
+143
+00:11:38,639 --> 00:11:43,120
+esses tipos ali, né, esses tipos de retorno que a gente tem,
+
+144
+00:11:43,800 --> 00:11:46,160
+eh, a gente vai ter que renomear
+
+145
+00:11:46,560 --> 00:11:50,920
+esse essa importação ali que a gente fez. Por exemplo, aqui, ó, vou criar uma duas
+
+146
+00:11:50,920 --> 00:11:51,920
+funções
+
+147
+00:11:53,160 --> 00:11:59,160
+paraa gente exemplificar mesmo que o retorno dela vai ser aqui um result,
+
+148
+00:12:01,560 --> 00:12:08,040
+certo? E aí eu vou criar uma outra função aqui que o retorno dela também vai ser um
+
+149
+00:12:08,040 --> 00:12:09,040
+result.
+
+150
+00:12:18,800 --> 00:12:24,600
+Ele também vai ser um result, ó. Certo? A gente tem essas duas funções aqui. Se eu
+
+151
+00:12:24,600 --> 00:12:31,639
+salvo, ele já dá o erro aqui e vai falar pra gente, ó, que a gente tá tendo eh
+
+152
+00:12:32,839 --> 00:12:37,360
+que a gente tá tendo aqui um conflito, né, entre esses dois
+
+153
+00:12:38,320 --> 00:12:40,279
+entre esses dois eh
+
+154
+00:12:40,560 --> 00:12:44,600
+itens, né? esses entre esses dois entre essas duas importações.
+
+155
+00:12:45,040 --> 00:12:49,079
+E aí, como que eu faço para eu renomear uma importação?
+
+156
+00:12:49,839 --> 00:12:51,639
+Eu venho na importação
+
+157
+00:12:52,560 --> 00:12:58,040
+e na frente da importação eu coloco a a palavra reservada s,
+
+158
+00:12:58,800 --> 00:13:04,120
+ó. E aí coloca o novo nome. É semelhante ao type isso daqui.
+
+159
+00:13:06,600 --> 00:13:10,839
+E agora aqui ele já consegue então separar
+
+160
+00:13:11,079 --> 00:13:15,880
+e já remove o conflito que que tinha dado. Certo?
+
+161
+00:13:17,120 --> 00:13:21,839
+Então bacana, né, pessoal? A gente viu então aqui como a gente cria os módulos. a
+
+162
+00:13:21,839 --> 00:13:27,760
+gente viu como a gente importa os módulos de forma que fica menos verboso para tá
+
+163
+00:13:27,760 --> 00:13:33,839
+utilizando dentro da do código ali da aplicação. A gente viu também como a gente eh
+
+164
+00:13:33,839 --> 00:13:40,920
+lida com módulos ou eh funções ou enuns importações que t o mesmo nome,
+
+165
+00:13:40,920 --> 00:13:45,600
+trazem o objeto do mesmo nome. E aí a gente renomeia ele através da palavra
+
+166
+00:13:45,600 --> 00:13:47,279
+reservada S.
+
+167
+00:13:47,560 --> 00:13:51,399
+E agora a gente vai ver também como a gente separa
+
+168
+00:13:51,600 --> 00:13:57,680
+esse arquivo aqui, porque, por exemplo, né, esse arquivo eh ele tá com muitas
+
+169
+00:13:57,680 --> 00:13:58,680
+responsabilidades.
+
+170
+00:13:59,000 --> 00:14:05,560
+A gente consegue levar boa parte desse código aqui para arquivos separados. E é isso
+
+171
+00:14:05,560 --> 00:14:12,040
+que os módulos fazem. Eles eh nos permitem organizar o nosso código de forma
+
+172
+00:14:13,079 --> 00:14:19,680
+eh isolada ali, né, mais organizada, certo? Então, beleza. Aqui, ó, dentro do nosso,
+
+173
+00:14:20,759 --> 00:14:26,079
+dentro aqui da nossa aplicação, né, a gente tem esse módulo chamado front of hose,
+
+174
+00:14:26,079 --> 00:14:31,639
+certo? Que seria ali a parte da frente ali do restaurante, beleza? E aí o que que
+
+175
+00:14:31,639 --> 00:14:35,320
+acontece? Eu consigo eh
+
+176
+00:14:35,880 --> 00:14:42,000
+isolar esse módulo aqui. Por exemplo, eu vou criar um novo arquivo, ele deve ser
+
+177
+00:14:42,000 --> 00:14:48,360
+idêntico ao nome do módulo. Por exemplo, esse aqui, ó, módulo chamado front of rose.
+
+178
+00:14:48,360 --> 00:14:49,920
+Eu quero tirar
+
+179
+00:14:50,360 --> 00:14:55,279
+essa definição do módulo aqui de dentro e levar para um arquivo separado. Como que
+
+180
+00:14:55,279 --> 00:15:01,600
+eu faço? Crio um arquivo idêntico com o nome idêntico ao nome do módulo.
+
+181
+00:15:09,639 --> 00:15:10,639
+Certo?
+
+182
+00:15:10,839 --> 00:15:13,480
+Coloco o conteúdo do módulo.
+
+183
+00:15:18,240 --> 00:15:19,240
+Certo?
+
+184
+00:15:20,800 --> 00:15:22,000
+E agora
+
+185
+00:15:23,880 --> 00:15:25,120
+a gente
+
+186
+00:15:25,560 --> 00:15:26,839
+vem aqui
+
+187
+00:15:27,399 --> 00:15:29,360
+e só faz dessa forma.
+
+188
+00:15:29,800 --> 00:15:35,160
+E a gente já importou o nosso módulo aqui para dentro da aplicação. Simples, né,
+
+189
+00:15:35,160 --> 00:15:36,160
+pessoal?
+
+190
+00:15:37,199 --> 00:15:40,240
+Aqui, ó. Então, eh,
+
+191
+00:15:42,399 --> 00:15:44,959
+por exemplo, aí agora aqui
+
+192
+00:15:45,480 --> 00:15:47,319
+eu consigo também
+
+193
+00:15:47,560 --> 00:15:48,560
+eh
+
+194
+00:15:49,240 --> 00:15:55,240
+isolar ainda mais. Por exemplo, caso eu queira isolar esse conteúdo que tem dentro
+
+195
+00:15:55,240 --> 00:15:57,079
+aqui do módulo hosting,
+
+196
+00:15:57,319 --> 00:16:02,800
+né, eu quero criar um novo arquivo, eu crio um novo arquivo com o nome do módulo, no
+
+197
+00:16:02,800 --> 00:16:04,120
+caso hosting,
+
+198
+00:16:08,440 --> 00:16:13,519
+e leva o conteúdo dele lá para dentro, então, do novo arquivo.
+
+199
+00:16:15,279 --> 00:16:17,319
+E aqui dentro eu só
+
+200
+00:16:17,759 --> 00:16:19,959
+faço essa importação aqui.
+
+201
+00:16:28,399 --> 00:16:35,079
+Só que aí, né, não deu certo. Por que que não deu certo? Porque esse módulo ele tá
+
+202
+00:16:35,079 --> 00:16:36,360
+na mesma
+
+203
+00:16:37,120 --> 00:16:39,279
+eh na mesma
+
+204
+00:16:39,680 --> 00:16:45,759
+hierarquia de arquivos daquela pasta. Ele precisa para para funcionar, a gente
+
+205
+00:16:45,759 --> 00:16:52,079
+precisa agora, se a gente quiser isolar o submódulo do módulo que a gente isolou, a
+
+206
+00:16:52,079 --> 00:16:54,360
+gente precisa criar uma nova pasta
+
+207
+00:16:55,600 --> 00:16:57,800
+com o nome do módulo P.
+
+208
+00:17:01,399 --> 00:17:08,480
+Dentro dessa pasta, a gente vai ter um arquivo chamado mod.rs, rs, que seria
+
+209
+00:17:08,480 --> 00:17:10,959
+o arquivo principal dele ali.
+
+210
+00:17:11,839 --> 00:17:15,319
+O hosting a gente joga ali para dentro também.
+
+211
+00:17:16,880 --> 00:17:19,520
+E aqui dentro do mod
+
+212
+00:17:21,000 --> 00:17:24,199
+a gente faz a publicação aqui do husting.
+
+213
+00:17:29,400 --> 00:17:30,400
+E
+
+214
+00:17:31,559 --> 00:17:33,760
+agora aqui dentro do
+
+215
+00:17:34,679 --> 00:17:39,360
+eu posso excluir esse item aqui, no caso. E agora aqui dentro
+
+216
+00:17:41,240 --> 00:17:42,480
+já tá
+
+217
+00:17:42,720 --> 00:17:46,240
+rodando. Eu já tô expondo o meu submódulo husting
+
+218
+00:17:46,760 --> 00:17:48,360
+que tem essa função.
+
+219
+00:17:49,160 --> 00:17:54,679
+O mod agora ele virou como arquivo principal, então ele faz referência ao nome da
+
+220
+00:17:54,679 --> 00:17:55,679
+pasta,
+
+221
+00:17:55,919 --> 00:18:02,120
+né? E aqui dentro do nosso arquivo a gente conseguiu também eh estar utilizando esse
+
+222
+00:18:02,120 --> 00:18:04,440
+módulo que a gente criou.
+
+223
+00:18:06,080 --> 00:18:09,400
+E é isso, pessoal. Essa foi uma exemplificação
+
+224
+00:18:09,640 --> 00:18:16,760
+de como que os módulos funcionam aqui dentro do Rust através aqui, né, da de
+
+225
+00:18:16,760 --> 00:18:22,440
+quando a gente cria um um sistema, quando a gente cria ali um uma aplicação
+
+226
+00:18:22,559 --> 00:18:29,600
+utilizando o menos menos lib, a flag lib, que ela permite então a gente criar os
+
+227
+00:18:29,600 --> 00:18:35,200
+crates, os pacotes, que são os módulos. E esses módulos eles permitem que nossa
+
+228
+00:18:35,200 --> 00:18:36,200
+aplicação
+
+229
+00:18:36,440 --> 00:18:40,880
+fica mais organizada, as responsabilidades mais isoladas
+
+230
+00:18:41,280 --> 00:18:48,600
+e também para dar mais eh manutenção também fica melhor. Então é isso, pessoal.
+
+231
+00:18:48,600 --> 00:18:54,720
+Quem gostou do vídeo, curte, compartilha. Obrigado pela audiência e vamos juntos.
+

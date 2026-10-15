@@ -1,0 +1,248 @@
+Fala D. Beleza?
+Hoje a gente vai entender aqui sobre o ownership no Rust.
+a gente tem, né, os modelos de gerenciamento de memória nas linguagens de
+programação.
+A gente tem o Garbage Collector,
+que é um coletor de lixo, que o sistema automaticamente gerencia a memória,
+liberando memória que não é mais necessária.
+Ele é fácil de usar, né? Porque não requer um gerenciamento manual da memória
+e pode causar pausas no programa para essa coleta de lixo, né? o que pode afetar o
+desempenho.
+Tem um gerenciamento de memória manual,
+onde o programador é responsável por alocar e liberar a memória. Tem, né, um maior
+controle sobre a memória, pode ser mais eficiente em termos de desempenho também,
+porém tem o maior risco de vazamento de memória e erros, como acessar a memória que
+já foi liberada, por exemplo.
+E tem o modelo
+é um sistema de gerenciamento de memória que ele garante que cada valor tenha apenas
+um proprietário
+e a memória é liberada automaticamente quando o proprietário sai do escopo.
+Isso evita, né, os vazamentos de memória, não requer o gab de collecto e é bastante
+eficiente em termos de desempenho.
+pode ser mais difícil de entender para iniciantes aqui, né, programadores
+iniciantes, porque requer que o programador pense sobre a propriedade dos valores,
+que a gente vai tá vendo isso aí aqui, então, né, a gente tem
+eh um exemplo
+de duas estruturas
+que são armazenadas e na memória.
+A gente tem a pilha, que é o stack,
+que ela é usada para armazenar os dados de tamanho fixo e conhecidos em tempos de
+compilação.
+E temos a heap, que é usada para armazenar dados em de tamanho variável, dinâmico ou
+desconhecido em tempo de compilação.
+O Rust ele utiliza esse modelo de ownership para gerenciar a memória que é alocada na
+RAP,
+garantindo que a memória seja liberada automaticamente quando não for mais
+necessária.
+Então aqui a a pilha ela armazena os valores eh na ordem que ele chega e remove
+na ordem inversa,
+né? Ou seja, o último valor adicionado é o primeiro a ser removido.
+Esse gerenciamento
+na pilha, na stack, ele é automático e é rápido também. Esses tipos que são tipos
+escalares, por exemplo, inteiro, float, caracter, boleanos,
+tuplas que contém esses tipos escalares também, são todos armazenados na pilha, n
+stack. E aí a gente não precisa eh aplicar, né, o as regras do ownership
+para esses dados que são armazenados na pilha, armazenados na stec, que são os dados
+escalares, né, tipo os dados primitivos, como inteiro, floid, caracter buleano e
+duplas desses mesmos dados. E tem a heap,
+que é um pouco mais lento, né, do que a pilha, porque ela envolve a locação dinâmica
+e o gerenciamento de memória, né, e aplicando ali o ownership.
+Eh,
+os tipos compostos, como os vetores, trings, eles são armazenados na heap. E a
+locação, né, de memória na heap, ela é feita através de ponteiros, que são as
+referência aos locais ali na heap.
+E o Rust utiliza então esse modelo de ownership de, né, que isso aqui significa
+posse, né, esse modelo de ownership para garantir, né, que a memória seja liberada
+quando não for mais necessária.
+a gente vai tá vendo aqui, ó, por exemplo,
+é, tem aqui, ó, o a quantidade de inscritos, né, o a idade aqui na média,
+na média do das avaliações,
+se o canal é monetizado ou não. Isso aqui, ó, são todos tipos,
+eh, escalares. Por exemplo, ó, aqui é um inteiro, aqui é um float, aqui é um
+boleano, que ele é um caractere.
+E aqui
+embaixo a gente pega e utiliza, né? Faz a imprensão aqui desses valores.
+E a gente não precisa aplicar nada de ownership neles, né?
+Já nessa variável aqui, ó, de name, a gente utiliza o o string,
+que é um tipo que ele precisa ser alocado na heap.
+E aí a gente vai ter que aplicar essas regras do ownership.
+Eh, aqui para essa para esses valores, a gente vai ver como que funciona.
+Por exemplo, aqui, ó,
+eu fui, né, atribuir esse valor aqui para essa variável name. E aqui embaixo eu fui
+e mostrei ela e no console ali, né, na tela.
+Só que aqui eu criei uma outra variável chamada noder name
+que recebe o a variável name que a gente criou anteriormente.
+Aí o que que acontece?
+Eh, a propriedade
+name, ela é movida
+agora aqui para pro anoder name, para essa variável aqui.
+E esse anoder name agora é o novo dono, né, da string ali e que tá locada na heap,
+né, é o novo dono da propriedade que antes era do name.
+Então, o name agora ele não é mais válido. Por exemplo, aqui, ó, nesse print, é
+aqui, vai ser válido, né? Vai mostrar na tela normal ali. Só que aqui, esse print
+aqui de baixo vai mostrar um erro, porque o name ele foi e invalidado
+na hora que a propriedade dele foi movida para essa outra variável aqui, another
+name.
+Vamos rodar o cargo room aqui. Cargo Ran, né?
+Ó, já deu um erro ali, ó. falou que a variável name, né, o valor name, ele foi
+movido
+e aqui depois a gente tenta acessar ele, só que o valor dele já foi movido.
+E aí então para esses valores que são locados na heap, como string, a gente vai ter
+que aplicar as regras ali do ownership
+pra gente tá conseguindo lidar com essas, né, atribuições dos valores entre as
+variáveis de gerenciamento de memória. Então, né, a gente viu que para os valores
+que são escalaros, né, ou primitivos, são os inteiros, float, buleano, caracter, o
+hust ele utiliza o copy trate, que ele permite que esses valores sejam copiados
+automaticamente.
+Eh, para valores que são alocados na heap, né, que são aqueles compostos como strings
+e outro, vetores e outros ali, o rush ele não permite que se faça a cópia desse
+valor automaticamente.
+Em vez disso, a propriedade do valor, ela é movida pra outra variável que
+é declara ela, né? Então, para copiar um valor que é alocado na heap, né, como
+string, vetores, essas outras coisas, a gente tem que utilizar esse método clone,
+que ele cria uma cópia do valor e aloca na memória,
+na heap ali para essa cópia, aloca uma nova memória.
+Por exemplo, aqui, ó, a gente tem essa string aqui,
+que ela é desse desse tipo, né, string e tem esse valor aqui, hellow hust, e ela
+precisa ser alocada na heap, né? E ela acontece então essas regras de ownership nela,
+ó, para eu tento copiar ela declarando essa variável aqui, né? Copia de string
+e declarando, né, que recebi ela.
+A propriedade
+dessa variável original string agora ela foi movida para essa variável que a gente
+declarou aqui, ó, copiar de string. E aí essa original string, ela agora ela passa a
+ser inválida porque a propriedade dela foi movida
+para essa outra variável que a gente declarou aqui embaixo. a gente faz um print
+aqui, né, da variável que foi copiada,
+no caso essa copiar de string, que ela tem o o valor da propriedade.
+E aqui, ó, é a gente pega, tenta fazer o print também daquela variável original
+string. Só que isso aqui vai acontecer um erro, porque o valor, a propriedade dela
+foi movida para essa outra variável que a gente declarou aqui, ó. Então, para isso,
+eh, a gente usa essa função clone. Por exemplo, aqui, ó, eu tenho essa variável
+chamada clone de string, por exemplo, que ela é uma um clone
+da essa variável eh que a gente declarou aqui em cima.
+E agora os dois são, essas duas aqui são válidas que agora a gente usou essa função
+clone aqui para tá clonando a a variável ali. E aí esse esse clone da variável ele
+faz uma cópia profunda, né, da variável ali.
+E aí ele não move a propriedade dela, ele faz uma cópia mesmo, sabe? As funções elas
+seguem as regras de honership também. Então, quando você passa uma variável para uma
+função, a propriedade dessa variável, ela é movida lá pra função.
+Por exemplo, aqui, ó, a gente tem uma variável name e a gente passa ela para essa
+função show channel name, né, que ela só faz um print aqui do nome do canal.
+Aí quando a gente passa ela para cá, aqui ela é válida. aqui vai mostrar o print
+certinho, só que esse outro print aqui, eh, que a gente tenta passar a variável name
+porque essa a propriedade da variável name, ela foi movida aqui para dentro da
+função,
+igual a gente tá vendo, ó.
+Então, se eu comentar ali, já viu que o roxan análise já parou de dar o erro e aqui
+no cargo, ele vai executar normalmente também.
+Então, na nas funções a gente segue eh essas regras de ownership para as funções
+também. Então, a gente pode eh tá usando as referência para acessar os dados sem
+transferir a propriedade delas.
+Isso é chamado de borra win, que no caso é tipo um empréstimo, né? As referências
+elas podem ser tanto imutáveis
+quanto mutáveis. E a gente vai ver isso aí. Elas eh são definidas com esse símbolo
+de ecomercial
+e uma referência mutável, ela é definida com o ecomercial e a palavra-chave mt
+frente aqui, ó.
+As regras da de referência, a gente vai ver como que funciona.
+A gente pode ter só uma eh referência mutável
+ou várias referências imutáveis, mas a gente não pode ter os dois ao mesmo tempo. A
+gente não pode ter nenhuma referência solta pros dados que já saíram ali do escopo,
+que a gente vai ver isso aí agora.
+Por exemplo, aqui, ó, a gente tem e duas variáveis, né? Uma imutável
+e outra mutável.
+A gente passa aqui, ó, paraa função
+que mostra o nome do canal,
+a referência
+da variável aqui name.
+Dessa forma
+aqui, ó,
+essa função ela vai receber, né, como parâmetro uma referência
+de um tipo string.
+referência aqui de um tipo string e vai est exibindo o nome aqui do canal.
+Logo após a gente ter passado então essa variável aqui para essa função através da
+referência
+aqui embaixo a gente consegue utilizar a variável novamente
+porque a propriedade dela não foi movida.
+A função, ela só recebeu uma referência dessa variável e não a propriedade da string
+em si. Aqui também a gente pode ter referência
+mutável.
+E aí a gente passa o e comercial, né, e o a palavra mut na frente.
+Dessa forma a gente tem uma referência mutável.
+Por exemplo, aqui a gente vai alterar o nome do canal, né? E aí para para quando a
+gente passa uma referência mutável,
+eh, a variável ela também deve ser mutável aqui em cima. a gente também tem que
+definir essa palavra-chave aqui pra variável aqui em cima, que é mutável.
+Beleza?
+Aqui, por exemplo, ó, isso aqui causaria um erro, né? Porque a gente tá tentando
+fazer uma referência eh
+imutável
+e uma referência mutável
+com a mesma variável ali, né? Isso aqui vai causar um erro ali pra frente. E aqui,
+ó, a gente pode ter várias referências imutáveis.
+Tá vendo?
+A gente pode ter várias referências imutáveis
+ou uma var uma referência mutável,
+mas não os dois ao mesmo tempo. Quando a gente pega e tenta passar
+uma referência solta, por exemplo, essa função aqui, ó, lose reference, ela ela
+retorna uma referência de string, né? E aqui dentro a gente cria a variável e
+retorna a referência dessa variável. Só que isso vai causar um erro, porque a
+referência name aqui, ó, ela tá solta, ela vai sair desse escopo eh após eh fechar
+aqui nessas chaves.
+E aí o compilador ele não permite essas referências soltas, né, para os dados aqui
+que saem do escopo.
+Então, pra gente tá utilizando aqui e essas funções dessa forma aqui, ó, só
+retornando a string, a gente pode pegar e não precisa passar essa referência aqui do
+e comercial, né?
+tanto nesse retorno aqui
+da tipagem, quanto no retorno aqui do da variável em si. Então, a gente remove essas
+referências aqui
+e aí, né, fica igual essa função aqui de baixo
+que é esse get channel.
+E aqui, ó, e voltou a compilar normalmente, né?
+Agora a gente tem eh
+uma função ali, né, que retorna a string ali em si e não precisa retornar uma
+referência. A gente tem o os slices, né? Os slices eles são referência ao partes
+de coleção ali de dados, né? Pode ser strings ou arrays ou outro tipo de coleção.
+Ass elas são definido com o símbolo ali do ecomercial, né, de referência e permite
+acessar uma parte da coleção sem transferir a propriedade,
+né? Eles são imutáveis por padrão, igual as variáveis mesmo. E eles não precisam ter
+é as regras de ownership
+porque eles são referências.
+Por exemplo, aqui a gente tem essa string, é chamada o mundo, né? E aqui, ó, nessa
+string de hello,
+a gente pegou
+do do índex zero
+até
+o index 3 - 1, né? Então é o final -1, porque aqui no caso ele não vai até o três,
+ele vai até o dois, né? Então ele vai 0 1 e 2. E aí pegou essa parte aqui do olá,
+então ele consegue fazer, né, as partições ali de
+alguma coleção, né? Aí por exemplo aqui esse Word, né? A gente pegou então do index
+4 até o nove, até o oito aqui, no caso, né? E pegou essa essa parte do mundo.
+E aqui, ó, para a gente pode pegar e omitir o o índex inicial ou final. Por exemplo,
+aqui, ó, seria do zero ao três, igual aqui em cima. Só que aí a gente pode omitir o
+zero. Aqui embaixo seria do 4 ao 9, né? Só que aí a gente pode também omitir o
+final. E se a gente quiser pegar a string inteira, a gente pode omitir os dois e
+índex ali e só passar esses dois pontos aqui do range, né?
+Aqui a gente tem essa função, né, eh, que pega a primeira palavra,
+ele vai pegar e vai pegar essa string, né, vai transformar ela em bit em bytes e vai
+fazer um for aqui até encontrar o primeiro espaço vazio. Aí, nesse caso aqui, ele
+vai retornar da do index zero até o espaço primeiro espaço ali que foi encontrado,
+né? Que é esse índex aqui da intereração, ó, por exemplo.
+E aqui também a gente tem essa outra função, que no caso ele pega a segunda palavra,
+né? Ele vai pegar do index até mais um e até o final ali.
+A gente também eh consegue ver aqui essas string literais que a gente pega e passa
+diretamente aqui, ó,
+elas são slides também. Então a gente não precisa eh tá fazendo a questão das regras
+de ownership com ela.
+Vamos estar mostrando elas aqui também.
+E também a gente pode eh fazer os slice com esses outros arrays aqui, por exemplo,
+de número, né? E aqui a gente vai pegar, por exemplo, do index um até ao
+o dois ali, né? E aí pega o elemento dois e três, por exemplo,
+né? e que tá mostrando os slides que foram feitos ali.
+Então é isso, Dev. Eh, então a gente viu aqui sobre os conceitos, né, do ownership,
+que ele funciona pra gente estar aplicando a parte da locação e liberação de memória
+na heap para esses dados que são tipos compostos, né?
+É, slices também.
+E é isso daí.
+Quem gostou, deixa um like, se inscreve no canal e muito obrigado.

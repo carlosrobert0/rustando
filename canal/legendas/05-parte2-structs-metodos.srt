@@ -1,0 +1,864 @@
+1
+00:00:01,240 --> 00:00:07,240
+Fala dev, beleza? Fala, rustáceo. Beleza? Então, continuando aqui e a nossa aula
+
+2
+00:00:07,240 --> 00:00:11,639
+sobre struct. Agora vamos falar sobre outros dois tipos de
+
+3
+00:00:11,639 --> 00:00:12,639
+struct.
+
+4
+00:00:13,120 --> 00:00:20,279
+É que é o tipo de struct em formato de tupla e o tipo de struct é sem nenhum formato
+
+5
+00:00:20,279 --> 00:00:24,760
+e sem nenhum dado também. Vou estar mostrando aqui para vocês como que funciona.
+
+6
+00:00:26,880 --> 00:00:34,440
+Eh, essa struct chama tuple struct porque tem o formato de uma tupla.
+
+7
+00:00:35,559 --> 00:00:36,559
+Struct
+
+8
+00:00:37,079 --> 00:00:42,200
+ela, né? a gente cria ela com com a palavra reservada struct
+
+9
+00:00:49,440 --> 00:00:56,399
+aquele ali os nossos eh formatos daquele dado em formato de tupla.
+
+10
+00:00:57,960 --> 00:01:05,080
+Por exemplo, essa color aqui vai ter três é espaços ali, né? vamos dizer assim,
+
+11
+00:01:05,080 --> 00:01:09,400
+que que vai que vai ser do tipo inteiro, beleza?
+
+12
+00:01:37,119 --> 00:01:40,360
+Beleza? Agora eu vou tá acessando aqui,
+
+13
+00:01:40,840 --> 00:01:45,000
+eh, mostrando esses valores que a gente criou aqui
+
+14
+00:01:56,640 --> 00:02:00,600
+e vou est rodando aqui para você ver que vai acontecer um erro.
+
+15
+00:02:14,480 --> 00:02:19,400
+Ó, ele aconteceu um erro ali e falou que a função que aquela struct, né, ela não
+
+16
+00:02:19,400 --> 00:02:22,560
+implementa essa trait chamada display.
+
+17
+00:02:22,920 --> 00:02:29,280
+O que que acontece? Eh, aqui a gente tá most aqui, por exemplo, a struct,
+
+18
+00:02:30,319 --> 00:02:35,480
+essa Struct aqui de usuário, a gente tá acessando só o campo de active.
+
+19
+00:02:36,360 --> 00:02:40,680
+Aqui a gente tá acessando eh uma instructia
+
+20
+00:02:41,360 --> 00:02:46,560
+todos esses três valores aqui. Por exemplo, eu poderia acessar em formato de tupla
+
+21
+00:02:46,560 --> 00:02:47,560
+também
+
+22
+00:02:48,239 --> 00:02:51,159
+esse valor aqui que não daria um erro.
+
+23
+00:02:56,360 --> 00:02:58,599
+Ele só é
+
+24
+00:03:06,440 --> 00:03:09,400
+tô viajando. Não é o original, é point.
+
+25
+00:03:10,280 --> 00:03:11,280
+Beleza.
+
+26
+00:03:22,280 --> 00:03:24,720
+Ah, tá. Aqui também é um só.
+
+27
+00:03:29,799 --> 00:03:36,239
+Beleza. Ó, mostrou aqui. Por quê? Porque agora eu tô tô acessando a propriedade
+
+28
+00:03:36,720 --> 00:03:43,840
+e aqui eu acesso através de igual a gente eh igual como se
+
+29
+00:03:43,840 --> 00:03:48,360
+a gente tivesse acessando uma tupla mesmo, entendeu? Acessando aqui pelo índex da
+
+30
+00:03:48,360 --> 00:03:49,360
+tupla.
+
+31
+00:03:50,519 --> 00:03:56,400
+Eh, caso a gente queira exibir o a instruct completa, por exemplo, vou fazer aqui
+
+32
+00:03:56,400 --> 00:03:58,360
+para essa de usuário.
+
+33
+00:03:58,640 --> 00:04:04,662
+Quero exibir agora o usuário completo, todos os dados dele.
+
+34
+00:04:05,360 --> 00:04:08,159
+Eh, eu preciso implementar
+
+35
+00:04:08,560 --> 00:04:14,680
+uma trait. Uma trait seria uma função que é permite
+
+36
+00:04:15,159 --> 00:04:21,720
+a gente fazer alguma coisa, entendeu? a gente eh beleza. Essa trait ela
+
+37
+00:04:22,400 --> 00:04:27,840
+ela mostra aqui no no próprio no próprio log aqui, no próprio erro, caso a gente
+
+38
+00:04:27,840 --> 00:04:28,840
+rode
+
+39
+00:04:29,080 --> 00:04:34,880
+ou se você tiver com a extensão do Rust análise instalado aqui, ele também mostra.
+
+40
+00:04:34,880 --> 00:04:38,199
+Só que eu desinstalei só pr pra gente ir vendo aqui.
+
+41
+00:04:38,440 --> 00:04:43,800
+Então aqui, ó, ele mostra, né, e fala que essa struct nossa não implementa essa trait
+
+42
+00:04:43,800 --> 00:04:45,280
+chamada display.
+
+43
+00:04:46,639 --> 00:04:51,600
+Eh, e aí ele fala aqui como que a gente faz para tá utilizando.
+
+44
+00:04:53,840 --> 00:04:59,600
+Ao invés da gente passar só as chaves, a gente vai tá passando dois pontos
+
+45
+00:04:59,600 --> 00:05:06,199
+interrogação dentro das chaves onde referencia o o valor aqui,
+
+46
+00:05:07,479 --> 00:05:08,479
+certo?
+
+47
+00:05:09,160 --> 00:05:13,560
+E aí a gente vai rodar novamente. Ele vai dar mais um erro, porque o rush ele, o
+
+48
+00:05:13,560 --> 00:05:16,280
+compilador ele mostra pra gente os erros, né?
+
+49
+00:05:16,720 --> 00:05:22,639
+E aqui ele mostrou, né, que a gente tá utilizando agora essa forma de acessar o
+
+50
+00:05:22,639 --> 00:05:25,199
+objeto que mostra todos os dados.
+
+51
+00:05:26,039 --> 00:05:31,120
+Porém, a gente ainda não implementou a mais uma trait que
+
+52
+00:05:31,433 --> 00:05:33,080
+que chama debug.
+
+53
+00:05:33,919 --> 00:05:39,400
+E aqui embaixo, ó, ele mostra eh o que que a gente precisa fazer. Então, a gente
+
+54
+00:05:39,400 --> 00:05:42,080
+pega essa função aqui, ó,
+
+55
+00:05:42,639 --> 00:05:44,000
+eh, hashagchaves
+
+56
+00:05:44,639 --> 00:05:45,639
+derivênteses
+
+57
+00:05:46,479 --> 00:05:49,319
+debug e adiciona manualmente
+
+58
+00:05:49,919 --> 00:05:54,639
+em cima da struct, onde a gente quer exibir todos os dados dela.
+
+59
+00:05:58,479 --> 00:05:59,479
+Beleza?
+
+60
+00:05:59,919 --> 00:06:06,360
+Aqui dentro, só de curiosidade, aqui dentro eu consigo passar outras eh
+
+61
+00:06:07,319 --> 00:06:12,599
+outras traits também, mas a gente vai estar utilizando só essa debug.
+
+62
+00:06:15,360 --> 00:06:17,240
+Eu posso vir aqui, ó.
+
+63
+00:06:17,759 --> 00:06:24,720
+E agora ele mostrou todos os campos daquela struct ali, certo? Beleza?
+
+64
+00:06:25,759 --> 00:06:33,280
+Eh, e a gente também consegue criar structs que não tem nenhum
+
+65
+00:06:33,659 --> 00:06:37,520
+nenhum formato e também nenhum campo.
+
+66
+00:06:38,720 --> 00:06:40,880
+Essa struct aqui, por exemplo,
+
+67
+00:06:41,400 --> 00:06:42,400
+eh,
+
+68
+00:06:44,479 --> 00:06:49,680
+certo? Por exemplo, assim, uma um nome de uma função de de algo, sabe? E ela não
+
+69
+00:06:49,680 --> 00:06:51,360
+recebe nada, sabe?
+
+70
+00:06:52,120 --> 00:06:55,440
+a gente consegue estar utilizando também. Beleza?
+
+71
+00:06:56,039 --> 00:06:58,759
+Eh, agora então eu vou est mostrando
+
+72
+00:06:59,520 --> 00:07:03,479
+eh um exemplo de como que a gente pode estar utilizando structs
+
+73
+00:07:03,720 --> 00:07:07,520
+em um exemplo real aqui. Então, bora lá,
+
+74
+00:07:10,120 --> 00:07:11,120
+ó.
+
+75
+00:07:11,649 --> 00:07:13,879
+a gente vai ter um
+
+76
+00:07:14,240 --> 00:07:17,080
+um programa que calcula o
+
+77
+00:07:17,319 --> 00:07:18,319
+pixel
+
+78
+00:07:19,080 --> 00:07:23,840
+de de um retângulo ali, calcula um retângulo em em pixels quadrados,
+
+79
+00:07:23,840 --> 00:07:24,840
+beleza?
+
+80
+00:07:25,720 --> 00:07:28,080
+Então, a gente vai ter aqui uma função
+
+81
+00:07:30,400 --> 00:07:38,120
+e a gente vai ter então e dois e valores que é o ITF e o e o
+
+82
+00:07:41,280 --> 00:07:44,479
+e o que é a largura e a altura, né?
+
+83
+00:07:47,080 --> 00:07:48,080
+Beleza?
+
+84
+00:07:48,639 --> 00:07:55,400
+E aí aqui eu posso tá fazendo um print ln e posso falar aqui, ó, que a área
+
+85
+00:07:55,759 --> 00:07:57,039
+do retângulo
+
+86
+00:07:57,879 --> 00:07:58,879
+é
+
+87
+00:08:00,199 --> 00:08:02,240
+em pixels,
+
+88
+00:08:03,120 --> 00:08:05,199
+quadrados, vamos dizer assim.
+
+89
+00:08:07,520 --> 00:08:10,120
+E aí a gente vai e
+
+90
+00:08:10,639 --> 00:08:14,159
+fazer o quê? a gente vai multiplicar o if
+
+91
+00:08:15,120 --> 00:08:17,280
+vezes o,
+
+92
+00:08:25,000 --> 00:08:30,520
+ó. Aí ele pegou e mostrou aqui, então, né, que essa esse valor aqui pra gente,
+
+93
+00:08:30,520 --> 00:08:33,599
+certo? ele fez a multiplicação do idificate.
+
+94
+00:08:34,039 --> 00:08:37,560
+A gente quer saber a área e assim que a gente faz o cálculo da
+
+95
+00:08:37,560 --> 00:08:41,800
+área de um retângulo para para saber ali, né? Separando essas duas variáveis de
+
+96
+00:08:41,800 --> 00:08:42,800
+widate
+
+97
+00:08:43,039 --> 00:08:45,320
+e a gente sabe essa função.
+
+98
+00:08:45,600 --> 00:08:48,040
+É, aí a gente pode pegar
+
+99
+00:08:49,440 --> 00:08:54,279
+é aqui, espera feliz aí os buzinha. Mas beleza, aí a gente pode pegar e pode separar
+
+100
+00:08:54,279 --> 00:08:58,959
+isso daqui que a gente fez em uma função, por exemplo, vamos chamar ela de área.
+
+101
+00:08:58,959 --> 00:09:02,680
+Área que recebe dois parâmetros, né?
+
+102
+00:09:10,680 --> 00:09:15,160
+Esse retorno aqui é o mesmo e vai fazer esse cálculo ali pra gente entrar.
+
+103
+00:09:17,560 --> 00:09:19,959
+E agora aqui a gente pode chamar
+
+104
+00:09:20,399 --> 00:09:24,519
+o área passando os dois valores que a gente criou ali em cima.
+
+105
+00:09:31,880 --> 00:09:37,720
+Beleza? Rodou, né? Tranquilo. A gente também consegue fazer aqui através das tuplas.
+
+106
+00:09:37,720 --> 00:09:38,720
+Então,
+
+107
+00:09:39,360 --> 00:09:45,000
+por exemplo, agora, eh, ao invés de eu passar dois parâmetros separados, vou passar
+
+108
+00:09:45,000 --> 00:09:46,320
+uma tupla,
+
+109
+00:09:48,320 --> 00:09:51,040
+vou chamar essa tupla de dimensions.
+
+110
+00:09:53,680 --> 00:09:54,839
+E aí
+
+111
+00:09:55,959 --> 00:10:01,200
+eu vou passar os tipos dela, que o primeiro tipo aqui, né, são esses dois tipos
+
+112
+00:10:01,200 --> 00:10:08,279
+aqui, que que aqui dentro representa o e aqui o, certo? E aí vou fazer a mesma
+
+113
+00:10:08,279 --> 00:10:12,880
+coisa, só que aqui a tupla eu acesso pelo índex, né?
+
+114
+00:10:19,480 --> 00:10:20,480
+Certo?
+
+115
+00:10:26,200 --> 00:10:29,640
+É agora aqui, né? Eu preciso tá passando
+
+116
+00:10:30,160 --> 00:10:31,560
+uma dupla
+
+117
+00:10:32,200 --> 00:10:33,200
+aqui
+
+118
+00:10:37,560 --> 00:10:42,760
+com esses dois valores. E aqui eu só, né, eu passo agora dupla assim.
+
+119
+00:10:45,440 --> 00:10:51,120
+Certo? Retornou a mesma coisa, rodando normal. Agora a gente vai refatorar isso
+
+120
+00:10:51,120 --> 00:10:53,360
+daqui utilizando a Structs.
+
+121
+00:10:56,959 --> 00:11:02,880
+Vou criar um instruct aqui de chamada retângulo, porque vai ser esses essas
+
+122
+00:11:02,880 --> 00:11:06,760
+duas informações que a gente vai ter aqui, que a gente tá trabalhando para saber do
+
+123
+00:11:06,760 --> 00:11:08,959
+retângulo, certo? Então, structangle,
+
+124
+00:11:12,680 --> 00:11:16,240
+ó, sempre a primeira letra da Struct em maiúsculo.
+
+125
+00:11:19,800 --> 00:11:22,880
+E aqui nes, então o Wi
+
+126
+00:11:23,200 --> 00:11:24,600
+e o edit.
+
+127
+00:11:28,079 --> 00:11:33,720
+Agora aqui embaixo a gente vai est instanciando então a nossa e struct.
+
+128
+00:11:39,959 --> 00:11:46,639
+Certo? Agora aqui na nossa função diária, a gente vai tá então eh recebendo agora a
+
+129
+00:11:46,639 --> 00:11:47,959
+nossa struct
+
+130
+00:11:49,880 --> 00:11:52,480
+e a gente passa o e comercial,
+
+131
+00:11:52,839 --> 00:11:54,240
+que é a referência
+
+132
+00:11:54,519 --> 00:11:57,160
+e o nome da nossa struct.
+
+133
+00:11:57,760 --> 00:12:03,120
+E agora a gente consegue acessar aqui através dos campos da nossa.
+
+134
+00:12:12,680 --> 00:12:17,079
+Agora aqui, ó, onde a gente tá passando, né, a gente tem que passar também a
+
+135
+00:12:17,079 --> 00:12:18,079
+referência,
+
+136
+00:12:19,240 --> 00:12:21,120
+igual a gente fez aqui.
+
+137
+00:12:23,279 --> 00:12:25,760
+E aqui também, ó, o ponto e vírgula.
+
+138
+00:12:29,279 --> 00:12:35,223
+E ó, e aqui tornou o mesmo resultado. Então aqui, ó, a gente veio, né, eh,
+
+139
+00:12:36,920 --> 00:12:40,880
+como que a gente utiliza a funcionalidade aqui, então, de
+
+140
+00:12:41,199 --> 00:12:48,160
+do struct, né, por exemplo, a utilização de uma struct aqui, eh, em uma função
+
+141
+00:12:48,519 --> 00:12:50,279
+e como que a gente
+
+142
+00:12:52,120 --> 00:12:57,480
+como que a gente define então, né, as outras struct também, por exemplo, a do tipo de
+
+143
+00:12:57,480 --> 00:13:00,120
+dupla e a outra sem
+
+144
+00:13:01,000 --> 00:13:03,839
+nenhum campo. que é Unit Struct,
+
+145
+00:13:04,160 --> 00:13:06,920
+só o nome mesmo da estrutura ali.
+
+146
+00:13:07,839 --> 00:13:14,279
+Eh, a gente viu também a utilização do trait, do trait pra gente do trait chamado
+
+147
+00:13:14,279 --> 00:13:20,600
+debug pra gente eh mostrar ali todos os campos, né, de uma de uma struct.
+
+148
+00:13:21,519 --> 00:13:28,040
+E agora a gente viu então a utilização de um instruct em uma função aqui pra gente
+
+149
+00:13:28,040 --> 00:13:34,680
+tá tá vendo agora a gente vai tá vendo o uma coisa bastante importante ainda dentro
+
+150
+00:13:34,680 --> 00:13:41,379
+de struct que são os métodes, que os métodes nada mais são do que métodos que são
+
+151
+00:13:41,379 --> 00:13:44,240
+funções que a gente consegue
+
+152
+00:13:44,440 --> 00:13:45,920
+e criar
+
+153
+00:13:46,160 --> 00:13:47,480
+paraas nossas
+
+154
+00:13:47,959 --> 00:13:48,959
+instrucs,
+
+155
+00:13:49,480 --> 00:13:50,480
+certo?
+
+156
+00:13:51,480 --> 00:13:56,360
+Então vamos implementar aqui pra gente ver como que funciona. Por exemplo, a gente
+
+157
+00:13:56,360 --> 00:13:59,320
+tem essa função aqui chamada área, certo?
+
+158
+00:13:59,800 --> 00:14:04,160
+Eu consigo fazer isso através de de um método.
+
+159
+00:14:04,519 --> 00:14:09,079
+Eu consigo então criar um método para esse struct aqui.
+
+160
+00:14:09,560 --> 00:14:11,279
+E a gente faz isso
+
+161
+00:14:11,560 --> 00:14:12,560
+implementando
+
+162
+00:14:13,959 --> 00:14:14,959
+eh
+
+163
+00:14:15,759 --> 00:14:19,839
+o método para struct. Então, a gente escreve aqui o bloco implementação
+
+164
+00:14:22,480 --> 00:14:27,120
+e o nome da struct seguido aqui de chaves. E aqui dentro
+
+165
+00:14:27,360 --> 00:14:32,759
+a gente eh vai criar então funções pra nossa struct.
+
+166
+00:14:33,560 --> 00:14:39,240
+aqui seria, né, os comportamentos da da struct, né, e a struct em si seria a questão
+
+167
+00:14:39,240 --> 00:14:44,800
+do do objeto em si, né, vamos dizer assim, das propriedades dele. E aqui então a
+
+168
+00:14:44,800 --> 00:14:49,639
+gente consegue criar e funções. Por exemplo, vou criar aqui uma função diária.
+
+169
+00:14:50,120 --> 00:14:57,000
+E essa sintaxe de método é muito interessante porque o primeiro parâmetro é
+
+170
+00:14:57,000 --> 00:14:58,000
+sempre
+
+171
+00:14:58,680 --> 00:15:04,800
+os parâmetros self. E self aqui é uma palavra reservada do rush que representa a
+
+172
+00:15:04,800 --> 00:15:06,199
+própria struct,
+
+173
+00:15:06,680 --> 00:15:12,759
+né? Então aqui ele vai receber o self e vai est retornando o nosso i3. essa função
+
+174
+00:15:12,759 --> 00:15:17,639
+aqui que a gente tá fazendo. E aí a gente abre chaves, né, para fazer a função e a
+
+175
+00:15:17,639 --> 00:15:21,680
+gente acessa propriedades através do self ponto.
+
+176
+00:15:31,079 --> 00:15:36,040
+Isso. Agora a gente já acessou e aqui a gente consegue então
+
+177
+00:15:36,600 --> 00:15:43,240
+fazer isso, acessar as nossas funções, o nosso métodos através do ponto seguido da
+
+178
+00:15:43,240 --> 00:15:44,240
+função.
+
+179
+00:15:46,040 --> 00:15:49,120
+Aqui em parênteses, claro, para executar a função.
+
+180
+00:15:50,600 --> 00:15:52,360
+Vamos rodar aqui, ó.
+
+181
+00:15:52,800 --> 00:15:55,880
+E aí a gente vê que tá rodando da mesma forma.
+
+182
+00:15:56,440 --> 00:16:02,880
+Eh, tem mais uma coisa interessante também que a gente consegue fazer aqui dentro,
+
+183
+00:16:02,880 --> 00:16:06,440
+que são o quê? Criar funções associadas,
+
+184
+00:16:07,040 --> 00:16:11,639
+certo? Por exemplo, eu posso criar uma função aqui, ó,
+
+185
+00:16:12,079 --> 00:16:17,360
+que agora vai ser uma função mesmo que tá associada a esse método. Por exemplo,
+
+186
+00:16:19,440 --> 00:16:21,120
+FN é
+
+187
+00:16:21,920 --> 00:16:23,240
+low word
+
+188
+00:16:24,440 --> 00:16:28,759
+uma função aleatória. Aqui vai retornar então string.
+
+189
+00:16:29,560 --> 00:16:30,680
+E aqui
+
+190
+00:16:31,360 --> 00:16:33,639
+vou só colocar o prente ali.
+
+191
+00:16:42,959 --> 00:16:49,399
+Beleza? E aqui dentro eu consigo e tá acessando também essa função
+
+192
+00:16:50,560 --> 00:16:52,920
+que chama função associada.
+
+193
+00:16:59,839 --> 00:17:03,000
+eu consigo tá chamando também essa função associada.
+
+194
+00:17:03,240 --> 00:17:06,480
+Aí essa função associada ela é diferente
+
+195
+00:17:06,839 --> 00:17:13,559
+do método, porque o método ele sempre precisa receber como primeiro parâmetro aqui o
+
+196
+00:17:13,799 --> 00:17:16,400
+referência self, certo?
+
+197
+00:17:17,720 --> 00:17:25,640
+Já a função associada, ela não precisa e receber esse esse parâmetro aqui de self.
+
+198
+00:17:25,919 --> 00:17:31,160
+e da forma também que a gente acessa, que tem uma diferença aqui. Pra gente acessar
+
+199
+00:17:31,160 --> 00:17:36,440
+o método, a gente acessa com ponto. Já na função associada,
+
+200
+00:17:38,320 --> 00:17:40,919
+a gente acessa através
+
+201
+00:17:41,400 --> 00:17:44,200
+e da gente passando o nome da struct,
+
+202
+00:17:44,400 --> 00:17:48,840
+dois pontos, dois pontos e aí o nome da função.
+
+203
+00:17:52,679 --> 00:17:54,280
+Vamos executar aqui.
+
+204
+00:17:56,799 --> 00:17:58,240
+É assim, galera.
+
+205
+00:17:58,679 --> 00:18:00,400
+Toda hora da bug.
+
+206
+00:18:17,000 --> 00:18:18,559
+Então aqui, ó,
+
+207
+00:18:19,039 --> 00:18:24,240
+e trouxe, né, o retorno do Hello World aqui nessa primeira execução.
+
+208
+00:18:50,760 --> 00:18:54,559
+é ele executa e depois passa aqui também a
+
+209
+00:18:54,840 --> 00:18:57,120
+a referência da função, né?
+
+210
+00:19:00,360 --> 00:19:04,080
+Mas beleza. Então, esses foram ainda eh
+
+211
+00:19:07,559 --> 00:19:12,000
+as utilizações que a gente tem aqui com Struct, alguns exemplos,
+
+212
+00:19:12,200 --> 00:19:13,200
+eh,
+
+213
+00:19:13,440 --> 00:19:18,480
+a o método também, né? a sintaxe de método que a gente consegue criar funções
+
+214
+00:19:18,720 --> 00:19:25,559
+que referenciam a si próprio ali dentro da struct, né, implementando elas, a gente
+
+215
+00:19:25,559 --> 00:19:28,919
+também conseguiu então criar funções associadas ali.
+
+216
+00:19:29,320 --> 00:19:35,280
+E é isso aí, bora pro próximo vídeo e e até mais. Valeu,
+

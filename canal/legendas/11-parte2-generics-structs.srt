@@ -1,0 +1,688 @@
+1
+00:00:00,960 --> 00:00:06,359
+Fala galera, beleza? Então, continuando aqui o nosso vídeo sobre generics
+
+2
+00:00:06,839 --> 00:00:12,160
+e Lifetimes, agora a gente vai est continuando aí e falando sobre ainda sobre
+
+3
+00:00:12,160 --> 00:00:16,639
+generics. E agora nessa parte do vídeo a gente vai falar sobre genéricas
+
+4
+00:00:16,920 --> 00:00:18,240
+nas structs.
+
+5
+00:00:18,520 --> 00:00:22,160
+Então aqui, pessoal, vou est pegando um exemplo aqui para mostrar para vocês.
+
+6
+00:00:22,480 --> 00:00:28,599
+A gente tem então aqui, né, essa struct chamada point. E essa struct,
+
+7
+00:00:28,960 --> 00:00:35,800
+ela tem aqui, né, o os seus tipos, né, são os tipos genéricos, ó.
+
+8
+00:00:36,079 --> 00:00:43,200
+E aqui ele acontece esse erro e a gente vai entender o porquê desse erro. E e aqui
+
+9
+00:00:43,200 --> 00:00:48,719
+mesmo, ó, igual eu falei, com a nossa extensão do rust-analyzer, que é essa daqui, ó,
+
+10
+00:00:48,719 --> 00:00:54,239
+e em tempo de código mesmo, a gente consegue já verificar o erro. E aqui ele fala
+
+11
+00:00:54,239 --> 00:01:01,399
+que espera um inteiro, mas tá chegando um um um float, um número decimal,
+
+12
+00:01:01,399 --> 00:01:02,399
+certo?
+
+13
+00:01:03,280 --> 00:01:08,880
+E aí a gente tem esse erro. E agora a gente vai ver como que a gente consegue lidar
+
+14
+00:01:08,880 --> 00:01:10,360
+com esse erro.
+
+15
+00:01:10,680 --> 00:01:15,640
+Por exemplo, aqui, ó, a gente utilizou eh um tipo genérico
+
+16
+00:01:16,960 --> 00:01:23,079
+para para essa struct chamada point. Porém, a gente vê que a gente só tem um tipo
+
+17
+00:01:23,079 --> 00:01:28,439
+genérico. E aqui, eh, esse tipo genérico, ele deve corresponder
+
+18
+00:01:28,799 --> 00:01:33,000
+ao tipo que você, eh, coloca na sua struct.
+
+19
+00:01:33,520 --> 00:01:40,640
+Independente se for um um texto ou um número, eh os dois valores
+
+20
+00:01:40,640 --> 00:01:47,680
+dessa estrutura, no caso o X e o Y, eles devem receber o mesmo valor, porque aqui a
+
+21
+00:01:47,680 --> 00:01:53,439
+gente tá passando só um parâmetro genérico, certo? Que nesse caso é o T. Se eu
+
+22
+00:01:53,439 --> 00:02:00,520
+passasse aqui, ó, eh, um valor em texto, essa string aqui, no caso, e
+
+23
+00:02:00,520 --> 00:02:02,719
+passasse o mesmo valor,
+
+24
+00:02:03,240 --> 00:02:09,640
+que é o mesmo tipo, tanto pro valor X quanto pro valor Y, a gente vê que não
+
+25
+00:02:09,640 --> 00:02:12,319
+acontece erro, certo?
+
+26
+00:02:12,959 --> 00:02:18,080
+Porque é o mesmo valor, é o mesmo tipo genérico que a gente passou.
+
+27
+00:02:18,440 --> 00:02:21,440
+Se a gente quiser poder variar
+
+28
+00:02:21,879 --> 00:02:27,120
+entre os tipos aqui da struct, por exemplo, nesse caso aqui é um decimal.
+
+29
+00:02:27,360 --> 00:02:34,560
+Se a gente quiser que esse segundo valor possa ser um valor diferente, seja decimal,
+
+30
+00:02:34,560 --> 00:02:41,800
+seja string, seja qualquer outro, a gente precisa passar um novo eh parâmetro aqui
+
+31
+00:02:41,800 --> 00:02:45,480
+para esse struct. Igual a gente já fez,
+
+32
+00:02:46,159 --> 00:02:51,159
+passando esse parâmetro, falando que ela recebe esse parâmetro genérico que a gente
+
+33
+00:02:51,159 --> 00:02:56,480
+nomeou de T, agora a gente vai passar um novo parâmetro, que também é um parâmetro
+
+34
+00:02:56,480 --> 00:03:02,480
+genérico. E a gente pode falar que é qualquer qualquer texto, mas o texto que a
+
+35
+00:03:02,480 --> 00:03:08,159
+gente passa aqui, a gente precisa referenciar. Eu vou chamar de U e eu vou passar o
+
+36
+00:03:08,159 --> 00:03:13,560
+U aqui pro Y. Agora você vê que o erro ele já parou de acontecer,
+
+37
+00:03:14,280 --> 00:03:20,959
+porque dessa forma a gente permitiu eh a utilização de mais de um parâmetro genérico
+
+38
+00:03:20,959 --> 00:03:22,720
+aqui para esse struct.
+
+39
+00:03:23,319 --> 00:03:28,040
+Quando ele tava apenas com um parâmetro, que no caso é esse aqui que a gente estava
+
+40
+00:03:28,040 --> 00:03:33,200
+passando, ele tava dando um erro porque o segundo parâmetro não correspondia ao tipo
+
+41
+00:03:33,200 --> 00:03:39,879
+genérico que a gente definiu para esse caso dessa estrutura concreta, o inteiro. E
+
+42
+00:03:39,879 --> 00:03:46,400
+aí adicionando aqui então, né, um segundo parâmetro genérico, a gente consegue é
+
+43
+00:03:47,280 --> 00:03:52,360
+alternar aqui, né, os tipos e dessa struct aqui.
+
+44
+00:03:52,640 --> 00:03:56,120
+Beleza? Então aqui a gente viu como lidar com genérico,
+
+45
+00:03:57,680 --> 00:04:01,280
+passar mais de um parâmetro para struct aqui,
+
+46
+00:04:01,599 --> 00:04:04,439
+mais de um parâmetro genérico. Beleza?
+
+47
+00:04:05,079 --> 00:04:06,959
+Eh, e agora
+
+48
+00:04:07,319 --> 00:04:12,319
+a gente vai também e fazer um exemplo de utilização de generics,
+
+49
+00:04:12,599 --> 00:04:14,439
+só que instructs,
+
+50
+00:04:14,680 --> 00:04:16,879
+pessoal, relembrando, generics
+
+51
+00:04:17,840 --> 00:04:23,040
+parâmetros com tipos genéricos. Pode ser qualquer tipo, genérico é qualquer coisa,
+
+52
+00:04:23,040 --> 00:04:27,479
+você entendeu? É tipo um n script, mas é um valor que é genérico que a gente
+
+53
+00:04:27,479 --> 00:04:32,639
+consegue referenciar ele depois. Beleza? Continuando, então aqui a gente vai agora
+
+54
+00:04:32,639 --> 00:04:37,759
+ver os eh generics, só que nos enum,
+
+55
+00:04:38,120 --> 00:04:43,600
+tá? aqui uma estrutura de enum, né, que ela também consegue receber
+
+56
+00:04:43,880 --> 00:04:45,840
+os os genics.
+
+57
+00:04:46,160 --> 00:04:53,160
+Igual aqui, ó, a gente tem um enum de option, que ele recebe o some ou non e ele
+
+58
+00:04:53,160 --> 00:04:59,080
+também recebe um um tipo genérico. Esse enum ele é de um tipo genérico. E a gente tá
+
+59
+00:04:59,080 --> 00:05:04,720
+repassando esse tipo aqui pro nosso som. E depois a gente consegue referenciar esse
+
+60
+00:05:04,720 --> 00:05:11,400
+valor aqui dentro que a gente vai receber e passar pra frente, né? Igual e o enum
+
+61
+00:05:11,400 --> 00:05:18,560
+nada mais nada mais é e é é essa estrutura do enum, né? A gente sempre utilizou
+
+62
+00:05:18,560 --> 00:05:22,520
+mais para trás aí a questão dos enumuns, né? Que são opções enumeradas.
+
+63
+00:05:22,720 --> 00:05:29,479
+E agora a gente viu que o Enum por si só a estrutura dele, ele já utiliza o
+
+64
+00:05:29,479 --> 00:05:30,479
+genériclementar
+
+65
+00:05:33,000 --> 00:05:34,880
+esse enum, por exemplo,
+
+66
+00:05:35,720 --> 00:05:42,199
+a gente tem esse valor, né? Eh, entendendo a estrutura do Enum aqui, eh, ele recebe
+
+67
+00:05:42,199 --> 00:05:48,319
+então, né, esse Enum de option, por exemplo, que para quando ele tiver for some,
+
+68
+00:05:48,319 --> 00:05:53,240
+quando tiver alguma coisa naquela opção, ele vai conter o valor e a gente consegue
+
+69
+00:05:53,240 --> 00:05:57,680
+recuperar dessa forma que a gente a estrutura do Enum
+
+70
+00:05:58,400 --> 00:06:04,840
+e ela já tem esse valor que recebe um tipo genérico. E esse mesmo tipo genérico,
+
+71
+00:06:04,840 --> 00:06:09,639
+esse mesmo valor genérico, ele é repassado aqui pr dentro do som. É onde a gente
+
+72
+00:06:09,639 --> 00:06:15,639
+consegue recuperar o valor para quando é uma opção de soma, quando tem algum valor
+
+73
+00:06:15,639 --> 00:06:19,479
+ali dentro. E a gente também tem o outro enumenics,
+
+74
+00:06:20,440 --> 00:06:27,240
+que nesse caso aqui é o enum de resut. Já o result a gente vê que ele não na segunda
+
+75
+00:06:27,240 --> 00:06:32,440
+opção ali, né? Por exemplo, aqui no option, quando ele não tem nada, ele vai
+
+76
+00:06:32,440 --> 00:06:37,199
+retornar o Ne. Então, não tem nenhum valor dentro desse none que a gente consegue
+
+77
+00:06:37,199 --> 00:06:38,199
+recuperar.
+
+78
+00:06:38,599 --> 00:06:44,039
+Já no resulte, não. A gente tem uma expressão ali de um resultado de alguma operação
+
+79
+00:06:44,039 --> 00:06:49,840
+ou de alguma chamada, de alguma requisição. E aí para quando for sucesso, a gente
+
+80
+00:06:49,840 --> 00:06:56,120
+tem o OK aqui que a gente passa o parâmetro T, nesse caso aqui, né, esse parâmetro
+
+81
+00:06:56,120 --> 00:07:02,400
+genérico T. E para quando for erro, como a gente também consegue recuperar nesse
+
+82
+00:07:02,400 --> 00:07:09,120
+caso do option result esse erro, aí a estrutura dele também utiliza um segundo
+
+83
+00:07:09,120 --> 00:07:15,680
+parâmetro de eh valor genérico, que nesse caso é utilizado para erro, onde a gente
+
+84
+00:07:15,680 --> 00:07:22,319
+passa aqui dentro do método do erro, é nesse enum de result. Bacana, né, pessoal?
+
+85
+00:07:22,319 --> 00:07:25,520
+Então aqui, ó, a utilização dos dos generics
+
+86
+00:07:25,759 --> 00:07:30,560
+enuns. E agora a gente vai tá vendo aqui também eh como a gente utiliza
+
+87
+00:07:30,879 --> 00:07:32,240
+o generics em.
+
+88
+00:07:33,599 --> 00:07:38,800
+Eh, a gente vai, vocês lembram aí mais ou menos o que que é o método? O método é
+
+89
+00:07:38,800 --> 00:07:41,319
+quando a gente consegue e implementar
+
+90
+00:07:42,160 --> 00:07:43,680
+e funcionalidades
+
+91
+00:07:44,159 --> 00:07:49,960
+para dentro daquela struct. Por exemplo, a gente tem a nossa struct aqui de point.
+
+92
+00:07:49,960 --> 00:07:51,919
+Deixa eu puxar ela novamente.
+
+93
+00:07:52,520 --> 00:07:59,599
+Certo? Temos aqui essa struct de point e dentro dessa struct a gente consegue e criar
+
+94
+00:07:59,599 --> 00:08:02,039
+comportamentos. Esses comportamentos
+
+95
+00:08:02,360 --> 00:08:08,440
+é geralmente é são funções que dentro aqui do hust para quando a função referencia
+
+96
+00:08:08,440 --> 00:08:12,919
+ela mesmo, isso é chamado de métodos. Então, beleza. Então, como que a gente
+
+97
+00:08:12,919 --> 00:08:18,479
+implementa métodos dentro de uma struct? a gente utiliza o impl, né, pra gente tá
+
+98
+00:08:18,479 --> 00:08:19,479
+implementando.
+
+99
+00:08:19,720 --> 00:08:25,479
+A gente vai ter aqui o nosso eh a gente vai dizer que essa implementação
+
+100
+00:08:25,759 --> 00:08:31,199
+vai ter esse tipo genérico que a gente vai estar utilizando e a gente chama então,
+
+101
+00:08:31,199 --> 00:08:36,919
+né, o nome da nossa struct, nesse caso é o point. E desse caso aqui a gente vai
+
+102
+00:08:36,919 --> 00:08:41,159
+querer utilizar somente um parâmetro, até para não ficar muito confuso, para depois
+
+103
+00:08:41,159 --> 00:08:45,480
+a gente ver. Então aqui dentro ele vai tá implementando esse point e aqui a gente
+
+104
+00:08:45,480 --> 00:08:52,560
+definiu que a tipagem dele vai ser um de um de um valor eh genérico,
+
+105
+00:08:52,560 --> 00:08:57,160
+certo? E aqui dentro então a gente consegue implementar as funcionalidades,
+
+106
+00:08:57,360 --> 00:08:59,680
+os métodos dessa
+
+107
+00:09:00,000 --> 00:09:04,480
+struct chamada point. Nesse caso aqui, quando a gente utiliza
+
+108
+00:09:05,000 --> 00:09:06,000
+e
+
+109
+00:09:06,399 --> 00:09:12,480
+ó, por exemplo, aqui eu vou pegar o valor X do point. Quando a gente utiliza esse
+
+110
+00:09:12,480 --> 00:09:18,279
+primeiro parâmetro dentro da função chamado self, essa e sintaxe
+
+111
+00:09:18,640 --> 00:09:20,680
+ela é chamada de
+
+112
+00:09:21,320 --> 00:09:26,399
+método. Quando a gente tem então aqui dentro uma função que o primeiro parâmetro
+
+113
+00:09:26,399 --> 00:09:28,240
+dela é o self,
+
+114
+00:09:28,760 --> 00:09:35,720
+é, ou seja, ela mesmo, essa função, a sintaxe dela vai chamar método. E aqui a gente
+
+115
+00:09:35,720 --> 00:09:39,480
+vai ver como a gente implementa o genérico,
+
+116
+00:09:40,519 --> 00:09:46,839
+certo? Aqui a gente tem a struct chamada point, que ela tem também a sua tipagem
+
+117
+00:09:46,920 --> 00:09:52,800
+recebendo parâmetro genérico chamado T aqui. E dentro aqui da nossa implementação
+
+118
+00:09:52,800 --> 00:09:57,920
+dessa struct, a gente vai fazer uma implementação de um método que retorna o valor de
+
+119
+00:09:57,920 --> 00:10:00,360
+X dessa struct
+
+120
+00:10:07,440 --> 00:10:12,480
+genérico, que a gente chamou de T. Aqui a gente chama o nome da do nosso struct e
+
+121
+00:10:12,480 --> 00:10:18,440
+repassa aqui a referência do valor genérico aqui para dentro dessa structção
+
+122
+00:10:21,360 --> 00:10:26,760
+e o fn é pra gente criar a função. Eu vou chamar essa função de x e ela recebe como
+
+123
+00:10:26,760 --> 00:10:30,160
+parâmetro ela mesma, essa mesma struct
+
+124
+00:10:30,440 --> 00:10:37,399
+e por isso isso é chamado de método. E ela vai retornar pra gente uma referência
+
+125
+00:10:38,079 --> 00:10:43,279
+de um tipo genérico também, que no caso é o T que a gente está referenciando. E
+
+126
+00:10:43,279 --> 00:10:49,639
+dentro desse self a gente vai acessar o valor de X. E aí então aqui dentro agora a
+
+127
+00:10:49,639 --> 00:10:56,000
+gente criou um método chamado X, que acessa o valor de X dentro dessa struct. E aí,
+
+128
+00:10:56,000 --> 00:11:00,800
+pessoal, uma coisa que as pessoas confundem bastante e é bom a gente trazer é essa
+
+129
+00:11:00,800 --> 00:11:07,560
+forma que o a implementação utiliza aqui. Você vê que nessa primeira vez aqui a
+
+130
+00:11:07,560 --> 00:11:09,639
+implementação declara
+
+131
+00:11:10,480 --> 00:11:16,519
+o genérico. Ela declara o genérico dessa forma. E na segunda utilização aqui, o
+
+132
+00:11:16,519 --> 00:11:23,000
+point ele usa esse genérico. Se a gente utilizar sem esse primeiro e declaração aqui
+
+133
+00:11:23,000 --> 00:11:28,560
+da implementação desse genérico, ele entende que esse valor aqui de tintor
+
+134
+00:11:30,360 --> 00:11:35,560
+concreto que ele vai estar utilizando dentro da função. Vou ver, vou mostrar um
+
+135
+00:11:35,560 --> 00:11:40,079
+exemplo para vocês verem, ó. Aqui a gente vai ter uma implementação de um tipo
+
+136
+00:11:40,079 --> 00:11:47,160
+concreto. Eu vou implementar aqui dentro de point um tipo concreto chamado é
+
+137
+00:11:47,519 --> 00:11:53,279
+F32. Esse point aqui ele vai ter esse valor de F32. Beleza? Então vou criar uma
+
+138
+00:11:53,279 --> 00:11:56,959
+função aqui chamada distance from orig.
+
+139
+00:11:57,959 --> 00:12:04,000
+dentro ela vai receber aqui, né, o self, que é a própria referência do da Struct e
+
+140
+00:12:04,000 --> 00:12:11,560
+vai retornar pra gente esse tipo e do ponto flutuante F32. esse próprio é tipo
+
+141
+00:12:11,560 --> 00:12:16,519
+que a gente definiu aqui, ó, F32, ele tem acesso
+
+142
+00:12:17,000 --> 00:12:19,560
+aos métodos do
+
+143
+00:12:20,040 --> 00:12:22,760
+eh desse tipo do ponto flutuante.
+
+144
+00:12:23,320 --> 00:12:27,720
+Ou seja, aqui dentro, ó, esse método chamado PI,
+
+145
+00:12:28,360 --> 00:12:35,360
+por exemplo, ele é uma ele é um método que ele existe só dentro do tipo de ponto
+
+146
+00:12:35,360 --> 00:12:38,120
+flutuante, que é o tipo float. aqui
+
+147
+00:12:38,440 --> 00:12:45,040
+ele ele consegue utilizar, né, métodos ali de dentro que aquela própria tipagem,
+
+148
+00:12:45,040 --> 00:12:49,680
+daquele próprio formato de valor consegue fornecer pra gente. O próprio tipo aqui da
+
+149
+00:12:49,680 --> 00:12:55,519
+função, ele consegue eh que a gente tipou aqui, ó, da Struct, nesse caso, ele
+
+150
+00:12:55,519 --> 00:13:02,040
+consegue fazer a referência aqui dentro e utilizar métodos que esse tipo de dado,
+
+151
+00:13:02,040 --> 00:13:08,079
+somente esse tipo de dado tem, entendeu? Por exemplo, aqui, ó. Então aqui por isso
+
+152
+00:13:08,079 --> 00:13:13,240
+que a gente precisa utilizar esse essa declaração do genérico na frente do do impl
+
+153
+00:13:13,240 --> 00:13:20,360
+também, porque sem isso daqui ele entende que o T vai ser um tipo eh natural,
+
+154
+00:13:20,360 --> 00:13:21,600
+um tipo
+
+155
+00:13:22,440 --> 00:13:26,839
+um tipo concreto aqui, igual por exemplo o flu,
+
+156
+00:13:27,199 --> 00:13:31,680
+entendeu? Então é por isso que a gente tem que utilizar o genérico aqui na frente do
+
+157
+00:13:31,680 --> 00:13:33,000
+impl também.
+
+158
+00:13:33,920 --> 00:13:39,199
+E aqui também, pessoal, a gente tem um exemplo de eh métodos,
+
+159
+00:13:39,760 --> 00:13:43,959
+esses métodos aqui, ó, com seus próprios generics.
+
+160
+00:13:45,839 --> 00:13:48,199
+Ele utiliza os seus próprios generics,
+
+161
+00:13:48,440 --> 00:13:49,440
+diferente
+
+162
+00:13:49,720 --> 00:13:52,560
+dos de dos e generics
+
+163
+00:13:53,279 --> 00:13:58,959
+disponibiliza aqui pra gente utilizar. a gente consegue também eh criar genéricos
+
+164
+00:13:58,959 --> 00:14:04,040
+para dentro dos métodos aqui da Struct onde a gente vai estar implementando. Então a
+
+165
+00:14:04,040 --> 00:14:08,639
+gente utiliza os genéricos da própria Struct que ela disponibiliza para nós, vai est
+
+166
+00:14:08,639 --> 00:14:13,480
+disponibilizando e também os os métodos que a gente implementar nessa struct, a gente
+
+167
+00:14:13,480 --> 00:14:18,880
+pode utilizar generics também. E é isso, pessoal. Essa aula aqui foi sobre eh
+
+168
+00:14:18,880 --> 00:14:19,880
+generics ou
+
+169
+00:14:21,519 --> 00:14:22,880
+sobre genéricas
+
+170
+00:14:23,440 --> 00:14:28,399
+nas structs e também genéricos aqui nos métodos. Beleza? Valeu, pessoal. Muito
+
+171
+00:14:28,399 --> 00:14:34,839
+obrigado pela audiência e segue nós aí que a próxima, o próximo conteúdo aí vai ser
+
+172
+00:14:34,839 --> 00:14:36,639
+eh os traits.
+

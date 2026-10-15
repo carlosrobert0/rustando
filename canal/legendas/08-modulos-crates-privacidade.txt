@@ -1,0 +1,135 @@
+Fala, Dev. Beleza?
+Hoje você vai ver como que funciona a questão dos módulos aqui no Rust,
+ó. Aqui no Rust a gente tem essa documentação
+e dentro dessa documentação
+a gente tem tudo sobre o Rust, desde a instalação
+até sistemas embarcados e coisas do tipo. Falar sobre isso aqui.
+A gente tem os packages e os crates. O que que são esses packages e e esses crates?
+Nada mais são do que pacotes. Vamos imaginar dessa forma. Por exemplo, a gente vai
+vir aqui no código agora e a gente vai ver uma coisa, ó. como que funciona
+então beleza, né? Então aqui, ó, dentro do nosso terminal, eu vou criar um novo
+projeto para você ver, ó. Cargo new,
+eh, menos My Project,
+tá? É Cargo New e My Project, o nome do projeto, né? Beleza. Então, ó, tô criando
+aqui um novo projeto.
+Eh, deve tá dando para ver aí, né? De boa. Tô criando aqui um novo projeto e criou.
+Eu vou entrar dentro desse projeto e vou ver o que que tem dentro dele. Ó, essa CD é
+o jeito que a gente entra nas pastas, né? E o code ponto é para você abrir o Visual
+Studio eh naquele projeto ali.
+Eh, ele tem então, né, uma nomenclatura,
+uma divisão, né, de pastas que é esse sece e dentro ele gerou esse arquivo main.
+Esse arquivo main é o arquivo binário da aplicação, né? Não, dentro ainda do nosso
+projeto a gente tem e esse arquivo Cargo.toml, que é onde fica as dependências do
+projeto. Você viu, ó, que aqui ele criou um pacote, que é os package e os crates,
+né, que a gente tá falando. Então, aqui, ó, ele criou um pacote com o nome da nossa
+aplicação, certo? E aqui dentro de dependências vão vir os crates que ele vai
+depender. A gente então pode usar um crate aqui para tá eh utilizando em alguma
+feature, né, semelhante às bibliotecas ali do JavaScript
+e o package Jason. Então aqui, ó, foi criando eh um projeto em Rust
+eh a execução binária aqui dele, certo? Pra gente trabalhar com módulos,
+a gente cria eh uma lib, certo?
+Porque, por exemplo, esses eh esses crates que tem e tudo mais,
+eles são como se fosse bibliotecas, certo? E aí dentro de bibliotecas a gente pode
+ter módulos.
+E esses módulos, eles são eh geralmente
+funcionalidades isoladas que fazem alguma coisa, né? Certo? E agora a gente vai
+criar um módulo, um um uma lib. A gente vai criar uma lib, a gente vai criar um
+pacote
+pra gente ver o funcionamento dos módulos. Projeto ele não pode ser criado dessa
+forma, utilizando o cargo new. Ele tem que utilizar a lib,
+ele tem que utilizar a flag lib. Então, a gente já viu que para criar um projeto é
+cargon e ele cria um executável, que seria o binário,
+que é o arquivo main.rs.
+E agora a gente vai criar um módulo, a gente vai criar um pacote. E para isso a
+gente vai utilizar a flag lib.
+Então, ó, cargo new.
+Aí o nome do projeto
+e a flag libe
+vai ter criado então pra gente.
+Então vamos acessar agora o projeto, né?
+E aí quando a gente passa essa flag lib
+aqui no nosso sece
+ele vai ter criado um arquivo, ó, de nome libo invés de main. Maneiro, né?
+E aqui dentro, então, a gente consegue trabalhar com módulos
+e esses módulos vão permitir que a gente eh
+isole a nossa aplicação.
+Aqui a gente pode apagar tudo isso que vem dentro desse arquivo libro
+da documentação,
+a gente tem esse exemplo.
+Um, a gente cria um módulo através da palavra chave módulo mod e nomeia ele.
+Aí aqui dentro, então, né, a gente tem o módulo
+e a gente vai utilizar
+esses módulos que a gente tem dentro ali, dentro de uma função forma.
+A gente tem aqui essa função
+que utiliza esse módulos, esses módulos aqui, ó.
+Essas formas da gente acessar o módulo, formas que são
+eh uma é utilizando
+o PEF absoluto PEF, PEF absoluto, né? O caminho absoluto. E o caminho absoluto, ele
+sempre inicia desse crate dois pontos, dois pontos.
+E aí
+vem o nome do módulo e a gente vai acessando através desse
+comando aqui.
+E quando a gente quer acessar também de uma forma eh que você vai utilizar o caminho
+relativo e aí você já pode passar diretamente o nome do módulo aqui que tá dando
+esse erro aqui. Ele tá informando que o módulo é privado.
+E pra gente eh
+expor esse módulo,
+a gente consegue através da palavrachave pub. Então a gente vem no módulo que a
+gente quer expor e antes da definição dele, a gente escreve pub.
+E aí, ó, a gente vê que o módulo ele já tá público.
+Eh, agora a função a gente também precisa vir e tornar ela pública
+caso a gente queira acessar ela. Então,
+tudo no Rust
+é privado. Tudo no Rust é privado. E se a gente quiser
+eh
+expor de forma pública, a gente precisa utilizar a palavra-chave pub.
+E aí com isso, a gente já consegue acessar
+o que você quer
+acessar que está dentro daquele módulo ali, seja função, seja stup, seja
+ó, o que que acontece? A gente então criou um módulo
+através da palavra mod e dentro desse módulo a gente tem um struct
+e dentro aqui
+eh ainda dentro do módulo, a gente tem a implementação dessa struct
+criando uma função
+associada.
+Essa função associada,
+ela consegue
+alterar o valor que é privado.
+Então, tem um módulo que dentro dele tem uma struct e essa struct tem duas
+propriedades, uma é pública e a outra é privado.
+Mais para baixo a gente implementa essa struct pra gente trabalhar e conseguir
+utilizar as funções associadas. Essa função associada aqui, ela consegue alterar o
+valor que é privado dentro dessa struct.
+Beleza? Então é isso. E aqui mais para baixo a gente tem uma função
+que ela eh nomeia aqui, né? Então um pedido, né?
+Com esse com esse valor. Ele vai receber esse toast aqui, né? vamos dizer como
+valor, que é o que a gente consegue eh alterar, que é público,
+e ele recebe aqui então como uma propriedade
+e a gente vê que o que é público a gente consegue alterar,
+ó. a gente consegue vir aqui passar outro nome para ele e ele vai dar o print
+exibindo corretamente.
+Mas se a gente vi aqui e tentar mudar o que é privado,
+ele não vai deixar porque
+quando um item da struct é privado, a gente só consegue atribuir valor para ele
+através de funções associadas
+quando a gente vai implementar a struct. E agora a gente vai ver um exemplo com os
+enuns.
+Com o enum é bem diferente e muito mais simples.
+A gente tenta utilizar ele e fala que é privado,
+certo?
+Só que a gente não precisa eh ir em cada campo do Enum
+e nomear esse campo como público. A gente já consegue
+só a gente nomeando o Enum, a gente já consegue tornar ele público. Então aqui a
+gente tem um módulo que tem um enum público e por ele tá público, a gente consegue
+acessar dentro aqui do nosso código normalmente aqui, né? Eu tenho o meu módulo
+e aí eu consigo vir aqui e fazer a importação dele, ó.
+use create 2.2 pontos e o nome do módulo. E aí eu consigo utilizar ele aqui sem
+precisar eh
+utilizar o create aqui no módulo em si e ficar repetindo. Então esse use ele
+simplifica a importação pra gente. A gente tem um código aqui também que é pra gente
+ver o exemplo dele, né? por exemplo, result
+essas importações
+que elas têm o mesmo nome e aí a gente tem que renomear
+para conseguir eh lidar com eles. Aqui, por exemplo, esse daqui, ó, eu consigo
+renomear indo na frente da importação, passando o nome s e aí só renomeando aqui.
+M.

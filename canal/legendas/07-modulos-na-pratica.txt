@@ -1,0 +1,231 @@
+Fala, rustáceo,
+tudo certo? Se você tá escrevendo o seu código hoje em um arquivo só, você pode
+perceber que a manutenção dele é um caos, é praticamente impossível, né? E aí no
+Rust, os módulos
+que a gente consegue organizar, eh, separar melhor ali, né, as nossas eh
+responsabilidades através de arquivos separados.
+E aí a gente vai entender aqui qual que é a base, né, dos módulos aqui no Rust: os packages
+e os crates. Os packages e os crates, eles são base de tudo. Eh, tudo começa ali,
+né, com um package, né, um pacote. Quando você roda ali o comando cargo para criar
+uma nova aplicação, você cria um pacote que pode conter vários crates. E um crate
+é o menor pedaço de código que o compilador Rust analisa por vez, certo?
+Então bora lá. Vamos mão na massa pra gente ver como que funciona ali o sistema de
+módulos no Rust.
+Eh,
+beleza.
+Então, né? Bora lá. Vamos criar então um novo, um novo projeto. E aí pra gente criar
+ele eh para ele ser um módulo, a gente precisa utilizar flag lib.
+Então a gente vai fazer cargo
+cargil e esse nome da aplicação vai ser restaurante, que nessa aplicação a gente vai
+conseguir separar as responsabilidades, por exemplo, a parte da frente do
+restaurante, a parte da cozinha, essas coisas assim.
+Então, a gente roda Cargo Newil, eh, o nome da aplicação e menos menos lib.
+Aí ele vai tá criando pra gente eh um pacote ali,
+ele vai criar um create pra gente, beleza?
+Então, eh, ele criou aqui pra gente, né? E a gente pode navegar então para pra
+aplicação.
+A gente pode então, né, navegar aqui para nosso projeto que ele criou
+e a gente consegue ver uma estrutura de arquivos
+que é
+um sece geralmente ele gera. E aí ele vai gerar o arquivo libo invés do main,
+porque a gente criou então o módulo ali, certo?
+Ao invés de criar um binário executado. Beleza? Então o nosso projeto tá criado. O a
+nosso arquivo aqui LIB é o nosso create principal, né? O nosso root ali da raiz. E
+aqui vão ficar então todos os nossos eh
+as nossas funcionalidades que a gente vai ver como que funciona, beleza? Então,
+dentro desse arquivo Lib, vamos apagar tudo que tem tiver dentro dele aqui, né? E
+vamos tá escrevendo agora um novo módulo, certo?
+Eh, então vamos pensar aí no sistema de módulo como um sistema de arquivos, né, do
+seu computador. Eh, a gente vai modelar aqui um restaurante usando os módulos para
+separar ali, né, a frente da casa, seria onde ficam ali os clientes, o fundo da
+casa, né, onde fica ali a cozinha e a parte da administração.
+Beleza? Então vamos criar aqui um módulo chamado front da casa, que dentro dele vai
+ter um outro módulo,
+eh, e a gente vai ter também, eh, uma função. Beleza? Então vamos criar aqui o
+módulo. A gente cria com a palavra reservada mod e o nome do módulo na frente
+seguido ali, né, de chaves. Abre fecha e dentro aqui a gente vai definir o que que a
+gente quer expor desse módulo.
+Aqui a gente vai eh
+criar um novo módulo chamado hosting.
+E dentro dele a gente vai ter uma função
+que vai ser eh para adicionar ali na fila de espera,
+certo?
+Então explicando, né? Eh, nós usamos aqui a palavra-chave reservada
+mod para criar os nossos módulos, que esses módulos eles podem conter funções,
+structs, enuns e até outros módulos dentro dele. Note que eu eh
+que que agora você eu vou tá rodando isso daqui e você vai ver que o que que
+acontece. oust
+por padrão ele é
+ele é privado, as funções, os módulos, tudo dentro dele é privado. E aí se a gente
+tentar acessar esse módulo que a gente criou, por exemplo, ele vai tá reclamando por
+conta de que a gente precisa eh tornar o módulo público que a gente quer acessar.
+Por exemplo, vou criar aqui uma função
+que vai se chamar este restaurante comendo restaurante.
+E aqui dentro o que que eu vou fazer? Eu vou est referenciando
+o nosso módulo ali que a gente acabou de criar. E quando a gente vai referenciar o
+módulo que a gente criou, a gente tem dois formatos. um formato eh utilizando o
+caminho absoluto através da palavra chave create dois pontos dois pontos e o nome do
+módulo, o caminho.
+Esse essa é a forma com o caminho absoluto, que a gente consegue referenciar o
+módulo que a gente criou. Então a gente usa create dois pontos, dois pontos,
+create dois pontos, dois pontos e o nome do módulo.
+Certo?
+Aqui
+é a forma que a gente consegue referenciar o módulo através eh
+do caminho absoluto. A gente utiliza a palavra reservada create dois pontos dois
+pontos
+e na frente o módulo seguido ali eh
+seguido as referências até você chegar o o que você quer naquele módulo, certo? E
+tem a outra forma que a gente consegue lidar com os módulos aqui, referenciar eles
+através do caminho relativo,
+OK? Nesse caso, a gente só usa o nome do módulo mesmo, ao invés de usar o create 2.
+Na frente. Então aqui vai ser front, ó, rose
+que é o nome do módulo. E o que que a gente quer acessar dentro dele?
+Aquilo que eu tava falando com vocês em relação à privacidade do Rust, tudo no Rust
+é privado. E pra gente conseguir acessar, por exemplo, a gente criou esse módulo
+aqui de hosting e dentro dele essa função de adicionar a lista de espera. Só que é,
+a gente vê aqui através dessa
+extensão do Rust chamada rust-analyzer,
+ele consegue ver por o os problemas que tem no nosso código antes da gente copilar,
+compilar sem precisar compilar no terminal ali, ele consegue pegar os problemas. E
+aqui ele já fala pra gente, ó, o módulo husting o é privado.
+E aí, pra gente conseguir expor ele, a gente precisa usar uma palavra reservada
+chamada pub. que referencia a público. Então, na antes do da definição do módulo, a
+gente coloca a palavra reservada pub,
+que isso vai tornar então o nosso módulo aqui eh público, né? E aí, ó, a
+gente vê que ele já parou de reclamar na referência que a gente tentava acessar ele.
+E agora ele fala aqui também que a nossa função ela está privada e também precisa
+ser passada para public. ali. E agora o erro aqui no compilador ele já ele já para
+de acontecer, certo?
+A gente tem também aqui no Rust
+para importação do código, certo?
+Por exemplo, eh aqui, ó, a gente tem essa importação
+do caminho absoluto aqui, certo? Create 2.2 pontos, o nome do módulo e tudo mais,
+certo? No hust a gente tem
+um atalho que é um comando chamado use. Ele é semelhante ao a, por exemplo, PHP e
+outras linguagens que usa aqueles name space, né? E pra gente utilizar aquele
+namespace, a gente importa ele através do use. E aqui é semelhante a isso. A gente
+consegue então eh reduzir esse código todo aqui. Ao invés de chamar isso tudo aqui,
+a gente consegue importar
+através do comando use. Então a gente usa use e o nome daquele módulo ali, por
+exemplo, ó. É o host aqui, né?
+por exemplo, vamos pegar até o nossos mod host aqui, que é o que a gente quer tá
+importando, vamos dizer assim. E aqui, ó, ao invés de eu usar o create dois pontos,
+dois pontos, eu posso só passar o rust aqui, ó, que é o caminho que a gente tem aqui
+em cima. Esse é um jeito idiomático que o Rust faz para trazer os módulos ali para
+a função do do scopo que a gente tem. Então esse use a gente consegue importar
+eh
+aqui, né, a nossa a nossa função, o nosso módulo que a gente quer utilizar e aí ele
+fica menos verboso, né? A gente consegue reutilizar
+dentro aqui da nossa aplicação, certo? Beleza, pessoal?
+Eh,
+então, né? O que que acontece?
+A gente tem também aqui no Rust
+alguns possíveis conflitos eh de importação.
+E esses possíveis conflitos de importação
+são quando os nomes dos módulos ou das funções são idênticos. E aí a gente utiliza
+uma forma de fazer um alias, né, de renomear aquele módulo ali para ele não ter
+conflito, certo?
+Para isso, eu vou tá eh utilizando aqui
+um código que para exemplificar aqui para vocês, beleza?
+Ó, eu tenho aqui dentro da minha
+da minha aplicação, dentro do Rust,
+eu tenho uma função, né, uns pacote, um create que chama STD, que ele consegue pra
+gente aqui, né, pegar o resultado
+eh
+de uma de uma saída aqui que a gente vai precisar, certo?
+Então, e aqui também, ó, a gente tem dentro desse pacote do IO esse mesmo,
+esse mesmo,
+eh, esse mesmo type aqui, ó, esse mesmo tipo aqui que a gente tem do resulte, certo?
+E aí,
+caso a gente eh queira utilizar
+esses
+esses tipos ali, né, esses tipos de retorno que a gente tem,
+eh, a gente vai ter que renomear
+esse essa importação ali que a gente fez. Por exemplo, aqui, ó, vou criar uma duas
+funções
+paraa gente exemplificar mesmo que o retorno dela vai ser aqui um result,
+certo? E aí eu vou criar uma outra função aqui que o retorno dela também vai ser um
+result.
+Ele também vai ser um result, ó. Certo? A gente tem essas duas funções aqui. Se eu
+salvo, ele já dá o erro aqui e vai falar pra gente, ó, que a gente tá tendo eh
+que a gente tá tendo aqui um conflito, né, entre esses dois
+entre esses dois eh
+itens, né? esses entre esses dois entre essas duas importações.
+E aí, como que eu faço para eu renomear uma importação?
+Eu venho na importação
+e na frente da importação eu coloco a a palavra reservada s,
+ó. E aí coloca o novo nome. É semelhante ao type isso daqui.
+E agora aqui ele já consegue então separar
+e já remove o conflito que que tinha dado. Certo?
+Então bacana, né, pessoal? A gente viu então aqui como a gente cria os módulos. a
+gente viu como a gente importa os módulos de forma que fica menos verboso para tá
+utilizando dentro da do código ali da aplicação. A gente viu também como a gente eh
+lida com módulos ou eh funções ou enuns importações que t o mesmo nome,
+trazem o objeto do mesmo nome. E aí a gente renomeia ele através da palavra
+reservada S.
+E agora a gente vai ver também como a gente separa
+esse arquivo aqui, porque, por exemplo, né, esse arquivo eh ele tá com muitas
+responsabilidades.
+A gente consegue levar boa parte desse código aqui para arquivos separados. E é isso
+que os módulos fazem. Eles eh nos permitem organizar o nosso código de forma
+eh isolada ali, né, mais organizada, certo? Então, beleza. Aqui, ó, dentro do nosso,
+dentro aqui da nossa aplicação, né, a gente tem esse módulo chamado front of hose,
+certo? Que seria ali a parte da frente ali do restaurante, beleza? E aí o que que
+acontece? Eu consigo eh
+isolar esse módulo aqui. Por exemplo, eu vou criar um novo arquivo, ele deve ser
+idêntico ao nome do módulo. Por exemplo, esse aqui, ó, módulo chamado front of rose.
+Eu quero tirar
+essa definição do módulo aqui de dentro e levar para um arquivo separado. Como que
+eu faço? Crio um arquivo idêntico com o nome idêntico ao nome do módulo.
+Certo?
+Coloco o conteúdo do módulo.
+Certo?
+E agora
+a gente
+vem aqui
+e só faz dessa forma.
+E a gente já importou o nosso módulo aqui para dentro da aplicação. Simples, né,
+pessoal?
+Aqui, ó. Então, eh,
+por exemplo, aí agora aqui
+eu consigo também
+eh
+isolar ainda mais. Por exemplo, caso eu queira isolar esse conteúdo que tem dentro
+aqui do módulo hosting,
+né, eu quero criar um novo arquivo, eu crio um novo arquivo com o nome do módulo, no
+caso hosting,
+e leva o conteúdo dele lá para dentro, então, do novo arquivo.
+E aqui dentro eu só
+faço essa importação aqui.
+Só que aí, né, não deu certo. Por que que não deu certo? Porque esse módulo ele tá
+na mesma
+eh na mesma
+hierarquia de arquivos daquela pasta. Ele precisa para para funcionar, a gente
+precisa agora, se a gente quiser isolar o submódulo do módulo que a gente isolou, a
+gente precisa criar uma nova pasta
+com o nome do módulo P.
+Dentro dessa pasta, a gente vai ter um arquivo chamado mod.rs, rs, que seria
+o arquivo principal dele ali.
+O hosting a gente joga ali para dentro também.
+E aqui dentro do mod
+a gente faz a publicação aqui do husting.
+E
+agora aqui dentro do
+eu posso excluir esse item aqui, no caso. E agora aqui dentro
+já tá
+rodando. Eu já tô expondo o meu submódulo husting
+que tem essa função.
+O mod agora ele virou como arquivo principal, então ele faz referência ao nome da
+pasta,
+né? E aqui dentro do nosso arquivo a gente conseguiu também eh estar utilizando esse
+módulo que a gente criou.
+E é isso, pessoal. Essa foi uma exemplificação
+de como que os módulos funcionam aqui dentro do Rust através aqui, né, da de
+quando a gente cria um um sistema, quando a gente cria ali um uma aplicação
+utilizando o menos menos lib, a flag lib, que ela permite então a gente criar os
+crates, os pacotes, que são os módulos. E esses módulos eles permitem que nossa
+aplicação
+fica mais organizada, as responsabilidades mais isoladas
+e também para dar mais eh manutenção também fica melhor. Então é isso, pessoal.
+Quem gostou do vídeo, curte, compartilha. Obrigado pela audiência e vamos juntos.

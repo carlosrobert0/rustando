@@ -77,3 +77,17 @@ Anotar no dia 7 (D+7) e no dia 28 (D+28) depois de publicar. No Studio: abrir o 
 | #10 Erros | 41:29 | 91 | 74 | 1:43 | 4,2% | 2 |
 | #9 Coleções | 56:40 | 90 | 71 | 3:42 | 6,6% | 3 |
 | macOS | 10:49 | 43 | 39 | 1:03 | 9,8% | 0 |
+
+## Teste: projeto vs aula
+
+O Projeto #1 é um teste do formato. No **D+28** do projeto, comparar com o **#11 Parte 1** e o **#11 Parte 2**
+também no D+28 deles (12/11/2026):
+
+| | Views engajadas D+28 | % assistido | % que fica até 0:30 | Inscritos |
+|---|---:|---:|---:|---:|
+| #11 Parte 1 | | | | |
+| #11 Parte 2 | | | | |
+| Projeto #1 | | | | |
+
+- **Projeto ganhou em views engajadas e em % assistido:** manter um projeto a cada 3–4 aulas.
+- **Empatou ou perdeu:** fazer só os projetos do próprio Book (minigrep e servidor web) e continuar o curso.

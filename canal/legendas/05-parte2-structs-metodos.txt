@@ -1,0 +1,216 @@
+Fala dev, beleza? Fala, rustáceo. Beleza? Então, continuando aqui e a nossa aula
+sobre struct. Agora vamos falar sobre outros dois tipos de
+struct.
+É que é o tipo de struct em formato de tupla e o tipo de struct é sem nenhum formato
+e sem nenhum dado também. Vou estar mostrando aqui para vocês como que funciona.
+Eh, essa struct chama tuple struct porque tem o formato de uma tupla.
+Struct
+ela, né? a gente cria ela com com a palavra reservada struct
+aquele ali os nossos eh formatos daquele dado em formato de tupla.
+Por exemplo, essa color aqui vai ter três é espaços ali, né? vamos dizer assim,
+que que vai que vai ser do tipo inteiro, beleza?
+Beleza? Agora eu vou tá acessando aqui,
+eh, mostrando esses valores que a gente criou aqui
+e vou est rodando aqui para você ver que vai acontecer um erro.
+Ó, ele aconteceu um erro ali e falou que a função que aquela struct, né, ela não
+implementa essa trait chamada display.
+O que que acontece? Eh, aqui a gente tá most aqui, por exemplo, a struct,
+essa Struct aqui de usuário, a gente tá acessando só o campo de active.
+Aqui a gente tá acessando eh uma instructia
+todos esses três valores aqui. Por exemplo, eu poderia acessar em formato de tupla
+também
+esse valor aqui que não daria um erro.
+Ele só é
+tô viajando. Não é o original, é point.
+Beleza.
+Ah, tá. Aqui também é um só.
+Beleza. Ó, mostrou aqui. Por quê? Porque agora eu tô tô acessando a propriedade
+e aqui eu acesso através de igual a gente eh igual como se
+a gente tivesse acessando uma tupla mesmo, entendeu? Acessando aqui pelo índex da
+tupla.
+Eh, caso a gente queira exibir o a instruct completa, por exemplo, vou fazer aqui
+para essa de usuário.
+Quero exibir agora o usuário completo, todos os dados dele.
+Eh, eu preciso implementar
+uma trait. Uma trait seria uma função que é permite
+a gente fazer alguma coisa, entendeu? a gente eh beleza. Essa trait ela
+ela mostra aqui no no próprio no próprio log aqui, no próprio erro, caso a gente
+rode
+ou se você tiver com a extensão do Rust análise instalado aqui, ele também mostra.
+Só que eu desinstalei só pr pra gente ir vendo aqui.
+Então aqui, ó, ele mostra, né, e fala que essa struct nossa não implementa essa trait
+chamada display.
+Eh, e aí ele fala aqui como que a gente faz para tá utilizando.
+Ao invés da gente passar só as chaves, a gente vai tá passando dois pontos
+interrogação dentro das chaves onde referencia o o valor aqui,
+certo?
+E aí a gente vai rodar novamente. Ele vai dar mais um erro, porque o rush ele, o
+compilador ele mostra pra gente os erros, né?
+E aqui ele mostrou, né, que a gente tá utilizando agora essa forma de acessar o
+objeto que mostra todos os dados.
+Porém, a gente ainda não implementou a mais uma trait que
+que chama debug.
+E aqui embaixo, ó, ele mostra eh o que que a gente precisa fazer. Então, a gente
+pega essa função aqui, ó,
+eh, hashagchaves
+derivênteses
+debug e adiciona manualmente
+em cima da struct, onde a gente quer exibir todos os dados dela.
+Beleza?
+Aqui dentro, só de curiosidade, aqui dentro eu consigo passar outras eh
+outras traits também, mas a gente vai estar utilizando só essa debug.
+Eu posso vir aqui, ó.
+E agora ele mostrou todos os campos daquela struct ali, certo? Beleza?
+Eh, e a gente também consegue criar structs que não tem nenhum
+nenhum formato e também nenhum campo.
+Essa struct aqui, por exemplo,
+eh,
+certo? Por exemplo, assim, uma um nome de uma função de de algo, sabe? E ela não
+recebe nada, sabe?
+a gente consegue estar utilizando também. Beleza?
+Eh, agora então eu vou est mostrando
+eh um exemplo de como que a gente pode estar utilizando structs
+em um exemplo real aqui. Então, bora lá,
+ó.
+a gente vai ter um
+um programa que calcula o
+pixel
+de de um retângulo ali, calcula um retângulo em em pixels quadrados,
+beleza?
+Então, a gente vai ter aqui uma função
+e a gente vai ter então e dois e valores que é o ITF e o e o
+e o que é a largura e a altura, né?
+Beleza?
+E aí aqui eu posso tá fazendo um print ln e posso falar aqui, ó, que a área
+do retângulo
+é
+em pixels,
+quadrados, vamos dizer assim.
+E aí a gente vai e
+fazer o quê? a gente vai multiplicar o if
+vezes o,
+ó. Aí ele pegou e mostrou aqui, então, né, que essa esse valor aqui pra gente,
+certo? ele fez a multiplicação do idificate.
+A gente quer saber a área e assim que a gente faz o cálculo da
+área de um retângulo para para saber ali, né? Separando essas duas variáveis de
+widate
+e a gente sabe essa função.
+É, aí a gente pode pegar
+é aqui, espera feliz aí os buzinha. Mas beleza, aí a gente pode pegar e pode separar
+isso daqui que a gente fez em uma função, por exemplo, vamos chamar ela de área.
+Área que recebe dois parâmetros, né?
+Esse retorno aqui é o mesmo e vai fazer esse cálculo ali pra gente entrar.
+E agora aqui a gente pode chamar
+o área passando os dois valores que a gente criou ali em cima.
+Beleza? Rodou, né? Tranquilo. A gente também consegue fazer aqui através das tuplas.
+Então,
+por exemplo, agora, eh, ao invés de eu passar dois parâmetros separados, vou passar
+uma tupla,
+vou chamar essa tupla de dimensions.
+E aí
+eu vou passar os tipos dela, que o primeiro tipo aqui, né, são esses dois tipos
+aqui, que que aqui dentro representa o e aqui o, certo? E aí vou fazer a mesma
+coisa, só que aqui a tupla eu acesso pelo índex, né?
+Certo?
+É agora aqui, né? Eu preciso tá passando
+uma dupla
+aqui
+com esses dois valores. E aqui eu só, né, eu passo agora dupla assim.
+Certo? Retornou a mesma coisa, rodando normal. Agora a gente vai refatorar isso
+daqui utilizando a Structs.
+Vou criar um instruct aqui de chamada retângulo, porque vai ser esses essas
+duas informações que a gente vai ter aqui, que a gente tá trabalhando para saber do
+retângulo, certo? Então, structangle,
+ó, sempre a primeira letra da Struct em maiúsculo.
+E aqui nes, então o Wi
+e o edit.
+Agora aqui embaixo a gente vai est instanciando então a nossa e struct.
+Certo? Agora aqui na nossa função diária, a gente vai tá então eh recebendo agora a
+nossa struct
+e a gente passa o e comercial,
+que é a referência
+e o nome da nossa struct.
+E agora a gente consegue acessar aqui através dos campos da nossa.
+Agora aqui, ó, onde a gente tá passando, né, a gente tem que passar também a
+referência,
+igual a gente fez aqui.
+E aqui também, ó, o ponto e vírgula.
+E ó, e aqui tornou o mesmo resultado. Então aqui, ó, a gente veio, né, eh,
+como que a gente utiliza a funcionalidade aqui, então, de
+do struct, né, por exemplo, a utilização de uma struct aqui, eh, em uma função
+e como que a gente
+como que a gente define então, né, as outras struct também, por exemplo, a do tipo de
+dupla e a outra sem
+nenhum campo. que é Unit Struct,
+só o nome mesmo da estrutura ali.
+Eh, a gente viu também a utilização do trait, do trait pra gente do trait chamado
+debug pra gente eh mostrar ali todos os campos, né, de uma de uma struct.
+E agora a gente viu então a utilização de um instruct em uma função aqui pra gente
+tá tá vendo agora a gente vai tá vendo o uma coisa bastante importante ainda dentro
+de struct que são os métodes, que os métodes nada mais são do que métodos que são
+funções que a gente consegue
+e criar
+paraas nossas
+instrucs,
+certo?
+Então vamos implementar aqui pra gente ver como que funciona. Por exemplo, a gente
+tem essa função aqui chamada área, certo?
+Eu consigo fazer isso através de de um método.
+Eu consigo então criar um método para esse struct aqui.
+E a gente faz isso
+implementando
+eh
+o método para struct. Então, a gente escreve aqui o bloco implementação
+e o nome da struct seguido aqui de chaves. E aqui dentro
+a gente eh vai criar então funções pra nossa struct.
+aqui seria, né, os comportamentos da da struct, né, e a struct em si seria a questão
+do do objeto em si, né, vamos dizer assim, das propriedades dele. E aqui então a
+gente consegue criar e funções. Por exemplo, vou criar aqui uma função diária.
+E essa sintaxe de método é muito interessante porque o primeiro parâmetro é
+sempre
+os parâmetros self. E self aqui é uma palavra reservada do rush que representa a
+própria struct,
+né? Então aqui ele vai receber o self e vai est retornando o nosso i3. essa função
+aqui que a gente tá fazendo. E aí a gente abre chaves, né, para fazer a função e a
+gente acessa propriedades através do self ponto.
+Isso. Agora a gente já acessou e aqui a gente consegue então
+fazer isso, acessar as nossas funções, o nosso métodos através do ponto seguido da
+função.
+Aqui em parênteses, claro, para executar a função.
+Vamos rodar aqui, ó.
+E aí a gente vê que tá rodando da mesma forma.
+Eh, tem mais uma coisa interessante também que a gente consegue fazer aqui dentro,
+que são o quê? Criar funções associadas,
+certo? Por exemplo, eu posso criar uma função aqui, ó,
+que agora vai ser uma função mesmo que tá associada a esse método. Por exemplo,
+FN é
+low word
+uma função aleatória. Aqui vai retornar então string.
+E aqui
+vou só colocar o prente ali.
+Beleza? E aqui dentro eu consigo e tá acessando também essa função
+que chama função associada.
+eu consigo tá chamando também essa função associada.
+Aí essa função associada ela é diferente
+do método, porque o método ele sempre precisa receber como primeiro parâmetro aqui o
+referência self, certo?
+Já a função associada, ela não precisa e receber esse esse parâmetro aqui de self.
+e da forma também que a gente acessa, que tem uma diferença aqui. Pra gente acessar
+o método, a gente acessa com ponto. Já na função associada,
+a gente acessa através
+e da gente passando o nome da struct,
+dois pontos, dois pontos e aí o nome da função.
+Vamos executar aqui.
+É assim, galera.
+Toda hora da bug.
+Então aqui, ó,
+e trouxe, né, o retorno do Hello World aqui nessa primeira execução.
+é ele executa e depois passa aqui também a
+a referência da função, né?
+Mas beleza. Então, esses foram ainda eh
+as utilizações que a gente tem aqui com Struct, alguns exemplos,
+eh,
+a o método também, né? a sintaxe de método que a gente consegue criar funções
+que referenciam a si próprio ali dentro da struct, né, implementando elas, a gente
+também conseguiu então criar funções associadas ali.
+E é isso aí, bora pro próximo vídeo e e até mais. Valeu,

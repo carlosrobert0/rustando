@@ -1,0 +1,2880 @@
+1
+00:00:03,480 --> 00:00:09,559
+Fala pessoal, bem-vindos a mais um vídeo do Rustando. Hoje a gente vai falar das
+
+2
+00:00:09,559 --> 00:00:11,040
+Common Collections
+
+3
+00:00:11,240 --> 00:00:16,400
+do Rust, que são aquelas três estruturas que você vai usar praticamente todos os
+
+4
+00:00:16,400 --> 00:00:21,680
+dias, que é o vetor, a string e o hash map.
+
+5
+00:00:21,920 --> 00:00:23,080
+A diferença
+
+6
+00:00:23,760 --> 00:00:30,080
+delas pros arrays e tuplas que a gente já viu é simples. arrays e tuplas tem tamanho
+
+7
+00:00:30,080 --> 00:00:32,720
+fixo e não vivem na stack.
+
+8
+00:00:32,920 --> 00:00:40,000
+Essas coleções aqui elas guardam os dados na heap, ou seja, pode crescer e também
+
+9
+00:00:40,000 --> 00:00:46,239
+diminuir enquanto o programa roda ali. Eh, a gente vai então tá escrevendo aqui do
+
+10
+00:00:46,239 --> 00:00:51,559
+zero tudo aqui junto com vocês. Então, eh, bora para cima.
+
+11
+00:00:52,079 --> 00:00:57,039
+Eh, abre aí, né, o seu editor de código. No meu caso, eu tô utilizando
+
+12
+00:00:57,600 --> 00:01:03,680
+o VS Code aqui, né? Você pode estar abrindo aí o seu editor de código de
+
+13
+00:01:03,680 --> 00:01:04,680
+preferência.
+
+14
+00:01:05,280 --> 00:01:09,320
+E a gente vai tá criando então um novo projeto que vai chamar collections,
+
+15
+00:01:10,119 --> 00:01:12,159
+cargo new collections.
+
+16
+00:01:14,479 --> 00:01:17,560
+Ele vai tá criando aqui pra gente o nosso
+
+17
+00:01:17,945 --> 00:01:22,799
+o nosso projeto. Projeto já foi criado inclusive.
+
+18
+00:01:23,360 --> 00:01:26,240
+E aí a gente vai est então começando
+
+19
+00:01:26,960 --> 00:01:28,799
+eh a utilizar.
+
+20
+00:01:29,240 --> 00:01:35,520
+Beleza? Primeiro das collections que a gente falou, que a gente vai falar, a gente
+
+21
+00:01:35,520 --> 00:01:42,079
+vai iniciar falando da collection, que é o vetor. Beleza? Primeiro nós vamos est
+
+22
+00:01:42,079 --> 00:01:44,200
+entrando aqui dentro do nosso
+
+23
+00:01:44,719 --> 00:01:51,759
+do nosso projeto. Como eu tô aqui no Mac e ainda não aprendi utilizar o code ponto,
+
+24
+00:01:51,759 --> 00:01:56,840
+eu vou vir por aqui e vou est acessando esse projeto que a gente criou.
+
+25
+00:02:04,360 --> 00:02:09,560
+Beleza, já acessei aqui então, né, o projeto que a gente criou, que é um
+
+26
+00:02:09,560 --> 00:02:11,520
+projeto chamado Collections.
+
+27
+00:02:11,959 --> 00:02:14,800
+E a gente então vai tá iniciando
+
+28
+00:02:16,200 --> 00:02:20,440
+o desenvolvimento aqui, né, de uma collection.
+
+29
+00:02:31,800 --> 00:02:36,599
+Então, pessoal, eh já criei aqui, né, o nosso projeto chamado Collections, que é o
+
+30
+00:02:36,599 --> 00:02:41,720
+projeto onde a gente vai trabalhar e as três collections que existe, que é a
+
+31
+00:02:41,720 --> 00:02:47,159
+collection de vetor, a collection de string e a collection de HashMap. E nesse
+
+32
+00:02:47,159 --> 00:02:53,560
+primeiro momento, nessa primeira sessão, a gente vai trabalhar com o vetor. O vetor
+
+33
+00:02:53,560 --> 00:02:56,200
+é uma lista que ele pode crescer.
+
+34
+00:02:56,959 --> 00:03:03,400
+Então, a gente vai começar aqui eh criando uma um vetor vazio
+
+35
+00:03:04,159 --> 00:03:07,280
+pra gente ver como que é feito. Beleza?
+
+36
+00:03:07,560 --> 00:03:12,959
+Então, aqui, né, no nosso projeto, a gente tem a nossa função main, que é a função
+
+37
+00:03:12,959 --> 00:03:13,959
+principal.
+
+38
+00:03:14,440 --> 00:03:19,120
+E dentro dessa função, eu vou criar aqui um novo vetor.
+
+39
+00:03:23,959 --> 00:03:25,200
+Esse vetor,
+
+40
+00:03:25,640 --> 00:03:27,319
+deixa eu tirar o
+
+41
+00:03:28,120 --> 00:03:30,200
+o auto complete aqui.
+
+42
+00:03:35,959 --> 00:03:37,560
+Deixa eu só
+
+43
+00:03:40,040 --> 00:03:41,680
+tirar, né?
+
+44
+00:03:44,760 --> 00:03:49,040
+Só tirar a complit aqui, né? Porque senão ele vai ficar completando pra gente. Então
+
+45
+00:03:49,040 --> 00:03:51,560
+aqui pra gente criar um um vetor,
+
+46
+00:03:51,959 --> 00:03:53,720
+eh esse vetor
+
+47
+00:03:54,120 --> 00:04:01,159
+a gente vai criar ele utilizando eh tipagem. A gente já vai iniciar ele tipando ele.
+
+48
+00:04:01,159 --> 00:04:03,159
+Então vamos criar um novo vetor
+
+49
+00:04:03,400 --> 00:04:05,519
+que eu vou chamar aqui de V.
+
+50
+00:04:06,239 --> 00:04:08,640
+E essa variável ela vai receber,
+
+51
+00:04:09,360 --> 00:04:12,920
+ela vai ser do tipo, né, VC, que é um vetor,
+
+52
+00:04:13,120 --> 00:04:20,280
+e vai ser do valor dela dentro desse vetor vai ser um valor inteiro, que é o
+
+53
+00:04:20,280 --> 00:04:21,280
+I3.
+
+54
+00:04:22,360 --> 00:04:24,639
+E aqui a gente estancia
+
+55
+00:04:24,960 --> 00:04:26,520
+o nosso vetor.
+
+56
+00:04:27,400 --> 00:04:33,880
+Dessa forma, a gente criou um novo vetor sem nenhum valor, mas que a gente já
+
+57
+00:04:33,880 --> 00:04:41,400
+definiu que dentro dele os valores que vão poder ser eh compostos vão ser valores
+
+58
+00:04:41,400 --> 00:04:43,840
+inteiros do tipo ali I32,
+
+59
+00:04:47,120 --> 00:04:48,120
+certo?
+
+60
+00:04:48,639 --> 00:04:50,639
+Eh, a gente também consegue
+
+61
+00:04:50,919 --> 00:04:54,120
+criar valores iniciais para um vetor,
+
+62
+00:04:54,560 --> 00:05:00,160
+eh, utilizando uma macro chamado VC, que a gente consegue
+
+63
+00:05:00,680 --> 00:05:07,280
+eh passar os valores ali pro vetor e ele infere esse valor de forma
+
+64
+00:05:07,560 --> 00:05:09,880
+automática ali, implícita.
+
+65
+00:05:10,639 --> 00:05:14,160
+né? Então aqui eu vou criar um valor, um
+
+66
+00:05:14,759 --> 00:05:15,800
+um vetor
+
+67
+00:05:16,759 --> 00:05:24,280
+de nome numbers e dentro dele eu vou utilizar essa sintaxe que chama
+
+68
+00:05:24,280 --> 00:05:30,800
+eh o macro, né? Esse essa exclamação é sempre quando a gente quer utilizar alguma
+
+69
+00:05:30,800 --> 00:05:37,440
+chamada eh do tipo macro aqui no Rust. Então, dessa forma aqui, ó, VEC ponto
+
+70
+00:05:37,440 --> 00:05:41,240
+exclamação, a gente consegue criar um novo vetor
+
+71
+00:05:41,720 --> 00:05:48,600
+sem definir o tipo dele. E aqui a gente passa, por exemplo, os números. Dessa forma
+
+72
+00:05:48,600 --> 00:05:52,440
+ele vai tá inferindo os tipos do vetor.
+
+73
+00:05:53,600 --> 00:05:59,280
+Eu vou estar fazendo um print ln aqui pra gente alistar o nosso vetor.
+
+74
+00:06:08,000 --> 00:06:10,000
+E a gente vai passar também
+
+75
+00:06:11,880 --> 00:06:14,479
+o vetor de números ali,
+
+76
+00:06:16,240 --> 00:06:19,720
+beleza? Então, primeiro exemplo criado.
+
+77
+00:06:21,000 --> 00:06:23,400
+Vamos estar executando o projeto.
+
+78
+00:06:27,199 --> 00:06:33,120
+Ele compilou e aí listou aqui pra gente então os nossos dois vetores que a gente
+
+79
+00:06:33,120 --> 00:06:37,319
+acabou de criar. um vetor com a tipagem explícita,
+
+80
+00:06:37,599 --> 00:06:43,160
+onde a gente define o tipo do vetor. Nesse caso, a gente só iniciou ele
+
+81
+00:06:43,520 --> 00:06:49,160
+com esse construtor new, mas não passamos nenhum valor para ele. E nesse segundo
+
+82
+00:06:49,160 --> 00:06:51,360
+caso, a gente criou um outro vetor
+
+83
+00:06:52,560 --> 00:06:59,400
+que a gente passou alguns valores para ele e ele inferiu o tipo desses valores ali
+
+84
+00:06:59,400 --> 00:07:00,639
+pra gente.
+
+85
+00:07:02,400 --> 00:07:09,360
+E essa questão aqui do dois pontos interrogação é aquele debug que ele permite a
+
+86
+00:07:09,360 --> 00:07:15,680
+gente printar mais informações do que a gente quer tá exibindo aqui em tela.
+
+87
+00:07:17,520 --> 00:07:18,520
+Beleza?
+
+88
+00:07:19,199 --> 00:07:23,280
+Então é isso. Por exemplo, nesse array aqui,
+
+89
+00:07:23,919 --> 00:07:30,000
+nesse vetor, né, que eu criei, que eu instanciei ele aqui
+
+90
+00:07:30,800 --> 00:07:37,599
+e ele tá vazio porque eu não associei nem nada a ele, eu consigo associar novos
+
+91
+00:07:37,599 --> 00:07:40,840
+valores para ele. De que forma?
+
+92
+00:07:41,319 --> 00:07:48,159
+Vou tentar primeiro tá associando aqui com o push normal, né, que é o que você
+
+93
+00:07:48,159 --> 00:07:52,319
+consegue inserir novas informações dentro de um vetor.
+
+94
+00:07:52,840 --> 00:07:55,919
+E aí vai dar um erro porque
+
+95
+00:07:56,120 --> 00:07:57,520
+esse vetor,
+
+96
+00:07:57,759 --> 00:08:02,599
+essa variável ela é imutável. Tudo no rush é imutável.
+
+97
+00:08:03,080 --> 00:08:09,479
+Primeiro eu vou tá tentando fazer com imutabilidade e vou est tentando alterar o
+
+98
+00:08:09,479 --> 00:08:12,360
+valor do array do vetor.
+
+99
+00:08:13,520 --> 00:08:15,199
+E aqui mesmo,
+
+100
+00:08:16,000 --> 00:08:19,599
+é, já era para est me aparecendo o erro,
+
+101
+00:08:19,800 --> 00:08:23,919
+mas provavelmente é porque eu tô com rust-analyzer
+
+102
+00:08:24,759 --> 00:08:25,759
+desinstalado,
+
+103
+00:08:26,120 --> 00:08:32,560
+que é quem vai tá fazendo aqui pra gente, né, a nossa verificação do código em tempo
+
+104
+00:08:32,560 --> 00:08:33,760
+de escrita.
+
+105
+00:08:34,240 --> 00:08:37,399
+Então, eh vou est instalando ele aqui.
+
+106
+00:08:40,599 --> 00:08:41,599
+Beleza?
+
+107
+00:08:42,080 --> 00:08:45,120
+E vamos ver se ele já vai pegar o erro aqui pra gente.
+
+108
+00:08:45,880 --> 00:08:48,800
+Ó, agora ele já pegou o erro,
+
+109
+00:08:49,160 --> 00:08:55,080
+ó. A extensão do rush analiz já pegou o erro informando que é aquele cheque, aquele
+
+110
+00:08:55,080 --> 00:08:59,040
+borrel cheque, né? Ele fala que essa variável
+
+111
+00:08:59,760 --> 00:09:04,800
+ela ela tá tentando ser uma variável mutável,
+
+112
+00:09:05,240 --> 00:09:09,120
+porém não tem nada declarando que ela é mutável.
+
+113
+00:09:09,519 --> 00:09:16,640
+E o e o bom do Rust, que ele mesmo já mostra pra gente eh qual que é a solução aí
+
+114
+00:09:16,640 --> 00:09:22,800
+que ele fala, né? Só adicionar essa palavra reservada antes do nome da variável.
+
+115
+00:09:22,800 --> 00:09:29,000
+Então aqui pra gente transformar esse vetor em um array mutável, porque a gente quer
+
+116
+00:09:29,000 --> 00:09:34,040
+adicionar novos valores para ele, a gente declara que ele é um
+
+117
+00:09:34,560 --> 00:09:41,040
+valor mutável. E dessa forma ele já vai tá permitindo a gente inserir novos valores
+
+118
+00:09:41,040 --> 00:09:42,720
+dentro desse vetor.
+
+119
+00:09:43,000 --> 00:09:47,560
+Então aqui, ó, vou colocar o cinco e também vou fazer um push aqui do do
+
+120
+00:09:47,880 --> 00:09:50,680
+seis, só pra gente ver dois itens.
+
+121
+00:09:51,240 --> 00:09:53,480
+E agora aqui no cargo run,
+
+122
+00:09:53,720 --> 00:09:58,680
+ele vai est então listando pra gente esses dois novos itens que a gente adicionou no
+
+123
+00:09:58,680 --> 00:09:59,680
+vetor.
+
+124
+00:10:00,920 --> 00:10:02,920
+Eh, beleza?
+
+125
+00:10:04,600 --> 00:10:05,600
+Agora,
+
+126
+00:10:05,920 --> 00:10:08,000
+eh, a gente também
+
+127
+00:10:08,399 --> 00:10:15,880
+vai tá aprendendo como que a gente ler os vetor os vetores aqui dentro do rust.
+
+128
+00:10:16,040 --> 00:10:20,399
+A gente viu como a gente cria um novo vetor.
+
+129
+00:10:21,440 --> 00:10:26,640
+A gente viu como a gente insere novos valores para para esse vetor. E agora a gente
+
+130
+00:10:26,640 --> 00:10:30,959
+vai ver como que a gente lê informações desse vetor.
+
+131
+00:10:31,959 --> 00:10:35,079
+Beleza? Então, ó, vamos então, né?
+
+132
+00:10:35,279 --> 00:10:39,000
+tá pegando aqui esse exemplo do,
+
+133
+00:10:39,800 --> 00:10:42,240
+vamos criar um novo exemplo, na verdade
+
+134
+00:10:43,560 --> 00:10:46,839
+que vai ser um vetor. Vamos criar aqui um vetor
+
+135
+00:10:47,519 --> 00:10:51,800
+que ele vai ter cinco, cinco itens ali dentro. Vamos colocar.
+
+136
+00:10:55,320 --> 00:11:01,279
+Beleza? Esse B aqui tá maiúsculo, tá maiúsculo. Beleza, agora tá minúsculo. Então a
+
+137
+00:11:01,279 --> 00:11:05,560
+gente tem aqui um vetor com cinco posições.
+
+138
+00:11:07,240 --> 00:11:08,240
+Eh,
+
+139
+00:11:08,680 --> 00:11:09,880
+e aí
+
+140
+00:11:10,839 --> 00:11:15,040
+a gente vai ver a forma que a gente faz para tá acessando
+
+141
+00:11:15,720 --> 00:11:16,720
+esse
+
+142
+00:11:17,600 --> 00:11:23,200
+esse esse item ali dentro do vetor. Por exemplo, eu quero acessar o terceiro
+
+143
+00:11:23,200 --> 00:11:25,800
+elemento desse vetor.
+
+144
+00:11:26,200 --> 00:11:33,519
+É, o terceiro elemento é o número três. Como é um vetor, todo vetor começa no índice
+
+145
+00:11:33,519 --> 00:11:40,240
+zero. Então, se a gente quer o pegar o o a referência da posição três,
+
+146
+00:11:40,519 --> 00:11:47,200
+a gente precisa pegar o índice dois, porque o vetor começa no zero. Então beleza,
+
+147
+00:11:47,200 --> 00:11:54,160
+vamos criar uma variável chamada TID, que ela vai representar pra gente que esse é o
+
+148
+00:11:54,160 --> 00:11:56,160
+terceiro elemento ali
+
+149
+00:11:56,680 --> 00:11:59,600
+que a gente tá querendo eh buscar.
+
+150
+00:12:00,519 --> 00:12:03,160
+E aqui a gente então passa
+
+151
+00:12:03,880 --> 00:12:05,600
+o e comercial,
+
+152
+00:12:05,959 --> 00:12:08,040
+que é a referência,
+
+153
+00:12:08,959 --> 00:12:11,839
+é a sintaxe que a gente acessa a referência
+
+154
+00:12:12,040 --> 00:12:14,279
+nesse caso aqui também.
+
+155
+00:12:14,519 --> 00:12:19,880
+E aí a gente passa qual a posição que a gente quer. Como eu disse, o vetor ele
+
+156
+00:12:19,880 --> 00:12:25,639
+inicia na posição zero, no índice zero. Se a gente quer pegar a posição três, então
+
+157
+00:12:25,639 --> 00:12:27,920
+o índice é o valor do
+
+158
+00:12:28,240 --> 00:12:32,360
+e dessa forma a gente consegue acessar
+
+159
+00:12:32,839 --> 00:12:34,040
+a terceira,
+
+160
+00:12:34,279 --> 00:12:38,160
+o terceiro item desse vetor que a gente acabou de criar.
+
+161
+00:12:38,920 --> 00:12:46,120
+Então, dessa forma, a gente eh acessa ele através ali das referências, né, buscando
+
+162
+00:12:46,120 --> 00:12:50,320
+pela posição dele. Vamos então fazer um print aln aqui
+
+163
+00:12:50,680 --> 00:12:52,279
+e vamos est
+
+164
+00:12:52,600 --> 00:12:55,079
+informando, né? O terceiro
+
+165
+00:12:55,639 --> 00:12:56,639
+elemento
+
+166
+00:12:56,959 --> 00:13:02,800
+é, e aí eu passo aqui dentro o nosso valor que a gente acabou de definir ali em
+
+167
+00:13:02,800 --> 00:13:03,800
+cima.
+
+168
+00:13:04,600 --> 00:13:05,600
+Beleza?
+
+169
+00:13:06,279 --> 00:13:10,480
+Beleza? Dessa forma vamos est rodando o cargo run.
+
+170
+00:13:10,800 --> 00:13:18,040
+E ele já trouxe aqui pra gente que o terceiro elemento é o valor 3 aqui. E ele
+
+171
+00:13:18,040 --> 00:13:20,959
+inferiu também o tipo do
+
+172
+00:13:21,519 --> 00:13:27,600
+nosso elemento. Caso a gente quisesse, a gente poderia também definir aqui de forma
+
+173
+00:13:27,600 --> 00:13:33,399
+explícita qual é a tipagem que a gente quer buscar desse vetor aqui
+
+174
+00:13:33,839 --> 00:13:35,560
+que daria no mesmo.
+
+175
+00:13:37,240 --> 00:13:38,240
+Bacana.
+
+176
+00:13:38,600 --> 00:13:42,720
+Eh, beleza. A outra forma que a gente tem também
+
+177
+00:13:43,079 --> 00:13:45,600
+de acessar o
+
+178
+00:13:46,079 --> 00:13:50,680
+valor ali, né, dentro do vetor é através do get.
+
+179
+00:13:50,959 --> 00:13:53,399
+O que que acontece? O get
+
+180
+00:13:53,639 --> 00:13:57,279
+ele retorna pra gente um option.
+
+181
+00:13:57,519 --> 00:14:00,920
+Um optional é um é um enum
+
+182
+00:14:01,160 --> 00:14:08,480
+que ele pode ser su que é quando tem alguma coisa, ou pode ser nisa.
+
+183
+00:14:09,920 --> 00:14:12,399
+Então vamos tá acessando aqui
+
+184
+00:14:14,360 --> 00:14:19,199
+o terceiro elemento desse vetor através da sintaxe
+
+185
+00:14:19,399 --> 00:14:20,680
+do get.
+
+186
+00:14:21,720 --> 00:14:24,839
+Beleza? Então vamos aqui, né,
+
+187
+00:14:25,959 --> 00:14:28,480
+fazer essa nova chamada
+
+188
+00:14:29,320 --> 00:14:32,440
+e aqui dentro a gente vai querer então
+
+189
+00:14:32,880 --> 00:14:33,880
+buscar
+
+190
+00:14:34,360 --> 00:14:41,639
+o a posição dois do vetor. Nesse caso a gente tá buscando através do ponto get.
+
+191
+00:14:42,399 --> 00:14:48,399
+Na inferência de tipo, o Rust já trouxe aqui pra gente que ele é um option que vai
+
+192
+00:14:48,399 --> 00:14:56,040
+retornar uma referência eh de um inteiro, certo? A gente pode vir aqui e definir
+
+193
+00:14:56,040 --> 00:15:00,320
+a tipagem dele ou a gente também pode
+
+194
+00:15:01,839 --> 00:15:09,279
+ele inferir a tipagem. Mas bem, beleza. Então, eh, tivemos agora uma um acesso
+
+195
+00:15:09,279 --> 00:15:10,519
+do vetor
+
+196
+00:15:10,800 --> 00:15:17,480
+e a gente quer buscar o índex dele e a gente tá utilizando a sintaxe do get. Dentro
+
+197
+00:15:17,480 --> 00:15:23,320
+do get a gente retorna qual o índex que a gente quer e o retorno desse get.
+
+198
+00:15:24,720 --> 00:15:31,480
+Esse option ele pode retornar um sum para quando tem valor e um nani para quando não
+
+199
+00:15:31,480 --> 00:15:38,639
+tem valor. Dessa forma, com o get, a gente encontra ali o valor
+
+200
+00:15:38,639 --> 00:15:45,839
+dessa sintaxe de optal, utilizando e a sintaxe de Mat. O Mat é
+
+201
+00:15:45,839 --> 00:15:48,959
+dessa forma. Você passa o match,
+
+202
+00:15:49,759 --> 00:15:54,199
+passa o item que você quer fazer a comparação
+
+203
+00:15:54,519 --> 00:16:01,839
+e dentro dele você vai retornar o que que você quer. Como é um option, ele
+
+204
+00:16:01,839 --> 00:16:03,680
+retorna um som
+
+205
+00:16:04,839 --> 00:16:07,160
+que dentro dele tem o value
+
+206
+00:16:07,800 --> 00:16:09,839
+e a gente vai estar
+
+207
+00:16:10,279 --> 00:16:13,600
+eh fazendo o print desse valor
+
+208
+00:16:25,120 --> 00:16:31,319
+ou ele retorna o nô para quando essa condição não for verdadeira.
+
+209
+00:16:33,199 --> 00:16:35,680
+E aqui a gente vai imprimir então
+
+210
+00:16:42,079 --> 00:16:43,600
+que não existe
+
+211
+00:16:48,120 --> 00:16:49,639
+terceiro elemento.
+
+212
+00:16:52,959 --> 00:16:59,120
+Beleza? Então, dessa forma aqui, ele retorna pra gente nesse métor
+
+213
+00:17:01,839 --> 00:17:04,279
+dentro aqui desse tird, né,
+
+214
+00:17:04,480 --> 00:17:10,600
+acessando o vetor pelo get, ele vai retornar o valor. Quando não tiver, ele não vai
+
+215
+00:17:10,600 --> 00:17:14,480
+retornar o valor. Vamos rodar aqui para ver o que que ele vai estar passando.
+
+216
+00:17:14,799 --> 00:17:19,839
+E aí aqui, ó, é, ele retornou o valor, né, porque
+
+217
+00:17:20,039 --> 00:17:26,079
+é o terceiro elemento que que ele encontrou ali pra gente.
+
+218
+00:17:26,079 --> 00:17:32,080
+Mas, por exemplo, se eu vim aqui e tento acessar o índex 20, não vai ter, porque a
+
+219
+00:17:32,080 --> 00:17:38,679
+gente só tem cinco index aqui. Aí ele vai cair dentro dessa condição de none.
+
+220
+00:17:40,600 --> 00:17:42,960
+Ó, não existe terceiro elemento.
+
+221
+00:17:43,919 --> 00:17:49,200
+Beleza? Então, essas duas formas a gente consegue est acessando o
+
+222
+00:17:50,760 --> 00:17:51,760
+nosso
+
+223
+00:17:53,120 --> 00:17:58,919
+os nossos itens ali dentro do vetor. Dessa forma, a gente consegue acessar
+
+224
+00:17:59,120 --> 00:18:02,000
+utilizando as referências e passando
+
+225
+00:18:02,559 --> 00:18:03,559
+eh
+
+226
+00:18:04,039 --> 00:18:07,400
+o a o índex a gente quer
+
+227
+00:18:07,799 --> 00:18:10,320
+retornar, a posição que a gente quer retornar.
+
+228
+00:18:10,760 --> 00:18:17,240
+E por exemplo, nesse caso aqui que a gente não utilizou a sintaxe do get, se a gente
+
+229
+00:18:17,240 --> 00:18:19,440
+vi aqui e tentar acessar
+
+230
+00:18:19,799 --> 00:18:25,880
+o o index 20 através da referência, vamos ver o que que dá.
+
+231
+00:18:26,159 --> 00:18:31,400
+Ó, ele deu um erro, ele deu um panic, porque a gente não tem esse 20.
+
+232
+00:18:31,640 --> 00:18:38,960
+Já aqui embaixo, utilizando o get, por ele retornar um option, que pode
+
+233
+00:18:38,960 --> 00:18:40,640
+retornar um valor
+
+234
+00:18:41,200 --> 00:18:48,360
+ou não, aí nessa nessa sintaxe ele consegue tratar e ao invés de
+
+235
+00:18:48,360 --> 00:18:54,440
+retornar um panic, ele retorna pra gente uma tentativa melhor informando aqui, né,
+
+236
+00:18:54,440 --> 00:18:57,200
+que não existe o terceiro elemento.
+
+237
+00:18:59,200 --> 00:19:00,200
+Beleza?
+
+238
+00:19:01,320 --> 00:19:02,320
+Eh,
+
+239
+00:19:05,760 --> 00:19:10,919
+beleza. Agora, pessoal, eu vou est mostrando para vocês um exemplo de borb
+
+240
+00:19:12,200 --> 00:19:17,360
+aqui no vetor, né? No vector. Que isso? Então eu vou est mostrando aqui um exemplo
+
+241
+00:19:17,360 --> 00:19:22,039
+de B cheque no vetor. Eh, aqui, ó,
+
+242
+00:19:22,240 --> 00:19:27,039
+vamos estar utilizando esse vetor que a gente tem mesmo e vamos estar acessando o
+
+243
+00:19:27,039 --> 00:19:29,360
+primeiro elemento desse vetor.
+
+244
+00:19:35,640 --> 00:19:41,640
+Beleza? Ó, aqui a gente já tá acessando o primeiro elemento do vetor.
+
+245
+00:19:42,679 --> 00:19:47,440
+Logo aqui embaixo, mesmo esse vetor sendo o vetor mutável,
+
+246
+00:19:48,480 --> 00:19:51,080
+logo aqui embaixo eu vou tentar
+
+247
+00:19:51,280 --> 00:19:53,360
+eh tá fazendo aqui
+
+248
+00:19:53,600 --> 00:19:57,600
+uma inserção de um novo item no vetor.
+
+249
+00:19:58,440 --> 00:20:02,400
+E mais embaixo eu vou estar fazendo um print ln,
+
+250
+00:20:03,360 --> 00:20:06,600
+mostrando ali o valor, né, do primeiro
+
+251
+00:20:07,360 --> 00:20:09,840
+do primeiro item que a gente trouxe.
+
+252
+00:20:14,280 --> 00:20:20,679
+Beleza? Aí, pessoal, ó, só de eu salvar aqui o Rust Analyse e
+
+253
+00:20:20,679 --> 00:20:28,320
+o borrel check do Rust, ele já veio aqui pra gente, ó. Ó, canal B
+
+254
+00:20:28,320 --> 00:20:29,320
+votable
+
+255
+00:20:29,840 --> 00:20:34,400
+because it is also B as immutable.
+
+256
+00:20:35,039 --> 00:20:39,320
+Mas enfim, o que que ele tá falando? Que você não pode
+
+257
+00:20:39,640 --> 00:20:44,520
+eh fazer essa transferência aí de valor, porque
+
+258
+00:20:44,919 --> 00:20:46,480
+aqui em cima
+
+259
+00:20:46,840 --> 00:20:50,640
+essa variável ela utiliza uma referência
+
+260
+00:20:51,159 --> 00:20:56,600
+do nosso vetor. Como ela utiliza uma referência do nosso vetor? E aqui embaixo a
+
+261
+00:20:56,600 --> 00:20:58,400
+gente tenta adicionar
+
+262
+00:20:58,840 --> 00:21:00,320
+mais um
+
+263
+00:21:00,760 --> 00:21:07,720
+mais um item ali dentro do vetor, ele perde eh essa referência, porque esse
+
+264
+00:21:07,720 --> 00:21:12,679
+empréstimo aqui que ele fez, né, essa referência que ele fez, ela é imutável.
+
+265
+00:21:13,000 --> 00:21:15,279
+por conta dela ser imutável,
+
+266
+00:21:15,760 --> 00:21:16,760
+eh,
+
+267
+00:21:16,960 --> 00:21:17,960
+esse
+
+268
+00:21:19,000 --> 00:21:25,919
+e essa inserção aqui do vetor não pode acontecer porque ele já meio que se
+
+269
+00:21:25,919 --> 00:21:32,360
+comprometeu, né, com essa primeira eh variável que a gente definiu aqui. Então, ou
+
+270
+00:21:32,360 --> 00:21:33,360
+seja,
+
+271
+00:21:33,799 --> 00:21:37,880
+se eu utilizo a referência de um vetor
+
+272
+00:21:38,720 --> 00:21:40,279
+que é mutável
+
+273
+00:21:41,480 --> 00:21:48,760
+e depois eu tento acrescentar novos valores nesse vetor, eu não consigo, porque o
+
+274
+00:21:48,760 --> 00:21:52,120
+borrel check ele já identifica
+
+275
+00:21:52,520 --> 00:21:58,720
+que tem uma primeira variável que já tá utilizando a referência desse vetor. E aí
+
+276
+00:21:58,720 --> 00:22:05,320
+quando a gente tenta fazer algo com ele que mude a estrutura dele ou algo do tipo,
+
+277
+00:22:05,320 --> 00:22:10,919
+ele já identifica que tem uma variável que já fez a referência daquilo e não pode
+
+278
+00:22:10,919 --> 00:22:13,360
+mudar. Muito interessante, né?
+
+279
+00:22:13,880 --> 00:22:16,640
+Então é isso. Eh, agora
+
+280
+00:22:17,240 --> 00:22:24,039
+a gente vai tá percorrendo aqui também eh o nosso vetor pra gente ver como que
+
+281
+00:22:24,039 --> 00:22:25,039
+funciona
+
+282
+00:22:25,240 --> 00:22:28,440
+eh essa questão de você conseguir percorrer
+
+283
+00:22:28,760 --> 00:22:33,880
+dentro ali de dos vetores. Beleza? Então bora lá. Primeiro vou criar aqui uma
+
+284
+00:22:33,880 --> 00:22:35,520
+estrutura de vetor
+
+285
+00:22:35,880 --> 00:22:39,120
+que não vai ser essa que a gente utilizou várias vezes,
+
+286
+00:22:39,320 --> 00:22:41,000
+vai ser essa daqui.
+
+287
+00:22:43,000 --> 00:22:48,559
+Beleza? Eu tenho aqui, né, um vetor com alguns valores dentro. Esses valores eles
+
+288
+00:22:48,559 --> 00:22:50,039
+não são mutáveis.
+
+289
+00:22:52,120 --> 00:22:54,840
+Tenho então, né, esses valores aqui dentro.
+
+290
+00:22:55,120 --> 00:23:01,440
+E agora eu quero percorrer esse vetor. Como eu faço isso? Eu tenho aqui a estrutura
+
+291
+00:23:01,440 --> 00:23:08,600
+de repetição for, que ela ela funciona da seguinte forma. Você faz o for, cria
+
+292
+00:23:08,600 --> 00:23:14,240
+uma variável que vai ser a variável que vai interar dentro ali do for e você fala
+
+293
+00:23:14,240 --> 00:23:21,080
+sobre o que que essa variável vai iterar. Então ela vai iterar em, né,
+
+294
+00:23:21,080 --> 00:23:25,320
+esse I. e a gente passa a referência
+
+295
+00:23:25,520 --> 00:23:27,159
+do nosso vetor.
+
+296
+00:23:27,760 --> 00:23:31,159
+Aqui dentro a gente pode colocar um print ln,
+
+297
+00:23:34,760 --> 00:23:37,159
+onde vai tá listando pra gente
+
+298
+00:23:37,520 --> 00:23:38,520
+eh
+
+299
+00:23:39,720 --> 00:23:42,799
+o item que tá sendo iterado ali.
+
+300
+00:23:43,400 --> 00:23:48,559
+Vamos dar um carro no RAM aqui para ver. E aí ele lista então pra gente, né, esses
+
+301
+00:23:48,799 --> 00:23:51,159
+eh itens do vetor.
+
+302
+00:23:51,840 --> 00:23:53,480
+A gente também consegue
+
+303
+00:23:54,080 --> 00:24:00,320
+eh alterar esses elementos que tá sendo interados. Como que a gente faz? A gente
+
+304
+00:24:00,320 --> 00:24:07,120
+precisa que o vetor seja mutável. Por isso a gente utiliza a palavra mut ali na
+
+305
+00:24:07,120 --> 00:24:08,120
+frente
+
+306
+00:24:08,400 --> 00:24:12,720
+antes, na verdade do nome da variável. E aqui dentro,
+
+307
+00:24:13,000 --> 00:24:17,000
+eh, a gente vai tá passando a nossa referência
+
+308
+00:24:17,440 --> 00:24:23,799
+como sendo mutável também. Aqui, ao invés de eu passar só a referência, eu passo a
+
+309
+00:24:23,799 --> 00:24:24,799
+referência
+
+310
+00:24:25,880 --> 00:24:31,240
+e na frente a palavra mil, que ele já vai entender que esse valor é
+
+311
+00:24:31,240 --> 00:24:34,640
+mutável. Agora aqui dentro dessa
+
+312
+00:24:34,919 --> 00:24:35,919
+repetição,
+
+313
+00:24:36,120 --> 00:24:38,399
+eu vou estar fazendo uma iteração.
+
+314
+00:24:39,120 --> 00:24:40,880
+Vou pegar o item
+
+315
+00:24:41,360 --> 00:24:43,559
+que está sendo iterado.
+
+316
+00:24:44,399 --> 00:24:51,240
+Eh, esse esse esse asterisco significa de referência.
+
+317
+00:24:51,520 --> 00:24:54,240
+Aqui dentro ele faz a derreferência
+
+318
+00:24:54,600 --> 00:24:59,720
+desse item. Mas enfim, então eu vou pegar esse meu item que tá sendo iterado e vou
+
+319
+00:24:59,720 --> 00:25:01,960
+somar mais 50 nele.
+
+320
+00:25:03,080 --> 00:25:06,640
+É. E aí, fora do loop, fora da repetição,
+
+321
+00:25:06,960 --> 00:25:09,000
+eu vou estar fazendo então
+
+322
+00:25:09,559 --> 00:25:11,120
+a exibição
+
+323
+00:25:11,320 --> 00:25:15,760
+desse item, que no caso é o nosso print ln aqui
+
+324
+00:25:23,080 --> 00:25:30,279
+e esse print ln. Beleza? Agora eu vou est então rodando o comando o projeto e a
+
+325
+00:25:30,279 --> 00:25:34,120
+gente vê que os itens eles foram iterados
+
+326
+00:25:34,480 --> 00:25:37,200
+com um valor de 50 a mais ali.
+
+327
+00:25:38,440 --> 00:25:40,159
+Eh, beleza?
+
+328
+00:25:42,559 --> 00:25:50,120
+Agora a gente também vai aprender trabalhar com eh vetores de tipos diferente.
+
+329
+00:25:50,240 --> 00:25:56,720
+Por exemplo, até agora a gente trabalhou com vetores que dentro dele eh eram
+
+330
+00:25:56,720 --> 00:26:02,760
+formados por um mesmo tipo. Por exemplo, nesse caso, eram formado por inteiros.
+
+331
+00:26:03,240 --> 00:26:09,880
+Agora a gente vai aprender a como trabalhar com vetores de tipos diferentes. Por
+
+332
+00:26:09,880 --> 00:26:10,880
+exemplo,
+
+333
+00:26:11,520 --> 00:26:14,200
+vou criar aqui um enum
+
+334
+00:26:15,799 --> 00:26:16,799
+e
+
+335
+00:26:17,399 --> 00:26:19,600
+para como se fosse uma
+
+336
+00:26:20,039 --> 00:26:26,200
+uma células de uma planilha, certo? Então eu vou colocar aqui, ó, spriad
+
+337
+00:26:28,240 --> 00:26:29,240
+spriad
+
+338
+00:26:29,600 --> 00:26:30,600
+cheit
+
+339
+00:26:31,120 --> 00:26:32,120
+cell.
+
+340
+00:26:32,480 --> 00:26:37,440
+que seriam as células. E aqui dentro eu vou passar os tipos,
+
+341
+00:26:38,000 --> 00:26:42,520
+ó. Vou passar o inteiro que dentro dele ele é um i3,
+
+342
+00:26:43,360 --> 00:26:44,600
+um float
+
+343
+00:26:45,480 --> 00:26:46,480
+f64
+
+344
+00:26:47,760 --> 00:26:51,600
+e um text que vai ser uma string.
+
+345
+00:26:52,399 --> 00:26:53,399
+Beleza?
+
+346
+00:26:53,600 --> 00:26:55,720
+E aí aqui dentro
+
+347
+00:26:56,640 --> 00:26:58,440
+a gente estancia
+
+348
+00:26:59,240 --> 00:27:01,080
+esse novo vetor
+
+349
+00:27:04,840 --> 00:27:09,440
+e dentro dele a gente passa então o nosso enumero.
+
+350
+00:27:12,120 --> 00:27:17,679
+Aqui, ó, vou falar que esse é do tipo inteiro e o valor vai ser três.
+
+351
+00:27:21,000 --> 00:27:24,919
+Vou falar que esse vai ser do tipo string,
+
+352
+00:27:25,120 --> 00:27:29,399
+que é um texto, né? E aqui dentro, então, eu vou passar
+
+353
+00:27:29,799 --> 00:27:31,520
+um valor para ele.
+
+354
+00:27:31,880 --> 00:27:36,919
+Nesse caso são cores, né? Então vou passar, por exemplo, cor blue.
+
+355
+00:27:37,919 --> 00:27:40,399
+E também tenho o meu
+
+356
+00:27:40,720 --> 00:27:43,159
+enum aqui de float
+
+357
+00:27:43,600 --> 00:27:50,440
+que para dentro dele eu consigo também passar um float. Beleza? E aqui dentro,
+
+358
+00:27:50,440 --> 00:27:52,919
+então, eu vou estar listando
+
+359
+00:27:53,200 --> 00:27:56,320
+o nosso vetor que a gente acabou de
+
+360
+00:27:57,440 --> 00:27:59,840
+acabou de eh criar.
+
+361
+00:28:12,320 --> 00:28:17,559
+Ah, sim. Beleza? Ó, uma coisa importante aqui pra gente é que, por exemplo, eu tô
+
+362
+00:28:17,559 --> 00:28:19,039
+querendo exibir
+
+363
+00:28:19,760 --> 00:28:26,279
+essa rua aqui pra gente, só que tem uma trait que depois a gente vai falar sobre
+
+364
+00:28:26,279 --> 00:28:28,720
+isso, chamada display.
+
+365
+00:28:29,279 --> 00:28:33,600
+Essa trait display a gente precisa implementar ela
+
+366
+00:28:33,880 --> 00:28:41,120
+para que nossos e enum eles possam estar sendo exibidos aqui no print ln.
+
+367
+00:28:43,080 --> 00:28:47,799
+E beleza? E dessa forma, como que a gente faz essa implementação?
+
+368
+00:28:49,679 --> 00:28:55,320
+Eh, é sempre bom a gente ver o próprio erro que o Rust mostra. Ó, ele tá falando que
+
+369
+00:28:55,320 --> 00:29:01,760
+não pode implementar, né? Que e esse não, ele não implementa esse display,
+
+370
+00:29:03,279 --> 00:29:04,279
+né?
+
+371
+00:29:04,799 --> 00:29:07,279
+E aqui ele fala, né?
+
+372
+00:29:08,120 --> 00:29:14,799
+Tã, como é que é? para quando a gente quer utilizar dessa forma aqui, certo?
+
+373
+00:29:15,240 --> 00:29:19,960
+Aí, pessoal, só pra gente passar por essa etapa aqui,
+
+374
+00:29:20,399 --> 00:29:24,919
+tem uma tem uma derivada, né? Tem uma
+
+375
+00:29:25,679 --> 00:29:31,039
+uma derivada que a gente consegue trazer para cá, que é o debug.
+
+376
+00:29:36,720 --> 00:29:38,799
+Deixa eu ver se essa é sintaxe
+
+377
+00:29:42,159 --> 00:29:46,960
+assim. Beleza? Então é dessa forma aqui mesmo. Só que ao invés de seu coochetes
+
+378
+00:29:46,960 --> 00:29:50,559
+aqui, eu vou utilizar as chaves.
+
+379
+00:29:52,720 --> 00:30:00,200
+Beleza? Dessa forma, pessoal, eh eu utilizei esse esse deriv aqui que ele consegue
+
+380
+00:30:00,200 --> 00:30:06,519
+meio que importar esse macro aqui, debug, que esse debug, esse trate debug, ele
+
+381
+00:30:06,519 --> 00:30:08,880
+permite que a gente exiba
+
+382
+00:30:09,240 --> 00:30:12,799
+a nossa o nosso Enum aqui através do
+
+383
+00:30:13,519 --> 00:30:18,679
+eh de conseguir, né, mostrar o objeto, mostrar o item em si completo. Então, dessa
+
+384
+00:30:18,679 --> 00:30:20,440
+forma a gente consegue
+
+385
+00:30:21,080 --> 00:30:25,320
+estar listando aqui pra gente. É, voltando aqui,
+
+386
+00:30:25,960 --> 00:30:32,480
+eh, a gente então utilizou esse esse deriv aqui, né, esse trait do debug para
+
+387
+00:30:32,480 --> 00:30:34,279
+conseguir exibir
+
+388
+00:30:34,480 --> 00:30:40,320
+todos os nossos itens aqui sem precisar mostrar um por um. Eh, e aí vamos estar
+
+389
+00:30:40,320 --> 00:30:42,399
+rodando o nosso programa.
+
+390
+00:30:42,840 --> 00:30:48,200
+E aqui embaixo, ó, ele já retorna pra gente os nossos resultados, ó. int 3, text
+
+391
+00:30:48,200 --> 00:30:55,279
+blue e float 10.12, igual os valores que a gente eh passou aqui para ele.
+
+392
+00:30:55,279 --> 00:30:59,360
+Então, dessa forma, a gente consegue fazer eh
+
+393
+00:30:59,639 --> 00:31:01,799
+vetores que
+
+394
+00:31:02,720 --> 00:31:04,600
+tem tipos diferentes.
+
+395
+00:31:07,720 --> 00:31:13,600
+Beleza? Beleza? Então pessoal, essa foi a primeira sessão, né, das collections.
+
+396
+00:31:14,519 --> 00:31:15,519
+E
+
+397
+00:31:16,080 --> 00:31:18,960
+essa foi as explicações
+
+398
+00:31:19,240 --> 00:31:26,080
+da collection de vetor. Agora a gente vai utilizar, a gente vai aprender sobre a
+
+399
+00:31:26,080 --> 00:31:31,679
+collection do da string. Beleza? Então bora lá.
+
+400
+00:31:32,760 --> 00:31:35,320
+Eh, deixa eu só limpar o código aqui.
+
+401
+00:31:36,679 --> 00:31:37,679
+Então,
+
+402
+00:31:38,080 --> 00:31:44,159
+eh, a string ela é um pouco mais chata aqui no Rust, porque ela lida com esse com o
+
+403
+00:31:44,159 --> 00:31:51,480
+TF8 ali, né? Eh, em vez de de tipo assim, de mascarar o problema, ela consegue litar
+
+404
+00:31:51,480 --> 00:31:53,440
+lidar com o TF8.
+
+405
+00:31:54,080 --> 00:31:59,440
+E e isso é um pouco complicado aqui pro Ver, mas beleza. Então, ó, vamos tá criando
+
+406
+00:31:59,440 --> 00:32:00,639
+uma nova
+
+407
+00:32:01,000 --> 00:32:02,880
+uma nova string aqui,
+
+408
+00:32:03,480 --> 00:32:05,159
+que ela vai ser mutável
+
+409
+00:32:05,679 --> 00:32:08,760
+e a gente cria com essa sintaxe
+
+410
+00:32:09,240 --> 00:32:10,240
+string
+
+411
+00:32:10,880 --> 00:32:15,039
+e o new. Esse new é um construtor
+
+412
+00:32:15,240 --> 00:32:20,480
+que ele consegue então e criar uma nova string pra gente. Beleza? A nova string foi
+
+413
+00:32:20,480 --> 00:32:26,080
+criada. Eu posso aqui, por exemplo, colocar alguns valores, por exemplo, esse data
+
+414
+00:32:26,080 --> 00:32:28,159
+aqui, ó, conteúdo inicial.
+
+415
+00:32:31,720 --> 00:32:32,720
+Eh,
+
+416
+00:32:33,360 --> 00:32:36,760
+e vou pegar e vou estar concatenando
+
+417
+00:32:37,440 --> 00:32:38,440
+eh
+
+418
+00:32:38,720 --> 00:32:41,760
+com mais um valor aqui, por exemplo, ó,
+
+419
+00:32:42,200 --> 00:32:44,159
+s de string.
+
+420
+00:32:45,120 --> 00:32:49,600
+Vou tá transformando esse valor aqui para uma string
+
+421
+00:32:51,320 --> 00:32:53,360
+e depois eu vou est fazendo
+
+422
+00:32:54,240 --> 00:32:57,159
+isso daqui que também dá na mesma.
+
+423
+00:33:01,120 --> 00:33:04,559
+as formas, né, que a gente consegue trabalhar, né, transformar
+
+424
+00:33:05,000 --> 00:33:07,360
+uma slice e uma string.
+
+425
+00:33:11,440 --> 00:33:19,000
+E aqui também a gente consegue eh escrever um string através da sintaxe de string
+
+426
+00:33:19,080 --> 00:33:23,720
+do pontos dois pontos from e aqui dentro você passa
+
+427
+00:33:24,240 --> 00:33:32,240
+o valor que você quer pra sua string. já com um valor inicial ali, né? Por exemplo,
+
+428
+00:33:33,919 --> 00:33:36,559
+então é o two string
+
+429
+00:33:36,799 --> 00:33:39,039
+e o string 2.2
+
+430
+00:33:39,279 --> 00:33:44,200
+from, eles fazem a mesma coisa e aí é mais a preferência
+
+431
+00:33:44,559 --> 00:33:47,480
+eh de estilo, né?
+
+432
+00:33:49,440 --> 00:33:50,919
+Eh, e aí,
+
+433
+00:33:51,440 --> 00:33:52,919
+só pra gente
+
+434
+00:33:53,639 --> 00:33:56,679
+aqui dentro da dessa string
+
+435
+00:33:56,880 --> 00:33:58,399
+cabe qualquer
+
+436
+00:33:58,639 --> 00:34:01,159
+eh caractere ali do TF8.
+
+437
+00:34:01,519 --> 00:34:04,960
+Por exemplo, eu vou vou pegar alguns exemplos aqui.
+
+438
+00:34:05,639 --> 00:34:12,280
+É igual aqui, ó, é um com acento, né? Olá, depois vem os chinês aqui, depois outros
+
+439
+00:34:12,280 --> 00:34:13,280
+caracteres.
+
+440
+00:34:13,800 --> 00:34:16,560
+Então, eh, a gente percebe
+
+441
+00:34:17,159 --> 00:34:18,159
+que
+
+442
+00:34:18,760 --> 00:34:25,760
+a string aqui dentro ela consegue lidar com os caracteres de UTF8 de forma
+
+443
+00:34:25,760 --> 00:34:26,760
+tranquila.
+
+444
+00:34:27,599 --> 00:34:28,599
+Beleza?
+
+445
+00:34:29,200 --> 00:34:34,639
+Eh, então, atualizando as strings, né, atualizando os valores dela. Por exemplo, eu
+
+446
+00:34:34,639 --> 00:34:37,079
+vou iniciar aqui uma nova string
+
+447
+00:34:38,520 --> 00:34:40,399
+com o valor full.
+
+448
+00:34:41,280 --> 00:34:44,599
+Depois eu vou tá e acrescentando o barra.
+
+449
+00:34:45,480 --> 00:34:52,000
+E aí eu vou criar então aqui uma nova, uma string no dois aqui que vai ter
+
+450
+00:34:52,679 --> 00:34:57,159
+o slice aqui, né, que vai ter o valor de barra.
+
+451
+00:34:57,720 --> 00:34:58,720
+Beleza?
+
+452
+00:34:59,800 --> 00:35:03,200
+Eh, agora aqui se eu vim e fazer
+
+453
+00:35:13,480 --> 00:35:16,480
+por quê? Porque esse push
+
+454
+00:35:16,880 --> 00:35:19,920
+é aquele push que a gente utiliza para
+
+455
+00:35:20,320 --> 00:35:25,839
+levar itens para dentro de um vetor. Só que como a gente tá dentro da string, a
+
+456
+00:35:25,839 --> 00:35:27,800
+gente utiliza o push.
+
+457
+00:35:28,560 --> 00:35:29,560
+stream
+
+458
+00:35:30,680 --> 00:35:31,839
+que aí
+
+459
+00:35:35,520 --> 00:35:36,520
+aqui,
+
+460
+00:35:41,200 --> 00:35:46,880
+ó, punh string. E aí, dessa forma ele permite que a gente faça esse push. Então, se
+
+461
+00:35:46,880 --> 00:35:49,880
+eu vi aqui e mostrar, ó,
+
+462
+00:36:02,920 --> 00:36:08,800
+então se eu rodar o comando, se eu rodar o programa aqui, ele vai tá então, né, eh,
+
+463
+00:36:08,800 --> 00:36:10,599
+trazendo aqui pra gente.
+
+464
+00:36:12,920 --> 00:36:15,160
+Beleza? E aí
+
+465
+00:36:16,240 --> 00:36:20,319
+aqui quando a gente quer juntar, né, as strings,
+
+466
+00:36:20,800 --> 00:36:26,720
+ela aqui, o que que a gente faz? A gente pode utilizar a sintaxe do format.
+
+467
+00:36:28,240 --> 00:36:33,119
+Eh, eu vou est tentando fazer a concatenização
+
+468
+00:36:33,680 --> 00:36:35,560
+das stringas aqui
+
+469
+00:36:36,160 --> 00:36:42,839
+e e vou est mostrando para vocês a utilização do macro format, que aí você que ele
+
+470
+00:36:42,839 --> 00:36:48,079
+permite que a gente formata uma string e a gente consegue concatenar uma na outra.
+
+471
+00:36:48,079 --> 00:36:49,400
+Mas de início,
+
+472
+00:36:49,880 --> 00:36:53,720
+eh, vou estar criando aqui, então, né, duas
+
+473
+00:36:54,440 --> 00:36:58,079
+duas strings que são esse Hello World.
+
+474
+00:36:59,680 --> 00:37:04,240
+Eh, e dessa forma a gente tem, né, essa concatenização
+
+475
+00:37:05,040 --> 00:37:06,760
+com o mais.
+
+476
+00:37:11,599 --> 00:37:15,079
+E se a gente tenta listar aqui então no print ln
+
+477
+00:37:15,560 --> 00:37:16,800
+do três
+
+478
+00:37:17,319 --> 00:37:18,640
+três, né?
+
+479
+00:37:25,280 --> 00:37:31,240
+A gente vê então, né, que esses itens eles foram concatenados, ó, por exemplo, Hello
+
+480
+00:37:31,240 --> 00:37:35,040
+Word. E aqui ele trouxe pra gente.
+
+481
+00:37:36,400 --> 00:37:44,000
+Eh, só que dessa forma aqui fica uma sintaxe muito ruim eh de de identificar.
+
+482
+00:37:44,280 --> 00:37:45,760
+Por isso, então
+
+483
+00:37:46,160 --> 00:37:49,640
+a a gente tem aqui a sintaxe do format.
+
+484
+00:37:49,880 --> 00:37:51,920
+Aí você chama o format
+
+485
+00:37:52,200 --> 00:37:53,800
+de forma macro,
+
+486
+00:37:54,240 --> 00:37:59,720
+né? né, com essa exclamação, reforma de exclamação. E aqui dentro você consegue
+
+487
+00:37:59,720 --> 00:38:03,960
+então formatar sua string de uma forma muito mais
+
+488
+00:38:04,760 --> 00:38:05,760
+eh
+
+489
+00:38:07,119 --> 00:38:11,359
+muito melhor, né, de uma forma muito mais semântica aqui. Então, por exemplo, eu
+
+490
+00:38:11,359 --> 00:38:13,400
+posso vir aqui, ó, S1
+
+491
+00:38:17,560 --> 00:38:18,839
+e S2,
+
+492
+00:38:19,440 --> 00:38:24,960
+que ele vai formatar a string, vai criar essas duas strings aqui, né? e vai tá
+
+493
+00:38:24,960 --> 00:38:29,359
+listando pra gente também da mesma forma, ó. Hello world.
+
+494
+00:38:29,760 --> 00:38:31,079
+Tudo certinho.
+
+495
+00:38:35,720 --> 00:38:37,280
+Beleza. Beleza.
+
+496
+00:38:47,720 --> 00:38:52,839
+Show de bola, pessoal. Eh, tem um outro ponto aqui também que eu não ia
+
+497
+00:38:52,839 --> 00:38:57,280
+estar mostrando para vocês porque é um pouco maçante, mas eu vou est mostrando assim
+
+498
+00:38:57,280 --> 00:39:03,200
+mesmo. O que que acontece? a gente não consegue indexar strings.
+
+499
+00:39:04,839 --> 00:39:06,760
+em outras, eh,
+
+500
+00:39:07,040 --> 00:39:12,480
+em outras linguagens de programação, JavaScript, a gente consegue fazer o, é,
+
+501
+00:39:12,480 --> 00:39:18,400
+capturar, né, o índex da string, igual, por exemplo, aqui seria o H, né,
+
+502
+00:39:18,640 --> 00:39:20,839
+mas aqui ele não consegue
+
+503
+00:39:21,200 --> 00:39:23,359
+eh tá pegando
+
+504
+00:39:24,040 --> 00:39:28,040
+esse índex da string, porque o rush
+
+505
+00:39:29,160 --> 00:39:30,160
+ele
+
+506
+00:39:30,960 --> 00:39:31,960
+ele
+
+507
+00:39:32,280 --> 00:39:34,720
+ele traz ali, né, alguns bytes
+
+508
+00:39:35,400 --> 00:39:40,160
+para string. E aí cada letra, né, ela consegue, ela ocupa ali
+
+509
+00:39:40,160 --> 00:39:42,359
+os dois bytes em TF8.
+
+510
+00:39:42,839 --> 00:39:49,319
+Então, eh, ele não traz por conta disso, porque algumas strings pode ter um byte
+
+511
+00:39:49,319 --> 00:39:51,400
+maior e outras menores
+
+512
+00:39:51,640 --> 00:39:57,839
+e e por isso ele não consegue eh capturar o índex em si.
+
+513
+00:39:58,440 --> 00:40:04,280
+Eh, a coisa, a única coisa que ele consegue fazer o jeito certo ali, né, seria
+
+514
+00:40:04,280 --> 00:40:10,240
+iterar, fazer a iteração sobre aquela string. E aí sim a gente conseguiria
+
+515
+00:40:10,560 --> 00:40:12,040
+eh pegar
+
+516
+00:40:12,720 --> 00:40:15,359
+o índex daquela string. Por exemplo,
+
+517
+00:40:15,920 --> 00:40:18,800
+eu tenho essa string aqui, hera
+
+518
+00:40:21,800 --> 00:40:22,800
+iteração.
+
+519
+00:40:23,280 --> 00:40:30,680
+Eu eu peguei aqui, né, o range dela do do index zero até o o quatro aqui. E logo
+
+520
+00:40:30,680 --> 00:40:31,680
+abaixo
+
+521
+00:40:32,040 --> 00:40:36,200
+eu faço então a iteração desses itens.
+
+522
+00:40:41,680 --> 00:40:43,280
+Eu faço aqui, né,
+
+523
+00:40:43,599 --> 00:40:45,599
+a interação do item
+
+524
+00:40:47,319 --> 00:40:52,200
+e dessa forma ele consegue retornar pra gente o índex.
+
+525
+00:40:55,480 --> 00:40:59,800
+Ó, ele traz o índex ali desse
+
+526
+00:41:00,200 --> 00:41:02,560
+desse dessa string.
+
+527
+00:41:02,920 --> 00:41:03,920
+Beleza?
+
+528
+00:41:04,280 --> 00:41:11,480
+Então é isso, ó. Agora já acabou o a fase dois, que foi a fase das strings.
+
+529
+00:41:11,560 --> 00:41:18,760
+Primeira fase das collections foram os vetores, segunda fase a string e a terceira
+
+530
+00:41:18,760 --> 00:41:24,640
+fase agora é o HashMap. O HMAP é uma estrutura de chave e
+
+531
+00:41:24,640 --> 00:41:31,760
+valor que a gente vai tá estudando aqui agora. Eh, então, beleza, vamos estar então,
+
+532
+00:41:31,760 --> 00:41:34,119
+né, criando um novo HashMap
+
+533
+00:41:34,400 --> 00:41:35,920
+aqui pra gente.
+
+534
+00:41:37,200 --> 00:41:42,880
+O HashMap ele é uma collection que a gente precisa importar
+
+535
+00:41:43,640 --> 00:41:49,880
+de dentro ali das collections disponíveis no hust. Então, pra gente tá importando, a
+
+536
+00:41:49,880 --> 00:41:51,680
+gente utiliza a
+
+537
+00:41:52,400 --> 00:41:59,640
+sintaxe do use e passa eh a o create box ali, né?
+
+538
+00:41:59,640 --> 00:42:00,760
+A lipar.
+
+539
+00:42:01,760 --> 00:42:09,720
+Nesse caso é do STD e dentro dela tem os collections e a gente quer o HashMap.
+
+540
+00:42:10,440 --> 00:42:16,280
+Beleza? Agora aqui a gente vai então instanciar um novo HashMap.
+
+541
+00:42:17,200 --> 00:42:18,560
+A gente vai
+
+542
+00:42:18,880 --> 00:42:22,079
+definir esse HashMap como scores
+
+543
+00:42:22,319 --> 00:42:28,559
+e a gente vai utilizar sintaxe passando o nome da collection seguido de 2.2 pontos
+
+544
+00:42:28,559 --> 00:42:35,760
+new. Isso cria uma um construtor de um novo HashMap. HashMap é uma estrutura
+
+545
+00:42:35,760 --> 00:42:40,119
+de chave e valor. E aqui foi criado o novo HashMap.
+
+546
+00:42:40,880 --> 00:42:46,319
+Agora vamos inserir chaves e valores dentro desse HashMap.
+
+547
+00:42:46,599 --> 00:42:49,240
+Para isso, a gente pega o nome
+
+548
+00:42:49,839 --> 00:42:53,559
+da collection, que é a variável que a gente acabou de criar.
+
+549
+00:42:54,000 --> 00:42:56,920
+E aqui dentro a gente tem algumas funções.
+
+550
+00:42:57,400 --> 00:42:59,800
+A gente tem a função de insert,
+
+551
+00:43:00,400 --> 00:43:06,200
+onde a gente vai tá passando chave e valor. A gente vai passar a chave
+
+552
+00:43:07,200 --> 00:43:10,319
+e para branco, né, que seria
+
+553
+00:43:11,240 --> 00:43:12,720
+a cor ali.
+
+554
+00:43:12,920 --> 00:43:16,040
+E para pro branco a gente vai ter o valor 10.
+
+555
+00:43:16,559 --> 00:43:22,760
+A gente vai fazer a mesma coisa embaixo, só que vai ser a chave, o nome yellow e pro
+
+556
+00:43:22,760 --> 00:43:25,559
+yellow a gente vai ter o valor 50.
+
+557
+00:43:28,680 --> 00:43:29,680
+Beleza?
+
+558
+00:43:30,720 --> 00:43:32,640
+Eh, fechou.
+
+559
+00:43:33,359 --> 00:43:37,400
+Então, aqui dentro a gente tem um HashMap
+
+560
+00:43:38,119 --> 00:43:39,119
+criado
+
+561
+00:43:39,359 --> 00:43:47,000
+com eh essa estrutura que a gente estanciou o novo HashMap através do
+
+562
+00:43:47,000 --> 00:43:48,720
+construtor new
+
+563
+00:43:49,240 --> 00:43:51,200
+da collection HashMap.
+
+564
+00:43:51,720 --> 00:43:57,359
+E dentro do HashMap a gente tem algumas funções, uma delas é a insert.
+
+565
+00:43:57,599 --> 00:44:03,200
+E aqui então a gente passa o chave e qual é o valor para aquela chave.
+
+566
+00:44:03,760 --> 00:44:04,920
+Para agora,
+
+567
+00:44:05,160 --> 00:44:07,119
+eh, pra gente ler
+
+568
+00:44:08,079 --> 00:44:09,319
+o HashMap,
+
+569
+00:44:09,960 --> 00:44:14,400
+eh, a gente precisa, então, né, de algumas
+
+570
+00:44:14,680 --> 00:44:17,680
+de algumas propriedades ali. Beleza?
+
+571
+00:44:17,880 --> 00:44:25,440
+Então, vamos estar eh criando aqui um novo time, só pra gente ter exemplos de busca,
+
+572
+00:44:25,920 --> 00:44:27,440
+que vai ser
+
+573
+00:44:28,119 --> 00:44:29,119
+blue.
+
+574
+00:44:29,839 --> 00:44:32,599
+Ele vai ter a chave blue ali.
+
+575
+00:44:33,319 --> 00:44:40,359
+E agora eu vou querer eh ler esse valor de dentro ali do nosso HashMap.
+
+576
+00:44:40,440 --> 00:44:43,640
+Então vou criar aqui um score
+
+577
+00:44:44,319 --> 00:44:48,720
+que ele vai tá então dentro do nosso scores que é o nosso Hmap.
+
+578
+00:44:48,960 --> 00:44:51,960
+Eu vou acessar o valor através do get
+
+579
+00:44:52,960 --> 00:44:57,280
+e dentro aqui do getu vou passar a referência
+
+580
+00:44:58,839 --> 00:45:00,440
+da nossa chave,
+
+581
+00:45:02,480 --> 00:45:03,480
+certo?
+
+582
+00:45:03,920 --> 00:45:07,960
+Eh, e aí a gente vai fazer uma cópia desse valor.
+
+583
+00:45:08,200 --> 00:45:15,440
+E como o get ele é um optimum, ele pode retornar algo ou não. Eu vou fazer um um
+
+584
+00:45:15,440 --> 00:45:16,440
+wrap
+
+585
+00:45:19,079 --> 00:45:25,720
+um wrap or zero, ou seja, caso ele não encontre nenhum valor, ele vai retornar o
+
+586
+00:45:25,720 --> 00:45:26,720
+zero.
+
+587
+00:45:26,920 --> 00:45:30,760
+E aqui embaixo eu vou estar então fazendo o print ln
+
+588
+00:45:31,079 --> 00:45:38,800
+do nosso score, que é o valor que a gente é acessou de dentro do HashMap.
+
+589
+00:45:42,880 --> 00:45:50,520
+E aqui dentro, então, ele retorna pra gente que pra chave Blue o valor é 10.
+
+590
+00:45:57,200 --> 00:46:02,079
+Beleza, beleza, beleza. Eh, então, né, a gente pegou
+
+591
+00:46:02,760 --> 00:46:06,720
+e utilizou então aqui o
+
+592
+00:46:06,920 --> 00:46:08,160
+a estrutura,
+
+593
+00:46:09,880 --> 00:46:11,800
+a collection HashMap,
+
+594
+00:46:12,400 --> 00:46:19,319
+criamos alguns valores para ela, depois fizemos o acesso aqui da collection através
+
+595
+00:46:19,319 --> 00:46:25,720
+do get, que retorna pra gente uma option. com a referência ali, né, do I32.
+
+596
+00:46:26,800 --> 00:46:29,480
+Esse essa função de copied,
+
+597
+00:46:29,839 --> 00:46:36,119
+ela transforma eh a referência em um valor bruto ali, né, que seria o o número
+
+598
+00:46:37,000 --> 00:46:43,559
+para fora ali da referência, né? E esse um RP, ele faz o seguinte, se encontra algo,
+
+599
+00:46:43,559 --> 00:46:49,880
+se não encontrar algo, o defu vai ser zero. E aqui embaixo ele faz o print do valor
+
+600
+00:46:49,880 --> 00:46:51,920
+que a gente acabou de acessar.
+
+601
+00:46:52,839 --> 00:46:57,119
+a gente consegue também acessar os valores da collection
+
+602
+00:46:57,680 --> 00:46:59,079
+e do HashMap
+
+603
+00:46:59,520 --> 00:47:06,200
+percorrendo ela com o for. Então, a gente cria um novo for. Aqui dentro a gente vai
+
+604
+00:47:06,200 --> 00:47:08,280
+passar a chave e o valor,
+
+605
+00:47:08,520 --> 00:47:14,200
+né? E a gente vai passar qual estrutura que a gente vai iterar. a gente passa a
+
+606
+00:47:14,200 --> 00:47:20,200
+referência e passa aqui, que é a estrutura de da collection aqui de scores esse
+
+607
+00:47:20,200 --> 00:47:21,200
+HashMap.
+
+608
+00:47:21,440 --> 00:47:26,400
+E aqui para dentro a gente pode rodar um print ln retornando
+
+609
+00:47:27,960 --> 00:47:29,160
+a chave
+
+610
+00:47:30,240 --> 00:47:31,680
+e o valor.
+
+611
+00:47:33,800 --> 00:47:35,319
+E o valor.
+
+612
+00:47:35,599 --> 00:47:40,480
+Beleza? Aí agora aqui, né, a gente sempre lembrando do ponto e vírgula,
+
+613
+00:47:40,880 --> 00:47:44,240
+vamos tá exibindo. E aí percorrendo
+
+614
+00:47:44,680 --> 00:47:50,760
+a o HashMap, a gente retorna então ali a chave e o valor do item.
+
+615
+00:47:51,359 --> 00:47:56,359
+Beleza? Agora, pessoal, trabalhando aqui com o ownership, a gente sabe que o
+
+616
+00:47:56,359 --> 00:48:00,119
+ownership é um dos conceitos aqui do Rust: ownership
+
+617
+00:48:03,079 --> 00:48:08,880
+vai tá funcionando dentro de um HashMap, beleza? Então vamos est pegando esse
+
+618
+00:48:08,880 --> 00:48:10,280
+exemplo aqui,
+
+619
+00:48:11,440 --> 00:48:14,599
+onde a gente tem dois nomes, né?
+
+620
+00:48:14,960 --> 00:48:19,680
+A gente tem o nome do campo e o valor do campo em si.
+
+621
+00:48:21,200 --> 00:48:22,200
+Eh,
+
+622
+00:48:22,920 --> 00:48:28,720
+e aqui dentro, então, a gente tem uma nova estrutura, um novo HashMap, que vai ser
+
+623
+00:48:28,720 --> 00:48:35,319
+mutável, porque ele vai poder receber eh novas novos valores. E ele recebe então
+
+624
+00:48:35,319 --> 00:48:42,680
+aqui o a chave e o valor e insere dentro desse HashMap. Agora
+
+625
+00:48:42,680 --> 00:48:46,040
+vamos estar tentando eh acessar
+
+626
+00:48:46,559 --> 00:48:52,400
+esse field name aqui, pessoal. ele já deu o erro do
+
+627
+00:48:52,640 --> 00:48:53,640
+onip
+
+628
+00:48:54,040 --> 00:48:58,440
+porque ele ele já fala aqui, ó, que eu tentei
+
+629
+00:48:58,960 --> 00:49:03,280
+eh fazer o print de um valor que já foi modificado,
+
+630
+00:49:03,680 --> 00:49:08,520
+porque quando a gente utiliza esse fio de name aqui dentro do insert,
+
+631
+00:49:08,760 --> 00:49:11,680
+a gente falou agora, eh,
+
+632
+00:49:12,119 --> 00:49:18,760
+ele já foi utilizado, né? ele já tem essa, ele já tem um dono. E aí quando a gente
+
+633
+00:49:18,760 --> 00:49:23,680
+tenta acessar ele aqui de novo, ele dá o erro de
+
+634
+00:49:23,880 --> 00:49:30,040
+de ownership, né? Caso a gente venha aqui e faça um clone ou algo do tipo assim, ele
+
+635
+00:49:30,040 --> 00:49:31,520
+vai até passar.
+
+636
+00:49:32,400 --> 00:49:39,280
+Então copy também, mas esse erro acontece porque o field name foi movido aqui, foi
+
+637
+00:49:39,280 --> 00:49:46,520
+movido aqui para dentro do do MAC. E quando ele é movido, ele ele
+
+638
+00:49:47,200 --> 00:49:54,200
+ele ele é o novo. Tipo assim, quando ele é movido, o ele perde a propriedade dele. E
+
+639
+00:49:54,200 --> 00:49:57,119
+aí quando a gente tenta utilizar novamente,
+
+640
+00:49:57,359 --> 00:50:02,599
+ele já dá o erro falando que a propriedade desse valor já foi utilizada
+
+641
+00:50:03,240 --> 00:50:04,880
+em outro lugar.
+
+642
+00:50:05,520 --> 00:50:06,520
+Beleza?
+
+643
+00:50:12,319 --> 00:50:16,760
+Então, beleza. Agora, pessoal, a gente vai também fazer, aproveitar para fazer um
+
+644
+00:50:16,760 --> 00:50:19,799
+exemplo aqui de sobreescrever
+
+645
+00:50:20,240 --> 00:50:25,680
+versus inserir só se não existir o item ali no HashMap.
+
+646
+00:50:26,280 --> 00:50:27,280
+Beleza?
+
+647
+00:50:27,640 --> 00:50:32,799
+Então, bora lá. Eh, vamos então utilizar esse exemplo.
+
+648
+00:50:38,079 --> 00:50:41,839
+A gente vai utilizar esse exemplo aqui, onde a gente tem o HashMap,
+
+649
+00:50:42,440 --> 00:50:44,079
+inserimos novas
+
+650
+00:50:44,440 --> 00:50:50,599
+eh novos itens aqui para ele, né? E depois a gente sobrescreveu o valor
+
+651
+00:50:50,960 --> 00:50:52,440
+aqui na exibição,
+
+652
+00:50:53,000 --> 00:50:56,920
+ele vai retornar pra gente o novo valor que foi sobrescrito.
+
+653
+00:51:03,400 --> 00:51:04,400
+Já
+
+654
+00:51:05,400 --> 00:51:07,400
+já dessa forma aqui
+
+655
+00:51:08,400 --> 00:51:11,160
+ele ele faz a verificação
+
+656
+00:51:12,160 --> 00:51:14,200
+para ver se já não existe.
+
+657
+00:51:14,960 --> 00:51:21,839
+Beleza? Ó, aqui ele faz o insert, né, do da chave blue e o valor 10.
+
+658
+00:51:22,000 --> 00:51:29,319
+E através do entry, esse entry aqui, ele é uma API do nosso STD,
+
+659
+00:51:29,319 --> 00:51:32,359
+né, que é essa liba
+
+660
+00:51:33,960 --> 00:51:36,400
+te dá uma entrada naquela chave.
+
+661
+00:51:36,720 --> 00:51:40,000
+Eh, e aí, né, ele consegue verificar
+
+662
+00:51:40,599 --> 00:51:45,079
+se esse se essa chave existe ou não.
+
+663
+00:51:45,440 --> 00:51:48,359
+E aí, caso não exista,
+
+664
+00:51:48,640 --> 00:51:51,440
+ele utiliza esse or insert
+
+665
+00:51:51,680 --> 00:51:57,040
+para passar um valor de full para ele ali. Vamos tá vendo?
+
+666
+00:51:58,040 --> 00:52:05,240
+E agora aqui, ó, pro valor blue, ele passa o 50 e o yellow 50 também.
+
+667
+00:52:05,520 --> 00:52:12,480
+Aqui ele ignora porque nesse entry, quando ele pesquisa por essa chave do Blue, ele
+
+668
+00:52:12,480 --> 00:52:13,799
+já encontra
+
+669
+00:52:14,000 --> 00:52:17,559
+e ignora ela. Bacana demais, né, pessoal?
+
+670
+00:52:19,680 --> 00:52:23,839
+Eh, então beleza. Agora a gente vai utilizar, então vamos fazer o último exemplo
+
+671
+00:52:23,839 --> 00:52:29,559
+para fechar com chave de ouro, que é o exemplo clássico aqui de contar palavras no
+
+672
+00:52:29,559 --> 00:52:30,559
+HashMap.
+
+673
+00:52:33,119 --> 00:52:36,400
+Eh, a gente então vai utilizar esse exemplo
+
+674
+00:52:37,760 --> 00:52:44,040
+que a gente tem um texto que é uma slice, né? é esse string aqui, uma referência de
+
+675
+00:52:44,040 --> 00:52:45,040
+string.
+
+676
+00:52:45,440 --> 00:52:50,799
+Eh, e dentro a gente cria então uma um novo HashMap.
+
+677
+00:52:51,599 --> 00:52:58,040
+E agora aqui para dentro a gente vai estar contando as palavras dessa string. O que
+
+678
+00:52:58,040 --> 00:53:03,000
+que a gente faz? A gente pega esse Word como o iterador,
+
+679
+00:53:03,440 --> 00:53:10,559
+ele vai ter sobre essa slice chamada text, onde a gente vai
+
+680
+00:53:10,559 --> 00:53:15,640
+eh fazer o split ali, né, dos espaços, vai tá retirando os espaços.
+
+681
+00:53:16,040 --> 00:53:23,200
+E aqui a gente vai fazer a contagem, então, eh, do da palavra em si.
+
+682
+00:53:23,359 --> 00:53:30,119
+vai pegar esse esse esse HashMap que a gente criou e a gente vai utilizar esse entry
+
+683
+00:53:30,119 --> 00:53:33,839
+para ver se já tem essa palavra que
+
+684
+00:53:34,040 --> 00:53:35,240
+a gente
+
+685
+00:53:35,559 --> 00:53:41,880
+inseriu, que está passando ali dentro do do iterador. Caso não tenha, ele vai
+
+686
+00:53:41,880 --> 00:53:44,720
+colocar o valor como zero aqui em defrazer
+
+687
+00:53:47,200 --> 00:53:49,240
+a interação de mais mais
+
+688
+00:53:49,599 --> 00:53:55,119
+de mais um, no caso ali, né? E no final ele mostra qual que é o
+
+689
+00:53:55,440 --> 00:54:01,440
+qual que é a o valor ali, né, das palavras em si, separadas por espaço.
+
+690
+00:54:02,400 --> 00:54:04,000
+Então aqui, ó,
+
+691
+00:54:04,359 --> 00:54:11,240
+eh ele mostra aqui o relo quantas vezes que foi, né? Uma vez o Word
+
+692
+00:54:11,680 --> 00:54:17,839
+duas vezes e o Wordful aqui uma vez, sem fazer a repetição
+
+693
+00:54:18,079 --> 00:54:22,520
+eh das palavras em si. Então, a gente tem uma string,
+
+694
+00:54:23,440 --> 00:54:26,119
+a gente estancia um novo HashMap,
+
+695
+00:54:26,640 --> 00:54:28,559
+a gente faz a iteração
+
+696
+00:54:29,359 --> 00:54:34,240
+e dentro dessa string, separa ela por espaços
+
+697
+00:54:34,440 --> 00:54:40,119
+e aqui dentro a gente verifica se a se a palavra já existe, a gente somente ignora.
+
+698
+00:54:40,119 --> 00:54:41,720
+E caso não exista,
+
+699
+00:54:42,000 --> 00:54:47,559
+eh, a gente faz a contagem aqui, né, do mais. Então aqui, né, ele identificou que a
+
+700
+00:54:47,559 --> 00:54:55,559
+palavra rel aparece uma vez, a palavra Word aparece duas e o Wordful uma vez também.
+
+701
+00:54:56,319 --> 00:54:58,000
+Eh, então
+
+702
+00:54:58,440 --> 00:55:03,359
+é isso, pessoal. Pra gente fechar aqui, né, resumindo tudo que a gente viu, pra
+
+703
+00:55:03,359 --> 00:55:05,760
+gente fechar com chave de ouro,
+
+704
+00:55:06,160 --> 00:55:07,160
+eh,
+
+705
+00:55:07,599 --> 00:55:14,440
+a gente tem o vetor, né, que é uma lista que cresce, a gente consegue acessar
+
+706
+00:55:14,760 --> 00:55:16,640
+através ali dos
+
+707
+00:55:17,480 --> 00:55:19,119
+dos tipos, né,
+
+708
+00:55:19,760 --> 00:55:21,480
+a gente consegue acessar
+
+709
+00:55:22,000 --> 00:55:28,039
+e geralmente ele ele só tem um tipo, a menos que você utilize um N1 para você
+
+710
+00:55:28,039 --> 00:55:32,119
+utilizar diversos tipos dentro ali do seu vetor.
+
+711
+00:55:32,400 --> 00:55:39,200
+A gente tem a collection de string, onde ela lida muito bem ali com os
+
+712
+00:55:41,039 --> 00:55:46,720
+questão da indexação, mas tem o format, que é string que a gente consegue formatar
+
+713
+00:55:46,720 --> 00:55:50,240
+as strings ali, juntar elas de uma forma mais elegante.
+
+714
+00:55:51,280 --> 00:55:57,839
+E por final a gente tem a collection, é do HashMap, que é uma collection que é a
+
+715
+00:55:57,839 --> 00:56:04,319
+estrutura dela é chave e valor. E a gente também tem essa sintaxe aqui do entry, que
+
+716
+00:56:04,319 --> 00:56:09,680
+resolve metade dos problemas no HashMap, onde a gente consegue verificar, né, se
+
+717
+00:56:09,680 --> 00:56:16,359
+aquele item já existe ou coisas do tipo. Pessoal, muito obrigado pela audiência.
+
+718
+00:56:16,440 --> 00:56:22,480
+Conseguimos então finalizar essa aula aqui relacionada a collections no Rust. Muito
+
+719
+00:56:22,480 --> 00:56:27,559
+obrigado e bora para cima. Se inscreve no canal, deixa o like se gostou e muito
+
+720
+00:56:27,559 --> 00:56:28,960
+obrigado. Ja.
+

@@ -1,0 +1,276 @@
+1
+00:00:02,440 --> 00:00:07,680
+Fala, Dev, beleza? Seja muito bem-vindo à segunda aula do nosso curso de Rust aqui
+
+2
+00:00:07,680 --> 00:00:13,160
+no canal. Hoje vou mostrar para você passo a passo como instalar o Rust o Visual
+
+3
+00:00:13,160 --> 00:00:18,400
+Studio Code com extensão certa para programar com mais produtividade. Beleza? Então,
+
+4
+00:00:18,400 --> 00:00:19,640
+bora lá.
+
+5
+00:00:20,199 --> 00:00:24,240
+Então, pessoal, eh, aqui no Google a gente pode estar pesquisando por Rust
+
+6
+00:00:26,199 --> 00:00:30,800
+opção vai ser aqui, Rust Programming Language. A gente pode estar clicando aqui, ó,
+
+7
+00:00:30,800 --> 00:00:34,000
+e a gente vem na opção do get started,
+
+8
+00:00:35,079 --> 00:00:38,559
+que também se a gente quiser, ó, podemos traduzir pro português,
+
+9
+00:00:38,760 --> 00:00:41,440
+beleza? E aqui vai ter um
+
+10
+00:00:42,320 --> 00:00:43,640
+como instalar,
+
+11
+00:00:43,879 --> 00:00:47,640
+como instalar, né? A gente vai ter a opção aqui de instalando o Rust.
+
+12
+00:00:47,840 --> 00:00:53,399
+a gente pode testar ele sem instalar. E aqui e a gente vai tá instalando, utilizando
+
+13
+00:00:53,399 --> 00:01:00,120
+o Rust, né, que ele é um instalador ali, né, e gerenciador de versões do Rust.
+
+14
+00:01:00,399 --> 00:01:04,640
+Aqui você pode baixar a 32 bits ou a 64 bits.
+
+15
+00:01:04,920 --> 00:01:08,280
+Eu vou baixar isso daqui. Como eu tô no Windows, né, eu vou estar baixando dessa
+
+16
+00:01:08,280 --> 00:01:12,880
+forma. Se vocês tiverem no Linux ou no Mac, vocês podem estar baixando dessa forma
+
+17
+00:01:12,880 --> 00:01:18,880
+aqui através do CO aqui. Beleza? Então, eh, ele baixado, eu posso vir, né, e
+
+18
+00:01:18,880 --> 00:01:20,880
+executar o meu
+
+19
+00:01:21,600 --> 00:01:27,759
+o meu arquivo aqui. O, como eu já tava já tinha continuado iniciada a instalação,
+
+20
+00:01:27,880 --> 00:01:33,119
+eh, vai pular a parte da a primeira parte da instalação, mas a primeira parte vocês
+
+21
+00:01:33,119 --> 00:01:40,320
+vão na opção um e dá e aperta enter, que depois eh vai tá fazendo a parte
+
+22
+00:01:40,320 --> 00:01:44,439
+ali das configurações, né, a instalação utilizando o Visual Studio Community,
+
+23
+00:01:44,439 --> 00:01:50,159
+beleza? Eh, então aqui, ó, eu vou est só continuando o meu, finalizando, na verdade,
+
+24
+00:01:50,159 --> 00:01:53,719
+né, a minha instalação aqui, que ele tava dependendo, né, do
+
+25
+00:01:53,960 --> 00:01:59,640
+Visual Studio ali. E a gente continua assim que essa instalação finalizar. Beleza?
+
+26
+00:01:59,640 --> 00:02:05,039
+Então, não, que já funcionou. Pra gente conferir se deu tudo certo, a gente pode
+
+27
+00:02:05,200 --> 00:02:07,439
+rodar o rust
+
+28
+00:02:08,039 --> 00:02:14,440
+menos vers no nosso terminal, por exemplo. Vou abrir o cmd aqui só de início mesmo
+
+29
+00:02:14,920 --> 00:02:16,879
+e vou rodar o hust
+
+30
+00:02:17,080 --> 00:02:19,720
+c men- menos version.
+
+31
+00:02:22,040 --> 00:02:25,959
+Ó, tá vendo que ele já instalou para mim? Então, né? ele já mostra aqui qual a
+
+32
+00:02:25,959 --> 00:02:29,959
+versão do Rust já tá sendo executada aqui.
+
+33
+00:02:30,280 --> 00:02:35,239
+Eh, ele também instala o cargo que eu vou falar para vocês eh daqui a pouco sobre
+
+34
+00:02:35,239 --> 00:02:41,840
+ele. Vamos verificar se a instalação dele também eh está bem-sucedida, né? Fazendo o
+
+35
+00:02:41,840 --> 00:02:46,000
+cargo menos version. E aqui também tá a instalação dele.
+
+36
+00:02:46,560 --> 00:02:52,440
+Eh, então, beleza. Eh, as duas versões já apareceram, então o Rust e o cargo já
+
+37
+00:02:52,440 --> 00:02:56,200
+estão instalados, prontos para serem usados. Beleza? Então agora vamos estar
+
+38
+00:02:56,200 --> 00:03:01,360
+instalando o VS Code. Da mesma forma a gente vem aqui, ó, pesquisa por VS Code no
+
+39
+00:03:01,360 --> 00:03:04,319
+Google. Vai ser o primeiro link que aparecer.
+
+40
+00:03:05,159 --> 00:03:10,080
+Você clica em download aqui, ó, na na opção que aparecer, né? E aqui é, como eu tô
+
+41
+00:03:10,080 --> 00:03:14,640
+no Windows, eu vou selecionar o Windows e ele vai tá baixando aqui para mim também o
+
+42
+00:03:14,640 --> 00:03:20,360
+o VS Code. Beleza? Eh, só eu tá executando aqui mesmo o arquivo normalmente
+
+43
+00:03:21,040 --> 00:03:23,560
+de instalação agora do VS Code.
+
+44
+00:03:24,799 --> 00:03:26,760
+Eh, então vamos lá.
+
+45
+00:03:29,040 --> 00:03:32,120
+Agora aqui, né, estamos então instalando o VS Code
+
+46
+00:03:32,760 --> 00:03:38,159
+pra gente conseguir eh tá codando o nossos programas a letra do Rust. Beleza? Esse
+
+47
+00:03:38,159 --> 00:03:42,879
+VS Code ele é um editor de código, né, que permite a gente então tá fazendo essas
+
+48
+00:03:42,879 --> 00:03:46,200
+edições de códigos aí de de programas, de sistemas.
+
+49
+00:03:46,560 --> 00:03:51,319
+E é isso daí. Então, eh, vamos estar iniciando aqui o VS Code.
+
+50
+00:03:55,079 --> 00:03:59,840
+Beleza? de início aqui ele dá uma página de WCOM mesmo normal aqui.
+
+51
+00:04:00,079 --> 00:04:03,120
+Eh, agora, pessoal, aqui no VS Code,
+
+52
+00:04:03,519 --> 00:04:05,159
+eh, a gente tem
+
+53
+00:04:07,159 --> 00:04:12,120
+aqui no VS Code, a gente tem eh uma extensão chamada rust-analyzer.
+
+54
+00:04:13,159 --> 00:04:16,760
+A gente vem aqui em extensions e vamos procurar Rust.
+
+55
+00:04:20,120 --> 00:04:22,040
+Eh, deixa eu aumentar aqui.
+
+56
+00:04:22,960 --> 00:04:27,440
+Beleza. Então, a gente tem essa extensão do Rust que tá depreciada, na verdade é
+
+57
+00:04:27,440 --> 00:04:31,400
+essa daqui que tá depreciada. E a gente tem essa extensão rust-analyzer.
+
+58
+00:04:31,919 --> 00:04:35,919
+Essa extensão, pessoal, vai est ajudando a gente a programar melhor aí com o Rust,
+
+59
+00:04:35,919 --> 00:04:38,919
+beleza? Então, a gente vai est instalando essa
+
+60
+00:04:39,240 --> 00:04:42,120
+extensão chamado Rust, beleza?
+
+61
+00:04:42,800 --> 00:04:47,520
+Então, Rust já tá configurado, o rust-analyzer aqui. Então, pessoal, eh, o Rust agora
+
+62
+00:04:47,520 --> 00:04:52,280
+ele já tá instalado, o VS Code ele já tá instalado também e configurado com a
+
+63
+00:04:52,280 --> 00:04:54,080
+extensão do rust-analyzer.
+
+64
+00:04:54,400 --> 00:04:59,080
+Eh, e é isso aí. Agora a gente já tem o Rust instalado, a gente já tem o VS Code
+
+65
+00:04:59,080 --> 00:05:03,080
+configurado para começar a programar e na próxima aula a gente vai escrever o nosso
+
+66
+00:05:03,080 --> 00:05:07,280
+primeiro programa em Rust, o clássico Hello World, e já entender como o cargo
+
+67
+00:05:07,280 --> 00:05:10,880
+funciona. Então já deixa o like aqui no vídeo, se inscreve no canal para não perder
+
+68
+00:05:10,880 --> 00:05:15,600
+os próximos vídeos que chegarem e comenta aí embaixo se deu tudo certo na sua
+
+69
+00:05:15,600 --> 00:05:18,560
+instalação. E até a próxima. Valeu,
+

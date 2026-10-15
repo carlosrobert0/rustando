@@ -1,0 +1,308 @@
+1
+00:00:04,600 --> 00:00:10,280
+Fala pessoal, beleza? Seja muito bem-vindo ao canal Rustando. Hoje vamos começar
+
+2
+00:00:10,280 --> 00:00:15,400
+nossa jornada no mundo do Rust desde a instalação no Windows, criando o clássico
+
+3
+00:00:15,400 --> 00:00:20,359
+Hello World e conhecendo também o Cargo, que é um gerenciador de pacotes do Rust.
+
+4
+00:00:20,359 --> 00:00:26,920
+Beleza? toda documentação oficial eh que eu estou usando para desenvolver esse vídeo
+
+5
+00:00:26,920 --> 00:00:28,840
+vai tá aqui no comentário.
+
+6
+00:00:29,519 --> 00:00:35,320
+E é isso daí, pessoal. Então, vamos iniciar aqui a instalação do Rust.
+
+7
+00:00:36,040 --> 00:00:42,280
+Eh, beleza, galera. Então, o que que acontece, né? O Rust ele ele é instalado
+
+8
+00:00:43,239 --> 00:00:45,600
+eh através do rustup.
+
+9
+00:00:46,320 --> 00:00:51,480
+Eh, na própria documentação a gente vem aqui em get started e instalação.
+
+10
+00:00:52,000 --> 00:00:56,120
+Aqui ele vai tá mostrando aqui, ó, na parte instalando
+
+11
+00:00:56,399 --> 00:00:58,559
+o Rust, né, com o rustup
+
+12
+00:01:00,359 --> 00:01:01,680
+nesse link,
+
+13
+00:01:02,199 --> 00:01:03,640
+faz a instalação
+
+14
+00:01:04,320 --> 00:01:07,320
+e executa aqui o nosso executável.
+
+15
+00:01:08,000 --> 00:01:12,479
+Eh, clica na primeira opção que vai ser a número um e deixa ele fazer a instalação
+
+16
+00:01:12,479 --> 00:01:18,720
+que precisa. Quando finalizar, pessoal, a gente vai poder estar testando utilizando
+
+17
+00:01:18,720 --> 00:01:22,159
+o rustc men- Version.
+
+18
+00:01:22,759 --> 00:01:26,479
+Então, pessoal, eh, o que que acontece agora com ele instalado?
+
+19
+00:01:27,240 --> 00:01:30,360
+Eh, ele então vai mostrar pra gente, né, qual que é o
+
+20
+00:01:30,600 --> 00:01:31,600
+o
+
+21
+00:01:31,920 --> 00:01:36,360
+a versão que tá instalada aqui, se tiver tudo instalado certinho. Então, agora a
+
+22
+00:01:36,360 --> 00:01:40,399
+gente vai tá criando então o primeiro Hello World com a linguagem.
+
+23
+00:01:40,640 --> 00:01:47,159
+Beleza? Então, pessoal, eh, aqui a gente vai tá criando um novo diretório através
+
+24
+00:01:47,159 --> 00:01:50,920
+desse MKIR e ele vai se chamar Hello World.
+
+25
+00:01:51,479 --> 00:01:56,759
+Beleza? já apareceu aqui pra gente. E aí, pessoal, dentro desse repositório,
+
+26
+00:01:57,200 --> 00:02:00,719
+a gente vai tá criando um arquivo chamado
+
+27
+00:02:00,920 --> 00:02:01,920
+main.rs.
+
+28
+00:02:03,680 --> 00:02:10,319
+RS é a extensão de Rust, beleza? E aqui dentro desse arquivo, a gente vai criar uma
+
+29
+00:02:10,319 --> 00:02:16,560
+função através da palavra reservada FN e vamos chamar ela de main.
+
+30
+00:02:18,920 --> 00:02:25,920
+Essa função, pessoal, ela nada mais vai fazer do que apenas um Hello World.
+
+31
+00:02:25,959 --> 00:02:30,879
+Ela vai printar um Hello World ali no terminal pra gente. Uma coisa importante também
+
+32
+00:02:30,879 --> 00:02:35,640
+é o ponto e vírgula, que aqui no Rust ele pede pra gente estar utilizando o ponto e
+
+33
+00:02:35,640 --> 00:02:41,800
+vírgula. Beleza? Quando a gente, pessoal, faz a compilação aqui,
+
+34
+00:02:42,040 --> 00:02:47,519
+eh, quando a gente tá no Rust, a gente precisa compilar o nosso programa para depois
+
+35
+00:02:47,519 --> 00:02:52,239
+ele executar. E a gente compila ele utilizando Rust Cquo,
+
+36
+00:02:53,560 --> 00:02:55,840
+no caso main.rs. RS.
+
+37
+00:02:56,959 --> 00:03:03,480
+Ó, ele compilou e já criou aqui alguns outros arquivos pra gente. E para executar é
+
+38
+00:03:03,480 --> 00:03:08,640
+só a gente entrar dentro do nosso eh arquivo em si.
+
+39
+00:03:10,680 --> 00:03:11,680
+Eh,
+
+40
+00:03:15,680 --> 00:03:19,760
+então a gente entrar dentro do nosso arquivo em si. E aqui, pessoal, ó, tá aqui
+
+41
+00:03:19,760 --> 00:03:26,720
+printado, né, o nosso então Hello World aqui na tela, utilizando apenas o HT. Beleza,
+
+42
+00:03:26,720 --> 00:03:33,200
+galera? Então, agora, pessoal, a gente vai conhecer o cargo. O que que é o cargo? O
+
+43
+00:03:33,200 --> 00:03:35,040
+cargo ele é
+
+44
+00:03:35,480 --> 00:03:36,480
+um
+
+45
+00:03:37,040 --> 00:03:44,040
+O cargo ele é um gerenciador de pacotes e também um criador, um compilador ali, né,
+
+46
+00:03:44,040 --> 00:03:50,400
+gerador de builds do Rust, pessoal. E o que que acontece? Eh, o cargo
+
+47
+00:03:50,840 --> 00:03:57,200
+a gente consegue verificar se a gente tem o cargo utilizando também o cargo menos
+
+48
+00:03:57,200 --> 00:03:58,200
+version.
+
+49
+00:03:59,040 --> 00:04:04,519
+e apareceu aqui. Então, a gente tem essa versão. Pra gente estar criando o nosso
+
+50
+00:04:04,519 --> 00:04:10,400
+projeto com o cargo, a gente vai utilizar cargo, new e o nome do projeto.
+
+51
+00:04:14,799 --> 00:04:19,959
+Aí, pessoal, eu vou até entrar aqui para vocês verem qual a estrutura que foi
+
+52
+00:04:19,959 --> 00:04:21,440
+criada, né?
+
+53
+00:04:21,759 --> 00:04:26,919
+Então aqui de início ele cria um arquivo, ele cria um sece, né, com um arquivo main
+
+54
+00:04:26,919 --> 00:04:27,919
+aqui.
+
+55
+00:04:28,320 --> 00:04:34,479
+Eh, ele também cria esse arquivo chamado Cargo.toml, que é onde vai ficar as
+
+56
+00:04:34,479 --> 00:04:39,720
+dependências do projeto, informações do projeto, semelhante ao package.json e que
+
+57
+00:04:39,720 --> 00:04:45,840
+também é um.gitignore. Agora, pessoal, é pra gente executar o projeto, é só a
+
+58
+00:04:45,840 --> 00:04:48,160
+gente rodar o cargo run.
+
+59
+00:04:49,000 --> 00:04:54,120
+E aqui, ó, o nosso Hello World tá printado na tela, pessoal. Tá vendo como que é? Bem
+
+60
+00:04:54,120 --> 00:04:57,320
+simples aqui também, se você quiser,
+
+61
+00:04:57,600 --> 00:05:02,880
+eh, por exemplo, essa pasta target, ela é gerada sempre que você compila o projeto.
+
+62
+00:05:02,880 --> 00:05:04,600
+Caso você delete
+
+63
+00:05:05,520 --> 00:05:10,000
+e você queira compilar novamente, é o cargo build, ele vai est gerando essa pasta
+
+64
+00:05:10,000 --> 00:05:11,639
+aqui pra gente novamente.
+
+65
+00:05:12,400 --> 00:05:16,800
+Então, é, é isso, pessoal. Deixa eu rodar aqui novamente. Tá vendo aqui o Hello
+
+66
+00:05:16,800 --> 00:05:20,880
+World rodando? Então, só para resumir, hoje a gente aprendeu aqui, né, instalar o
+
+67
+00:05:20,880 --> 00:05:21,880
+Rust através
+
+68
+00:05:22,400 --> 00:05:23,600
+do Rust.
+
+69
+00:05:23,960 --> 00:05:28,840
+Escrevemos o nosso primeiro Hello World só com Rust, compilamos ele aqui, né, com
+
+70
+00:05:28,840 --> 00:05:30,240
+Rust Cutamos
+
+71
+00:05:30,639 --> 00:05:36,840
+também. Criamos o novo projeto com cargo através do cargo new e executamos também
+
+72
+00:05:36,840 --> 00:05:40,720
+com o cargo run. No próximo vídeo, a gente vai tá criando então um jogo de
+
+73
+00:05:40,720 --> 00:05:41,720
+adivinhação,
+
+74
+00:05:42,080 --> 00:05:47,520
+eh, para praticar alguns conceitos do Rust, como variáveis, funções, mat, crees e
+
+75
+00:05:47,520 --> 00:05:53,840
+outras eh funcionalidades e conceitos do Rust em si. Beleza? Então, já deixa seu
+
+76
+00:05:53,840 --> 00:05:56,840
+like, se inscreve no canal e bora continuar.
+
+77
+00:05:57,280 --> 00:05:59,319
+Até a próxima. Valeu,
+

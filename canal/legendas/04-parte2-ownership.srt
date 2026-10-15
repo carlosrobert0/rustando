@@ -1,0 +1,992 @@
+1
+00:00:00,160 --> 00:00:02,240
+Fala D. Beleza?
+
+2
+00:00:02,720 --> 00:00:06,839
+Hoje a gente vai entender aqui sobre o ownership no Rust.
+
+3
+00:00:07,319 --> 00:00:11,440
+a gente tem, né, os modelos de gerenciamento de memória nas linguagens de
+
+4
+00:00:11,440 --> 00:00:12,440
+programação.
+
+5
+00:00:12,840 --> 00:00:14,759
+A gente tem o Garbage Collector,
+
+6
+00:00:14,960 --> 00:00:19,760
+que é um coletor de lixo, que o sistema automaticamente gerencia a memória,
+
+7
+00:00:19,760 --> 00:00:22,240
+liberando memória que não é mais necessária.
+
+8
+00:00:23,400 --> 00:00:28,039
+Ele é fácil de usar, né? Porque não requer um gerenciamento manual da memória
+
+9
+00:00:28,519 --> 00:00:35,360
+e pode causar pausas no programa para essa coleta de lixo, né? o que pode afetar o
+
+10
+00:00:35,360 --> 00:00:36,360
+desempenho.
+
+11
+00:00:36,840 --> 00:00:39,200
+Tem um gerenciamento de memória manual,
+
+12
+00:00:39,680 --> 00:00:44,120
+onde o programador é responsável por alocar e liberar a memória. Tem, né, um maior
+
+13
+00:00:44,120 --> 00:00:50,120
+controle sobre a memória, pode ser mais eficiente em termos de desempenho também,
+
+14
+00:00:51,079 --> 00:00:55,640
+porém tem o maior risco de vazamento de memória e erros, como acessar a memória que
+
+15
+00:00:55,640 --> 00:00:57,719
+já foi liberada, por exemplo.
+
+16
+00:00:58,320 --> 00:01:00,359
+E tem o modelo
+
+17
+00:01:02,239 --> 00:01:08,159
+é um sistema de gerenciamento de memória que ele garante que cada valor tenha apenas
+
+18
+00:01:08,159 --> 00:01:10,240
+um proprietário
+
+19
+00:01:10,680 --> 00:01:16,280
+e a memória é liberada automaticamente quando o proprietário sai do escopo.
+
+20
+00:01:16,880 --> 00:01:22,479
+Isso evita, né, os vazamentos de memória, não requer o gab de collecto e é bastante
+
+21
+00:01:22,479 --> 00:01:24,439
+eficiente em termos de desempenho.
+
+22
+00:01:25,360 --> 00:01:29,799
+pode ser mais difícil de entender para iniciantes aqui, né, programadores
+
+23
+00:01:29,799 --> 00:01:35,479
+iniciantes, porque requer que o programador pense sobre a propriedade dos valores,
+
+24
+00:01:35,479 --> 00:01:40,520
+que a gente vai tá vendo isso aí aqui, então, né, a gente tem
+
+25
+00:01:41,159 --> 00:01:42,680
+eh um exemplo
+
+26
+00:01:42,960 --> 00:01:44,600
+de duas estruturas
+
+27
+00:01:45,119 --> 00:01:48,439
+que são armazenadas e na memória.
+
+28
+00:01:48,840 --> 00:01:51,759
+A gente tem a pilha, que é o stack,
+
+29
+00:01:52,040 --> 00:01:56,759
+que ela é usada para armazenar os dados de tamanho fixo e conhecidos em tempos de
+
+30
+00:01:56,759 --> 00:01:57,759
+compilação.
+
+31
+00:01:58,520 --> 00:02:04,880
+E temos a heap, que é usada para armazenar dados em de tamanho variável, dinâmico ou
+
+32
+00:02:04,880 --> 00:02:06,960
+desconhecido em tempo de compilação.
+
+33
+00:02:08,319 --> 00:02:14,160
+O Rust ele utiliza esse modelo de ownership para gerenciar a memória que é alocada na
+
+34
+00:02:14,160 --> 00:02:15,160
+RAP,
+
+35
+00:02:15,959 --> 00:02:19,519
+garantindo que a memória seja liberada automaticamente quando não for mais
+
+36
+00:02:19,519 --> 00:02:20,519
+necessária.
+
+37
+00:02:24,680 --> 00:02:31,800
+Então aqui a a pilha ela armazena os valores eh na ordem que ele chega e remove
+
+38
+00:02:31,800 --> 00:02:33,840
+na ordem inversa,
+
+39
+00:02:34,239 --> 00:02:39,120
+né? Ou seja, o último valor adicionado é o primeiro a ser removido.
+
+40
+00:02:40,159 --> 00:02:41,360
+Esse gerenciamento
+
+41
+00:02:41,920 --> 00:02:48,680
+na pilha, na stack, ele é automático e é rápido também. Esses tipos que são tipos
+
+42
+00:02:48,680 --> 00:02:52,720
+escalares, por exemplo, inteiro, float, caracter, boleanos,
+
+43
+00:02:53,239 --> 00:02:59,000
+tuplas que contém esses tipos escalares também, são todos armazenados na pilha, n
+
+44
+00:02:59,000 --> 00:03:05,480
+stack. E aí a gente não precisa eh aplicar, né, o as regras do ownership
+
+45
+00:03:05,720 --> 00:03:11,879
+para esses dados que são armazenados na pilha, armazenados na stec, que são os dados
+
+46
+00:03:11,879 --> 00:03:16,799
+escalares, né, tipo os dados primitivos, como inteiro, floid, caracter buleano e
+
+47
+00:03:16,799 --> 00:03:20,360
+duplas desses mesmos dados. E tem a heap,
+
+48
+00:03:21,120 --> 00:03:26,680
+que é um pouco mais lento, né, do que a pilha, porque ela envolve a locação dinâmica
+
+49
+00:03:26,680 --> 00:03:31,799
+e o gerenciamento de memória, né, e aplicando ali o ownership.
+
+50
+00:03:32,560 --> 00:03:33,560
+Eh,
+
+51
+00:03:33,959 --> 00:03:40,560
+os tipos compostos, como os vetores, trings, eles são armazenados na heap. E a
+
+52
+00:03:40,560 --> 00:03:45,680
+locação, né, de memória na heap, ela é feita através de ponteiros, que são as
+
+53
+00:03:45,680 --> 00:03:49,599
+referência aos locais ali na heap.
+
+54
+00:03:50,840 --> 00:03:57,079
+E o Rust utiliza então esse modelo de ownership de, né, que isso aqui significa
+
+55
+00:03:57,079 --> 00:04:02,879
+posse, né, esse modelo de ownership para garantir, né, que a memória seja liberada
+
+56
+00:04:02,879 --> 00:04:04,599
+quando não for mais necessária.
+
+57
+00:04:07,120 --> 00:04:09,840
+a gente vai tá vendo aqui, ó, por exemplo,
+
+58
+00:04:11,120 --> 00:04:18,600
+é, tem aqui, ó, o a quantidade de inscritos, né, o a idade aqui na média,
+
+59
+00:04:18,600 --> 00:04:21,199
+na média do das avaliações,
+
+60
+00:04:21,519 --> 00:04:26,199
+se o canal é monetizado ou não. Isso aqui, ó, são todos tipos,
+
+61
+00:04:26,479 --> 00:04:31,039
+eh, escalares. Por exemplo, ó, aqui é um inteiro, aqui é um float, aqui é um
+
+62
+00:04:31,039 --> 00:04:33,000
+boleano, que ele é um caractere.
+
+63
+00:04:33,560 --> 00:04:34,759
+E aqui
+
+64
+00:04:35,639 --> 00:04:42,320
+embaixo a gente pega e utiliza, né? Faz a imprensão aqui desses valores.
+
+65
+00:04:46,479 --> 00:04:50,520
+E a gente não precisa aplicar nada de ownership neles, né?
+
+66
+00:04:54,600 --> 00:04:59,199
+Já nessa variável aqui, ó, de name, a gente utiliza o o string,
+
+67
+00:04:59,639 --> 00:05:05,000
+que é um tipo que ele precisa ser alocado na heap.
+
+68
+00:05:05,800 --> 00:05:09,520
+E aí a gente vai ter que aplicar essas regras do ownership.
+
+69
+00:05:10,479 --> 00:05:14,880
+Eh, aqui para essa para esses valores, a gente vai ver como que funciona.
+
+70
+00:05:16,000 --> 00:05:17,840
+Por exemplo, aqui, ó,
+
+71
+00:05:18,960 --> 00:05:24,759
+eu fui, né, atribuir esse valor aqui para essa variável name. E aqui embaixo eu fui
+
+72
+00:05:24,759 --> 00:05:28,520
+e mostrei ela e no console ali, né, na tela.
+
+73
+00:05:29,080 --> 00:05:33,400
+Só que aqui eu criei uma outra variável chamada noder name
+
+74
+00:05:33,919 --> 00:05:38,240
+que recebe o a variável name que a gente criou anteriormente.
+
+75
+00:05:39,000 --> 00:05:40,560
+Aí o que que acontece?
+
+76
+00:05:41,840 --> 00:05:44,000
+Eh, a propriedade
+
+77
+00:05:44,560 --> 00:05:46,639
+name, ela é movida
+
+78
+00:05:46,919 --> 00:05:51,720
+agora aqui para pro anoder name, para essa variável aqui.
+
+79
+00:05:52,080 --> 00:05:58,080
+E esse anoder name agora é o novo dono, né, da string ali e que tá locada na heap,
+
+80
+00:05:58,080 --> 00:06:02,800
+né, é o novo dono da propriedade que antes era do name.
+
+81
+00:06:03,240 --> 00:06:09,120
+Então, o name agora ele não é mais válido. Por exemplo, aqui, ó, nesse print, é
+
+82
+00:06:09,120 --> 00:06:14,680
+aqui, vai ser válido, né? Vai mostrar na tela normal ali. Só que aqui, esse print
+
+83
+00:06:14,680 --> 00:06:20,720
+aqui de baixo vai mostrar um erro, porque o name ele foi e invalidado
+
+84
+00:06:20,960 --> 00:06:25,720
+na hora que a propriedade dele foi movida para essa outra variável aqui, another
+
+85
+00:06:25,720 --> 00:06:26,720
+name.
+
+86
+00:06:27,199 --> 00:06:30,560
+Vamos rodar o cargo room aqui. Cargo Ran, né?
+
+87
+00:06:36,919 --> 00:06:43,080
+Ó, já deu um erro ali, ó. falou que a variável name, né, o valor name, ele foi
+
+88
+00:06:43,080 --> 00:06:44,080
+movido
+
+89
+00:06:44,800 --> 00:06:49,360
+e aqui depois a gente tenta acessar ele, só que o valor dele já foi movido.
+
+90
+00:06:50,479 --> 00:06:55,160
+E aí então para esses valores que são locados na heap, como string, a gente vai ter
+
+91
+00:06:55,160 --> 00:06:58,680
+que aplicar as regras ali do ownership
+
+92
+00:06:59,000 --> 00:07:04,680
+pra gente tá conseguindo lidar com essas, né, atribuições dos valores entre as
+
+93
+00:07:04,680 --> 00:07:09,240
+variáveis de gerenciamento de memória. Então, né, a gente viu que para os valores
+
+94
+00:07:09,240 --> 00:07:14,360
+que são escalaros, né, ou primitivos, são os inteiros, float, buleano, caracter, o
+
+95
+00:07:14,360 --> 00:07:19,440
+hust ele utiliza o copy trate, que ele permite que esses valores sejam copiados
+
+96
+00:07:19,440 --> 00:07:20,440
+automaticamente.
+
+97
+00:07:21,360 --> 00:07:26,240
+Eh, para valores que são alocados na heap, né, que são aqueles compostos como strings
+
+98
+00:07:26,240 --> 00:07:31,240
+e outro, vetores e outros ali, o rush ele não permite que se faça a cópia desse
+
+99
+00:07:31,240 --> 00:07:32,520
+valor automaticamente.
+
+100
+00:07:33,160 --> 00:07:38,120
+Em vez disso, a propriedade do valor, ela é movida pra outra variável que
+
+101
+00:07:38,599 --> 00:07:42,919
+é declara ela, né? Então, para copiar um valor que é alocado na heap, né, como
+
+102
+00:07:42,919 --> 00:07:47,919
+string, vetores, essas outras coisas, a gente tem que utilizar esse método clone,
+
+103
+00:07:48,159 --> 00:07:51,520
+que ele cria uma cópia do valor e aloca na memória,
+
+104
+00:07:52,000 --> 00:07:56,520
+na heap ali para essa cópia, aloca uma nova memória.
+
+105
+00:07:58,639 --> 00:08:01,319
+Por exemplo, aqui, ó, a gente tem essa string aqui,
+
+106
+00:08:01,720 --> 00:08:08,879
+que ela é desse desse tipo, né, string e tem esse valor aqui, hellow hust, e ela
+
+107
+00:08:08,879 --> 00:08:14,639
+precisa ser alocada na heap, né? E ela acontece então essas regras de ownership nela,
+
+108
+00:08:14,639 --> 00:08:21,720
+ó, para eu tento copiar ela declarando essa variável aqui, né? Copia de string
+
+109
+00:08:22,039 --> 00:08:24,879
+e declarando, né, que recebi ela.
+
+110
+00:08:25,479 --> 00:08:26,599
+A propriedade
+
+111
+00:08:27,319 --> 00:08:33,240
+dessa variável original string agora ela foi movida para essa variável que a gente
+
+112
+00:08:33,240 --> 00:08:38,440
+declarou aqui, ó, copiar de string. E aí essa original string, ela agora ela passa a
+
+113
+00:08:38,440 --> 00:08:41,599
+ser inválida porque a propriedade dela foi movida
+
+114
+00:08:41,800 --> 00:08:46,680
+para essa outra variável que a gente declarou aqui embaixo. a gente faz um print
+
+115
+00:08:46,680 --> 00:08:48,800
+aqui, né, da variável que foi copiada,
+
+116
+00:08:49,360 --> 00:08:53,279
+no caso essa copiar de string, que ela tem o o valor da propriedade.
+
+117
+00:08:54,000 --> 00:09:00,480
+E aqui, ó, é a gente pega, tenta fazer o print também daquela variável original
+
+118
+00:09:00,480 --> 00:09:05,600
+string. Só que isso aqui vai acontecer um erro, porque o valor, a propriedade dela
+
+119
+00:09:05,600 --> 00:09:11,760
+foi movida para essa outra variável que a gente declarou aqui, ó. Então, para isso,
+
+120
+00:09:11,760 --> 00:09:18,200
+eh, a gente usa essa função clone. Por exemplo, aqui, ó, eu tenho essa variável
+
+121
+00:09:18,200 --> 00:09:23,120
+chamada clone de string, por exemplo, que ela é uma um clone
+
+122
+00:09:24,200 --> 00:09:28,640
+da essa variável eh que a gente declarou aqui em cima.
+
+123
+00:09:29,600 --> 00:09:34,600
+E agora os dois são, essas duas aqui são válidas que agora a gente usou essa função
+
+124
+00:09:34,600 --> 00:09:41,680
+clone aqui para tá clonando a a variável ali. E aí esse esse clone da variável ele
+
+125
+00:09:41,680 --> 00:09:46,200
+faz uma cópia profunda, né, da variável ali.
+
+126
+00:09:46,680 --> 00:09:53,120
+E aí ele não move a propriedade dela, ele faz uma cópia mesmo, sabe? As funções elas
+
+127
+00:09:53,120 --> 00:09:57,640
+seguem as regras de honership também. Então, quando você passa uma variável para uma
+
+128
+00:09:57,640 --> 00:10:01,959
+função, a propriedade dessa variável, ela é movida lá pra função.
+
+129
+00:10:03,240 --> 00:10:09,160
+Por exemplo, aqui, ó, a gente tem uma variável name e a gente passa ela para essa
+
+130
+00:10:09,160 --> 00:10:15,079
+função show channel name, né, que ela só faz um print aqui do nome do canal.
+
+131
+00:10:15,800 --> 00:10:20,680
+Aí quando a gente passa ela para cá, aqui ela é válida. aqui vai mostrar o print
+
+132
+00:10:20,680 --> 00:10:28,640
+certinho, só que esse outro print aqui, eh, que a gente tenta passar a variável name
+
+133
+00:10:30,040 --> 00:10:35,440
+porque essa a propriedade da variável name, ela foi movida aqui para dentro da
+
+134
+00:10:35,440 --> 00:10:36,440
+função,
+
+135
+00:10:37,959 --> 00:10:39,839
+igual a gente tá vendo, ó.
+
+136
+00:10:42,160 --> 00:10:47,079
+Então, se eu comentar ali, já viu que o roxan análise já parou de dar o erro e aqui
+
+137
+00:10:47,079 --> 00:10:49,760
+no cargo, ele vai executar normalmente também.
+
+138
+00:10:51,440 --> 00:10:57,440
+Então, na nas funções a gente segue eh essas regras de ownership para as funções
+
+139
+00:10:57,440 --> 00:11:03,000
+também. Então, a gente pode eh tá usando as referência para acessar os dados sem
+
+140
+00:11:03,000 --> 00:11:05,200
+transferir a propriedade delas.
+
+141
+00:11:06,079 --> 00:11:11,800
+Isso é chamado de borra win, que no caso é tipo um empréstimo, né? As referências
+
+142
+00:11:11,800 --> 00:11:14,320
+elas podem ser tanto imutáveis
+
+143
+00:11:14,680 --> 00:11:19,880
+quanto mutáveis. E a gente vai ver isso aí. Elas eh são definidas com esse símbolo
+
+144
+00:11:19,880 --> 00:11:21,079
+de ecomercial
+
+145
+00:11:21,720 --> 00:11:28,279
+e uma referência mutável, ela é definida com o ecomercial e a palavra-chave mt
+
+146
+00:11:28,279 --> 00:11:29,720
+frente aqui, ó.
+
+147
+00:11:30,040 --> 00:11:33,320
+As regras da de referência, a gente vai ver como que funciona.
+
+148
+00:11:33,920 --> 00:11:38,200
+A gente pode ter só uma eh referência mutável
+
+149
+00:11:38,480 --> 00:11:43,480
+ou várias referências imutáveis, mas a gente não pode ter os dois ao mesmo tempo. A
+
+150
+00:11:43,480 --> 00:11:47,760
+gente não pode ter nenhuma referência solta pros dados que já saíram ali do escopo,
+
+151
+00:11:47,760 --> 00:11:49,760
+que a gente vai ver isso aí agora.
+
+152
+00:11:50,600 --> 00:11:56,360
+Por exemplo, aqui, ó, a gente tem e duas variáveis, né? Uma imutável
+
+153
+00:11:56,800 --> 00:11:58,480
+e outra mutável.
+
+154
+00:11:59,680 --> 00:12:02,920
+A gente passa aqui, ó, paraa função
+
+155
+00:12:03,399 --> 00:12:06,399
+que mostra o nome do canal,
+
+156
+00:12:06,880 --> 00:12:08,160
+a referência
+
+157
+00:12:09,600 --> 00:12:11,800
+da variável aqui name.
+
+158
+00:12:12,959 --> 00:12:14,399
+Dessa forma
+
+159
+00:12:14,880 --> 00:12:16,279
+aqui, ó,
+
+160
+00:12:17,240 --> 00:12:22,040
+essa função ela vai receber, né, como parâmetro uma referência
+
+161
+00:12:23,120 --> 00:12:25,199
+de um tipo string.
+
+162
+00:12:27,079 --> 00:12:31,880
+referência aqui de um tipo string e vai est exibindo o nome aqui do canal.
+
+163
+00:12:32,800 --> 00:12:38,639
+Logo após a gente ter passado então essa variável aqui para essa função através da
+
+164
+00:12:38,639 --> 00:12:39,639
+referência
+
+165
+00:12:40,199 --> 00:12:44,120
+aqui embaixo a gente consegue utilizar a variável novamente
+
+166
+00:12:44,399 --> 00:12:47,079
+porque a propriedade dela não foi movida.
+
+167
+00:12:47,360 --> 00:12:53,519
+A função, ela só recebeu uma referência dessa variável e não a propriedade da string
+
+168
+00:12:53,519 --> 00:12:56,639
+em si. Aqui também a gente pode ter referência
+
+169
+00:12:57,320 --> 00:12:58,320
+mutável.
+
+170
+00:12:58,560 --> 00:13:04,000
+E aí a gente passa o e comercial, né, e o a palavra mut na frente.
+
+171
+00:13:04,320 --> 00:13:07,079
+Dessa forma a gente tem uma referência mutável.
+
+172
+00:13:07,600 --> 00:13:13,920
+Por exemplo, aqui a gente vai alterar o nome do canal, né? E aí para para quando a
+
+173
+00:13:13,920 --> 00:13:16,120
+gente passa uma referência mutável,
+
+174
+00:13:16,639 --> 00:13:20,959
+eh, a variável ela também deve ser mutável aqui em cima. a gente também tem que
+
+175
+00:13:20,959 --> 00:13:25,040
+definir essa palavra-chave aqui pra variável aqui em cima, que é mutável.
+
+176
+00:13:25,519 --> 00:13:26,519
+Beleza?
+
+177
+00:13:27,440 --> 00:13:32,320
+Aqui, por exemplo, ó, isso aqui causaria um erro, né? Porque a gente tá tentando
+
+178
+00:13:32,320 --> 00:13:34,959
+fazer uma referência eh
+
+179
+00:13:35,279 --> 00:13:36,279
+imutável
+
+180
+00:13:37,600 --> 00:13:39,600
+e uma referência mutável
+
+181
+00:13:40,920 --> 00:13:45,800
+com a mesma variável ali, né? Isso aqui vai causar um erro ali pra frente. E aqui,
+
+182
+00:13:45,800 --> 00:13:49,279
+ó, a gente pode ter várias referências imutáveis.
+
+183
+00:13:49,880 --> 00:13:51,000
+Tá vendo?
+
+184
+00:13:51,440 --> 00:13:53,839
+A gente pode ter várias referências imutáveis
+
+185
+00:13:54,040 --> 00:13:57,440
+ou uma var uma referência mutável,
+
+186
+00:13:58,320 --> 00:14:03,120
+mas não os dois ao mesmo tempo. Quando a gente pega e tenta passar
+
+187
+00:14:03,639 --> 00:14:09,839
+uma referência solta, por exemplo, essa função aqui, ó, lose reference, ela ela
+
+188
+00:14:09,839 --> 00:14:16,320
+retorna uma referência de string, né? E aqui dentro a gente cria a variável e
+
+189
+00:14:16,320 --> 00:14:20,759
+retorna a referência dessa variável. Só que isso vai causar um erro, porque a
+
+190
+00:14:20,759 --> 00:14:27,320
+referência name aqui, ó, ela tá solta, ela vai sair desse escopo eh após eh fechar
+
+191
+00:14:27,320 --> 00:14:28,839
+aqui nessas chaves.
+
+192
+00:14:29,920 --> 00:14:34,000
+E aí o compilador ele não permite essas referências soltas, né, para os dados aqui
+
+193
+00:14:34,000 --> 00:14:35,639
+que saem do escopo.
+
+194
+00:14:35,920 --> 00:14:41,079
+Então, pra gente tá utilizando aqui e essas funções dessa forma aqui, ó, só
+
+195
+00:14:41,079 --> 00:14:47,040
+retornando a string, a gente pode pegar e não precisa passar essa referência aqui do
+
+196
+00:14:47,040 --> 00:14:49,040
+e comercial, né?
+
+197
+00:14:49,360 --> 00:14:52,199
+tanto nesse retorno aqui
+
+198
+00:14:53,160 --> 00:14:58,560
+da tipagem, quanto no retorno aqui do da variável em si. Então, a gente remove essas
+
+199
+00:14:58,560 --> 00:15:00,120
+referências aqui
+
+200
+00:15:02,079 --> 00:15:05,240
+e aí, né, fica igual essa função aqui de baixo
+
+201
+00:15:06,519 --> 00:15:08,759
+que é esse get channel.
+
+202
+00:15:10,480 --> 00:15:15,560
+E aqui, ó, e voltou a compilar normalmente, né?
+
+203
+00:15:16,079 --> 00:15:18,320
+Agora a gente tem eh
+
+204
+00:15:18,720 --> 00:15:23,519
+uma função ali, né, que retorna a string ali em si e não precisa retornar uma
+
+205
+00:15:23,519 --> 00:15:29,959
+referência. A gente tem o os slices, né? Os slices eles são referência ao partes
+
+206
+00:15:29,959 --> 00:15:35,399
+de coleção ali de dados, né? Pode ser strings ou arrays ou outro tipo de coleção.
+
+207
+00:15:35,399 --> 00:15:40,759
+Ass elas são definido com o símbolo ali do ecomercial, né, de referência e permite
+
+208
+00:15:40,759 --> 00:15:44,000
+acessar uma parte da coleção sem transferir a propriedade,
+
+209
+00:15:44,480 --> 00:15:50,480
+né? Eles são imutáveis por padrão, igual as variáveis mesmo. E eles não precisam ter
+
+210
+00:15:50,480 --> 00:15:52,279
+é as regras de ownership
+
+211
+00:15:53,360 --> 00:15:55,600
+porque eles são referências.
+
+212
+00:15:56,759 --> 00:16:02,240
+Por exemplo, aqui a gente tem essa string, é chamada o mundo, né? E aqui, ó, nessa
+
+213
+00:16:02,240 --> 00:16:04,079
+string de hello,
+
+214
+00:16:04,319 --> 00:16:05,759
+a gente pegou
+
+215
+00:16:06,279 --> 00:16:08,800
+do do índex zero
+
+216
+00:16:09,839 --> 00:16:10,839
+até
+
+217
+00:16:12,560 --> 00:16:17,920
+o index 3 - 1, né? Então é o final -1, porque aqui no caso ele não vai até o três,
+
+218
+00:16:17,920 --> 00:16:25,360
+ele vai até o dois, né? Então ele vai 0 1 e 2. E aí pegou essa parte aqui do olá,
+
+219
+00:16:25,560 --> 00:16:29,600
+então ele consegue fazer, né, as partições ali de
+
+220
+00:16:30,079 --> 00:16:34,480
+alguma coleção, né? Aí por exemplo aqui esse Word, né? A gente pegou então do index
+
+221
+00:16:34,480 --> 00:16:40,440
+4 até o nove, até o oito aqui, no caso, né? E pegou essa essa parte do mundo.
+
+222
+00:16:40,720 --> 00:16:47,959
+E aqui, ó, para a gente pode pegar e omitir o o índex inicial ou final. Por exemplo,
+
+223
+00:16:47,959 --> 00:16:52,120
+aqui, ó, seria do zero ao três, igual aqui em cima. Só que aí a gente pode omitir o
+
+224
+00:16:52,120 --> 00:16:56,920
+zero. Aqui embaixo seria do 4 ao 9, né? Só que aí a gente pode também omitir o
+
+225
+00:16:56,920 --> 00:17:01,600
+final. E se a gente quiser pegar a string inteira, a gente pode omitir os dois e
+
+226
+00:17:01,600 --> 00:17:06,000
+índex ali e só passar esses dois pontos aqui do range, né?
+
+227
+00:17:07,439 --> 00:17:11,839
+Aqui a gente tem essa função, né, eh, que pega a primeira palavra,
+
+228
+00:17:12,439 --> 00:17:18,360
+ele vai pegar e vai pegar essa string, né, vai transformar ela em bit em bytes e vai
+
+229
+00:17:18,360 --> 00:17:22,919
+fazer um for aqui até encontrar o primeiro espaço vazio. Aí, nesse caso aqui, ele
+
+230
+00:17:22,919 --> 00:17:27,720
+vai retornar da do index zero até o espaço primeiro espaço ali que foi encontrado,
+
+231
+00:17:27,720 --> 00:17:32,000
+né? Que é esse índex aqui da intereração, ó, por exemplo.
+
+232
+00:17:42,360 --> 00:17:46,679
+E aqui também a gente tem essa outra função, que no caso ele pega a segunda palavra,
+
+233
+00:17:46,679 --> 00:17:51,080
+né? Ele vai pegar do index até mais um e até o final ali.
+
+234
+00:17:59,559 --> 00:18:05,480
+A gente também eh consegue ver aqui essas string literais que a gente pega e passa
+
+235
+00:18:05,480 --> 00:18:07,360
+diretamente aqui, ó,
+
+236
+00:18:07,760 --> 00:18:13,600
+elas são slides também. Então a gente não precisa eh tá fazendo a questão das regras
+
+237
+00:18:13,600 --> 00:18:15,760
+de ownership com ela.
+
+238
+00:18:16,720 --> 00:18:18,840
+Vamos estar mostrando elas aqui também.
+
+239
+00:18:20,280 --> 00:18:26,039
+E também a gente pode eh fazer os slice com esses outros arrays aqui, por exemplo,
+
+240
+00:18:26,039 --> 00:18:31,480
+de número, né? E aqui a gente vai pegar, por exemplo, do index um até ao
+
+241
+00:18:31,799 --> 00:18:35,520
+o dois ali, né? E aí pega o elemento dois e três, por exemplo,
+
+242
+00:18:35,799 --> 00:18:40,559
+né? e que tá mostrando os slides que foram feitos ali.
+
+243
+00:18:41,600 --> 00:18:47,159
+Então é isso, Dev. Eh, então a gente viu aqui sobre os conceitos, né, do ownership,
+
+244
+00:18:47,320 --> 00:18:53,000
+que ele funciona pra gente estar aplicando a parte da locação e liberação de memória
+
+245
+00:18:53,000 --> 00:18:57,200
+na heap para esses dados que são tipos compostos, né?
+
+246
+00:18:57,840 --> 00:18:59,840
+É, slices também.
+
+247
+00:19:00,840 --> 00:19:02,679
+E é isso daí.
+
+248
+00:19:03,720 --> 00:19:07,480
+Quem gostou, deixa um like, se inscreve no canal e muito obrigado.
+

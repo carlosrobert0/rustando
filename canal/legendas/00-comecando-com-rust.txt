@@ -1,0 +1,77 @@
+Fala pessoal, beleza? Seja muito bem-vindo ao canal Rustando. Hoje vamos começar
+nossa jornada no mundo do Rust desde a instalação no Windows, criando o clássico
+Hello World e conhecendo também o Cargo, que é um gerenciador de pacotes do Rust.
+Beleza? toda documentação oficial eh que eu estou usando para desenvolver esse vídeo
+vai tá aqui no comentário.
+E é isso daí, pessoal. Então, vamos iniciar aqui a instalação do Rust.
+Eh, beleza, galera. Então, o que que acontece, né? O Rust ele ele é instalado
+eh através do rustup.
+Eh, na própria documentação a gente vem aqui em get started e instalação.
+Aqui ele vai tá mostrando aqui, ó, na parte instalando
+o Rust, né, com o rustup
+nesse link,
+faz a instalação
+e executa aqui o nosso executável.
+Eh, clica na primeira opção que vai ser a número um e deixa ele fazer a instalação
+que precisa. Quando finalizar, pessoal, a gente vai poder estar testando utilizando
+o rustc men- Version.
+Então, pessoal, eh, o que que acontece agora com ele instalado?
+Eh, ele então vai mostrar pra gente, né, qual que é o
+o
+a versão que tá instalada aqui, se tiver tudo instalado certinho. Então, agora a
+gente vai tá criando então o primeiro Hello World com a linguagem.
+Beleza? Então, pessoal, eh, aqui a gente vai tá criando um novo diretório através
+desse MKIR e ele vai se chamar Hello World.
+Beleza? já apareceu aqui pra gente. E aí, pessoal, dentro desse repositório,
+a gente vai tá criando um arquivo chamado
+main.rs.
+RS é a extensão de Rust, beleza? E aqui dentro desse arquivo, a gente vai criar uma
+função através da palavra reservada FN e vamos chamar ela de main.
+Essa função, pessoal, ela nada mais vai fazer do que apenas um Hello World.
+Ela vai printar um Hello World ali no terminal pra gente. Uma coisa importante também
+é o ponto e vírgula, que aqui no Rust ele pede pra gente estar utilizando o ponto e
+vírgula. Beleza? Quando a gente, pessoal, faz a compilação aqui,
+eh, quando a gente tá no Rust, a gente precisa compilar o nosso programa para depois
+ele executar. E a gente compila ele utilizando Rust Cquo,
+no caso main.rs. RS.
+Ó, ele compilou e já criou aqui alguns outros arquivos pra gente. E para executar é
+só a gente entrar dentro do nosso eh arquivo em si.
+Eh,
+então a gente entrar dentro do nosso arquivo em si. E aqui, pessoal, ó, tá aqui
+printado, né, o nosso então Hello World aqui na tela, utilizando apenas o HT. Beleza,
+galera? Então, agora, pessoal, a gente vai conhecer o cargo. O que que é o cargo? O
+cargo ele é
+um
+O cargo ele é um gerenciador de pacotes e também um criador, um compilador ali, né,
+gerador de builds do Rust, pessoal. E o que que acontece? Eh, o cargo
+a gente consegue verificar se a gente tem o cargo utilizando também o cargo menos
+version.
+e apareceu aqui. Então, a gente tem essa versão. Pra gente estar criando o nosso
+projeto com o cargo, a gente vai utilizar cargo, new e o nome do projeto.
+Aí, pessoal, eu vou até entrar aqui para vocês verem qual a estrutura que foi
+criada, né?
+Então aqui de início ele cria um arquivo, ele cria um sece, né, com um arquivo main
+aqui.
+Eh, ele também cria esse arquivo chamado Cargo.toml, que é onde vai ficar as
+dependências do projeto, informações do projeto, semelhante ao package.json e que
+também é um.gitignore. Agora, pessoal, é pra gente executar o projeto, é só a
+gente rodar o cargo run.
+E aqui, ó, o nosso Hello World tá printado na tela, pessoal. Tá vendo como que é? Bem
+simples aqui também, se você quiser,
+eh, por exemplo, essa pasta target, ela é gerada sempre que você compila o projeto.
+Caso você delete
+e você queira compilar novamente, é o cargo build, ele vai est gerando essa pasta
+aqui pra gente novamente.
+Então, é, é isso, pessoal. Deixa eu rodar aqui novamente. Tá vendo aqui o Hello
+World rodando? Então, só para resumir, hoje a gente aprendeu aqui, né, instalar o
+Rust através
+do Rust.
+Escrevemos o nosso primeiro Hello World só com Rust, compilamos ele aqui, né, com
+Rust Cutamos
+também. Criamos o novo projeto com cargo através do cargo new e executamos também
+com o cargo run. No próximo vídeo, a gente vai tá criando então um jogo de
+adivinhação,
+eh, para praticar alguns conceitos do Rust, como variáveis, funções, mat, crees e
+outras eh funcionalidades e conceitos do Rust em si. Beleza? Então, já deixa seu
+like, se inscreve no canal e bora continuar.
+Até a próxima. Valeu,

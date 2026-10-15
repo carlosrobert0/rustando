@@ -7,7 +7,10 @@ e os roteiros em `../roteiros/`.
 |---|---|
 | [plano-de-melhorias.md](plano-de-melhorias.md) | **Comece aqui.** O que fazer, em que ordem, e o que já foi feito |
 | [padroes.md](padroes.md) | Como fazer título, descrição, abertura, thumbnail, Shorts e telas finais |
-| [videos-existentes.md](videos-existentes.md) | Correções prontas (título/descrição) pros vídeos já publicados |
+| [melhorias-por-video.md](melhorias-por-video.md) | **O conteúdo dos vídeos publicados:** cortes no Editor, legendas corrigidas e capítulos de cada vídeo |
+| [videos-existentes.md](videos-existentes.md) | Títulos e descrições dos vídeos publicados (Lote 1 aplicado, Lote 2 pendente) |
+| [legendas/](legendas/) | Legendas corrigidas (`.srt` e `.txt`) de 15 vídeos, prontas pra enviar no Studio |
+| [../roteiros/](../roteiros/README.md) | **Próximos vídeos:** roteiros prontos e calendário até 03/12/2026 |
 | [metricas.md](metricas.md) | Números mês a mês e por vídeo: onde olhar e o que é bom |
 | [diagnostico-2026-10-15.md](diagnostico-2026-10-15.md) | A análise completa que originou o plano (linha de base) |
 
@@ -26,7 +29,8 @@ e os roteiros em `../roteiros/`.
 
 **O diagnóstico em três linhas:** o conteúdo converte bem (18 inscritos a cada mil views nos vídeos longos),
 mas o canal vive de busca ("curso de rust") e de playlist. Quase metade da audiência sai nos primeiros 30–40 s,
-e os vídeos de 41–57 min afundaram a retenção. O formato que mais segura gente é o **projeto** (#3).
+e os vídeos de 41–57 min afundaram a retenção. **A linha didática (curso seguindo o Rust Book) é o ponto forte e fica.**
+O plano mexe na embalagem e no ritmo, e encaixa um projeto a cada 3–4 aulas, como o próprio Book faz.
 
 ## Rotina
 

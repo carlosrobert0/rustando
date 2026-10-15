@@ -3,10 +3,10 @@
 > Duração alvo: **13–15 min** · Projeto: `contador-palavras/` (código final testado em `src/main.rs`)
 > Thumbnail: `contador-palavras/thumbnail-projeto-01.png` (editável no thumbgen pelo `.json`)
 
-**Por que este projeto:** o #3 (jogo de adivinhação) é o vídeo do canal com melhor retenção e mais tempo de
-exibição. E os vídeos "Learn Rust: Build X" em inglês fizeram de 20 a 100 vezes a média dos canais. Este projeto
-usa exatamente o que as aulas #9 e #10 ensinaram (HashMap, String, Result, `?`) e dá um motivo pra quem parou
-nelas voltar.
+**Por que este projeto:** o curso segue o Rust Book, e o Book alterna capítulos de conceito com projetos. Este é o
+projeto depois dos capítulos 8 e 9: usa só o que as aulas #9 e #10 ensinaram (HashMap, String, Result, `?`) e dá
+um motivo pra quem parou nelas voltar. O formato também tem dados a favor: o #3 (jogo de adivinhação, o projeto
+do cap. 2) é o vídeo do canal com melhor retenção. É um teste: ver [metricas.md](../canal/metricas.md#teste-projeto-vs-aula).
 
 ---
 

@@ -1,0 +1,460 @@
+1
+00:00:01,040 --> 00:00:06,480
+Fala Dev, fala rustáceo. Beleza? Ó, começando esse vídeo com esse conteúdo muito
+
+2
+00:00:06,480 --> 00:00:13,080
+maneiro que é o quê? É a nossa cidade. Olha que bção. Ol bom paraíso igual simpos.
+
+3
+00:00:13,200 --> 00:00:14,639
+Então bora começar.
+
+4
+00:00:17,240 --> 00:00:23,599
+Fala Dev, beleza? Fala rustáceo. Beleza? Vamos então estar implementando agora o
+
+5
+00:00:23,599 --> 00:00:28,320
+struct pra gente ver como que funciona aqui na prática numa mão na massa.
+
+6
+00:00:29,039 --> 00:00:34,239
+A gente começa eh definindo uma struct com a palavra reservada struct
+
+7
+00:00:35,079 --> 00:00:39,120
+seguido do nome da struct, por exemplo, user.
+
+8
+00:00:40,120 --> 00:00:45,200
+E depois dentro de chaves a gente vai pegar e vai est colocando ali os nossos
+
+9
+00:00:45,200 --> 00:00:47,879
+valores e daquela struct.
+
+10
+00:00:48,559 --> 00:00:51,960
+Por exemplo, eh activo,
+
+11
+00:00:52,760 --> 00:00:54,359
+ele vai ser um guliano
+
+12
+00:00:57,879 --> 00:00:59,160
+uma stringil
+
+13
+00:01:02,840 --> 00:01:03,840
+string
+
+14
+00:01:04,119 --> 00:01:05,360
+e sig
+
+15
+00:01:06,320 --> 00:01:07,320
+count.
+
+16
+00:01:09,600 --> 00:01:12,520
+Dessa forma, então a gente implementou
+
+17
+00:01:12,960 --> 00:01:17,560
+e uma struct, a gente definiu, na verdade uma struct.
+
+18
+00:01:17,840 --> 00:01:22,600
+E como que a gente faz pra gente estar agora utilizando essa struct
+
+19
+00:01:23,119 --> 00:01:29,320
+dentro da nossa função main principal aqui do Rust? A gente vai est então e criando
+
+20
+00:01:29,320 --> 00:01:35,520
+uma variável e está atribuindo para ela a struct. E quando a gente faz essa
+
+21
+00:01:35,520 --> 00:01:41,759
+atribuição da struct, é a forma que a gente faz para instanciar a struct. E aí dentro
+
+22
+00:01:41,759 --> 00:01:46,360
+da struct ali a gente vai passar os valores de cada campo.
+
+23
+00:01:49,079 --> 00:01:55,240
+A gente passa então a struct seguido de chaves, bem semelhante à forma que a gente
+
+24
+00:01:55,240 --> 00:02:02,520
+define, só que ao invés agora da gente passar o tipo do campo, a gente passa o valor
+
+25
+00:02:02,520 --> 00:02:03,640
+em cima.
+
+26
+00:02:17,400 --> 00:02:23,959
+Beleza? Aí a gente passa o valor aqui de cada eh propriedade de cada atributo aqui
+
+27
+00:02:23,959 --> 00:02:24,959
+do
+
+28
+00:02:25,239 --> 00:02:28,680
+da Struct. ela é semelhante a um objeto.
+
+29
+00:02:30,239 --> 00:02:35,480
+Portanto, eh, a gente consegue acessar os valores da struct.
+
+30
+00:02:37,040 --> 00:02:42,159
+Por exemplo, eu consigo vir aqui, ó, e fazer um print eh
+
+31
+00:02:43,599 --> 00:02:51,120
+do username que a gente definiu aqui, acessando a struct seguido do nome
+
+32
+00:02:51,120 --> 00:02:55,760
+do da propriedade do atributo que seria que a gente quer acessar.
+
+33
+00:02:56,040 --> 00:03:01,159
+Dessa forma ele consegue fazer o acesso aqui pra gente. Normalmente
+
+34
+00:03:03,440 --> 00:03:06,040
+ele vai fazer o log aqui, né?
+
+35
+00:03:06,319 --> 00:03:09,319
+Aqui, ó. Ele mostra pra gente o log normalmente,
+
+36
+00:03:09,720 --> 00:03:15,239
+certo? Beleza. Vamos continuando aqui. Então, a struct a gente, se a gente quiser,
+
+37
+00:03:15,239 --> 00:03:21,840
+por exemplo, reatribuir algum valor a alguma propriedade da Struct, a gente consegue
+
+38
+00:03:21,840 --> 00:03:26,480
+também. Por exemplo, eu vou vir aqui e vou fazer assim, ó. user
+
+39
+00:03:27,040 --> 00:03:28,040
+ponusername,
+
+40
+00:03:29,239 --> 00:03:33,560
+né? Acessei a propriedade. Agora vou passar agora o novo valor para ela,
+
+41
+00:03:40,239 --> 00:03:42,400
+certo? Passei o novo valor.
+
+42
+00:03:42,640 --> 00:03:49,319
+Aí aqui a gente vai tá rodando a aplicação e ele vai est gerando pra gente um erro.
+
+43
+00:03:53,280 --> 00:03:58,760
+Ele mostra então pra gente aqui no erro que a gente não consegue reatribuir por
+
+44
+00:03:58,760 --> 00:04:04,159
+conta da variável que a gente criou e atribuiu a Struct. Ela é uma variável
+
+45
+00:04:04,159 --> 00:04:09,079
+imutável, porque pro padrão toda a variável é imutável. Então, a gente precisa
+
+46
+00:04:09,079 --> 00:04:12,519
+adicionar aqui antes do nome da variável
+
+47
+00:04:13,040 --> 00:04:15,239
+a palavra reservada milde.
+
+48
+00:04:16,479 --> 00:04:18,239
+Com isso, a gente consegue
+
+49
+00:04:18,560 --> 00:04:23,759
+acessar aqui novamente e ele já passa o novo valor aqui pra gente que foi a então,
+
+50
+00:04:23,759 --> 00:04:31,120
+né, a reatribuição do valor de uma propriedade da Struct, de um campo da Struct.
+
+51
+00:04:31,120 --> 00:04:38,039
+A gente consegue também e utilizar a sintaxe de field short hand, que é a sintaxe de
+
+52
+00:04:38,039 --> 00:04:43,080
+abreviação. Vou criar aqui então uma função pra gente tá vendo esse exemplo.
+
+53
+00:04:43,639 --> 00:04:49,280
+Por exemplo, vou criar aqui uma função e build user que recebe dois parâmetros, o
+
+54
+00:04:49,280 --> 00:04:54,560
+e-mail que é uma string e username que também é uma string. E ele vai retornar pra
+
+55
+00:04:54,560 --> 00:04:57,759
+gente, então, é a criação ali,
+
+56
+00:04:58,039 --> 00:04:59,919
+de uma struct.
+
+57
+00:05:01,360 --> 00:05:07,160
+Então, a gente vai retornar esse instruct, certo? E vamos abrir a função aqui. Agora
+
+58
+00:05:07,160 --> 00:05:12,199
+dentro da função, a gente vai criar então e a implementação da struct. Fazendo da
+
+59
+00:05:12,199 --> 00:05:14,840
+seguinte forma. A gente passa a struct
+
+60
+00:05:15,520 --> 00:05:18,199
+seguido de chaves e aqui dentro os valores.
+
+61
+00:05:28,680 --> 00:05:32,440
+Beleza? Eh, a sintaxe aqui de
+
+62
+00:05:32,720 --> 00:05:40,360
+short e não, a sintaxe aqui de field e need short hand é a sintaxe da abreviação
+
+63
+00:05:40,360 --> 00:05:45,360
+que a gente pode fazer aqui. Por exemplo, a gente tá passando para pro valor aqui da
+
+64
+00:05:45,360 --> 00:05:46,360
+Struct
+
+65
+00:05:47,400 --> 00:05:54,199
+uma propriedade, né, um parâmetro que tem o mesmo nome do campo da Struct. Então, a
+
+66
+00:05:54,199 --> 00:05:59,479
+gente pode abreviar aqui e passar dessa forma que funciona também. Então eu vou est
+
+67
+00:05:59,479 --> 00:06:06,199
+criando aqui esse novo usuário aqui com essa função pra gente ver ele aqui
+
+68
+00:06:06,199 --> 00:06:07,199
+funcionando.
+
+69
+00:06:13,720 --> 00:06:15,080
+Pera aí rapidinho.
+
+70
+00:06:17,319 --> 00:06:21,039
+Vou criar aqui então pra gente ver, né, ele funcionando
+
+71
+00:06:22,840 --> 00:06:24,120
+pra gente.
+
+72
+00:06:24,360 --> 00:06:27,000
+Eu posso dar o log dele aqui
+
+73
+00:06:30,759 --> 00:06:37,599
+e vai tá ali, então, né, o nosso log é da criação do da Struct através de uma função
+
+74
+00:06:37,599 --> 00:06:42,919
+e utilizando a sintaxe de field short rang onde a gente pode abreviar
+
+75
+00:06:43,160 --> 00:06:50,120
+e o o a atribuição ali do valor ao campo quando é o mesmo nome do campo que a gente
+
+76
+00:06:50,120 --> 00:06:56,440
+tá atribuindo ali. Beleza? Então vamos continuando aqui. Eh, a gente consegue também
+
+77
+00:06:56,440 --> 00:07:03,160
+criar outras instâncias de da Struct através de uma que já foi criada, ou seja, a
+
+78
+00:07:03,160 --> 00:07:04,840
+gente consegue reaproveitar
+
+79
+00:07:05,120 --> 00:07:09,039
+uma struct já criada. E a gente faz da seguinte forma,
+
+80
+00:07:10,680 --> 00:07:17,440
+por exemplo, vou tá vou estar apagando aqui só pra gente tá fazendo eh essa
+
+81
+00:07:17,440 --> 00:07:22,960
+exemplificação da reutilização de uma struct. Por exemplo, aqui eu posso criar o user
+
+82
+00:07:22,960 --> 00:07:23,960
+do
+
+83
+00:07:24,680 --> 00:07:26,680
+e ele vai ser um instructe
+
+84
+00:07:29,639 --> 00:07:31,080
+vai ter um username,
+
+85
+00:07:33,919 --> 00:07:35,720
+um username diferente,
+
+86
+00:07:37,560 --> 00:07:42,280
+por exemplo. Vou colocar aqui Carlos 2. E o e-mail também vai ser diferente.
+
+87
+00:07:46,360 --> 00:07:54,280
+Agora, o restante dos dados, que são os campos actitive e o campo sign account,
+
+88
+00:07:54,280 --> 00:07:59,159
+esse eu quero reaproveitar, eu quero que sejam os mesmos. Eu posso vir aqui e
+
+89
+00:07:59,159 --> 00:08:03,120
+passar, por exemplo, é active igual user.
+
+90
+00:08:03,520 --> 00:08:04,520
+Active
+
+91
+00:08:05,360 --> 00:08:07,919
+e sign in account user.
+
+92
+00:08:08,280 --> 00:08:09,280
+Account
+
+93
+00:08:10,199 --> 00:08:17,319
+vai funcionar. Ou eu também posso utilizar a sintaxe de update eh da
+
+94
+00:08:17,319 --> 00:08:22,560
+Struct que a gente faz semelhante ao spread operator no Typescript,
+
+95
+00:08:22,960 --> 00:08:24,840
+que é da seguinte forma.
+
+96
+00:08:25,840 --> 00:08:28,879
+A gente passa dois pontos final
+
+97
+00:08:30,080 --> 00:08:32,400
+e agora o nome da struct.
+
+98
+00:08:33,519 --> 00:08:36,599
+Dessa forma, a gente utiliza
+
+99
+00:08:37,839 --> 00:08:45,399
+o o restante dos dados e daquela struct que a gente tá referenciando ali. É semelhante
+
+100
+00:08:45,399 --> 00:08:47,839
+ao spread operator no JavaScript.
+
+101
+00:08:51,040 --> 00:08:55,279
+Ó, aqui, por exemplo, para vocês verem que ele reutiliza, eu vou est passando aqui
+
+102
+00:08:55,279 --> 00:08:58,399
+uma um atributo, por exemplo, o atributo de
+
+103
+00:09:02,240 --> 00:09:03,440
+no nosso
+
+104
+00:09:09,200 --> 00:09:12,399
+é aqui, ponto vírgula que esqueceu.
+
+105
+00:09:13,360 --> 00:09:18,279
+E aqui, ó, ele já retornou, né, a propriedade que ele reaproveitou daquela struct.
+
+106
+00:09:18,279 --> 00:09:25,000
+Isso chama eh o struct update, que é a sintaxe, né, de de atualizar uma struct aqui
+
+107
+00:09:25,000 --> 00:09:31,839
+no no Rust. Aí, pessoal, eu mostrei agora então eh alguns exemplos da Struct e esses
+
+108
+00:09:31,839 --> 00:09:38,880
+exemplos foi da struct e que chamamos de field name struct, onde a gente tem
+
+109
+00:09:38,880 --> 00:09:41,240
+os nossos campos aqui nomeados.
+
+110
+00:09:41,640 --> 00:09:47,959
+Existe também outros dois tipos de struct, que é o o tuple struct, que a gente passa
+
+111
+00:09:47,959 --> 00:09:55,360
+só o tipo e do campo e no formato de tupla e o unit struct,
+
+112
+00:09:55,360 --> 00:10:01,079
+que a gente só passa o nome ali para struct sem nenhum e nome para campo e também sem
+
+113
+00:10:01,079 --> 00:10:06,920
+nenhum valor atribuído. Beleza? Então, esse foi o vídeo aí eh sobre struct e nos
+
+114
+00:10:06,920 --> 00:10:10,640
+próximos vídeos eu vou estar mostrando os outros dois tipos de struct e também um
+
+115
+00:10:10,640 --> 00:10:14,440
+exemplo de eh utilização da struct. Valeu,
+

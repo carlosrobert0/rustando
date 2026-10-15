@@ -1,0 +1,172 @@
+Fala galera, beleza? Então, continuando aqui o nosso vídeo sobre generics
+e Lifetimes, agora a gente vai est continuando aí e falando sobre ainda sobre
+generics. E agora nessa parte do vídeo a gente vai falar sobre genéricas
+nas structs.
+Então aqui, pessoal, vou est pegando um exemplo aqui para mostrar para vocês.
+A gente tem então aqui, né, essa struct chamada point. E essa struct,
+ela tem aqui, né, o os seus tipos, né, são os tipos genéricos, ó.
+E aqui ele acontece esse erro e a gente vai entender o porquê desse erro. E e aqui
+mesmo, ó, igual eu falei, com a nossa extensão do rust-analyzer, que é essa daqui, ó,
+e em tempo de código mesmo, a gente consegue já verificar o erro. E aqui ele fala
+que espera um inteiro, mas tá chegando um um um float, um número decimal,
+certo?
+E aí a gente tem esse erro. E agora a gente vai ver como que a gente consegue lidar
+com esse erro.
+Por exemplo, aqui, ó, a gente utilizou eh um tipo genérico
+para para essa struct chamada point. Porém, a gente vê que a gente só tem um tipo
+genérico. E aqui, eh, esse tipo genérico, ele deve corresponder
+ao tipo que você, eh, coloca na sua struct.
+Independente se for um um texto ou um número, eh os dois valores
+dessa estrutura, no caso o X e o Y, eles devem receber o mesmo valor, porque aqui a
+gente tá passando só um parâmetro genérico, certo? Que nesse caso é o T. Se eu
+passasse aqui, ó, eh, um valor em texto, essa string aqui, no caso, e
+passasse o mesmo valor,
+que é o mesmo tipo, tanto pro valor X quanto pro valor Y, a gente vê que não
+acontece erro, certo?
+Porque é o mesmo valor, é o mesmo tipo genérico que a gente passou.
+Se a gente quiser poder variar
+entre os tipos aqui da struct, por exemplo, nesse caso aqui é um decimal.
+Se a gente quiser que esse segundo valor possa ser um valor diferente, seja decimal,
+seja string, seja qualquer outro, a gente precisa passar um novo eh parâmetro aqui
+para esse struct. Igual a gente já fez,
+passando esse parâmetro, falando que ela recebe esse parâmetro genérico que a gente
+nomeou de T, agora a gente vai passar um novo parâmetro, que também é um parâmetro
+genérico. E a gente pode falar que é qualquer qualquer texto, mas o texto que a
+gente passa aqui, a gente precisa referenciar. Eu vou chamar de U e eu vou passar o
+U aqui pro Y. Agora você vê que o erro ele já parou de acontecer,
+porque dessa forma a gente permitiu eh a utilização de mais de um parâmetro genérico
+aqui para esse struct.
+Quando ele tava apenas com um parâmetro, que no caso é esse aqui que a gente estava
+passando, ele tava dando um erro porque o segundo parâmetro não correspondia ao tipo
+genérico que a gente definiu para esse caso dessa estrutura concreta, o inteiro. E
+aí adicionando aqui então, né, um segundo parâmetro genérico, a gente consegue é
+alternar aqui, né, os tipos e dessa struct aqui.
+Beleza? Então aqui a gente viu como lidar com genérico,
+passar mais de um parâmetro para struct aqui,
+mais de um parâmetro genérico. Beleza?
+Eh, e agora
+a gente vai também e fazer um exemplo de utilização de generics,
+só que instructs,
+pessoal, relembrando, generics
+parâmetros com tipos genéricos. Pode ser qualquer tipo, genérico é qualquer coisa,
+você entendeu? É tipo um n script, mas é um valor que é genérico que a gente
+consegue referenciar ele depois. Beleza? Continuando, então aqui a gente vai agora
+ver os eh generics, só que nos enum,
+tá? aqui uma estrutura de enum, né, que ela também consegue receber
+os os genics.
+Igual aqui, ó, a gente tem um enum de option, que ele recebe o some ou non e ele
+também recebe um um tipo genérico. Esse enum ele é de um tipo genérico. E a gente tá
+repassando esse tipo aqui pro nosso som. E depois a gente consegue referenciar esse
+valor aqui dentro que a gente vai receber e passar pra frente, né? Igual e o enum
+nada mais nada mais é e é é essa estrutura do enum, né? A gente sempre utilizou
+mais para trás aí a questão dos enumuns, né? Que são opções enumeradas.
+E agora a gente viu que o Enum por si só a estrutura dele, ele já utiliza o
+genériclementar
+esse enum, por exemplo,
+a gente tem esse valor, né? Eh, entendendo a estrutura do Enum aqui, eh, ele recebe
+então, né, esse Enum de option, por exemplo, que para quando ele tiver for some,
+quando tiver alguma coisa naquela opção, ele vai conter o valor e a gente consegue
+recuperar dessa forma que a gente a estrutura do Enum
+e ela já tem esse valor que recebe um tipo genérico. E esse mesmo tipo genérico,
+esse mesmo valor genérico, ele é repassado aqui pr dentro do som. É onde a gente
+consegue recuperar o valor para quando é uma opção de soma, quando tem algum valor
+ali dentro. E a gente também tem o outro enumenics,
+que nesse caso aqui é o enum de resut. Já o result a gente vê que ele não na segunda
+opção ali, né? Por exemplo, aqui no option, quando ele não tem nada, ele vai
+retornar o Ne. Então, não tem nenhum valor dentro desse none que a gente consegue
+recuperar.
+Já no resulte, não. A gente tem uma expressão ali de um resultado de alguma operação
+ou de alguma chamada, de alguma requisição. E aí para quando for sucesso, a gente
+tem o OK aqui que a gente passa o parâmetro T, nesse caso aqui, né, esse parâmetro
+genérico T. E para quando for erro, como a gente também consegue recuperar nesse
+caso do option result esse erro, aí a estrutura dele também utiliza um segundo
+parâmetro de eh valor genérico, que nesse caso é utilizado para erro, onde a gente
+passa aqui dentro do método do erro, é nesse enum de result. Bacana, né, pessoal?
+Então aqui, ó, a utilização dos dos generics
+enuns. E agora a gente vai tá vendo aqui também eh como a gente utiliza
+o generics em.
+Eh, a gente vai, vocês lembram aí mais ou menos o que que é o método? O método é
+quando a gente consegue e implementar
+e funcionalidades
+para dentro daquela struct. Por exemplo, a gente tem a nossa struct aqui de point.
+Deixa eu puxar ela novamente.
+Certo? Temos aqui essa struct de point e dentro dessa struct a gente consegue e criar
+comportamentos. Esses comportamentos
+é geralmente é são funções que dentro aqui do hust para quando a função referencia
+ela mesmo, isso é chamado de métodos. Então, beleza. Então, como que a gente
+implementa métodos dentro de uma struct? a gente utiliza o impl, né, pra gente tá
+implementando.
+A gente vai ter aqui o nosso eh a gente vai dizer que essa implementação
+vai ter esse tipo genérico que a gente vai estar utilizando e a gente chama então,
+né, o nome da nossa struct, nesse caso é o point. E desse caso aqui a gente vai
+querer utilizar somente um parâmetro, até para não ficar muito confuso, para depois
+a gente ver. Então aqui dentro ele vai tá implementando esse point e aqui a gente
+definiu que a tipagem dele vai ser um de um de um valor eh genérico,
+certo? E aqui dentro então a gente consegue implementar as funcionalidades,
+os métodos dessa
+struct chamada point. Nesse caso aqui, quando a gente utiliza
+e
+ó, por exemplo, aqui eu vou pegar o valor X do point. Quando a gente utiliza esse
+primeiro parâmetro dentro da função chamado self, essa e sintaxe
+ela é chamada de
+método. Quando a gente tem então aqui dentro uma função que o primeiro parâmetro
+dela é o self,
+é, ou seja, ela mesmo, essa função, a sintaxe dela vai chamar método. E aqui a gente
+vai ver como a gente implementa o genérico,
+certo? Aqui a gente tem a struct chamada point, que ela tem também a sua tipagem
+recebendo parâmetro genérico chamado T aqui. E dentro aqui da nossa implementação
+dessa struct, a gente vai fazer uma implementação de um método que retorna o valor de
+X dessa struct
+genérico, que a gente chamou de T. Aqui a gente chama o nome da do nosso struct e
+repassa aqui a referência do valor genérico aqui para dentro dessa structção
+e o fn é pra gente criar a função. Eu vou chamar essa função de x e ela recebe como
+parâmetro ela mesma, essa mesma struct
+e por isso isso é chamado de método. E ela vai retornar pra gente uma referência
+de um tipo genérico também, que no caso é o T que a gente está referenciando. E
+dentro desse self a gente vai acessar o valor de X. E aí então aqui dentro agora a
+gente criou um método chamado X, que acessa o valor de X dentro dessa struct. E aí,
+pessoal, uma coisa que as pessoas confundem bastante e é bom a gente trazer é essa
+forma que o a implementação utiliza aqui. Você vê que nessa primeira vez aqui a
+implementação declara
+o genérico. Ela declara o genérico dessa forma. E na segunda utilização aqui, o
+point ele usa esse genérico. Se a gente utilizar sem esse primeiro e declaração aqui
+da implementação desse genérico, ele entende que esse valor aqui de tintor
+concreto que ele vai estar utilizando dentro da função. Vou ver, vou mostrar um
+exemplo para vocês verem, ó. Aqui a gente vai ter uma implementação de um tipo
+concreto. Eu vou implementar aqui dentro de point um tipo concreto chamado é
+F32. Esse point aqui ele vai ter esse valor de F32. Beleza? Então vou criar uma
+função aqui chamada distance from orig.
+dentro ela vai receber aqui, né, o self, que é a própria referência do da Struct e
+vai retornar pra gente esse tipo e do ponto flutuante F32. esse próprio é tipo
+que a gente definiu aqui, ó, F32, ele tem acesso
+aos métodos do
+eh desse tipo do ponto flutuante.
+Ou seja, aqui dentro, ó, esse método chamado PI,
+por exemplo, ele é uma ele é um método que ele existe só dentro do tipo de ponto
+flutuante, que é o tipo float. aqui
+ele ele consegue utilizar, né, métodos ali de dentro que aquela própria tipagem,
+daquele próprio formato de valor consegue fornecer pra gente. O próprio tipo aqui da
+função, ele consegue eh que a gente tipou aqui, ó, da Struct, nesse caso, ele
+consegue fazer a referência aqui dentro e utilizar métodos que esse tipo de dado,
+somente esse tipo de dado tem, entendeu? Por exemplo, aqui, ó. Então aqui por isso
+que a gente precisa utilizar esse essa declaração do genérico na frente do do impl
+também, porque sem isso daqui ele entende que o T vai ser um tipo eh natural,
+um tipo
+um tipo concreto aqui, igual por exemplo o flu,
+entendeu? Então é por isso que a gente tem que utilizar o genérico aqui na frente do
+impl também.
+E aqui também, pessoal, a gente tem um exemplo de eh métodos,
+esses métodos aqui, ó, com seus próprios generics.
+Ele utiliza os seus próprios generics,
+diferente
+dos de dos e generics
+disponibiliza aqui pra gente utilizar. a gente consegue também eh criar genéricos
+para dentro dos métodos aqui da Struct onde a gente vai estar implementando. Então a
+gente utiliza os genéricos da própria Struct que ela disponibiliza para nós, vai est
+disponibilizando e também os os métodos que a gente implementar nessa struct, a gente
+pode utilizar generics também. E é isso, pessoal. Essa aula aqui foi sobre eh
+generics ou
+sobre genéricas
+nas structs e também genéricos aqui nos métodos. Beleza? Valeu, pessoal. Muito
+obrigado pela audiência e segue nós aí que a próxima, o próximo conteúdo aí vai ser
+eh os traits.

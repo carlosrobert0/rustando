@@ -1,0 +1,159 @@
+Fala galera, beleza?
+Toda linguagem tem um jeito ali, né, de lidar com a duplicação de código. E aqui no
+Rust, esse jeito, ele tem três nomes que são os generics, os traits e os lifetimes.
+Os genérico,
+ele é um tipo genérico.
+Eh, o trait, ele é tipo assim, ó. Esse tipo aqui ele sabe fazer tal coisa, ou seja,
+ele tem os métodos ali dentro dele.
+E o lifetime
+é tipo assim, ó, a referência
+vive o tempo suficiente
+eh durante aquele processo ali da função onde ele tá sendo utilizado ali. Então os
+três juntos são o que faz o rush ficar parecido ali, né, com o C e segura ao mesmo
+tempo. Então, bora para cima. Então, aqui, ó, a gente tem eh essa função aqui
+que ela recebe esses parâmetros, né? Eles são desses tipos aqui, né? Esse lifetime e
+esse tipo genético.
+E dentro dele tem os parâmetros que a função recebe em si, né? E ela retorna também
+uma um lifetime aqui desse tipo de string.
+Beleza? Ó, por enquanto a gente não tá entendendo, né, muito bem o que que esse
+código faz, mas no final aqui dessa aula a gente vai entender direitinho o que que o
+que que ele faz e o que que ele traz pra gente de utilidade nessa questão aí de
+duplicar duplicidade do código, né? evitar a questão da duplicidade do código. Então
+vou trazer aqui pra gente, entendeu, a questão do problema em si. Eu vou criar aqui
+uma função, né? Vou até trazer aqui para vocês já, que é o quê? Esse daqui é um um
+array, né? Um array de de numérico. Tem os valores aqui numéricos.
+E a gente tem essa função que
+vê qual que é o
+Então a gente tem aqui nessa função pra gente achar qual que é o maior número ali
+dessa lista. Então, a gente define essa variável como uma variável mutável e pega
+essa referência do nosso array inicia na posição zero, né, que a gente vai estar
+percorrendo o array para ver qual desses aqui que é o maior número. Depois a gente
+faz uma interação através desse foring
+e aqui dentro a gente verifica se o número for maior do que o latested. O latested
+então é igual ao número. Essa função, essa lógica aqui, ela encontra o maior número
+dentro desse array, certo? Beleza? Então, e aqui dentro desse array, a gente vê
+que os valores são numéricos, né?
+Agora a gente eh precisa ali dessa mesma função, só que agora ao invés de ser por um
+valor valor numérico, vai ser um por um valor em texto, vai ser um char. Então a
+gente vai pegar e vai duplicar esse código,
+ó. Então aqui, né, a gente tem essas duas funções
+que para dentro dessa função a gente vai jogar então esse mesmo código aqui, essa
+mesma lógica que a gente que a gente tem.
+Eh, só que no caso aqui ele ele retorna
+essa
+esse tipo, né? Então, como ele retorna, a gente pode até fazer um print, mas a gente
+também tem que fazer o retorno dele aqui. Então, agora você já viu que parou de dar
+erro e agora a gente vai repetir aqui para baixo, utilizando essa mesma esse mesmo
+esquema aqui.
+Beleza? Aí aqui, né, como o tipo,
+pera aí.
+Beleza. Beleza. Nesse caso aqui, ó, como ele já recebe esse list, ele tem que
+utilizar o list ao invés do number list.
+Então vamos tá passando aqui,
+né? Como ele já é também é referência, eu não preciso passar a referência aqui
+novamente, já parou de dar o erro. A gente vai fazer o mesmo para cá, para baixo.
+Beleza? Beleza? Então aqui, pessoal, a gente viu que a gente criou duas funções pra
+lógica de encontrar o maior número. Só que no caso aqui a gente tem essa função que
+é pro tipo inteiro e a gente tem essa função que é pro tipo em texto, que é o o tipo
+char, beleza? E aí aqui dentro a gente vai fazer
+essa
+essa chamada, né? Por exemplo, aqui, ó, eu posso fazer isso, ó. Result.
+E aqui eu faço é res, é, crio aqui, né, uma arrextual,
+né, e aqui eu também vou fazer o meu res.
+Aqui eu posso também tá trazendo o print deles, né? E aqui
+eu trago
+essa função aqui para fora.
+Beleza? Agora eu posso executar. Então,
+e a gente viu, ó, que desse array que é um array numérico, o maior número é o 100.
+E desse array aqui, que é um array textual, que é um char, o maior caractere é o Y.
+Beleza? Aí, pessoal, entendendo aqui o que que acontece. Você vê que eu que aqui
+aconteceu uma repetição de lógica. Essa lógica aqui, ó, ela tá idêntica.
+Ela tá idêntica. E para isso, eh, o, a única coisa que tem de diferente ali dentro
+são, é os parâmetros que a função recebe e o parâmetro que a função retorna.
+Nesse caso, a gente consegue utilizar o genérico,
+pra gente tá eh definindo um parâmetro e um retorno genérico.
+E dessa forma a gente consegue eh reduzir essa duplicidade de de código. Beleza?
+Então, ó, vou pegar e vou estar fazendo aqui pra gente ver como que funciona.
+Eh, essa mesma lógica aqui que a gente tem, eu vou criar uma nova função.
+Você vê que o que o auto ao auto eh auto complite ali, né? Já tá, já dá até as
+instruções.
+Então aqui, ó, eu vou rodar dessa forma aqui pra gente ver o que que é um um erro
+que é um erro proposital que eu tô fazendo aqui pra gente ver um uma questão
+relacionada ao generics. Então aqui, ó, eu tenho essa função que ela vai ser de um
+tipo genérico,
+que nesse caso a gente vai chamar de T, mas poderia ser qualquer outro nome ou
+qualquer outro caractere. E aqui dentro a gente vai ter o parâmetro, que no caso é o
+list.
+E a gente vai falar que esse parâmetro
+é do tipo
+é genérico.
+Aqui, pessoal, igual eu falei, esse T ele é você pode passar ele de qualquer eh
+ele é tipo assim, ele ele não precisa ser o T, pode ser outros nomes, sabe? Pode
+ser. Mas aí ao mesmo que você passar aqui, você tem que referenciar
+aqui no outro. Por exemplo, posso passar aqui é
+qualquer coisa, mas depois aqui eu também tenho que referenciar ele. Beleza? Então,
+aqui dentro eu tenho uma função que recebe eh um parâmetro que é um parâmetro
+genérico
+e o retorno dele também será
+um retorno genérico.
+Vou criar aqui então a função
+aqui dentro, né? Eu vou pegar essa lógica que a gente já tá criando nas outras
+funções. Vou extrair aqui, ó, de uma delas completamente
+e vou passar aqui para dentro.
+Beleza, agora a gente já tem a lógica extraída.
+E aí, pessoal, olha só que interessante, ó. Antes de eu pegar aqui e rodar a minha
+aplicação, por exemplo, vou rodar aqui só para vocês verem,
+ó. Antes de eu rodar minha aplicação,
+o próprio Rust Analyze, que é essa extensão aqui, ele identifica para mim,
+eh, só em tempo aqui de interpretação mesmo, ele identifica que, eh, a gente não
+consegue fazer essa comparação
+entre esses valores, porque esses valores eles podem ser de tipos diferentes. Então,
+não tem como eu comparar, por exemplo, se um número é maior do que uma letra,
+entende? Então, beleza. E aí é interessante aqui no Rust que todos os erros que ele
+te dá, você não precisa ficar fazendo log para você ir atrás dele. Ele mesmo já te
+mostra qual que é a solução. E aqui, ó, ele fala, ó, biná operation e maior que, né,
+que seria o bracket ou cat, né, ele fala que não pode aplicar em um tipo genérico,
+porque ele não consegue comparar tipos genéricos, mas ele mesmo já traz uma
+instrução que é esse trait chamado PartialOrd. que ele consegue fazer essa essa
+partição aí entre os os valores, os parâmetros que vão ter dentro da função e ele
+consegue fazer essa comparação entre eles. Beleza? Então aqui a gente viu o erro de
+forma proposital e ele mesmo já fala aqui pra gente o que que a gente precisa fazer
+para est inserindo
+eh aqui na nossa aplicação.
+Beleza? E aqui mesmo a gente vai fazer o quê? Então, a gente vai fazer, a gente vai
+falar que esse tipo genérico nosso, ele é de um tipo chamado partial
+ord. E com esse partial ord ele consegue fazer as comparações aqui pra gente. Então
+você vê que já parou de dar o erro aqui pra gente, beleza? E aí agora dentro da
+nossa função a gente consegue tá dentro aqui, né, da nossa aplicação, a gente
+conseguiu então tá reduzindo a duplicidade que acontecia em uma lógica que
+encontrava o maior número e precisava de parâmetros diferentes, porque em um array
+pode ser numérico e também pode ser em texto.
+E dessa forma a gente utilizou o Generics aqui para est conseguindo extrair essa
+lógica
+é aqui dentro
+de uma forma que os parâmetros que forem usados aqui dentro ele consigam ter um
+esquema de polimorfismo
+e se adaptar ali eh dentro da nossa lógica. Beleza? Então aqui dentro o que que a
+gente pode fazer? Ao invés da gente tá utilizando agora o latest i3 ou latest chá, a
+gente usa só o latest
+o legist, né? Eu não sei nem falar o nome do treino. E aqui, ó, agora a gente roda a
+nossa aplicação
+e tá aí a mesma execução que tinha antes. Agora, executando dessa forma aqui,
+utilizando os genéricas
+funções. Beleza, pessoal? Vou continuar esse vídeo, só que eu vou fazer em partes.
+Agora na próxima eh sessão, eu vou falar sobre o generics,
+só que dentro das structs, que são estruturas, pra gente ver como que ele vai
+funcionar. Beleza? Para não ficar muito longo, vamos cortar aqui. E a gente aprendeu
+então nessa aula a utilizar o generics
+e dentro do rush a gente tem um generics pra gente utilizar esse polimorfismo entre
+os parâmetros de uma função.
+A gente tem os traits pra gente lidar com os métodos, os comportamentos ali.
+E mas a gente vai ver nas próximas aulas, mas é desse contexto, é que lida ali o
+comportamento, né, daquela ação para falar o que que ele pode fazer. E a gente vai
+ver também a questão ainda dentro desse contexto de dos lifetimes, que são
+referências que existem ali dentro daquela função durante x tempo em que ela está
+executando. Beleza? tem esses três que são o que faz eh reduzir a duplicidade de
+código
+aqui dentro do Rust. E a gente viu nessa aula o genérico.
+E viu ele funcionando aqui. Beleza, pessoal? Muito obrigado aí pela audiência.
+Estamos diante e é nós. Até a próxima. M.
